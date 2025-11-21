@@ -1,0 +1,72 @@
+---
+sidebar_position: 17
+---
+
+# RHAL_CRYPTO
+
+RHAL_CRYPTO api
+
+## ChinaDRM_Storage_KeyData
+```bash
+extern int32_t ChinaDRM_Storage_KeyData(char*data, unsigned int len);
+```
+
+## ChinaDRM_Check_KeyData
+```bash
+extern int32_t ChinaDRM_Check_KeyData();
+```
+
+## ChinaDRM_Get_Device_ID
+```bash
+extern int32_t ChinaDRM_Get_Device_ID(char*device_id, unsigned int*len);
+```
+
+## RHAL_CRYPTO_WriteKey
+```bash
+DTV_STATUS_T RHAL_CRYPTO_WriteKey(RHAL_TRUSTZONE_KEYS_TYPE_T en_keys_type, UINT8*pu8_keys_data, UINT32 u32_keys_data_len);
+```
+
+## RHAL_CRYPTO_CertificateKey
+```bash
+DTV_STATUS_T RHAL_CRYPTO_CertificateKey(RHAL_TRUSTZONE_KEYS_T*pst_keys_data, RHAL_TRUSTZONE_KEY_CERTIFICATE_T*pen_certificate_result);
+```
+
+## RHAL_CRYPTO_ApplyKey
+```bash
+DTV_STATUS_T RHAL_CRYPTO_ApplyKey(RHAL_TRUSTZONE_KEYS_TYPE_T en_keys_type);
+```
+
+## RHAL_CYRPTO_QUERY_KEY
+```bash
+DTV_STATUS_T RHAL_CYRPTO_QUERY_KEY(RHAL_TRUSTZONE_KEYS_TYPE_T en_keys_type, UINT8*pu8_keys_ID, UINT32*u32_keys_ID_len);
+```
+
+## RHAL_CRYPTO_Get_Unique_Id
+```bash
+DTV_STATUS_T RHAL_CRYPTO_Get_Unique_Id(UINT8*pBuffer, UINT32*pSize);
+```
+
+## RHAL_CRYPTO_Set_PMode
+```bash
+DTV_STATUS_T RHAL_CRYPTO_Set_PMode(UINT32 mode);
+```
+
+## RHAL_CRYPTO_Set_ReleaseMode
+```bash
+DTV_STATUS_T RHAL_CRYPTO_Set_ReleaseMode();
+```
+
+## RHAL_CRYPTO_Get_CommonKey
+```bash
+DTV_STATUS_T RHAL_CRYPTO_Get_CommonKey(int*mode);
+```
+
+## RHAL_CRYPTO_Verify_Attestation_ID
+```bash
+DTV_STATUS_T RHAL_CRYPTO_Verify_Attestation_ID(UINT8*id_data, UINT32 id_data_len, RHAL_TRUSTZONE_ATTESTATION_ID_TYPE_T id_type);
+```
+
+## RHAL_CRYPTO_CheckKoPair
+```bash
+DTV_STATUS_T RHAL_CRYPTO_CheckKoPair();
+```

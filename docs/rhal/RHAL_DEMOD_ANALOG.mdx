@@ -1,0 +1,82 @@
+---
+sidebar_position: 21
+---
+
+# RHAL_DEMOD_ANALOG
+
+RHAL_DEMOD_ANALOG api
+
+## RHAL_ADEMOD_ProbeEx
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_ProbeEx(UINT8 portI2C, UINT32*pHandleI2C);
+```
+
+## RHAL_ADEMOD_NTSC_Initialize
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_NTSC_Initialize(void);
+```
+
+## RHAL_ADEMOD_PAL_Initialize
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_PAL_Initialize(void);
+```
+
+## RHAL_ADEMOD_ChangeTransMediaEx
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_ChangeTransMediaEx(HAL_DEMOD_TRANS_SYSTEM_T transMidia);
+```
+
+## RHAL_ADEMOD_Change_TransMedia
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_Change_TransMedia(HAL_DEMOD_ANALOG_SET_PARAM_T*pChangeParam);
+```
+
+## RHAL_ADEMOD_SetDemod
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_SetDemod(HAL_DEMOD_ANALOG_CONFIG_T*pAnalogParam);
+```
+
+## RHAL_ADEMOD_TunePostJob
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_TunePostJob(BOOLEAN*pFinished, SINT32*pOffsetFreq, HAL_DEMOD_LOCK_STATE_T*pLockState);
+```
+
+## RHAL_ADEMOD_ControlOutputEx
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_ControlOutputEx(BOOLEAN bEnableOutput);
+```
+
+## RHAL_ADEMOD_ATVIsLocked
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_ATVIsLocked(BOOLEAN*isLocked);
+```
+
+## RHAL_ADEMOD_GetSignalQulityEx
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_GetSignalQulityEx(UINT32*pSignalQaulity);
+```
+
+## RHAL_ADEMOD_GetSNREx
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_GetSNREx(UINT32*pSignalQaulity);
+```
+
+## RHAL_ADEMOD_CheckLockState
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_CheckLockState(HAL_DEMOD_LOCK_STATE_T*pLockState);
+```
+
+## RHAL_ADEMOD_SetSpecialData
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_SetSpecialData(HAL_DEMOD_AUDIO_SIF_SOUNDSYSTEM_T audioSystem);
+```
+
+## RHAL_ADEMOD_DebugMenu
+```bash
+extern void RHAL_ADEMOD_DebugMenu(void);
+```
+
+## RHAL_ADEMOD_Handler
+```bash
+extern DTV_STATUS_T RHAL_ADEMOD_Handler(HAL_DEMOD_TUNE_MODE_T tune_mode);
+```

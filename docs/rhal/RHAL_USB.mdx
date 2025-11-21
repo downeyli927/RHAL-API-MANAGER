@@ -1,0 +1,117 @@
+---
+sidebar_position: 66
+---
+
+# RHAL_USB
+
+RHAL_USB api
+
+## RHAL_USB_SuperSpeedSupport
+```bash
+DTV_STATUS_T RHAL_USB_SuperSpeedSupport(SINT32 connector1, BOOLEAN bOn);
+```
+
+## RHAL_USB_VBusControl
+```bash
+DTV_STATUS_T RHAL_USB_VBusControl(SINT32 connector1, BOOLEAN bOn);
+```
+
+## RHAL_USB_IsConnSupportU3
+```bash
+BOOLEAN RHAL_USB_IsConnSupportU3(SINT32 connector1);
+```
+
+## RHAL_USB_GetOCStatus
+```bash
+SINT32 RHAL_USB_GetOCStatus(SINT32 connector1);
+```
+
+## RHAL_USB_GetTotalConnNum
+```bash
+SINT32 RHAL_USB_GetTotalConnNum();
+```
+
+## RHAL_USB_Typec_Hidg_enable
+```bash
+DTV_STATUS_T RHAL_USB_Typec_Hidg_enable(BOOLEAN enable);
+```
+
+## RHAL_USB_Typec_Get_Hidg_enable
+```bash
+DTV_STATUS_T RHAL_USB_Typec_Get_Hidg_enable(BOOLEAN*enable);
+```
+
+## RHAL_USB_Typec_Reverse_mode_enable
+```bash
+DTV_STATUS_T RHAL_USB_Typec_Reverse_mode_enable(UINT32 id, BOOLEAN enable);
+```
+
+## RHAL_USB_Typec_Get_Reverse_mode_enable
+```bash
+DTV_STATUS_T RHAL_USB_Typec_Get_Reverse_mode_enable(UINT32 id, BOOLEAN*enable);
+```
+
+## RHAL_USB_Typec_Hidg_mode_enable
+```bash
+DTV_STATUS_T RHAL_USB_Typec_Hidg_mode_enable(UINT32 id, BOOLEAN enable);
+```
+
+## RHAL_USB_Typec_Get_Hidg_mode_enable
+```bash
+DTV_STATUS_T RHAL_USB_Typec_Get_Hidg_mode_enable(UINT32 id, BOOLEAN*enable);
+```
+
+## RHAL_USB_Typec_Select_Hub
+```bash
+DTV_STATUS_T RHAL_USB_Typec_Select_Hub(UINT32 id);
+```
+
+## RHAL_USB_SET_POWER_MONITOR_VALUE
+```bash
+DTV_STATUS_T RHAL_USB_SET_POWER_MONITOR_VALUE(UINT32 id, UINT32 power_value);
+```
+
+## RHAL_USB_GET_POWER_MONITOR_VALUE
+```bash
+DTV_STATUS_T RHAL_USB_GET_POWER_MONITOR_VALUE(UINT32 id, UINT32*power_value);
+```
+
+## RHAL_USB_SET_TYPEA_SWITCH_MODE
+```bash
+DTV_STATUS_T RHAL_USB_SET_TYPEA_SWITCH_MODE(UINT32 id, UINT32 mode);
+```
+
+## RHAL_USB_GET_TYPEA_SWITCH_MODE
+```bash
+DTV_STATUS_T RHAL_USB_GET_TYPEA_SWITCH_MODE(UINT32 id, UINT32*mode);
+```
+
+## RHAL_USB_SET_TYPEA_PORT_SWITCH_MODE
+```bash
+DTV_STATUS_T RHAL_USB_SET_TYPEA_PORT_SWITCH_MODE(UINT32 id, UINT32 port_num, UINT32 mode);
+```
+
+## RHAL_USB_GET_TYPEA_PORT_SWITCH_MODE
+```bash
+DTV_STATUS_T RHAL_USB_GET_TYPEA_PORT_SWITCH_MODE(UINT32 id, UINT32 port_num, UINT32*mode);
+```
+
+## RHAL_USB_Typec_Hidg_output_absolute_pos
+```bash
+DTV_STATUS_T RHAL_USB_Typec_Hidg_output_absolute_pos(UINT32 id, UINT32 x_pos, UINT32 y_pos);
+```
+
+## RHAL_USB_Typec_Hidg_send_keyup_event
+```bash
+DTV_STATUS_T RHAL_USB_Typec_Hidg_send_keyup_event(UINT32 id, SINT32 key_type);
+```
+
+## RHAL_Verify_MIC_Code
+```bash
+DTV_STATUS_T RHAL_Verify_MIC_Code(struct MIC_Parameters*parameters, UINT8 parameter_hash[32], struct MIC_Results*result, UINT8 result_hash[32]);
+```
+
+## RHAL_USB_Get_MIC_info
+```bash
+DTV_STATUS_T RHAL_USB_Get_MIC_info(char*product, struct MIC_Info*info);
+```

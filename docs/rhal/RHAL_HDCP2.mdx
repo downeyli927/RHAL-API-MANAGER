@@ -1,0 +1,197 @@
+---
+sidebar_position: 31
+---
+
+# RHAL_HDCP2
+
+RHAL_HDCP2 api
+
+## RHAL_HDCP_Init
+```bash
+DTV_STATUS_T RHAL_HDCP_Init(void);
+```
+
+## RHAL_HDCP2_GetCertInfo
+```bash
+DTV_STATUS_T RHAL_HDCP2_GetCertInfo(UINT8*pReceiverID, UINT8*pPubKey, UINT8*pRootSign);
+```
+
+## RHAL_HDCP2_GetCertInfo2
+```bash
+DTV_STATUS_T RHAL_HDCP2_GetCertInfo2(UINT8*pReceiverID, UINT8*pPubKey, UINT8*pReserved, UINT8*pRootSign);
+```
+
+## RHAL_HDCP2_Decrypt_RSAES_OAEP
+```bash
+DTV_STATUS_T RHAL_HDCP2_Decrypt_RSAES_OAEP(UINT8*pEkpub_km);
+```
+
+## RHAL_HDCP2_Kd_Key_Derivation
+```bash
+DTV_STATUS_T RHAL_HDCP2_Kd_Key_Derivation(UINT8*pRtx, UINT8*pRrx, UINT32 version);
+```
+
+## RHAL_HDCP2_Compute_H_Prime
+```bash
+DTV_STATUS_T RHAL_HDCP2_Compute_H_Prime(UINT8*pHPrime, UINT8 repeater, UINT8*pRtx, UINT8*pInfo, UINT32 version);
+```
+
+## RHAL_HDCP2_Compute_L_Prime
+```bash
+DTV_STATUS_T RHAL_HDCP2_Compute_L_Prime(UINT8*pL_prime, UINT8*pRn, UINT8*pRrx, UINT32 version);
+```
+
+## RHAL_HDCP2_Compute_Kh
+```bash
+DTV_STATUS_T RHAL_HDCP2_Compute_Kh(void);
+```
+
+## RHAL_HDCP2_Encrypt_Km_using_Kh
+```bash
+DTV_STATUS_T RHAL_HDCP2_Encrypt_Km_using_Kh(UINT8*pEkh_km, UINT8*pM);
+```
+
+## RHAL_HDCP2_Decrypt_Km_using_Kh
+```bash
+DTV_STATUS_T RHAL_HDCP2_Decrypt_Km_using_Kh(UINT8*pM, UINT8*ekh_km);
+```
+
+## RHAL_HDCP2_Decrypt_EKs
+```bash
+DTV_STATUS_T RHAL_HDCP2_Decrypt_EKs(UINT8*pEks, UINT8*pRtx, UINT8*pRrx, UINT8*pRn, UINT32 version);
+```
+
+## RHAL_HDCP2_XOR_Ks_with_LC128
+```bash
+DTV_STATUS_T RHAL_HDCP2_XOR_Ks_with_LC128(void);
+```
+
+## RHAL_HDCP2_Data_Decrypt
+```bash
+DTV_STATUS_T RHAL_HDCP2_Data_Decrypt(UINT8*pOutputbuf, UINT8*pInputbuf, SINT32 length, UINT8*pCounter);
+```
+
+## RHAL_HDCP2_WriteKeySet
+```bash
+DTV_STATUS_T RHAL_HDCP2_WriteKeySet(UINT8*pKeySet, UINT8*dst_file_path, UINT32 KeyLength);
+```
+
+## RHAL_HDCP2_SHA256
+```bash
+DTV_STATUS_T RHAL_HDCP2_SHA256(UINT8*pOutputBuf, UINT8*pInputBuf, SINT32 length);
+```
+
+## RHAL_HDCP2_AES_CTR
+```bash
+DTV_STATUS_T RHAL_HDCP2_AES_CTR(UINT8*pOutputBuf, UINT8*pInputBuf, SINT32 length, UINT8*pKey, SINT32 keyLength, UINT8*pCounter);
+```
+
+## RHAL_HDCP2_Data_Encrypt
+```bash
+DTV_STATUS_T RHAL_HDCP2_Data_Encrypt(UINT8*pOutputBuf, UINT8*pInputBuf, SINT32 length, UINT8*pCounter);
+```
+
+## RHAL_HDCP2_Generate_Km
+```bash
+DTV_STATUS_T RHAL_HDCP2_Generate_Km(UINT8*pMaskedDB, UINT8*pDB, UINT8*pDBmask);
+```
+
+## RHAL_HDCP2_Generate_Ks
+```bash
+DTV_STATUS_T RHAL_HDCP2_Generate_Ks(UINT8*pEks, UINT8*pRrx, UINT8*pRtx, UINT8*pRn, UINT32 version);
+```
+
+## RHAL_HDCP2_GetRootPublicKey
+```bash
+DTV_STATUS_T RHAL_HDCP2_GetRootPublicKey(UINT8*pRootPublicKey, UINT8*src_file_path);
+```
+
+## RHAL_HDCP2_Select_StoredKm
+```bash
+DTV_STATUS_T RHAL_HDCP2_Select_StoredKm(UINT32 index);
+```
+
+## RHAL_HDCP2_Write_StoredKm
+```bash
+DTV_STATUS_T RHAL_HDCP2_Write_StoredKm(UINT32 index);
+```
+
+## RHAL_HDCP2_HMAC_SHA256
+```bash
+DTV_STATUS_T RHAL_HDCP2_HMAC_SHA256(UINT8*pOutputBuf, UINT8*pInputBuf, SINT32 length, UINT8*pkey, SINT32 keylength);
+```
+
+## RHAL_HDCP2_SHA1
+```bash
+DTV_STATUS_T RHAL_HDCP2_SHA1(UINT8*pOutputBuf, UINT8*pInputBuf, SINT32 length);
+```
+
+## RHAL_HDCP2_GetProtectedDecryptionKey
+```bash
+DTV_STATUS_T RHAL_HDCP2_GetProtectedDecryptionKey(UINT8*pData, SINT32*pLength);
+```
+
+## RHAL_HDCP2_SetProtectedDecryptionKey
+```bash
+DTV_STATUS_T RHAL_HDCP2_SetProtectedDecryptionKey(UINT8*pData, SINT32 length);
+```
+
+## RHAL_HDCP2_GetEncHdcp2Key
+```bash
+DTV_STATUS_T RHAL_HDCP2_GetEncHdcp2Key(UINT8*pEncHdcp2Key, UINT8*src_file_path, UINT8*pEncKeyLength);
+```
+
+## RHAL_HDCP2_SetEncHdcp2Key
+```bash
+DTV_STATUS_T RHAL_HDCP2_SetEncHdcp2Key(UINT8*pEncHdcp2Key);
+```
+
+## RHAL_HDCP2_Compute_V_Prime
+```bash
+DTV_STATUS_T RHAL_HDCP2_Compute_V_Prime(UINT8*pVPrime, UINT8*pRxIdListsInfo, SINT32 infoLength);
+```
+
+## RHAL_HDCP2_Compute_M_Prime
+```bash
+DTV_STATUS_T RHAL_HDCP2_Compute_M_Prime(UINT8*pMPrime, UINT8*pStreamManageInfo, SINT32 infoLength);
+```
+
+## RHAL_HDCP2_get_hdcp_status
+```bash
+DTV_STATUS_T RHAL_HDCP2_get_hdcp_status(UINT8*b14Status, UINT8*b22Status);
+```
+
+## RHAL_HDCP2_Reencrypt
+```bash
+DTV_STATUS_T RHAL_HDCP2_Reencrypt(UINT8*encrypt_key, UINT32 encrypt_key_size, UINT8*reencrypt_key, UINT32 reencrypt_key_size);
+```
+
+## RHAL_HDCP2_Decrypt_and_Init
+```bash
+DTV_STATUS_T RHAL_HDCP2_Decrypt_and_Init(UINT8*encrypt_key, UINT32 encrypt_key_size);
+```
+
+## RHAL_HDCP_CertificateKey
+```bash
+DTV_STATUS_T RHAL_HDCP_CertificateKey(UINT32 keyType,UINT8*dataBuf,UINT32 dataLen, CHAR*device_id, UINT32*len);
+```
+
+## RHAL_HDCP_CertificateTxKey
+```bash
+DTV_STATUS_T RHAL_HDCP_CertificateTxKey(UINT32 keyType,UINT8*dataBuf,UINT32 dataLen, CHAR*device_id, UINT32*len);
+```
+
+## RHAL_HDCP_DeltTxKey
+```bash
+DTV_STATUS_T RHAL_HDCP_DeltTxKey(UINT32 keyType);
+```
+
+## RHAL_HDCP_SetTxKey
+```bash
+DTV_STATUS_T RHAL_HDCP_SetTxKey(UINT32 keyType,UINT8*dataBuf,UINT32 dataLen);
+```
+
+## RHAL_HDCP_ApplyTxKey
+```bash
+DTV_STATUS_T RHAL_HDCP_ApplyTxKey(UINT32 keyType);
+```

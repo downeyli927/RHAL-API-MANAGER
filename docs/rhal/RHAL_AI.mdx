@@ -1,0 +1,57 @@
+---
+sidebar_position: 1
+---
+
+# RHAL_AI
+
+RHAL_AI api
+
+## RHAL_AI_Initialize
+```bash
+BOOLEAN RHAL_AI_Initialize(CHAR*file, void**handle);
+```
+
+## RHAL_AI_UnInitialize
+```bash
+BOOLEAN RHAL_AI_UnInitialize(void*handle);
+```
+
+## RHAL_AI_Process
+```bash
+SINT32 RHAL_AI_Process(void*handle, NN_HW_INDEX hw, AI_CALLBACK_PTR ptr, UINT32 timeout);
+```
+
+## RHAL_AI_GetEstimatedWaitTime
+```bash
+SINT32 RHAL_AI_GetEstimatedWaitTime(void*handle);
+```
+
+## RHAL_AI_GetModelFileNum
+```bash
+SINT32 RHAL_AI_GetModelFileNum(void*handle);
+```
+
+## RHAL_AI_GetModelFileName
+```bash
+CHAR* RHAL_AI_GetModelFileName(void*handle, SINT32 fileIndex);
+```
+
+## RHAL_AI_GetInputHeight
+```bash
+SINT32 RHAL_AI_GetInputHeight(void*handle);
+```
+
+## RHAL_AI_GetInputWidth
+```bash
+SINT32 RHAL_AI_GetInputWidth(void*handle);
+```
+
+## RHAL_AI_CheckReadyToRun
+```bash
+SINT32 RHAL_AI_CheckReadyToRun(void*handle, volatile CHAR*pCancel);
+```
+
+## RHAL_AI_UpdateRunTime
+```bash
+SINT32 RHAL_AI_UpdateRunTime(void*handle);
+```

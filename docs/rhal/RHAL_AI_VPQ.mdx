@@ -1,0 +1,107 @@
+---
+sidebar_position: 8
+---
+
+# RHAL_AI_VPQ
+
+RHAL_AI_VPQ api
+
+## RHAL_AI_VPQ_Initialize
+```bash
+void* RHAL_AI_VPQ_Initialize(void);
+```
+
+## RHAL_AI_VPQ_UnInitialize
+```bash
+BOOLEAN RHAL_AI_VPQ_UnInitialize(void*handle);
+```
+
+## RHAL_AI_VPQ_Connect
+```bash
+BOOLEAN RHAL_AI_VPQ_Connect(void*handle, void*aiHandle);
+```
+
+## RHAL_AI_VPQ_SetAiInfo
+```bash
+BOOLEAN RHAL_AI_VPQ_SetAiInfo(void*handle, void*info, SINT32 infoSize);
+```
+
+## RHAL_AI_VPQ_GetBufferAddr
+```bash
+BOOLEAN RHAL_AI_VPQ_GetBufferAddr(void*handle, UINT32*va, UINT32*pa);
+```
+
+## RHAL_AI_VPQ_GetFlagAddr
+```bash
+BOOLEAN RHAL_AI_VPQ_GetFlagAddr(void*handle, UINT32*addr);
+```
+
+## RHAL_AI_VPQ_CheckBufferReady
+```bash
+BOOLEAN RHAL_AI_VPQ_CheckBufferReady(void*handle);
+```
+
+## RHAL_AI_VPQ_GetFlag
+```bash
+UINT32 RHAL_AI_VPQ_GetFlag(void*handle, UINT32 index);
+```
+
+## RHAL_AI_VPQ_GetAiMode
+```bash
+BOOLEAN RHAL_AI_VPQ_GetAiMode(void*handle, UINT32*mode);
+```
+
+## RHAL_AI_VPQ_Get90kClk
+```bash
+UINT32 RHAL_AI_VPQ_Get90kClk(void*handle);
+```
+
+## RHAL_AI_VPQ_ClearBufferReady
+```bash
+BOOLEAN RHAL_AI_VPQ_ClearBufferReady(void*handle);
+```
+
+## RHAL_AI_VPQ_GetGenreLabels
+```bash
+SINT32 RHAL_AI_VPQ_GetGenreLabels(char labels[][50], SINT32 input_genre_num);
+```
+
+## RHAL_AI_VPQ_GetAllowMode
+```bash
+UINT32 RHAL_AI_VPQ_GetAllowMode(void*handle);
+```
+
+## RHAL_AI_VPQ_SetApMask
+```bash
+BOOLEAN RHAL_AI_VPQ_SetApMask(void*handle,UINT32 mask);
+```
+
+## RHAL_AI_VPQ_SetCtrlDelayTime
+```bash
+BOOLEAN RHAL_AI_VPQ_SetCtrlDelayTime(void*handle,UINT32 delay_sec);
+```
+
+## RHAL_AI_VPQ_ENABLE_DECTION_AP
+```bash
+BOOLEAN RHAL_AI_VPQ_ENABLE_DECTION_AP(UINT32 ap_list);
+```
+
+## RHAL_AI_VPQ_DISABLE_DECTION_AP
+```bash
+BOOLEAN RHAL_AI_VPQ_DISABLE_DECTION_AP(UINT32 ap_list);
+```
+
+## RHAL_AI_VPQ_GetSupportList
+```bash
+UINT32 RHAL_AI_VPQ_GetSupportList(void*handle);
+```
+
+## RHAL_AI_VPQ_EnDebugOsd
+```bash
+BOOLEAN RHAL_AI_VPQ_EnDebugOsd(void*handle,AI_DETECTION_AP_E ap,UINT32 enDbgOsd);
+```
+
+## RHAL_AI_VPQ_GetFaceList
+```bash
+UINT32 RHAL_AI_VPQ_GetFaceList(void*handle,AP_FaceInfo*list,UINT32 listSize);
+```

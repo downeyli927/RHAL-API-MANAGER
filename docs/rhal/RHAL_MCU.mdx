@@ -1,0 +1,52 @@
+---
+sidebar_position: 39
+---
+
+# RHAL_MCU
+
+RHAL_MCU api
+
+## RHAL_MCU_InitSettings
+```bash
+DTV_STATUS_T RHAL_MCU_InitSettings(const char*mcuName, const char*filepath);
+```
+
+## RHAL_MCU_UnInitSettings
+```bash
+DTV_STATUS_T RHAL_MCU_UnInitSettings(const char*mcuName);
+```
+
+## RHAL_MCU_ReloadSettings
+```bash
+DTV_STATUS_T RHAL_MCU_ReloadSettings(const char*mcuName);
+```
+
+## RHAL_MCU_ReloadAllSetting
+```bash
+DTV_STATUS_T RHAL_MCU_ReloadAllSetting(void);
+```
+
+## RHAL_MCU_SetAttribute
+```bash
+DTV_STATUS_T RHAL_MCU_SetAttribute(const char*mcuName, const char*funName, const char*attrName, char*attrVal, unsigned char len);
+```
+
+## RHAL_MCU_GetAttribute
+```bash
+DTV_STATUS_T RHAL_MCU_GetAttribute(const char*mcuName, const char*funName, const char*attrName, char*attrVal, unsigned char*len);
+```
+
+## RHAL_MCU_SetFuncValue
+```bash
+DTV_STATUS_T RHAL_MCU_SetFuncValue(const char*mcuName, const char*funName, unsigned int onoff);
+```
+
+## RHAL_MCU_GetFuncValue
+```bash
+DTV_STATUS_T RHAL_MCU_GetFuncValue(const char*mcuName, const char*funName, unsigned int*value);
+```
+
+## RHAL_MCU_TransferData
+```bash
+DTV_STATUS_T RHAL_MCU_TransferData(const char*mcuName, const char*funName, MCU_CmdInfo*cmdInfo);
+```

@@ -1,0 +1,27 @@
+---
+sidebar_position: 32
+---
+
+# RHAL_I2C
+
+RHAL_I2C api
+
+## RHAL_I2C_GetIdByName
+```bash
+extern DTV_STATUS_T RHAL_I2C_GetIdByName(const char*pcbname,UINT8*pchNum);
+```
+
+## RHAL_I2C_Read
+```bash
+extern DTV_STATUS_T RHAL_I2C_Read(UINT8 chNum, UINT8 slaveAddr, UINT8 subAddrLen, UINT8*subAddr, UINT16 nBytes, UINT8*rxBuf, UINT32 transferFlag, UINT32 retry);
+```
+
+## RHAL_I2C_Write
+```bash
+extern DTV_STATUS_T RHAL_I2C_Write(UINT8 chNum, UINT8 slaveAddr, UINT16 nBytes, UINT8*txBuf, UINT32 transferFlag, UINT32 retry);
+```
+
+## RHAL_I2C_SetSpeed
+```bash
+extern DTV_STATUS_T RHAL_I2C_SetSpeed(UINT8 chNum, UINT32 paramKHz);
+```

@@ -1,0 +1,87 @@
+---
+sidebar_position: 73
+---
+
+# RHAL_VBE_HDMITX
+
+RHAL_VBE_HDMITX api
+
+## RHAL_VBE_HDMITX_Initialize
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_Initialize(void);
+```
+
+## RHAL_VBE_HDMITX_GetConnectionState
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_GetConnectionState(UINT8 port, UINT8*p_hpd_status);
+```
+
+## RHAL_VBE_HDMITX_Get_HotPlug
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_Get_HotPlug(UINT8 port, UINT8*p_hpd);
+```
+
+## RHAL_VBE_HDMITX_Connect
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_Connect(UINT8 port, RHAL_VBE_HDMITX_MODE_T mode, RHAL_VBE_HDMITX_INPUT_SRC_T input_src, UINT8 input_src_port);
+```
+
+## RHAL_VBE_HDMITX_Run
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_Run(UINT8 port);
+```
+
+## RHAL_VBE_HDMITX_Disconnect
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_Disconnect(UINT8 port);
+```
+
+## RHAL_VBE_HDMITX_Open
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_Open(void);
+```
+
+## RHAL_VBE_HDMITX_Close
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_Close(void);
+```
+
+## RHAL_VBE_HDMITX_Uninitialize
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_Uninitialize(void);
+```
+
+## RHAL_VBE_HDMITX_GetPortTimingInfo
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_GetPortTimingInfo(UINT8 port, HAL_VBE_HDMITX_TIMING_INFO_T*p_Info);
+```
+
+## RHAL_VBE_HDMITX_ReadEDID
+```bash
+DTV_STATUS_T RHAL_VBE_HDMITX_ReadEDID(UINT8 port, UINT8*p_Data, UINT16*p_Len);
+```
+
+## RHAL_VBE_HDMITX_HDCP_Get_AuthVersion
+```bash
+UINT8 RHAL_VBE_HDMITX_HDCP_Get_AuthVersion(UINT8 port);
+```
+
+## RHAL_VBE_HDMITX_HDCP_Set_AuthVersion
+```bash
+DTV_STATUS RHAL_VBE_HDMITX_HDCP_Set_AuthVersion(UINT8 port, int auth);
+```
+
+## RHAL_VBE_HDMITX_HDCP_Get_AuthStatus
+```bash
+UINT8 RHAL_VBE_HDMITX_HDCP_Get_AuthStatus(UINT8 port);
+```
+
+## RHAL_VBE_HDMITX_Set_AudioEnable
+```bash
+DTV_STATUS RHAL_VBE_HDMITX_Set_AudioEnable(unsigned char bAudioEnable);
+```
+
+## RHAL_VBE_HDMITX_GetTxPortCnt
+```bash
+UINT8 RHAL_VBE_HDMITX_GetTxPortCnt(void);
+```

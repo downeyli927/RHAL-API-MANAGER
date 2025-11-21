@@ -1,0 +1,47 @@
+---
+sidebar_position: 37
+---
+
+# RHAL_LSADC
+
+RHAL_LSADC api
+
+## RHAL_LSADC_SetVoltageMode
+```bash
+extern DTV_STATUS_T RHAL_LSADC_SetVoltageMode(HAL_LSADC_NAME name, UINT8 voltageMode);
+```
+
+## RHAL_LSADC_SetActive
+```bash
+extern DTV_STATUS_T RHAL_LSADC_SetActive(HAL_LSADC_NAME name, UINT8 active);
+```
+
+## RHAL_LSADC_SetThreshold
+```bash
+extern DTV_STATUS_T RHAL_LSADC_SetThreshold(HAL_LSADC_NAME name, UINT8 threshold);
+```
+
+## RHAL_LSADC_GetAdcValue
+```bash
+extern DTV_STATUS_T RHAL_LSADC_GetAdcValue(HAL_LSADC_NAME name, UINT8*value);
+```
+
+## RHAL_LSADC_GetVoltageMode
+```bash
+extern DTV_STATUS_T RHAL_LSADC_GetVoltageMode(HAL_LSADC_NAME name, UINT8*voltageMode);
+```
+
+## RHAL_LSADC_GetActiveStatus
+```bash
+extern DTV_STATUS_T RHAL_LSADC_GetActiveStatus(HAL_LSADC_NAME name, UINT8*active);
+```
+
+## RHAL_LSADC_GetThreshold
+```bash
+extern DTV_STATUS_T RHAL_LSADC_GetThreshold(HAL_LSADC_NAME name, UINT8*threshold);
+```
+
+## RHAL_LSADC_Dump
+```bash
+extern DTV_STATUS_T RHAL_LSADC_Dump(void);
+```

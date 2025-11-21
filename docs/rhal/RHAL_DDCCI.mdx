@@ -1,0 +1,47 @@
+---
+sidebar_position: 18
+---
+
+# RHAL_DDCCI
+
+RHAL_DDCCI api
+
+## RHAL_DDCCI_Open
+```bash
+DTV_STATUS_T RHAL_DDCCI_Open(void);
+```
+
+## RHAL_DDCCI_Close
+```bash
+DTV_STATUS_T RHAL_DDCCI_Close(void);
+```
+
+## RHAL_DDCCI_Enable
+```bash
+DTV_STATUS_T RHAL_DDCCI_Enable(ERTK_DDCCI_TYPE source, UINT8 port);
+```
+
+## RHAL_DDCCI_Disable
+```bash
+DTV_STATUS_T RHAL_DDCCI_Disable(void);
+```
+
+## RHAL_DDCCI_SendMessage
+```bash
+DTV_STATUS_T RHAL_DDCCI_SendMessage(UINT8*pMsg, UINT8 Len);
+```
+
+## RHAL_DDCCI_ReadMessage
+```bash
+DTV_STATUS_T RHAL_DDCCI_ReadMessage(UINT8*pMsg, UINT8 msgLen, UINT8*pRxLen);
+```
+
+## RHAL_DDCCI_SendMessageByPort
+```bash
+DTV_STATUS_T RHAL_DDCCI_SendMessageByPort(ERTK_DDCCI_TYPE source, UINT8 port, UINT8*pMsg, UINT8 Len);
+```
+
+## RHAL_DDCCI_ReadMessageByPort
+```bash
+DTV_STATUS_T RHAL_DDCCI_ReadMessageByPort(ERTK_DDCCI_TYPE source, UINT8 port, UINT8*pMsg, UINT8 msgLen, UINT8*pRxLen);
+```

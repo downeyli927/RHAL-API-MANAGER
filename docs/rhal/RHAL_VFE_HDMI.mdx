@@ -1,0 +1,287 @@
+---
+sidebar_position: 83
+---
+
+# RHAL_VFE_HDMI
+
+RHAL_VFE_HDMI api
+
+## __attribute__
+```bash
+} __attribute__((packed));
+```
+
+## RHAL_VFE_HDMI_Initialize
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_Initialize(void);
+```
+
+## RHAL_VFE_HDMI_Uninitialize
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_Uninitialize(void);
+```
+
+## RHAL_VFE_HDMI_Open
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_Open(void);
+```
+
+## RHAL_VFE_HDMI_Close
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_Close(void);
+```
+
+## RHAL_VFE_HDMI_Connect
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_Connect(UINT8 port);
+```
+
+## RHAL_VFE_HDMI_Disconnect
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_Disconnect(UINT8 port);
+```
+
+## RHAL_VFE_HDMI_GetRxPortCnt
+```bash
+UINT8 RHAL_VFE_HDMI_GetRxPortCnt(void);
+```
+
+## RHAL_VFE_HDMI_GetConnectionState
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetConnectionState(UINT8 port, UINT8*pData);
+```
+
+## RHAL_VFE_HDMI_GetClockStatus
+```bash
+BOOLEAN RHAL_VFE_HDMI_GetClockStatus(UINT8 port);
+```
+
+## RHAL_VFE_HDMI_GetPortTimingInfo
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetPortTimingInfo(UINT8 port, HAL_VFE_HDMI_TIMING_INFO_T*pInfo);
+```
+
+## RHAL_VFE_HDMI_Get_isHDMI20Supported
+```bash
+UINT8 RHAL_VFE_HDMI_Get_isHDMI20Supported(void);
+```
+
+## RHAL_VFE_HDMI_GetLogicalPort
+```bash
+UINT8 RHAL_VFE_HDMI_GetLogicalPort(void);
+```
+
+## RHAL_VFE_HDMI_GetColorDepth
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetColorDepth(UINT8 port, HAL_VFE_HDMI_COLOR_DEPTH_T*color_depth);
+```
+
+## RHAL_VFE_HDMI_GetARCChannel
+```bash
+SINT8 RHAL_VFE_HDMI_GetARCChannel(void);
+```
+
+## RHAL_VFE_HDMI_GetEARCChannel
+```bash
+SINT8 RHAL_VFE_HDMI_GetEARCChannel(void);
+```
+
+## RHAL_VFE_HDMI_GetAudioCodingType
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetAudioCodingType(UINT8*code_type);
+```
+
+## RHAL_VFE_HDMI_GetAVMute
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetAVMute(BOOLEAN*value);
+```
+
+## RHAL_VFE_HDMI_isFastSwitchSupported
+```bash
+UINT8 RHAL_VFE_HDMI_isFastSwitchSupported(void);
+```
+
+## RHAL_VFE_HDMI_GetDRMInfo
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetDRMInfo(UINT8 hwPort, HAL_VFE_HDMI_DRM_INFO_T*pstDRM);
+```
+
+## RHAL_VFE_HDMI_GetPortVSIInfo
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetPortVSIInfo(UINT8 port, HAL_VFE_HDMI_VSI_T*pPacket);
+```
+
+## RHAL_VFE_HDMI_GetPortMultipleVSIInfo
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetPortMultipleVSIInfo(UINT8 port, HAL_VFE_HDMI_MULTIPLE_VSI_T*pPacket);
+```
+
+## RHAL_VFE_HDMI_GetPortSPDInfo
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetPortSPDInfo(UINT8 port, HAL_VFE_HDMI_SPD_T*pPacket);
+```
+
+## RHAL_VFE_HDMI_GetPortAVIInfo
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetPortAVIInfo(UINT8 port, HAL_VFE_HDMI_AVI_T*pPacket);
+```
+
+## RHAL_VFE_HDMI_GetPortPacketInfo
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetPortPacketInfo(UINT8 port, HAL_VFE_HDMI_ALL_PACKET_T*pPacket);
+```
+
+## RHAL_VFE_HDMI_GetPortACPInfo
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetPortACPInfo(UINT8 port, HAL_VFE_HDMI_ACP_T*pPacket);
+```
+
+## RHAL_VFE_HDMI_GetAMDFreesyncInfo
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetAMDFreesyncInfo(HAL_HDMI_AMD_FREE_SYNC_INFO*pFreesyncinfo);
+```
+
+## RHAL_VFE_HDMI_EnableHPD
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_EnableHPD(void);
+```
+
+## RHAL_VFE_HDMI_DisableHPD
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_DisableHPD(void);
+```
+
+## RHAL_VFE_HDMI_Set_HotPlug
+```bash
+UINT8 RHAL_VFE_HDMI_Set_HotPlug(UINT8 port, UINT8 hpd);
+```
+
+## RHAL_VFE_HDMI_SetHPDLowDelay
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_SetHPDLowDelay(UINT32 delay);
+```
+
+## RHAL_VFE_HDMI_Reset_HotPlug
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_Reset_HotPlug(UINT8 port);
+```
+
+## RHAL_VFE_HDMI_ReadEDID
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_ReadEDID(UINT8 port, UINT8*pData);
+```
+
+## RHAL_VFE_HDMI_WriteEDID
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_WriteEDID(UINT8 port, UINT8*pData);
+```
+
+## RHAL_VFE_HDMI_ReadEDID_Ex
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_ReadEDID_Ex(UINT8 port, UINT8*pData, UINT16 Len);
+```
+
+## RHAL_VFE_HDMI_WriteEDID_Ex
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_WriteEDID_Ex(UINT8 port, UINT8*pData, UINT16 Len, UINT32 Flags);
+```
+
+## RHAL_VFE_HDMI_WriteHDCP
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_WriteHDCP(UINT8*pData);
+```
+
+## RHAL_VFE_HDMI_ReadHDCP
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_ReadHDCP(UINT8*pData);
+```
+
+## RHAL_VFE_HDMI_WriteHDCPKey
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_WriteHDCPKey(HAL_HDCP_KEY*pKey, UINT32 Flag);
+```
+
+## RHAL_VFE_HDMI_WriteHDCP_Apply
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_WriteHDCP_Apply(UINT8 version, UINT8*pData);
+```
+
+## RHAL_VFE_HDMI_GetSourceKSVData
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetSourceKSVData(UINT8 port, UINT8*pKSVData);
+```
+
+## RHAL_VFE_HDMI_Get_HDCP_Version
+```bash
+UINT8 RHAL_VFE_HDMI_Get_HDCP_Version(UINT8 port);
+```
+
+## RHAL_VFE_HDMI_isHDCP22Supported
+```bash
+UINT8 RHAL_VFE_HDMI_isHDCP22Supported(UINT8 port);
+```
+
+## RHAL_VFE_HDMI_getHDCPReceiverId
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_getHDCPReceiverId(UINT8*hdcp_2p2_ReceiverId);
+```
+
+## RHAL_VFE_HDMI_HDCP_REPEATER_MODE
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_HDCP_REPEATER_MODE(UINT8 enable);
+```
+
+## RHAL_VFE_HDMI_GetEMPacketSize
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetEMPacketSize(UINT8 port, HAL_VFE_HDMI_EMP_TYPE_T PacketType, UINT16*numOfPacket);
+```
+
+## RHAL_VFE_HDMI_GetEMPacket
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetEMPacket(UINT8 port, HAL_VFE_HDMI_EMP_TYPE_T PacketType, UINT8 emPacket[][_SIZE_OF_EM_PACKET]);
+```
+
+## RHAL_VFE_HDMI_GetCurrentVRRVFrequency
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetCurrentVRRVFrequency(UINT8 port, UINT16*vFreq);
+```
+
+## RHAL_VFE_HDMI_GetSCDCStatus
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetSCDCStatus(UINT8 port, HAL_VFE_HDMI_SCDC_DATA_T*pInfo ,UINT8 type);
+```
+
+## RHAL_VFE_HDMI_GetCurrentPrescionFrameRate
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_GetCurrentPrescionFrameRate(UINT8 port, UINT32*baseFrameRate, UINT32*currentVRRFrameRate);
+```
+
+## RHAL_VFE_HDMI_Get_Port_FRLSupport
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_Get_Port_FRLSupport(UINT8 port, UINT8*support);
+```
+
+## RHAL_VFE_HDMI_SetCECoption
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_SetCECoption(UINT32 option_type,UINT8 enable);
+```
+
+## RHAL_QS_VFE_HDMI_Initialize
+```bash
+DTV_STATUS_T RHAL_QS_VFE_HDMI_Initialize(void);
+```
+
+## RHAL_QS_VFE_HDMI_GetCurrentPort
+```bash
+DTV_STATUS_T RHAL_QS_VFE_HDMI_GetCurrentPort(RHAL_HDMI_QUICK_SHOW_CURRENT_PORT_STATE_T*value);
+```
+
+## RHAL_VFE_HDMI_SetBypassMode
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_SetBypassMode(UINT8 port, RHAL_VFE_HDMI_BYPASS_MODE_T bypass_mode);
+```
+
+## RHAL_VFE_HDMI_IsCapabilitySupported
+```bash
+DTV_STATUS_T RHAL_VFE_HDMI_IsCapabilitySupported(RHAL_VFE_HDMI_IS_CAPABILITY_SUPPORTED_T*capability);
+```

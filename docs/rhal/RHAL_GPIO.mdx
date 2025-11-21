@@ -1,0 +1,52 @@
+---
+sidebar_position: 29
+---
+
+# RHAL_GPIO
+
+RHAL_GPIO api
+
+## RHAL_GPIO_Init
+```bash
+extern DTV_STATUS_T RHAL_GPIO_Init(UINT8 boardType);
+```
+
+## RHAL_GPIO_SetPortOutput
+```bash
+extern DTV_STATUS_T RHAL_GPIO_SetPortOutput(HAL_GPIO_NAME pcbname, UINT8 value);
+```
+
+## RHAL_GPIO_GetPortOutput
+```bash
+extern DTV_STATUS_T RHAL_GPIO_GetPortOutput(HAL_GPIO_NAME pcbname, UINT8*value);
+```
+
+## RHAL_GPIO_GetPortInput
+```bash
+extern DTV_STATUS_T RHAL_GPIO_GetPortInput(HAL_GPIO_NAME pcbname, UINT8*value);
+```
+
+## RHAL_GPIO_SetPortDirectionEx
+```bash
+extern DTV_STATUS_T RHAL_GPIO_SetPortDirectionEx(HAL_GPIO_NAME pcbname, UINT8 direction);
+```
+
+## RHAL_GPIO_GetPortDirectionEx
+```bash
+extern DTV_STATUS_T RHAL_GPIO_GetPortDirectionEx(HAL_GPIO_NAME pcbname, UINT8*direction);
+```
+
+## RHAL_GPIO_SetIrqCallBackEx
+```bash
+extern DTV_STATUS_T RHAL_GPIO_SetIrqCallBackEx(HAL_GPIO_NAME pcbname, void(*pfnGPIO_CB)(UINT32), UINT8 enable, RHAL_GPIO_TRIGGER trigger_type);
+```
+
+## RHAL_GPIO_SetIrqCallBack
+```bash
+extern DTV_STATUS_T RHAL_GPIO_SetIrqCallBack(HAL_GPIO_NAME pcbname, void(*pfnGPIO_CB)(UINT32), UINT8 enable);
+```
+
+## RHAL_GPIO_GetGPIOList
+```bash
+extern DTV_STATUS_T RHAL_GPIO_GetGPIOList(RHAL_GPIO_DESC*pGPIOList, UINT8*count);
+```

@@ -1,0 +1,67 @@
+---
+sidebar_position: 50
+---
+
+# RHAL_PWM
+
+RHAL_PWM api
+
+## RHAL_PWM_SetDutyCycle_EX
+```bash
+extern INT32 RHAL_PWM_SetDutyCycle_EX(const INT8*pcbname, UINT32 data);
+```
+
+## RHAL_PWM_SetFrequency_EX
+```bash
+extern INT32 RHAL_PWM_SetFrequency_EX(const INT8*pcbname, UINT32 data);
+```
+
+## RHAL_PWM_SetEnable_EX
+```bash
+extern INT32 RHAL_PWM_SetEnable_EX(const INT8*pcbname, BOOLEAN data);
+```
+
+## RHAL_PWM_SetVsyncAlign_EX
+```bash
+extern INT32 RHAL_PWM_SetVsyncAlign_EX(const INT8*pcbname, BOOLEAN data);
+```
+
+## RHAL_PWM_SetPolarity_EX
+```bash
+extern INT32 RHAL_PWM_SetPolarity_EX(const INT8*pcbname, BOOLEAN data);
+```
+
+## RHAL_PWM_SetVsyncDelay_EX
+```bash
+extern INT32 RHAL_PWM_SetVsyncDelay_EX(const INT8*pcbname, UINT32 val);
+```
+
+## RHAL_PWM_SetMode
+```bash
+extern INT32 RHAL_PWM_SetMode(const INT8*pcbname, UINT32 mode, UINT32 val);
+```
+
+## RHAL_PWM_GetMode
+```bash
+extern INT32 RHAL_PWM_GetMode(const INT8*pcbname, UINT32*mode, UINT32*val);
+```
+
+## RHAL_PWM_SetParam_EX
+```bash
+extern INT32 RHAL_PWM_SetParam_EX(const INT8*pcbname, RTK_PWM_INFO_EX_T*pstPWMParam);
+```
+
+## RHAL_PWM_GetParam_EX
+```bash
+extern INT32 RHAL_PWM_GetParam_EX(const INT8*pcbname, RTK_PWM_INFO_EX_T*pstPWMParam);
+```
+
+## RHAL_PWM_SetVsyncAlignParam_EX
+```bash
+extern INT32 RHAL_PWM_SetVsyncAlignParam_EX(const INT8*pcbname,UINT32 Alignval,UINT32 Delayval);
+```
+
+## RHAL_PWM_backlight_get_effect
+```bash
+extern INT32 RHAL_PWM_backlight_get_effect(RTK_PWM_EFFECT_EX_T*effect);
+```

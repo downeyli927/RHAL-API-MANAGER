@@ -1,0 +1,8 @@
+{
+  "label": "RHAL VBE",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "RHAL API List"
+  }
+}

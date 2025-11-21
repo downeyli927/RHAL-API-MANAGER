@@ -1,0 +1,227 @@
+---
+sidebar_position: 93
+---
+
+# RHAL_VT
+
+RHAL_VT api
+
+## RHAL_VT_Init
+```bash
+DTV_STATUS_T RHAL_VT_Init(void);
+```
+
+## RHAL_VT_InitEX
+```bash
+DTV_STATUS_T RHAL_VT_InitEX(unsigned int buffernum);
+```
+
+## RHAL_VT_Finalize
+```bash
+DTV_STATUS_T RHAL_VT_Finalize(void);
+```
+
+## RHAL_VT_GetDeviceCapability
+```bash
+DTV_STATUS_T RHAL_VT_GetDeviceCapability(HAL_VT_DEVICE_CAPABILITY_INFO_T*pDeviceCapabilityInfo);
+```
+
+## RHAL_VT_GetVideoFrameBufferCapability
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameBufferCapability(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_VIDEO_FRAME_BUFFER_CAPABILITY_INFO_T*pVideoFrameBufferCapabilityInfo);
+```
+
+## RHAL_VT_GetVideoFrameOutputDeviceCapability
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameOutputDeviceCapability(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_VIDEO_FRAME_OUTPUT_DEVICE_CAPABILITY_INFO_T*pVideoFrameOutputDeviceCapabilityInfo);
+```
+
+## RHAL_VT_GetVideoFrameOutputDeviceLimitation
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameOutputDeviceLimitation(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_VIDEO_FRAME_OUTPUT_DEVICE_LIMITATION_INFO_T*pVideoFrameOutputDeviceLimitationInfo);
+```
+
+## RHAL_VT_GetAllVideoFrameBufferProperty
+```bash
+DTV_STATUS_T RHAL_VT_GetAllVideoFrameBufferProperty(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_VIDEO_FRAME_BUFFER_PROPERTY_INFO_T*pVideoFrameBufferProperty);
+```
+
+## RHAL_VT_GetVideoFrameBufferIndex
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameBufferIndex(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, unsigned int*pIndexOfCurrentVideoFrameBuffer);
+```
+
+## RHAL_VT_GetVideoFrameBufferSecureVideoState
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameBufferSecureVideoState(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, unsigned char*pIsSecureVideo);
+```
+
+## RHAL_VT_GetVideoFrameOutputDeviceState
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameOutputDeviceState(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_VIDEO_FRAME_OUTPUT_DEVICE_STATE_INFO_T*pVideoFrameOutputDeviceState);
+```
+
+## RHAL_VT_SetVideoFrameOutputDeviceState
+```bash
+DTV_STATUS_T RHAL_VT_SetVideoFrameOutputDeviceState(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_VIDEO_FRAME_OUTPUT_DEVICE_STATE_FLAGS_T videoFrameOutputDeviceStateFlags, HAL_VT_VIDEO_FRAME_OUTPUT_DEVICE_STATE_INFO_T*pVideoFrameOutputDeviceState);
+```
+
+## RHAL_VT_GetVideoFrameOutputDeviceFramerate
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameOutputDeviceFramerate(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, unsigned int*pVideoFrameOutputDeviceFramerate);
+```
+
+## RHAL_VT_GetVideoFrameOutputDeviceDumpLocation
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameOutputDeviceDumpLocation(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_DUMP_LOCATION_TYPE_T*pDumpLocation);
+```
+
+## RHAL_VT_SetVideoFrameOutputDeviceDumpLocation
+```bash
+DTV_STATUS_T RHAL_VT_SetVideoFrameOutputDeviceDumpLocation(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_DUMP_LOCATION_TYPE_T dumpLocation);
+```
+
+## RHAL_VT_GetVideoFrameOutputDeviceOutputInfo
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameOutputDeviceOutputInfo(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_DUMP_LOCATION_TYPE_T dumpLocation, HAL_VT_VIDEO_FRAME_OUTPUT_DEVICE_OUTPUT_INFO_T*pOutputInfo);
+```
+
+## RHAL_VT_SetVideoFrameOutputDeviceOutputRegion
+```bash
+DTV_STATUS_T RHAL_VT_SetVideoFrameOutputDeviceOutputRegion(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_DUMP_LOCATION_TYPE_T dumpLocation, HAL_VT_RECT_T*pOutputRegion);
+```
+
+## RHAL_VT_GetVideoFrameOutputDeviceBlockState
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameOutputDeviceBlockState(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, unsigned char*pbBlockState);
+```
+
+## RHAL_VT_SetVideoFrameOutputDeviceBlockState
+```bash
+DTV_STATUS_T RHAL_VT_SetVideoFrameOutputDeviceBlockState(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, unsigned char bBlockState);
+```
+
+## RHAL_VT_GetVideoFrameOutputDeviceProperty
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoFrameOutputDeviceProperty(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_VIDEO_FRAME_OUTPUT_DEVICE_PROPERTY_INFO_T*pVideoFrameOutputDeviceProperty);
+```
+
+## RHAL_VT_SetVideoFrameOutputDeviceProperty
+```bash
+DTV_STATUS_T RHAL_VT_SetVideoFrameOutputDeviceProperty(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_VIDEO_FRAME_OUTPUT_DEVICE_PROPERTY_INFO_T*pVideoFrameOutputDeviceProperty);
+```
+
+## RHAL_VT_WaitVsync
+```bash
+DTV_STATUS_T RHAL_VT_WaitVsync(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID);
+```
+
+## RHAL_VT_GetInputVideoInfo
+```bash
+DTV_STATUS_T RHAL_VT_GetInputVideoInfo(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_INPUT_VIDEO_INFO_T*pInputVideoInfo);
+```
+
+## RHAL_VT_GetOutputVideoInfo
+```bash
+DTV_STATUS_T RHAL_VT_GetOutputVideoInfo(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_OUTPUT_VIDEO_INFO_T*pOutputVideoInfo);
+```
+
+## RHAL_VT_GetVideoMuteStatus
+```bash
+DTV_STATUS_T RHAL_VT_GetVideoMuteStatus(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, unsigned char*pbOnOff);
+```
+
+## RHAL_VT_Set_PixelFormat
+```bash
+DTV_STATUS_T RHAL_VT_Set_PixelFormat(HAL_VT_CAP_FMT format);
+```
+
+## RHAL_VT_Set_Output_Fps
+```bash
+DTV_STATUS_T RHAL_VT_Set_Output_Fps(unsigned int fps);
+```
+
+## RHAL_VT_Set_App_Case
+```bash
+DTV_STATUS_T RHAL_VT_Set_App_Case(HAL_VT_APP_CASE type);
+```
+
+## RHAL_VT_Set_Enqueue_index
+```bash
+DTV_STATUS_T RHAL_VT_Set_Enqueue_index(unsigned int index);
+```
+
+## RHAL_VT_Get_Dequeue_index
+```bash
+DTV_STATUS_T RHAL_VT_Get_Dequeue_index(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, unsigned int*pIndex);
+```
+
+## RHAL_VT_Set_Crop
+```bash
+DTV_STATUS_T RHAL_VT_Set_Crop(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VT_RECT_T*pCropSize);
+```
+
+## RHAL_VT_Creat_Pre_FingerPrinter
+```bash
+DTV_STATUS_T RHAL_VT_Creat_Pre_FingerPrinter(unsigned int api_version);
+```
+
+## RHAL_VT_Release_Pre_FingerPrinter
+```bash
+DTV_STATUS_T RHAL_VT_Release_Pre_FingerPrinter(void);
+```
+
+## RHAL_VT_Reset_Pre_FingerPrinter
+```bash
+DTV_STATUS_T RHAL_VT_Reset_Pre_FingerPrinter(void);
+```
+
+## RHAL_VT_Pre_Fpt_Capture
+```bash
+DTV_STATUS_T RHAL_VT_Pre_Fpt_Capture(HAL_VT_DUMP_LOCATION_TYPE_T location, HAL_VT_CAP_FMT fmt, unsigned int cap_width, unsigned int cap_hight);
+```
+
+## RHAL_VT_Pre_Fpt_Update_Data
+```bash
+DTV_STATUS_T RHAL_VT_Pre_Fpt_Update_Data(unsigned char*data, unsigned int data_len, unsigned int*ret_value);
+```
+
+## RHAL_VT_Get_Pre_Fpt_Data
+```bash
+DTV_STATUS_T RHAL_VT_Get_Pre_Fpt_Data(unsigned char*data, unsigned int*fpt_size, unsigned short type, unsigned int*ret_value);
+```
+
+## RHAL_VT_Get_UVAddr_Is_Aligned
+```bash
+DTV_STATUS_T RHAL_VT_Get_UVAddr_Is_Aligned(HAL_VT_VIDEO_WINDOW_TYPE_T videoWindowID, unsigned char*pUVAligned);
+```
+
+## RHAL_VT_ROWDATA_SHOW_ONSUBDISP
+```bash
+DTV_STATUS_T RHAL_VT_ROWDATA_SHOW_ONSUBDISP(HAL_VT_ROWDATA_SHOW_ONSUBDISP_T*VT_ROWDATA_SHOW_ONSUBDISP);
+```
+
+## RHAL_VT_Magnifier_Init
+```bash
+DTV_STATUS_T RHAL_VT_Magnifier_Init(void);
+```
+
+## RHAL_VT_Magnifier_Crop_Apply
+```bash
+DTV_STATUS_T RHAL_VT_Magnifier_Crop_Apply(HAL_VT_RECT_T crop_rect);
+```
+
+## RHAL_VT_Magnifier_Zoom_Apply
+```bash
+DTV_STATUS_T RHAL_VT_Magnifier_Zoom_Apply(HAL_VT_RECT_T zoom_rect);
+```
+
+## RHAL_VT_Magnifier_Disable
+```bash
+DTV_STATUS_T RHAL_VT_Magnifier_Disable(void);
+```
+
+## RHAL_VT_DEBUG_Test
+```bash
+void RHAL_VT_DEBUG_Test(void);
+```

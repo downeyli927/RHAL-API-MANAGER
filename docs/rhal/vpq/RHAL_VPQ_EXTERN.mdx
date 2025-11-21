@@ -1,0 +1,2112 @@
+---
+sidebar_position: 87
+---
+
+# RHAL_VPQ_EXTERN
+
+RHAL_VPQ_EXTERN api
+
+## RHAL_VPQEX_Init
+```bash
+DTV_STATUS_T RHAL_VPQEX_Init(void);
+```
+
+## RHAL_VPQEX_Uninit
+```bash
+DTV_STATUS_T RHAL_VPQEX_Uninit(void);
+```
+
+## RHAL_VPQEX_Open
+```bash
+DTV_STATUS_T RHAL_VPQEX_Open(void);
+```
+
+## RHAL_VPQEX_Close
+```bash
+DTV_STATUS_T RHAL_VPQEX_Close(void);
+```
+
+## RHAL_VPQEX_Init_ProjectID
+```bash
+DTV_STATUS_T RHAL_VPQEX_Init_ProjectID(UINT32 id);
+```
+
+## RHAL_VPQEX_LoadOnePanelTables
+```bash
+DTV_STATUS_T RHAL_VPQEX_LoadOnePanelTables(SINT8*sPanelPath);
+```
+
+## RHAL_VPQEX_AutoLoadPanelTables
+```bash
+DTV_STATUS_T RHAL_VPQEX_AutoLoadPanelTables(void);
+```
+
+## RHAL_VPQ_GetPicMode
+```bash
+DTV_STATUS_T RHAL_VPQ_GetPicMode(HAL_VPQ_PICTURE_MODE*pPicMode);
+```
+
+## RHAL_VPQ_SetPicMode
+```bash
+DTV_STATUS_T RHAL_VPQ_SetPicMode(HAL_VPQ_PICTURE_MODE PicMode);
+```
+
+## RHAL_VPQEX_Get_HDR3DLUT_Offset
+```bash
+DTV_STATUS_T RHAL_VPQEX_Get_HDR3DLUT_Offset(int*offset);
+```
+
+## RHAL_VPQ_GetBrightness
+```bash
+DTV_STATUS_T RHAL_VPQ_GetBrightness(UINT32*pBrightness);
+```
+
+## RHAL_VPQ_SetBrightness
+```bash
+DTV_STATUS_T RHAL_VPQ_SetBrightness(UINT32 Brightness);
+```
+
+## RHAL_VPQ_GetContrast
+```bash
+DTV_STATUS_T RHAL_VPQ_GetContrast(UINT32*pContrast);
+```
+
+## RHAL_VPQ_SetContrast
+```bash
+DTV_STATUS_T RHAL_VPQ_SetContrast(UINT32 Contrast);
+```
+
+## RHAL_VPQ_GetSaturation
+```bash
+DTV_STATUS_T RHAL_VPQ_GetSaturation(UINT32*pSaturation);
+```
+
+## RHAL_VPQ_SetSaturation
+```bash
+DTV_STATUS_T RHAL_VPQ_SetSaturation(UINT32 Saturation);
+```
+
+## RHAL_VPQ_GetHue
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHue(UINT32*pHue);
+```
+
+## RHAL_VPQ_SetHue
+```bash
+DTV_STATUS_T RHAL_VPQ_SetHue(UINT32 Hue);
+```
+
+## RHAL_VPQ_GetNR
+```bash
+DTV_STATUS_T RHAL_VPQ_GetNR(HAL_VPQ_LEVEL_E*pNRLevel);
+```
+
+## RHAL_VPQ_SetNR
+```bash
+DTV_STATUS_T RHAL_VPQ_SetNR(HAL_VPQ_LEVEL_E NRLevel);
+```
+
+## RHAL_VPQ_GetSharpness
+```bash
+DTV_STATUS_T RHAL_VPQ_GetSharpness(UINT32*pSharpness);
+```
+
+## RHAL_VPQ_SetSharpnessExtend
+```bash
+DTV_STATUS_T RHAL_VPQ_SetSharpnessExtend(UINT32 Sharpness);
+```
+
+## RHAL_VPQ_GetDeBlocking
+```bash
+DTV_STATUS_T RHAL_VPQ_GetDeBlocking(HAL_VPQ_LEVEL_E*pDblevel);
+```
+
+## RHAL_VPQ_SetDeBlocking
+```bash
+DTV_STATUS_T RHAL_VPQ_SetDeBlocking(HAL_VPQ_LEVEL_E dblevel);
+```
+
+## RHAL_VPQ_GetDeRinging
+```bash
+DTV_STATUS_T RHAL_VPQ_GetDeRinging(HAL_VPQ_LEVEL_E*pDrlevel);
+```
+
+## RHAL_VPQ_SetDeRinging
+```bash
+DTV_STATUS_T RHAL_VPQ_SetDeRinging(HAL_VPQ_LEVEL_E drlevel);
+```
+
+## RHAL_VPQ_GetColorTemp
+```bash
+DTV_STATUS_T RHAL_VPQ_GetColorTemp(HAL_VPQ_COLOR_TEMP_DATA_S*pColorTemp);
+```
+
+## RHAL_VPQ_SetColorTempExtend
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorTempExtend(HAL_VPQ_COLOR_TEMP_DATA_S*ColorTemp);
+```
+
+## RHAL_VPQ_GetColorTempLevel
+```bash
+DTV_STATUS_T RHAL_VPQ_GetColorTempLevel(HAL_VPQ_COLOR_TEMP_LEVEL_E*pColorTempLevel);
+```
+
+## RHAL_VPQ_SetColorTempLevel
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorTempLevel(HAL_VPQ_COLOR_TEMP_LEVEL_E ColorTempLevel);
+```
+
+## RHAL_VPQ_GetColorTempGainOffset
+```bash
+DTV_STATUS_T RHAL_VPQ_GetColorTempGainOffset(HAL_VPQ_COLOR_TEMP_DATA_S*pCTGainOffset);
+```
+
+## RHAL_VPQ_SetColorTempRedGain
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorTempRedGain(UINT32 RGain);
+```
+
+## RHAL_VPQ_SetColorTempGreenGain
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorTempGreenGain(UINT32 GGain);
+```
+
+## RHAL_VPQ_SetColorTempBlueGain
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorTempBlueGain(UINT32 BGain);
+```
+
+## RHAL_VPQ_SetColorTempRedOffset
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorTempRedOffset(UINT32 ROffset);
+```
+
+## RHAL_VPQ_SetColorTempGreenOffset
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorTempGreenOffset(UINT32 GOffset);
+```
+
+## RHAL_VPQ_SetColorTempBlueOffset
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorTempBlueOffset(UINT32 BOffset);
+```
+
+## RHAL_VPQ_GetColorGain
+```bash
+DTV_STATUS_T RHAL_VPQ_GetColorGain(HAL_VPQ_LEVEL_E*pColorGain);
+```
+
+## RHAL_VPQ_SetColorGainExtend
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorGainExtend(UINT32 ColorGain);
+```
+
+## RHAL_VPQ_GetFleshTone
+```bash
+DTV_STATUS_T RHAL_VPQ_GetFleshTone(HAL_VPQ_LEVEL_E*pFleshTone);
+```
+
+## RHAL_VPQ_SetFleshTone
+```bash
+DTV_STATUS_T RHAL_VPQ_SetFleshTone(HAL_VPQ_LEVEL_E fleshTone);
+```
+
+## RHAL_VPQ_GetBackLight
+```bash
+DTV_STATUS_T RHAL_VPQ_GetBackLight(UINT32*pBackLight);
+```
+
+## RHAL_VPQ_SetBackLight
+```bash
+DTV_STATUS_T RHAL_VPQ_SetBackLight(UINT32 backLight);
+```
+
+## RHAL_VPQ_SetPanelBL
+```bash
+DTV_STATUS_T RHAL_VPQ_SetPanelBL(UINT8 bl);
+```
+
+## RHAL_VPQ_GetGammaNum
+```bash
+DTV_STATUS_T RHAL_VPQ_GetGammaNum(SINT32*pNumber);
+```
+
+## RHAL_VPQ_SetGamma
+```bash
+DTV_STATUS_T RHAL_VPQ_SetGamma(SINT32 gammaIndex);
+```
+
+## RHAL_VPQ_GetPQModule
+```bash
+DTV_STATUS_T RHAL_VPQ_GetPQModule(RTK_PQModule_T*flags);
+```
+
+## RHAL_VPQ_SetPQModule
+```bash
+DTV_STATUS_T RHAL_VPQ_SetPQModule(RTK_PQModule_T*flags);
+```
+
+## RHAL_VPQ_SetDemo
+```bash
+DTV_STATUS_T RHAL_VPQ_SetDemo(RTK_DEMO_MODE_T*flags);
+```
+
+## RHAL_VPQ_GetDebugMode
+```bash
+DTV_STATUS_T RHAL_VPQ_GetDebugMode(BOOLEAN*pOnOff);
+```
+
+## RHAL_VPQ_SetDebugMode
+```bash
+DTV_STATUS_T RHAL_VPQ_SetDebugMode(BOOLEAN onOff);
+```
+
+## RHAL_VPQ_GetHistogram
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHistogram(HAL_VPQ_PQ_DCI_HISTGRAM_S*pDCIHistogram);
+```
+
+## RHAL_VPQ_Get_Hue_Histogram
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_Hue_Histogram(HAL_VPQ_PQ_HUE_HISTGRAM*pHUEHistogram);
+```
+
+## RHAL_VPQ_Get_Sat_Histogram
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_Sat_Histogram(unsigned int*pSatHistogram);
+```
+
+## RHAL_VPQ_GetSRLevel
+```bash
+DTV_STATUS_T RHAL_VPQ_GetSRLevel(HAL_VPQ_DEMOLEVEL_E*pSrlevel);
+```
+
+## RHAL_VPQ_SetSRLevel
+```bash
+DTV_STATUS_T RHAL_VPQ_SetSRLevel(HAL_VPQ_DEMOLEVEL_E srlevel);
+```
+
+## RHAL_VPQ_SetBlackPatternOutput
+```bash
+DTV_STATUS_T RHAL_VPQ_SetBlackPatternOutput(BOOLEAN isBlackPattern);
+```
+
+## RHAL_VPQ_SetWhitePatternOutput
+```bash
+DTV_STATUS_T RHAL_VPQ_SetWhitePatternOutput(BOOLEAN isBlackPattern);
+```
+
+## RHAL_VPQ_GetODLevel
+```bash
+DTV_STATUS_T RHAL_VPQ_GetODLevel(UINT32*pODLevel);
+```
+
+## RHAL_VPQ_SetODReadEnable
+```bash
+DTV_STATUS_T RHAL_VPQ_SetODReadEnable(BOOLEAN enable);
+```
+
+## RHAL_VPQ_GetSrcHdrInfo
+```bash
+DTV_STATUS_T RHAL_VPQ_GetSrcHdrInfo(UINT32*pGammaType);
+```
+
+## RHAL_VPQ_GetSDR2HDR
+```bash
+DTV_STATUS_T RHAL_VPQ_GetSDR2HDR(BOOLEAN*pOnoff);
+```
+
+## RHAL_VPQ_SetSDR2HDR
+```bash
+DTV_STATUS_T RHAL_VPQ_SetSDR2HDR(BOOLEAN onoff);
+```
+
+## RHAL_VPQ_GetHdrType
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHdrType(HAL_VPQ_HDR_TYPE_E*pHdrType);
+```
+
+## RHAL_VPQ_SetDciType
+```bash
+DTV_STATUS_T RHAL_VPQ_SetDciType(UINT32 u32DciType);
+```
+
+## RHAL_VPQ_GetDolbyHdrPicMode
+```bash
+DTV_STATUS_T RHAL_VPQ_GetDolbyHdrPicMode(HAL_VPQ_DOLBY_HDR_PIC_MODE_E*pPictureMode);
+```
+
+## RHAL_VPQ_SetDolbyHdrPicMode
+```bash
+DTV_STATUS_T RHAL_VPQ_SetDolbyHdrPicMode(HAL_VPQ_DOLBY_HDR_PIC_MODE_E enPictureMode);
+```
+
+## RHAL_VPQ_GetHdr10Enable
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHdr10Enable(HAL_BOOL*pbEnable);
+```
+
+## RHAL_VPQ_SetHdr10Enable
+```bash
+DTV_STATUS_T RHAL_VPQ_SetHdr10Enable(HAL_BOOL bEnable);
+```
+
+## RHAL_VPQ_GetDOLBYHDREnable
+```bash
+DTV_STATUS_T RHAL_VPQ_GetDOLBYHDREnable(HAL_BOOL*pbEnable);
+```
+
+## RHAL_VPQ_SetDOLBYHDREnable
+```bash
+DTV_STATUS_T RHAL_VPQ_SetDOLBYHDREnable(HAL_BOOL bEnable);
+```
+
+## RHAL_VPQ_SetDreampanelLogEnable
+```bash
+DTV_STATUS_T RHAL_VPQ_SetDreampanelLogEnable(HAL_BOOL onoff);
+```
+
+## RHAL_VPQ_GetDreampanelBackLight
+```bash
+DTV_STATUS_T RHAL_VPQ_GetDreampanelBackLight(SINT32*backLight);
+```
+
+## RHAL_VPQ_SetDreampanelBackLight
+```bash
+DTV_STATUS_T RHAL_VPQ_SetDreampanelBackLight(SINT32 backLight);
+```
+
+## RHAL_VPQEX_GetDCCMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetDCCMode(HAL_VPQ_LEVEL_E*pDCCMode);
+```
+
+## RHAL_VPQEX_SetDCCMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetDCCMode(HAL_VPQ_LEVEL_E DCCMode);
+```
+
+## RHAL_VPQEX_Get_DCC_PICTURE_MODE_WEIGHTING_TV030
+```bash
+DTV_STATUS_T RHAL_VPQEX_Get_DCC_PICTURE_MODE_WEIGHTING_TV030(UINT32*DCC_weighting);
+```
+
+## RHAL_VPQEX_Set_DCC_PICTURE_MODE_WEIGHTING_TV030
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_DCC_PICTURE_MODE_WEIGHTING_TV030(UINT32 DCC_weighting);
+```
+
+## RHAL_VPQEX_Get_DECONTOUR_ENABLE_TV030
+```bash
+DTV_STATUS_T RHAL_VPQEX_Get_DECONTOUR_ENABLE_TV030(HAL_BOOL*penable);
+```
+
+## RHAL_VPQEX_Set_DECONTOUR_ENABLE_TV030
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_DECONTOUR_ENABLE_TV030(HAL_BOOL enable);
+```
+
+## RHAL_VPQEX_GetFilmMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetFilmMode(VPQEX_FILM_MODE_E*pFilmMode);
+```
+
+## RHAL_VPQEX_SetFilmMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetFilmMode(VPQEX_FILM_MODE_E FilmMode);
+```
+
+## RHAL_VPQEX_SetHDMIDataRange
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetHDMIDataRange(VPQEX_HDMI_DATA_RANGE_MODE_E Mode);
+```
+
+## RHAL_VPQEX_SetHDRForceMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetHDRForceMode(VPQEX_HDR_FORCE_MODE_E Mode);
+```
+
+## RHAL_VPQEX_GetBlackAdjust
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetBlackAdjust(HAL_VPQ_LEVEL_E*pLevel);
+```
+
+## RHAL_VPQEX_SetBlackAdjust
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetBlackAdjust(HAL_VPQ_LEVEL_E Level);
+```
+
+## RHAL_VPQEX_GetSGamma
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetSGamma(SINT32*pLevel);
+```
+
+## RHAL_VPQEX_SetSGamma
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetSGamma(SINT32 Level);
+```
+
+## RHAL_VPQEX_GetLiveColour
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetLiveColour(HAL_VPQ_LEVEL_E*pLevel);
+```
+
+## RHAL_VPQEX_SetLiveColour
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetLiveColour(HAL_VPQ_LEVEL_E Level);
+```
+
+## RHAL_VPQEX_GetClarityRealityCreation
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetClarityRealityCreation(VPQEX_SR_MODE_E*pMode);
+```
+
+## RHAL_VPQEX_SetClarityRealityCreation
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetClarityRealityCreation(VPQEX_SR_MODE_E Mode);
+```
+
+## RHAL_VPQEX_GetClarityResolution
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetClarityResolution(UINT32*pValue);
+```
+
+## RHAL_VPQEX_SetClarityResolution
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetClarityResolution(UINT32 Value);
+```
+
+## RHAL_VPQEX_GetMastered4K
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetMastered4K(UINT32*pEnable);
+```
+
+## RHAL_VPQEX_SetMastered4K
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetMastered4K(UINT32 Enable);
+```
+
+## RHAL_VPQEX_Set_IntelligentPictureEnable
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_IntelligentPictureEnable(HAL_VPQ_LEVEL_E Mode);
+```
+
+## RHAL_VPQEX_Set_IntelligentPictureOptimization
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_IntelligentPictureOptimization(UINT32 Lv);
+```
+
+## RHAL_VPQEX_Set_IntelligentSignalLvIndicatorONOFF
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_IntelligentSignalLvIndicatorONOFF(HAL_VPQ_LEVEL_E Mode);
+```
+
+## RHAL_VPQEX_Get_IntelligentPictureSignalLevel
+```bash
+DTV_STATUS_T RHAL_VPQEX_Get_IntelligentPictureSignalLevel(UINT32*pLv);
+```
+
+## RHAL_VPQEX_SetPQBypassLv
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetPQBypassLv(UINT32 Idx);
+```
+
+## RHAL_VPQEX_Set_PQ_Source_Type
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_PQ_Source_Type(UINT32 Idx);
+```
+
+## RHAL_VPQEX_Set_PQ_Extend_Data
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_PQ_Extend_Data(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_ICM_byAP
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_ICM_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_DCC_byAP
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_DCC_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_Black_Adjust_byAP
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Black_Adjust_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_Sharpness_byAP
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Sharpness_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_CSC_byAP
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_CSC_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_NR_byAP
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_NR_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_WBBL_byAP
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_WBBL_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_WB_BS_byAP
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_WB_BS_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_SetOutputGammaSCurve
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetOutputGammaSCurve(UINT32 Idx);
+```
+
+## RHAL_VPQEX_GetMagicColorTempByIndex
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetMagicColorTempByIndex(VPQEX_CT_COLOR_E colorIn, UINT32 indexIn, SINT32*pVlaueOut);
+```
+
+## RHAL_VPQEX_SetMagicColorTempOffset
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetMagicColorTempOffset(VPQEX_CT_COLOR_E colorIn, UINT32 indexIn, SINT32 value);
+```
+
+## RHAL_VPQ_GetColorFacOSDMap
+```bash
+DTV_STATUS_T RHAL_VPQ_GetColorFacOSDMap(HAL_VPQ_COLOR_DATA_FAC_E type, HAL_VPQ_COLOR_DATA_FAC_S*pData);
+```
+
+## RHAL_VPQ_SetColorFacOSDMap
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorFacOSDMap(HAL_VPQ_COLOR_DATA_FAC_E type, HAL_VPQ_COLOR_DATA_FAC_S data);
+```
+
+## RHAL_VPQ_SetColorFacOSDMapByLv
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorFacOSDMapByLv(HAL_VPQ_COLOR_DATA_FAC_E type, HAL_VPQ_COLOR_DATA_FAC_LV_E lv, UINT8 value);
+```
+
+## RHAL_VPQ_ResetCurPicModeData
+```bash
+DTV_STATUS_T RHAL_VPQ_ResetCurPicModeData(void);
+```
+
+## RHAL_VPQ_ResetCurColorTempData
+```bash
+DTV_STATUS_T RHAL_VPQ_ResetCurColorTempData(void);
+```
+
+## RHAL_VPQ_ResetCurColorFacOSDMap
+```bash
+DTV_STATUS_T RHAL_VPQ_ResetCurColorFacOSDMap(void);
+```
+
+## RHAL_VPQEX_SetGamutColorSpace
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetGamutColorSpace(VPQEX_COLOR_SPACE_E value);
+```
+
+## RHAL_VPQEX_SetCurSource
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetCurSource(VPQEX_SOURCE_E source);
+```
+
+## RHAL_VPQEX_GetCurSource
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetCurSource(VPQEX_SOURCE_E*source);
+```
+
+## RHAL_VPQ_GetENGMENU
+```bash
+DTV_STATUS_T RHAL_VPQ_GetENGMENU(HAL_VPQ_ENG_ITEM_STRUCT*item, HAL_VPQ_ENG_ID_STRUCT*ID);
+```
+
+## RHAL_VPQ_GetENGMENU_size
+```bash
+DTV_STATUS_T RHAL_VPQ_GetENGMENU_size(HAL_VPQ_ENG_SIZE*pData);
+```
+
+## RHAL_VPQ_GetENG_ID
+```bash
+DTV_STATUS_T RHAL_VPQ_GetENG_ID(HAL_VPQ_ENG_ID*ID);
+```
+
+## RHAL_VPQ_SetENG_ID
+```bash
+DTV_STATUS_T RHAL_VPQ_SetENG_ID(HAL_VPQ_ENG_ID*ID);
+```
+
+## RHAL_VPQ_SetGamma_TableSize
+```bash
+DTV_STATUS_T RHAL_VPQ_SetGamma_TableSize(UINT16*pu16Gamma_r,UINT16*pu16Gamma_g,UINT16*pu16Gamma_b,UINT16 nTableSize);
+```
+
+## RHAL_VPQ_GetHistoData_APL
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHistoData_APL(UINT32*pAPL);
+```
+
+## RHAL_VPQ_SetHDMIModeType
+```bash
+DTV_STATUS_T RHAL_VPQ_SetHDMIModeType(UINT8 mode_type);
+```
+
+## RHAL_VPQ_SetGammaLevel
+```bash
+DTV_STATUS_T RHAL_VPQ_SetGammaLevel(UINT8 Level);
+```
+
+## RHAL_VPQ_SetHigh_Light_Window_forDemo
+```bash
+DTV_STATUS_T RHAL_VPQ_SetHigh_Light_Window_forDemo(RTK_DEMO_MODE_T*flags);
+```
+
+## RHAL_VPQ_SetBRIGHTNESS_LUT_EOTF
+```bash
+DTV_STATUS_T RHAL_VPQ_SetBRIGHTNESS_LUT_EOTF(HAL_VPQ_BRIGHTNESS_LUT_EOTF*pLUT);
+```
+
+## RHAL_VPQ_SetBRIGHTNESS_LUT_OETF
+```bash
+DTV_STATUS_T RHAL_VPQ_SetBRIGHTNESS_LUT_OETF(HAL_VPQ_BRIGHTNESS_LUT_OETF*pLUT);
+```
+
+## RHAL_VPQ_SetColorSpace_HSI
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorSpace_HSI(UINT8 u8Mode , HAL_VPQ_COLORSPACE_BASIC*color , HAL_VPQ_COLORSPACE_ICMHSI index);
+```
+
+## RHAL_VPQ_SetVDPQ_MEMORY
+```bash
+DTV_STATUS_T RHAL_VPQ_SetVDPQ_MEMORY(HAL_BOOL bEnable);
+```
+
+## RHAL_VPQEX_GetDynamicRange
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetDynamicRange(UINT8 cur_src_type, UINT8*HdrMode);
+```
+
+## RHAL_VPQ_SetPanoramaType
+```bash
+DTV_STATUS_T RHAL_VPQ_SetPanoramaType(Hal_RATIO_TYPE_E pPanoramaType);
+```
+
+## RHAL_VPQ_GetENG_TWOLAYER_MENU
+```bash
+DTV_STATUS_T RHAL_VPQ_GetENG_TWOLAYER_MENU(HAL_VPQ_ENG_ITEM_TWOLAYER_STRUCT*item, HAL_VPQ_ENG_ID_STRUCT*ID);
+```
+
+## RHAL_VPQ_GetENG_TWOLAYER_ID
+```bash
+DTV_STATUS_T RHAL_VPQ_GetENG_TWOLAYER_ID(HAL_VPQ_ENG_TWOLAYER_ID*ID);
+```
+
+## RHAL_VPQ_SetENG_TWOLAYER_ID
+```bash
+DTV_STATUS_T RHAL_VPQ_SetENG_TWOLAYER_ID(HAL_VPQ_ENG_TWOLAYER_ID*ID);
+```
+
+## RHAL_VPQEX_GDBC_Set_Mode
+```bash
+DTV_STATUS_T RHAL_VPQEX_GDBC_Set_Mode(HAL_VPQ_GDBC_Mode DBC_Mode);
+```
+
+## RHAL_VPQEX_GDBC_Get_Mode
+```bash
+DTV_STATUS_T RHAL_VPQEX_GDBC_Get_Mode(HAL_VPQ_GDBC_Mode*DBC_Mode);
+```
+
+## RHAL_VPQEX_GDBC_Set_UI_DCR_BackLight
+```bash
+DTV_STATUS_T RHAL_VPQEX_GDBC_Set_UI_DCR_BackLight(UINT32 BL_Value);
+```
+
+## RHAL_VPQEX_GDBC_Get_DCR_BackLight
+```bash
+DTV_STATUS_T RHAL_VPQEX_GDBC_Get_DCR_BackLight(UINT32*BL_Value);
+```
+
+## RHAL_VPQ_SetColorMatrixSRGB
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorMatrixSRGB(HAL_COLOR_SRGB_MAPPING_T*pData);
+```
+
+## RHAL_VPQ_SetPatternforAutoGamma
+```bash
+DTV_STATUS_T RHAL_VPQ_SetPatternforAutoGamma(unsigned char Enable, unsigned short r_Val,unsigned short g_Val,unsigned short b_Val);
+```
+
+## RHAL_VPQEX_SetOD_TBL
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetOD_TBL(UINT8 od_ctrl[3][289]);
+```
+
+## RHAL_VPQEX_SetVALC_TBL
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetVALC_TBL(UINT8 valc_ctrl[6][17][17]);
+```
+
+## RHAL_VPQEX_SetDeMura_TBL
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetDeMura_TBL(HAL_DeMura_CTRL*DeMura_CTRL_T);
+```
+
+## RHAL_VPQEX_SetOutputGamma_TBL
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetOutputGamma_TBL(UINT32 OutputGamma_Table[4][128]);
+```
+
+## RHAL_VPQEX_notifyPlatformColorTemp
+```bash
+DTV_STATUS_T RHAL_VPQEX_notifyPlatformColorTemp(HAL_VPQ_COLOR_TEMP_LEVEL_E colorTempLevel);
+```
+
+## RHAL_VPQ_Set_PQ_table_bin_info
+```bash
+DTV_STATUS_T RHAL_VPQ_Set_PQ_table_bin_info(HAL_BOOL onoff);
+```
+
+## RHAL_VPQ_Set_TCON_table_bin_info
+```bash
+DTV_STATUS_T RHAL_VPQ_Set_TCON_table_bin_info(HAL_BOOL onoff);
+```
+
+## RHAL_VPQEX_GetPanelPqPath
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetPanelPqPath(SINT8*patch);
+```
+
+## RHAL_VPQEX_GetPanelPqName
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetPanelPqName(SINT8*name);
+```
+
+## RHAL_VPQ_SET_INTERNAL_PARTTEN_1W
+```bash
+DTV_STATUS_T RHAL_VPQ_SET_INTERNAL_PARTTEN_1W(unsigned char enable,unsigned short r_Val,unsigned short g_Val,unsigned short b_Val);
+```
+
+## RHAL_VPQ_GetMEMCLocalDimming_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_GetMEMCLocalDimming_TV030(HAL_BOOL*pbEnable);
+```
+
+## RHAL_VPQ_SetMEMCLocalDimming_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetMEMCLocalDimming_TV030(HAL_BOOL bEnable);
+```
+
+## RHAL_VPQ_Get_LC_BLKHVNUM_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_LC_BLKHVNUM_TV030(UINT8*piRow,UINT8*piCol);
+```
+
+## RHAL_VPQ_HDR_GetPicInfo_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_HDR_GetPicInfo_TV030(UINT32*pstPicInfo);
+```
+
+## RHAL_VPQ_GetHDR_Histogram_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHDR_Histogram_TV030(float*pHDRNits , UINT32*pstPicInfo);
+```
+
+## RHAL_VPQ_SetSplitDemo_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetSplitDemo_TV030(BOOLEAN bOnOff);
+```
+
+## RHAL_VPQ_GetLD_Enable_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_GetLD_Enable_TV030(HAL_BOOL*pbEnable);
+```
+
+## RHAL_VPQ_Get_LC_BLKAPL_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_LC_BLKAPL_TV030(UINT32 iMaxRow,UINT32 iMaxCol, UINT32*pVal);
+```
+
+## RHAL_VPQ_SetLowDelayMode_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetLowDelayMode_TV030(BOOLEAN bGameMode);
+```
+
+## RHAL_VPQ_Get_level_distribution_BackEnd_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_level_distribution_BackEnd_TV030(UINT32*pu16Distribution, UINT8 u8Size);
+```
+
+## RHAL_VPQ_GetHistoData_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHistoData_TV030(HAL_VPQ_DC2P_HISTODATA_INFO_TV030*pHistoInfo);
+```
+
+## RHAL_VPQ_SetParttenforAutoGamma_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetParttenforAutoGamma_TV030(UINT8 enable,UINT16 r_Val,UINT16 g_Val,UINT16 b_Val);
+```
+
+## RHAL_VPQ_SetBrightnessVal_OSDLayer_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetBrightnessVal_OSDLayer_TV030(UINT8 value);
+```
+
+## RHAL_VPQ_SetContrastVal_OSDLayer_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetContrastVal_OSDLayer_TV030(UINT8 value);
+```
+
+## RHAL_VPQ_SetFilmMode_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetFilmMode_TV030(VPQEX_FILM_MODE_E bFilmMode);
+```
+
+## RHAL_VPQ_SetPictureMode_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetPictureMode_TV030(unsigned char*picturemode);
+```
+
+## RHAL_VPQ_SetMagicGamma_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetMagicGamma_TV030(UINT16*MagicGamma_r,UINT16*MagicGamma_g,UINT16*MagicGamma_b,UINT16 enable);
+```
+
+## RHAL_VPQ_GetPixelInfo_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_GetPixelInfo_TV030(HAL_VPQ_SCREEN_PIXEL_INFO_T*pData);
+```
+
+## RHAL_VPQ_SetColorSpace
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorSpace(HAL_VPQ_COLORSPACE_INDEX*color);
+```
+
+## RHAL_VPQ_Setdolbybacklight
+```bash
+DTV_STATUS_T RHAL_VPQ_Setdolbybacklight(HAL_VPQ_DOBYBAKLIGHT_INI*glob_dolbybacklight_ini);
+```
+
+## RHAL_VPQ_Get_ICM_7_Axis_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_ICM_7_Axis_TV030(ICM_H_7axis_table*pdata);
+```
+
+## RHAL_VPQ_Set_ICM_7_Axis_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_Set_ICM_7_Axis_TV030(ICM_H_7axis_table data);
+```
+
+## RHAL_VPQ_GetMEMCLocalDimming
+```bash
+DTV_STATUS_T RHAL_VPQ_GetMEMCLocalDimming(HAL_BOOL*pbEnable);
+```
+
+## RHAL_VPQ_SetMEMCLocalDimming
+```bash
+DTV_STATUS_T RHAL_VPQ_SetMEMCLocalDimming(HAL_BOOL bEnable);
+```
+
+## RHAL_VPQ_Get_LC_BLKHVNUM
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_LC_BLKHVNUM(UINT8*piRow,UINT8*piCol);
+```
+
+## RHAL_VPQ_HDR_GetPicInfo
+```bash
+DTV_STATUS_T RHAL_VPQ_HDR_GetPicInfo(UINT32*pstPicInfo);
+```
+
+## RHAL_VPQ_GetHDR_Histogram
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHDR_Histogram(float*pHDRNits , UINT32*pstPicInfo);
+```
+
+## RHAL_VPQ_SetSplitDemo
+```bash
+DTV_STATUS_T RHAL_VPQ_SetSplitDemo(BOOLEAN bOnOff);
+```
+
+## RHAL_VPQ_GetLD_Enable
+```bash
+DTV_STATUS_T RHAL_VPQ_GetLD_Enable(HAL_BOOL*pbEnable);
+```
+
+## RHAL_VPQ_Get_LC_BLKAPL
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_LC_BLKAPL(UINT32 iMaxRow,UINT32 iMaxCol, UINT32*pVal);
+```
+
+## RHAL_VPQ_SetLowDelayMode
+```bash
+DTV_STATUS_T RHAL_VPQ_SetLowDelayMode(BOOLEAN bGameMode);
+```
+
+## RHAL_VPQ_Get_level_distribution_BackEnd
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_level_distribution_BackEnd(UINT32*pu16Distribution, UINT8 u8Size);
+```
+
+## RHAL_VPQ_GetHistoInfo
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHistoInfo(HAL_VPQ_DC2P_HISTODATA_INFO*pHistoInfo);
+```
+
+## RHAL_VPQ_SetParttenforAutoGamma
+```bash
+DTV_STATUS_T RHAL_VPQ_SetParttenforAutoGamma(UINT8 enable,UINT16 r_Val,UINT16 g_Val,UINT16 b_Val);
+```
+
+## RHAL_VPQ_SetBrightnessVal_OSDLayer
+```bash
+DTV_STATUS_T RHAL_VPQ_SetBrightnessVal_OSDLayer(UINT8 value);
+```
+
+## RHAL_VPQ_SetContrastVal_OSDLayer
+```bash
+DTV_STATUS_T RHAL_VPQ_SetContrastVal_OSDLayer(UINT8 value);
+```
+
+## RHAL_VPQ_SetFilmMode_T
+```bash
+DTV_STATUS_T RHAL_VPQ_SetFilmMode_T(VPQEX_FILM_MODE_E bFilmMode);
+```
+
+## RHAL_VPQ_SetPictureMode
+```bash
+DTV_STATUS_T RHAL_VPQ_SetPictureMode(HAL_PQ_MODE_TYPE picturemode);
+```
+
+## RHAL_VPQ_SetOSDValueMapFlag
+```bash
+DTV_STATUS_T RHAL_VPQ_SetOSDValueMapFlag(RHAL_VIP_Flag*Flag);
+```
+
+## RHAL_VPQ_SetPanel_Ini
+```bash
+DTV_STATUS_T RHAL_VPQ_SetPanel_Ini(RHAL_VIP_PANEL_DATA_T*pData);
+```
+
+## RHAL_VPQEX_GetVIPSrcResync
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetVIPSrcResync(UINT32*pVIPSrcResync);
+```
+
+## RHAL_VPQEX_SetTV002_MagicGamma
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetTV002_MagicGamma(VIP_MAGIC_GAMMA_Curve_Driver_Data*pData);
+```
+
+## RHAL_VPQEX_SET_SLR_VIP_TABLE
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_SLR_VIP_TABLE(SLR_VIP_TABLE*pData);
+```
+
+## RHAL_VPQEX_REGISTER_NEW_VIPTABLE
+```bash
+DTV_STATUS_T RHAL_VPQEX_REGISTER_NEW_VIPTABLE();
+```
+
+## RHAL_VPQEX_IOC_SET_SLR_VIP_TABLE_CUSTOM_TV001
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_SLR_VIP_TABLE_CUSTOM_TV001(SLR_VIP_TABLE_CUSTOM_TV001*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_VGA_ADCGainOffset
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_VGA_ADCGainOffset(HAL_ADCGainOffset*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_YPBPR_ADCGainOffset
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_YPBPR_ADCGainOffset(HAL_ADCGainOffset*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_PIC_MODE_DATA_defaultPictureModeSet
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_PIC_MODE_DATA_defaultPictureModeSet(HAL_SLR_PICTURE_MODE_DATA*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_PIC_MODE_DATA_DolbyHDRPictureModeSet
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_PIC_MODE_DATA_DolbyHDRPictureModeSet(HAL_SLR_PICTURE_MODE_DATA*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_StructColorDataType_defaultSDColorData
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataType_defaultSDColorData(HAL_StructColorDataType*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_StructColorDataType_defaultHDColorData
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataType_defaultHDColorData(HAL_StructColorDataType*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_COLOR_TEMP_DATA_defColorTempSet
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_COLOR_TEMP_DATA_defColorTempSet(HAL_SLR_COLORTEMP_DATA*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_defaultColorFacMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_defaultColorFacMode(HAL_StructColorDataFacModeType*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_AvColorFacMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_AvColorFacMode(HAL_StructColorDataFacModeType*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_YppColorFacMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_YppColorFacMode(HAL_StructColorDataFacModeType*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_VgaColorFacMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_VgaColorFacMode(HAL_StructColorDataFacModeType*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_HdmiSDColorFacMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_HdmiSDColorFacMode(HAL_StructColorDataFacModeType*pData);
+```
+
+## RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_HdmiColorFacMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_HdmiColorFacMode(HAL_StructColorDataFacModeType*pData);
+```
+
+## RHAL_VPQEX_SetTV002_EXT_FUN_EN
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetTV002_EXT_FUN_EN(UINT32 value);
+```
+
+## RHAL_VPQEX_GetCurSrcFmt
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetCurSrcFmt(UINT32*pSrcFmt);
+```
+
+## RAHL_VPQEX_GetCurVIPSrcTiming
+```bash
+DTV_STATUS_T RAHL_VPQEX_GetCurVIPSrcTiming(UINT32*pVIPSrcTiming);
+```
+
+## RHAL_VPQEX_GetCurSrcFmt
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetCurSrcFmt(UINT32*pSrcFmt);
+```
+
+## RAHL_VPQEX_GetCurVIPSrcTiming
+```bash
+DTV_STATUS_T RAHL_VPQEX_GetCurVIPSrcTiming(UINT32*pVIPSrcTiming);
+```
+
+## RHAL_VPQEX_SetVIPSrcResync
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetVIPSrcResync(UINT32 VIPSrcResync);
+```
+
+## RHAL_VPQEX_IOC_SET_StructColorDataFacMode_EXTERN
+```bash
+DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacMode_EXTERN(HAL_StructColorDataFacModeType*pData);
+```
+
+## RHAL_VPQEX_SetCinemaPicMode
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetCinemaPicMode(UINT32 Mode);
+```
+
+## RHAL_VPQEX_SetTV002_SR
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetTV002_SR(HAL_TV002_SR_T*pData);
+```
+
+## RHAL_VPQEX_SetTV002_BLE
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetTV002_BLE(HAL_VPQ_LEVEL_E level);
+```
+
+## RHAL_VPQEX_SetTV002_sGamma
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetTV002_sGamma(int level);
+```
+
+## RHAL_VPQEX_SetTV002_LiveColour
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetTV002_LiveColour(HAL_VPQ_LEVEL_E Level);
+```
+
+## RHAL_VPQEX_SetTV002_Mastered4K
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetTV002_Mastered4K(UINT32 Enable);
+```
+
+## RHAL_VPQEX_Get_HDR_Type_Flag
+```bash
+DTV_STATUS_T RHAL_VPQEX_Get_HDR_Type_Flag(UINT32*pHDR_Type_Flag);
+```
+
+## RHAL_VPQEX_GetDataAccess
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetDataAccess(RHAL_Data_Access_T*data);
+```
+
+## RHAL_VPQEX_SetDDomain3DLUT_Gamma
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetDDomain3DLUT_Gamma(UINT8 index);
+```
+
+## RHAL_VPQEX_Init_DDomain3DLUT_Gamma_Table
+```bash
+DTV_STATUS_T RHAL_VPQEX_Init_DDomain3DLUT_Gamma_Table(UINT8*table);
+```
+
+## RHAL_VPQEX_SET_TCON_ENABLE_CTRL_TABLE
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_TCON_ENABLE_CTRL_TABLE(UINT8*pData);
+```
+
+## RHAL_VPQEX_SET_OD_SETTING_TABLE
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_OD_SETTING_TABLE(RHAL_DRV_od_table_mode_t*pData);
+```
+
+## RHAL_VPQEX_SET_OD_TABLE
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_OD_TABLE(RHAL_DRV_od_table_t*pData);
+```
+
+## RHAL_VPQEX_SET_DeMura
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_DeMura(RHAL_VIP_DeMura_TBL*pData);
+```
+
+## RHAL_VPQEX_SET_VALC
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_VALC(UINT8*pData);
+```
+
+## RHAL_VPQEX_SET_VALCprotectSetting
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_VALCprotectSetting(RHAL_DRV_pcid_valc_t*pData);
+```
+
+## RHAL_VPQEX_SET_LEDOutGamma
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_LEDOutGamma(UINT16*pData);
+```
+
+## RHAL_VPQEX_SET_Output_InvOutput_Gamma
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_Output_InvOutput_Gamma(RHAL_VIP_Output_InvOutput_Gamma*pData);
+```
+
+## RHAL_VPQEX_SET_SLR_HDR_TABLE
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_SLR_HDR_TABLE(UINT8*pData);
+```
+
+## RHAL_VPQEX_SET_SLR_HDR_TABLE_PANEL_LUMINANCE
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_SLR_HDR_TABLE_PANEL_LUMINANCE(UINT16*panel_luminance);
+```
+
+## RHAL_VPQEX_SET_SLR_HDR_TABLE_OETF_Setting_Ctrl
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_SLR_HDR_TABLE_OETF_Setting_Ctrl(UINT16*enable);
+```
+
+## RHAL_VPQEX_SET_SLR_HDR_TABLE_OETF_Curve_Ctrl
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_SLR_HDR_TABLE_OETF_Curve_Ctrl(UINT16*index);
+```
+
+## RHAL_VPQEX_SET_PQVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_PQVerMiscInfo(RHAL_VPQ_VER_MISC_INFO*m_pVipVerMiscInfo);
+```
+
+## RHAL_VPQ_GET_PQVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQ_GET_PQVerMiscInfo(RHAL_VPQ_VER_MISC_INFO*m_pVipVerMiscInfo);
+```
+
+## RHAL_VPQEX_SET_HDRVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_HDRVerMiscInfo(RHAL_VPQ_VER_MISC_INFO_HDR*m_pVipVerMiscInfo_HDR);
+```
+
+## RHAL_VPQ_GET_HDRVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQ_GET_HDRVerMiscInfo(RHAL_VPQ_VER_MISC_INFO_HDR*m_pVipVerMiscInfo_HDR);
+```
+
+## RHAL_VPQEX_Set_ExtTable_PQVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_ExtTable_PQVerMiscInfo(RHAL_VPQ_EXT_TABLE_VER_MISC_INFO*m_pVipVerMiscInfo);
+```
+
+## RHAL_VPQEX_Get_ExtTable_PQVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_Get_ExtTable_PQVerMiscInfo(RHAL_VPQ_EXT_TABLE_VER_MISC_INFO*m_pVipVerMiscInfo);
+```
+
+## RHAL_VPQEX_Set_WCG_mode
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_WCG_mode(UINT32 wcgmode);
+```
+
+## RHAL_VPQEX_Set_Gamma_byOffset
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Gamma_byOffset(SINT32 gammaIdx);
+```
+
+## RHAL_VPQEX_Set_DCC_byIndex
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_DCC_byIndex(UINT32 Index);
+```
+
+## RHAL_VPQEX_Set_ICM_byIndex
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_ICM_byIndex(UINT32 Index);
+```
+
+## RHAL_VPQEX_Set_LC_byIndex
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_LC_byIndex(UINT32 Index);
+```
+
+## RHAL_VPQEX_Set_LC_byLevel
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_LC_byLevel(HAL_VPQ_LEVEL_E level);
+```
+
+## RHAL_VPQEX_Set_LD_byLevel
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_LD_byLevel(HAL_VPQ_LEVEL_E level);
+```
+
+## RHAL_VPQEX_Set_After_Filter
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_After_Filter(UINT8 value);
+```
+
+## RHAL_VPQEX_Set_After_Filter_Enable
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_After_Filter_Enable(UINT8 En);
+```
+
+## RHAL_VPQEX_Set_Blue_Stretch_Level
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Blue_Stretch_Level(HAL_VPQ_LEVEL_E Level);
+```
+
+## RHAL_VPQEX_Set_Color_Space
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Color_Space(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_10p_Gamma_Offset
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_10p_Gamma_Offset(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_HDR3DLUT_Offset
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_HDR3DLUT_Offset(int*offset);
+```
+
+## RHAL_VPQEX_Set_D_3DLUT_Offset
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_D_3DLUT_Offset(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_Black_Extension_level
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Black_Extension_level(UINT8 value);
+```
+
+## RHAL_VPQEX_Set_White_Extension_level
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_White_Extension_level(UINT8 value);
+```
+
+## RHAL_VPQEX_Set_Data_Range
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Data_Range(UINT8 Range);
+```
+
+## RHAL_VPQEX_Set_APDEM_INIT_PARA
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_APDEM_INIT_PARA(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_After_Filter_LPF_gain_ColorDataFac
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_After_Filter_LPF_gain_ColorDataFac(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Gamma_PowerCurve_Mapping
+```bash
+DTV_STATUS_T RHAL_VPQEX_Gamma_PowerCurve_Mapping(unsigned int*powercurve, unsigned int bin, unsigned short*pu8Data, unsigned short*pu8OutData);
+```
+
+## RHAL_VPQEX_SET_VIP_Gamma_Decode
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_VIP_Gamma_Decode(UINT16*GOut_R, UINT16*GOut_G, UINT16*GOut_B, VIP_Gamma*gamma);
+```
+
+## RHAL_VPQEX_SET_VIP_Gamma_Encode
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_VIP_Gamma_Encode(UINT16*curve_Input, UINT32*TBL_Out);
+```
+
+## RHAL_VPQEX_Set_AI_Face_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_AI_Face_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_AI_SQM_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_AI_SQM_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_AI_Genre_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_AI_Genre_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_AI_Content_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_AI_Content_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_AI_Depth_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_AI_Depth_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_AI_Semantic_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_AI_Semantic_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_AI_Grain_Noise_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_AI_Grain_Noise_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_ACCESS_VPQ_byPara
+```bash
+DTV_STATUS_T RHAL_VPQEX_ACCESS_VPQ_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_ACCESS_HDR_byPara
+```bash
+DTV_STATUS_T RHAL_VPQEX_ACCESS_HDR_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_OverDriver_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_OverDriver_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_ACCESS_GLC_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_ACCESS_GLC_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_ACCESS_OUTGAMMA_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_ACCESS_OUTGAMMA_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_ACCESS_VALC_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_ACCESS_VALC_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_ACCESS_LINEOD_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_ACCESS_LINEOD_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_ACCESS_DEMURA_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_ACCESS_DEMURA_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_ACCESS_HDRBoost_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_ACCESS_HDRBoost_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_DeFlick_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_DeFlick_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_Internal_PTG_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Internal_PTG_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_Dynamic_Black_Equalize_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Dynamic_Black_Equalize_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_Shadow_detail_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Shadow_detail_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_DCC_byPara
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_DCC_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_LocalContrast_byPara
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_LocalContrast_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_Gamma_byPara
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Gamma_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_RADCR_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_RADCR_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQEX_Set_RADCR_En
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_RADCR_En(UINT32 Enable);
+```
+
+## RHAL_VPQEX_Set_RADCR_Backlight_Mapping
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_RADCR_Backlight_Mapping(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQ_SetDemo_Mode_byParameter
+```bash
+DTV_STATUS_T RHAL_VPQ_SetDemo_Mode_byParameter(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQ_GetDemo_Mode_byParameter
+```bash
+DTV_STATUS_T RHAL_VPQ_GetDemo_Mode_byParameter(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQ_SetNNSR_byParameter
+```bash
+DTV_STATUS_T RHAL_VPQ_SetNNSR_byParameter(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQ_Decontour_byParameter
+```bash
+DTV_STATUS_T RHAL_VPQ_Decontour_byParameter(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## get_iveMatrix
+```bash
+UINT8 get_iveMatrix(float matrix[3][3], float matrix_inv[3][3]);
+```
+
+## mul3x1
+```bash
+UINT8 mul3x1(float a[3][3], float b[3][1], float out[3][1]);
+```
+
+## mul3x3
+```bash
+UINT8 mul3x3(float a[3][3], float b[3][3],float out[3][3]);
+```
+
+## RHAL_VPQEX_SetBlackExtension
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetBlackExtension(UINT8 value);
+```
+
+## RHAL_VPQEX_SetWhiteExtension
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetWhiteExtension(UINT8 value);
+```
+
+## RHAL_VPQEX_SetVideoCurve
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetVideoCurve(HAL_UI_REMAP_CURVE_T*pData);
+```
+
+## RHAL_VPQEX_SetBlueStretch
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetBlueStretch(HAL_VPQ_LEVEL_E Level);
+```
+
+## RHAL_VPQEX_SetGammaByExponentOffset
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetGammaByExponentOffset(HAL_GAMMA_BY_EXPONENT_OFFSET_T*pData);
+```
+
+## RHAL_VPQEX_SetColorTempAfterGamma
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetColorTempAfterGamma(HAL_VPQ_COLOR_TEMP_DATA_S*ColorTemp);
+```
+
+## RHAL_VPQEX_SetICMTableIdx
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetICMTableIdx(UINT8 index);
+```
+
+## RHAL_VPQEX_SetVDTable
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetVDTable(UINT32*pData);
+```
+
+## RHAL_VPQEX_SetColorSpace
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetColorSpace(UINT8 value);
+```
+
+## RHAL_VPQEX_SetLocalContrast
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetLocalContrast(UINT8 index);
+```
+
+## RHAL_VPQEX_SetToneMappingTableIdx
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetToneMappingTableIdx(UINT8 index);
+```
+
+## RHAL_VPQEX_SetICMTable
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetICMTable(UINT32*pData);
+```
+
+## RHAL_VPQEX_SetAIPQ_Para
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetAIPQ_Para(UINT32 version, UINT32 length, UINT8 cmd, void*pData);
+```
+
+## RHAL_VPQEX_SetNNSRTable
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetNNSRTable(UINT32 version, UINT32 length, UINT8 cmd, void*pData);
+```
+
+## RHAL_VPQEX_SetVDTable
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetVDTable(UINT32*pData);
+```
+
+## RHAL_VPQEX_ACCESS_OSD_byPara
+```bash
+DTV_STATUS_T RHAL_VPQEX_ACCESS_OSD_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQ_SetCustomerPQBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerPQBinPath(char*sPQBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerPQBinPath2Viptable
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerPQBinPath2Viptable(char*sPQBinPath);
+```
+
+## RHAL_VPQ_SetCustomerHDRBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerHDRBinPath(char*sHDRBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerHDRBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerHDRBinPath(char*sHDRBinPath);
+```
+
+## RHAL_VPQEX_Sent_PictureMode_Flag
+```bash
+DTV_STATUS_T RHAL_VPQEX_Sent_PictureMode_Flag(UINT8 pic_mode);
+```
+
+## RHAL_VPQ_Set_sRGB33
+```bash
+DTV_STATUS_T RHAL_VPQ_Set_sRGB33(short*sRGB);
+```
+
+## RHAL_VPQ_GetPanoramaType
+```bash
+DTV_STATUS_T RHAL_VPQ_GetPanoramaType(Hal_RATIO_TYPE_E*pPanoramaType);
+```
+
+## RHAL_VPQ_ratio_inner_product
+```bash
+DTV_STATUS_T RHAL_VPQ_ratio_inner_product(int*vector1, int*vector2, unsigned char length, unsigned int*result);
+```
+
+## RHAL_VPQ_EE_test
+```bash
+DTV_STATUS_T RHAL_VPQ_EE_test(unsigned char*result);
+```
+
+## RHAL_VPQEX_Get_VD_Color
+```bash
+DTV_STATUS_T RHAL_VPQEX_Get_VD_Color(HAL_VD_COLOR_ST*pData);
+```
+
+## RHAL_VPQEX_Set_VD_Color
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_VD_Color(HAL_VD_COLOR_ST*pData);
+```
+
+## RHAL_VPQEX_Get_AIPQ_UI_Support
+```bash
+DTV_STATUS_T RHAL_VPQEX_Get_AIPQ_UI_Support(UINT8*pOnOff);
+```
+
+## RHAL_VPQEX_GetAIPQInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GetAIPQInfo(HAL_VPQ_AI_INFO*info);
+```
+
+## RHAL_VPQEX_Get_Semantic_Ratio
+```bash
+DTV_STATUS_T RHAL_VPQEX_Get_Semantic_Ratio(UINT8*ratio);
+```
+
+## RHAL_VPQEX_Set_SLD
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_SLD(UINT32 version, UINT32 length, UINT8 wId, void*pData);
+```
+
+## RHAL_VPQ_SET_SetICM_7Axis_Adjust_table
+```bash
+DTV_STATUS_T RHAL_VPQ_SET_SetICM_7Axis_Adjust_table(HAL_VIP_ICM_7Axis_Adjust_table table);
+```
+
+## RHAL_VPQ_GetCOLORSPACEINFO
+```bash
+DTV_STATUS_T RHAL_VPQ_GetCOLORSPACEINFO(UINT32*info);
+```
+
+## RHAL_VPQ_SET_Select_PQSource
+```bash
+DTV_STATUS_T RHAL_VPQ_SET_Select_PQSource(unsigned int index);
+```
+
+## RHAL_VPQ_SetICMTableIndex
+```bash
+DTV_STATUS_T RHAL_VPQ_SetICMTableIndex(UINT32 Index);
+```
+
+## RHAL_VPQ_SetPanel2matrix
+```bash
+DTV_STATUS_T RHAL_VPQ_SetPanel2matrix(SLR_VIP_TABLE*pData);
+```
+
+## RHAL_VPQ_SetCustomerICMBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerICMBinPath(char*sICMBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerICMBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerICMBinPath(char*sICMBinPath);
+```
+
+## RHAL_VPQ_SetCustomerAIPQBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerAIPQBinPath(char*sAIPQBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerAIPQBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerAIPQBinPath(char*sAIPQBinPath);
+```
+
+## RHAL_VPQ_SetCustomerODBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerODBinPath(char*sODBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerODBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerODBinPath(char*sODBinPath);
+```
+
+## RHAL_VPQEX_SET_ICMVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_ICMVerMiscInfo(RHAL_ICM_VER_MISC_INFO*m_pVipICMVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_ICMVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_ICMVerMiscInfo(RHAL_ICM_VER_MISC_INFO*m_pVipICMVerMiscInfo);
+```
+
+## RHAL_VPQEX_SET_AIPQVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_AIPQVerMiscInfo(RHAL_AIPQ_VER_MISC_INFO*m_pVipAIPQVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_AIPQVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_AIPQVerMiscInfo(RHAL_AIPQ_VER_MISC_INFO*m_pVipAIPQVerMiscInfo);
+```
+
+## RHAL_VPQEX_SET_ODVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_ODVerMiscInfo(RHAL_OD_VER_MISC_INFO*m_pVipODVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_ODVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_ODVerMiscInfo(RHAL_OD_VER_MISC_INFO*m_pVipODVerMiscInfo);
+```
+
+## RHAL_VPQ_SetCustomerHDR2BinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerHDR2BinPath(char*sHDR2BinPath);
+```
+
+## RHAL_VPQ_SyncCustomerHDR2BinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerHDR2BinPath(char*sHDR2BinPath);
+```
+
+## RHAL_VPQEX_SET_HDR2VerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_HDR2VerMiscInfo(RHAL_HDR2_VER_MISC_INFO*m_pVipHDR2VerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_HDR2VerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_HDR2VerMiscInfo(RHAL_HDR2_VER_MISC_INFO*m_pVipHDR2VerMiscInfo);
+```
+
+## RHAL_VPQ_SetCustomerSLDBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerSLDBinPath(char*sSLDBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerSLDBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerSLDBinPath(char*sSLDBinPath);
+```
+
+## RHAL_VPQEX_SET_SLDVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_SLDVerMiscInfo(RHAL_SLD_VER_MISC_INFO*m_pVipSLDVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_SLDVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_SLDVerMiscInfo(RHAL_SLD_VER_MISC_INFO*m_pVipSLDVerMiscInfo);
+```
+
+## RHAL_VPQ_SetCustomerGLCBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerGLCBinPath(char*sGLCBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerGLCBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerGLCBinPath(char*sGLCBinPath);
+```
+
+## RHAL_VPQEX_SET_GLCVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_GLCVerMiscInfo(RHAL_GLC_VER_MISC_INFO*m_pVipGLCVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_GLCVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_GLCVerMiscInfo(RHAL_GLC_VER_MISC_INFO*m_pVipGLCVerMiscInfo);
+```
+
+## RHAL_VPQ_SetCustomerOUTGAMMABinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerOUTGAMMABinPath(char*sOUTGAMMABinPath);
+```
+
+## RHAL_VPQ_SyncCustomerOUTGAMMABinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerOUTGAMMABinPath(char*sOUTGAMMABinPath);
+```
+
+## RHAL_VPQEX_SET_OUTGAMMAVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_OUTGAMMAVerMiscInfo(RHAL_OUTGAMMA_VER_MISC_INFO*m_pVipOUTGAMMAVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_OUTGAMMAVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_OUTGAMMAVerMiscInfo(RHAL_OUTGAMMA_VER_MISC_INFO*m_pVipOUTGAMMAVerMiscInfo);
+```
+
+## RHAL_VPQ_SetCustomerLINEODBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerLINEODBinPath(char*sLINEODBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerLINEODBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerLINEODBinPath(char*sLINEODBinPath);
+```
+
+## RHAL_VPQEX_SET_LINEODVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_LINEODVerMiscInfo(RHAL_LINEOD_VER_MISC_INFO*m_pVipLINEODVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_LINEODVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_LINEODVerMiscInfo(RHAL_LINEOD_VER_MISC_INFO*m_pVipLINEODVerMiscInfo);
+```
+
+## RHAL_VPQ_SetCustomerVALCBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerVALCBinPath(char*sVALCBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerVALCBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerVALCBinPath(char*sVALCBinPath);
+```
+
+## RHAL_VPQEX_SET_VALCVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_VALCVerMiscInfo(RHAL_VALC_VER_MISC_INFO*m_pVipVALCVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_VALCVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_VALCVerMiscInfo(RHAL_VALC_VER_MISC_INFO*m_pVipVALCVerMiscInfo);
+```
+
+## RHAL_VPQ_SetCustomerHDRBoostBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerHDRBoostBinPath(char*sHDRBoostBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerHDRBoostBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerHDRBoostBinPath(char*sHDRBoostBinPath);
+```
+
+## RHAL_VPQEX_SET_HDRBoostVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_HDRBoostVerMiscInfo(RHAL_HDRBoost_VER_MISC_INFO*m_pVipHDRBoostVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_HDRBoostVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_HDRBoostVerMiscInfo(RHAL_HDRBoost_VER_MISC_INFO*m_pVipHDRBoostVerMiscInfo);
+```
+
+## RHAL_VPQ_SetCustomerNNSRBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerNNSRBinPath(char*sNNSRBinPath);
+```
+
+## RHAL_VPQ_SyncCustomerNNSRBinPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerNNSRBinPath(char*sNNSRBinPath);
+```
+
+## RHAL_VPQEX_SET_NNSRTableLabel
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_NNSRTableLabel(RHAL_NNSR_TABLE_LABEL*pNNSR_table_label);
+```
+
+## RHAL_VPQEX_GET_NNSRTableLabel
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_NNSRTableLabel(RHAL_NNSR_TABLE_LABEL*pNNSR_table_label);
+```
+
+## RHAL_VPQ_SetCustomerVDIniPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerVDIniPath(char*sVDIniPath);
+```
+
+## RHAL_VPQ_SyncCustomerVDIniPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerVDIniPath(char*sICMBinPath);
+```
+
+## RHAL_VPQEX_SET_VDVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_VDVerMiscInfo(RHAL_VD_VER_MISC_INFO*m_pVipVDVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_VDVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_VDVerMiscInfo(RHAL_VD_VER_MISC_INFO*m_pVipVDVerMiscInfo);
+```
+
+## RHAL_VPQ_SetCustomerOSDSRIniPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SetCustomerOSDSRIniPath(char*sOSDSRIniPath);
+```
+
+## RHAL_VPQ_SyncCustomerOSDSRIniPath
+```bash
+DTV_STATUS_T RHAL_VPQ_SyncCustomerOSDSRIniPath(char*sOSDSRIniPath);
+```
+
+## RHAL_VPQEX_SET_OSDSRVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_OSDSRVerMiscInfo(RHAL_OSDSR_VER_MISC_INFO*m_pVipOSDSRVerMiscInfo);
+```
+
+## RHAL_VPQEX_GET_OSDSRVerMiscInfo
+```bash
+DTV_STATUS_T RHAL_VPQEX_GET_OSDSRVerMiscInfo(RHAL_OSDSR_VER_MISC_INFO*m_pVipOSDSRVerMiscInfo);
+```
+
+## RHAL_VPQEX_SetDecontourLevel
+```bash
+DTV_STATUS_T RHAL_VPQEX_SetDecontourLevel(UINT8 value);
+```
+
+## RHAL_VPQ_Get_ColorMatrixType
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_ColorMatrixType(UINT32*type);
+```
+
+## RHAL_VPQ_SetColorMatrixEnable
+```bash
+DTV_STATUS_T RHAL_VPQ_SetColorMatrixEnable(HAL_BOOL enable, HAL_VPQ_COLOR_MATRIX_TYPE index);
+```
+
+## RHAL_VPQ_Set3DLutEnable
+```bash
+DTV_STATUS_T RHAL_VPQ_Set3DLutEnable(HAL_BOOL enable, HAL_VPQ_3DLUT_INDEX index);
+```
+
+## RHAL_VPQ_SetBaseColor
+```bash
+DTV_STATUS_T RHAL_VPQ_SetBaseColor(HAL_VPQ_COLORSPACE_INDEX*color);
+```
+
+## RHAL_VPQ_Set_3DLUT_Data
+```bash
+DTV_STATUS_T RHAL_VPQ_Set_3DLUT_Data(HAL_VPQ_3DLUT_PARAM*lut);
+```
+
+## RHAL_VPQ_Get_CurrentMatrix
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_CurrentMatrix(RHAL_VIP_Current_sRGB_Matrix*Currentmatrix);
+```
+
+## RHAL_VPQEX_SET_DeMura_Enable
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_DeMura_Enable(unsigned char Enable);
+```
+
+## RHAL_VPQEX_Set_Demura_Table
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_Demura_Table(unsigned char*pData);
+```
+
+## RHAL_VPQ_SetPatternforAutoGamma_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetPatternforAutoGamma_TV030(unsigned char Enable, unsigned short r_Val,unsigned short g_Val,unsigned short b_Val);
+```
+
+## RHAL_VPQEX_Set_LocalContrast_LEVEL_TV030
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_LocalContrast_LEVEL_TV030(HAL_VPQ_LocalContrast_LEVEL level);
+```
+
+## RHAL_VPQEX_Set_GammaCurve1024pts
+```bash
+DTV_STATUS_T RHAL_VPQEX_Set_GammaCurve1024pts(HAL_VPQ_GAMMA_CURVE_T*pData);
+```
+
+## RHAL_VPQ_SetMagicGamma_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetMagicGamma_TV030(UINT16*MagicGamma_r,UINT16*MagicGamma_g,UINT16*MagicGamma_b,UINT16 enable);
+```
+
+## RHAL_VPQ_Set_DLG_OD_Table
+```bash
+DTV_STATUS_T RHAL_VPQ_Set_DLG_OD_Table(HAL_DLG_OD_TABLE_TYPE*od_table);
+```
+
+## RHAL_VPQ_Set_DLG_ACC_Table
+```bash
+DTV_STATUS_T RHAL_VPQ_Set_DLG_ACC_Table(HAL_DLG_ACC_TABLE_TYPE*acc_table);
+```
+
+## RHAL_VPQEX_SET_SLR_VIP_OD_TABLE
+```bash
+DTV_STATUS_T RHAL_VPQEX_SET_SLR_VIP_OD_TABLE(unsigned char*pData);
+```
+
+## RHAL_VPQ_HDR_GetPicInfo_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_HDR_GetPicInfo_TV030(UINT32*pstPicInfo);
+```
+
+## RHAL_VPQ_Get_Hue_Histogram
+```bash
+DTV_STATUS_T RHAL_VPQ_Get_Hue_Histogram(HAL_VPQ_PQ_HUE_HISTGRAM*pHUEHistogram);
+```
+
+## RHAL_VPQ_GetHistoData_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHistoData_TV030(HAL_VPQ_DC2P_HISTODATA_INFO_TV030*pHistoInfo);
+```
+
+## RHAL_VPQ_SetOSDValueMapFlag
+```bash
+DTV_STATUS_T RHAL_VPQ_SetOSDValueMapFlag(RHAL_VIP_Flag*Flag);
+```
+
+## RHAL_VPQ_GetHDR_Histogram_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_GetHDR_Histogram_TV030(float*pHDRNits , UINT32*pstPicInfo);
+```
+
+## RHAL_VPQ_SetMEMCLocalDimming_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_SetMEMCLocalDimming_TV030(HAL_BOOL bEnable);
+```
+
+## RHAL_VPQ_GetMEMCLocalDimming_TV030
+```bash
+DTV_STATUS_T RHAL_VPQ_GetMEMCLocalDimming_TV030(HAL_BOOL*pbEnable);
+```
+
+## spline
+```bash
+int spline(float*x, float*y,int n,float yp1, float ypn , float*y2);
+```
+
+## splint
+```bash
+int splint(float*xa , float*ya , float*y2a ,int n , float x , float*y);
+```
+
+## spline1_c
+```bash
+int spline1_c(float*xi , float*yi , int*nin ,float*xo , float*yo , int*nout);
+```
+
+## RHAL_VPQ_Set_RGB_Mode
+```bash
+DTV_STATUS_T RHAL_VPQ_Set_RGB_Mode(HAL_VPQ_COLOR_TEMP_DATA_S*rgb_S);
+```
+
+## RHAL_VPQ_Set_AISR_Enable
+```bash
+DTV_STATUS_T RHAL_VPQ_Set_AISR_Enable(unsigned char enable);
+```
