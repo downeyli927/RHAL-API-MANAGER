@@ -10,6 +10,13 @@ RHAL_AI api
 ```bash
 BOOLEAN RHAL_AI_Initialize(CHAR*file, void**handle);
 ```
+AI module initialization function
+<ParamTable
+  items={[
+    { name: 'file', type: 'CHAR*', desc: 'The path to the model configuration file (e.g., "model.conf"), used to parse model information.' },
+    { name: 'handle', type: 'void**', desc: <>return the process handle after registration with the driver.</> },
+  ]}
+/>
 
 ## RHAL_AI_UnInitialize
 ```bash
@@ -20,6 +27,15 @@ BOOLEAN RHAL_AI_UnInitialize(void*handle);
 ```bash
 SINT32 RHAL_AI_Process(void*handle, NN_HW_INDEX hw, AI_CALLBACK_PTR ptr, UINT32 timeout);
 ```
+This function is used to "trigger a processing task for a specific AI hardware stage" and sets parameters such as callback functions and timeouts for that stage.
+<ParamTable
+  items={[
+    { name: 'handle', type: 'void*', desc: 'A pointer to the AI instance returned after initialization' },
+    { name: 'hw', type: 'NN_HW_INDEX', desc: <>The index of the hardware stage to be triggered.</> },
+    { name: 'ptr', type: 'AI_CALLBACK_PTR', desc: <>A pointer to the callback function, called when the corresponding stage thread completes processing or when an event occurs..</> },
+    { name: 'timeout', type: 'UINT32', desc: 'The timeout setting for this task, used as a reference by the stage thread during execution.' },
+  ]}
+/>
 
 ## RHAL_AI_GetEstimatedWaitTime
 ```bash
@@ -30,11 +46,13 @@ SINT32 RHAL_AI_GetEstimatedWaitTime(void*handle);
 ```bash
 SINT32 RHAL_AI_GetModelFileNum(void*handle);
 ```
+Get the number of model files loaded in the current AI process.
 
 ## RHAL_AI_GetModelFileName
 ```bash
 CHAR* RHAL_AI_GetModelFileName(void*handle, SINT32 fileIndex);
 ```
+Returns a pointer to the model file name string at the specified index in the current AI process.
 
 ## RHAL_AI_GetInputHeight
 ```bash
@@ -50,8 +68,10 @@ SINT32 RHAL_AI_GetInputWidth(void*handle);
 ```bash
 SINT32 RHAL_AI_CheckReadyToRun(void*handle, volatile CHAR*pCancel);
 ```
+This function is used to determine whether an AI inference/processing loop can begin at the current time, based on the target frame rate and the internal "next run time" scheduling.
 
 ## RHAL_AI_UpdateRunTime
 ```bash
 SINT32 RHAL_AI_UpdateRunTime(void*handle);
 ```
+After an AI processing/inference operation is completed, update the time point for the next allowed run (time2Run) and count the number of runs for the corresponding output function index.

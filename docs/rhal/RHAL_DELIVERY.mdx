@@ -20,51 +20,89 @@ DTV_STATUS_T RHAL_DELIVERY_GetParam(DELIVERY_PARAM_T param, UINT32*val);
 ```bash
 DTV_STATUS_T RHAL_DELIVERY_Initialize(void);
 ```
+Open delivery device fp
 
 ## RHAL_DELIVERY_Finalize
 ```bash
 DTV_STATUS_T RHAL_DELIVERY_Finalize(void);
 ```
+Close delivery device fp
 
 ## RHAL_DELIVERY_OpenChannel
 ```bash
 DTV_STATUS_T RHAL_DELIVERY_OpenChannel(DELIVERY_CHANNEL_T ch, DELIVERY_MODE_T mode);
 ```
+Open TS or TLV stream channel, (Note:TCL use 0 and 2) 
+<ParamTable
+  items={[
+    { name: 'ch', type: 'DELIVERY_CHANNEL_T', desc: '0 -> DELIVERY_CH_A,1 -> DELIVERY_CH_B,2 -> DELIVERY_CH_C' },
+    { name: 'mode', type: 'DELIVERY_MODE_T', desc: <>delivery mode.</> },
+  ]}
+/>
 
 ## RHAL_DELIVERY_CloseChannel
 ```bash
 DTV_STATUS_T RHAL_DELIVERY_CloseChannel(DELIVERY_CHANNEL_T ch);
 ```
+Close TS or TLV stream channel, (Note:TCL use 0 and 2) 
 
 ## RHAL_DELIVERY_SetInputConfig
 ```bash
 DTV_STATUS_T RHAL_DELIVERY_SetInputConfig(DELIVERY_CHANNEL_T ch, DELIVERY_INPUT_PORT_T portType, DELIVERY_INPUT_TYPE_T inputType, DELIVERY_SRC_TYPE_T srcType);
 ```
+Set input param of TS or TLV stream channel, (Note:TCL use 0 and 2) 
+<ParamTable
+  items={[
+    { name: 'ch', type: 'DELIVERY_CHANNEL_T', desc: '0 -> DELIVERY_CH_A  1 -> DELIVERY_CH_B 2 -> DELIVERY_CH_C' },
+    { name: 'portType', type: 'DELIVERY_INPUT_PORT_T', desc: 'Input From Internal Demodulator or External Demodulator' },
+    { name: 'inputType', type: 'DELIVERY_INPUT_TYPE_T', desc: 'input is serial or parallel or others' },
+    { name: 'DELIVERY_SRC_TYPE_T', type: 'srcType', desc: 'HW engine or raw mode' },
+  ]}
+/>
 
 ## RHAL_DELIVERY_GetInputConfig
 ```bash
 DTV_STATUS_T RHAL_DELIVERY_GetInputConfig(DELIVERY_CHANNEL_T ch, DELIVERY_INPUT_PORT_T*pPortType, DELIVERY_INPUT_TYPE_T*pInputType, DELIVERY_SRC_TYPE_T*srcType);
 ```
+Get input param of TS or TLV stream channel, (Note:TCL use 0 and 2) 
 
 ## RHAL_DELIVERY_RequestData
 ```bash
 DTV_STATUS_T RHAL_DELIVERY_RequestData(DELIVERY_CHANNEL_T ch);
 ```
+Config for read data of TS or TLV stream , (Note:TCL use 0 and 2)
 
 ## RHAL_DELIVERY_CancelData
 ```bash
 DTV_STATUS_T RHAL_DELIVERY_CancelData(DELIVERY_CHANNEL_T ch);
 ```
+Unconfig for read TLV data, (Note:TCL use 0 and 2) 
 
 ## RHAL_DELIVERY_Read
 ```bash
 SINT32 RHAL_DELIVERY_Read(DELIVERY_CHANNEL_T ch, UINT8*buffer, UINT32 buf_size);
 ```
+Read TLV data, (Note:TCL use 0 and 2) 
+<ParamTable
+  items={[
+    { name: 'ch', type: 'DELIVERY_CHANNEL_T', desc: '0 -> DELIVERY_CH_A  1 -> DELIVERY_CH_B 2 -> DELIVERY_CH_C' },
+    { name: 'buffer', type: 'UINT8*', desc: 'buffer' },
+    { name: 'buf_size', type: 'UINT32', desc: 'buffer size' },
+  ]}
+/>
 
 ## RHAL_DELIVERY_AddTLVFilter
 ```bash
 DTV_STATUS_T RHAL_DELIVERY_AddTLVFilter(DELIVERY_CHANNEL_T ch, UINT32 cnt, DELIVERY_FILTER_T*pfilter_info);
 ```
+Set TLV packet filter, (Note:TCL use 0 and 2) 
+<ParamTable
+  items={[
+    { name: 'ch', type: 'DELIVERY_CHANNEL_T', desc: '0 -> DELIVERY_CH_A  1 -> DELIVERY_CH_B 2 -> DELIVERY_CH_C' },
+    { name: 'cnt', type: 'UINT32', desc: 'number of filter info' },
+    { name: 'pfilter_info', type: 'DELIVERY_FILTER_T*', desc: 'filter info list' },
+  ]}
+/>
 
 ## RHAL_DELIVERY_RemoveTLVFilter
 ```bash
@@ -200,3 +238,4 @@ DTV_STATUS_T RHAL_DELIVERY_GetAlpBuffer(DELIVERY_CHANNEL_T ch, UINT8*alp_data, U
 ```bash
 DTV_STATUS_T RHAL_DELIVERY_DebugCommand(const char*pszCmd,const char*pszParam,char**buffer);
 ```
+NOT implemented!

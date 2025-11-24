@@ -8,45 +8,96 @@ RHAL_GPIO api
 
 ## RHAL_GPIO_Init
 ```bash
-extern DTV_STATUS_T RHAL_GPIO_Init(UINT8 boardType);
+DTV_STATUS_T RHAL_GPIO_Init(UINT8 boardType);
 ```
+Initializes the GPIO device driver.
+<ParamTable
+  items={[
+    { name: 'boardType', type: 'UINT8', desc: 'board type by event (ex, PV, DV, MP...)' },
+  ]}
+/>
 
 ## RHAL_GPIO_SetPortOutput
 ```bash
-extern DTV_STATUS_T RHAL_GPIO_SetPortOutput(HAL_GPIO_NAME pcbname, UINT8 value);
+DTV_STATUS_T RHAL_GPIO_SetPortOutput(HAL_GPIO_NAME pcbname, UINT8 value);
 ```
+Set output value of a Given GPIO port
+<ParamTable
+  items={[
+    { name: 'pcbname', type: 'HAL_GPIO_NAME', desc: 'name of GPIO port' },
+    { name: 'value', type: 'UINT8', desc: 'output value, 0 : Low , others : High' },
+  ]}
+/>
 
 ## RHAL_GPIO_GetPortOutput
 ```bash
-extern DTV_STATUS_T RHAL_GPIO_GetPortOutput(HAL_GPIO_NAME pcbname, UINT8*value);
+DTV_STATUS_T RHAL_GPIO_GetPortOutput(HAL_GPIO_NAME pcbname, UINT8*value);
 ```
+Get output value of a Given GPIO port
+<ParamTable
+  items={[
+    { name: 'pcbname', type: 'HAL_GPIO_NAME', desc: 'name of GPIO port' },
+    { name: 'value', type: 'UINT8', desc: 'output value, 0 : Low , others : High' },
+  ]}
+/>
 
 ## RHAL_GPIO_GetPortInput
 ```bash
-extern DTV_STATUS_T RHAL_GPIO_GetPortInput(HAL_GPIO_NAME pcbname, UINT8*value);
+DTV_STATUS_T RHAL_GPIO_GetPortInput(HAL_GPIO_NAME pcbname, UINT8*value);
 ```
+Read value of a Given GPIO port
+<ParamTable
+  items={[
+    { name: 'pcbname', type: 'HAL_GPIO_NAME', desc: 'name of GPIO port' },
+    { name: 'value', type: 'UINT8', desc: 'output value, 0 : Low , others : High' },
+  ]}
+/>
 
 ## RHAL_GPIO_SetPortDirectionEx
 ```bash
-extern DTV_STATUS_T RHAL_GPIO_SetPortDirectionEx(HAL_GPIO_NAME pcbname, UINT8 direction);
+DTV_STATUS_T RHAL_GPIO_SetPortDirectionEx(HAL_GPIO_NAME pcbname, UINT8 direction);
 ```
+Set Direction of a Given GPIO port
+<ParamTable
+  items={[
+    { name: 'pcbname', type: 'HAL_GPIO_NAME', desc: 'name of GPIO port' },
+    { name: 'direction', type: 'UINT8', desc: 'value of GPIO port,  0 : read, others : High' },
+  ]}
+/>
 
 ## RHAL_GPIO_GetPortDirectionEx
 ```bash
-extern DTV_STATUS_T RHAL_GPIO_GetPortDirectionEx(HAL_GPIO_NAME pcbname, UINT8*direction);
+DTV_STATUS_T RHAL_GPIO_GetPortDirectionEx(HAL_GPIO_NAME pcbname, UINT8*direction);
 ```
+Get Direction of a Given GPIO port
 
 ## RHAL_GPIO_SetIrqCallBackEx
 ```bash
-extern DTV_STATUS_T RHAL_GPIO_SetIrqCallBackEx(HAL_GPIO_NAME pcbname, void(*pfnGPIO_CB)(UINT32), UINT8 enable, RHAL_GPIO_TRIGGER trigger_type);
+DTV_STATUS_T RHAL_GPIO_SetIrqCallBackEx(HAL_GPIO_NAME pcbname, void(*pfnGPIO_CB)(UINT32), UINT8 enable, RHAL_GPIO_TRIGGER trigger_type);
 ```
+Set Callback of a Given GPIO port
+<ParamTable
+  items={[
+    { name: 'pcbname', type: 'HAL_GPIO_NAME', desc: 'name of GPIO port' },
+    { name: '*pfnGPIO_CB', type: 'void(UINT32)', desc: 'Call back function' },
+    { name: 'enable', type: 'UINT8', desc: 'enable / disable interrupt' },
+    { name: 'trigger_type', type: 'RHAL_GPIO_TRIGGER', desc: 'type of trigger' },
+  ]}
+/>
 
 ## RHAL_GPIO_SetIrqCallBack
 ```bash
-extern DTV_STATUS_T RHAL_GPIO_SetIrqCallBack(HAL_GPIO_NAME pcbname, void(*pfnGPIO_CB)(UINT32), UINT8 enable);
+DTV_STATUS_T RHAL_GPIO_SetIrqCallBack(HAL_GPIO_NAME pcbname, void(*pfnGPIO_CB)(UINT32), UINT8 enable);
 ```
 
 ## RHAL_GPIO_GetGPIOList
 ```bash
-extern DTV_STATUS_T RHAL_GPIO_GetGPIOList(RHAL_GPIO_DESC*pGPIOList, UINT8*count);
+DTV_STATUS_T RHAL_GPIO_GetGPIOList(RHAL_GPIO_DESC*pGPIOList, UINT8*count);
 ```
+Set Pin Info
+<ParamTable
+  items={[
+    { name: 'pGPIOList', type: 'RHAL_GPIO_DESC*', desc: 'output array of GPIO Info List' },
+    { name: 'count', type: 'UINT8*', desc: 'sizeof Pin Info List' },
+  ]}
+/>

@@ -10,6 +10,12 @@ RHAL_CIUSB api
 ```bash
 void* RHAL_CIUSB_Open(UINT8 Id);
 ```
+Open CI Plus USB interface
+<ParamTable
+  items={[
+    { name: 'Id', type: 'UINT8', desc: 'The id of CI Plus USB interface' },
+  ]}
+/>
 
 ## RHAL_CIUSB_Close
 ```bash
@@ -20,38 +26,89 @@ CIUSB_STS RHAL_CIUSB_Close(void*pUsbId);
 ```bash
 ssize_t RHAL_CIUSB_Read(void*pUsbId, int interface, UINT8*buffer, int len);
 ```
+Read data from CI Plus USB device
+<ParamTable
+  items={[
+    { name: 'pUsbId', type: 'void*', desc: 'indicate the CI Plus USB device ID' },
+    { name: 'interface', type: 'int', desc: 'indicate the interface of CI Plus' },
+    { name: 'buffer', type: 'UINT8*', desc: 'data buffer for reading from device' },
+    { name: 'len', type: 'int', desc: 'lengtg of read buffer' },
+  ]}
+/>
 
 ## RHAL_CIUSB_Write
 ```bash
 ssize_t RHAL_CIUSB_Write(void*pUsbId, int interface, const UINT8*buffer, int len);
 ```
+Write data to CI Plus USB device
+<ParamTable
+  items={[
+    { name: 'pUsbId', type: 'void*', desc: 'indicate the CI Plus USB device ID' },
+    { name: 'interface', type: 'int', desc: 'indicate the interface of CI Plus' },
+    { name: 'buffer', type: 'UINT8*', desc: 'data buffer for writing to device' },
+    { name: 'len', type: 'int', desc: 'lengtg of write buffer' },
+  ]}
+/>
 
 ## RHAL_CIUSB_GetCardStatus
 ```bash
 CIUSB_STS RHAL_CIUSB_GetCardStatus(void*pUsbId, UINT32*status);
 ```
+Get the connect status.
+<ParamTable
+  items={[
+    { name: 'pUsbId', type: 'void*', desc: 'indicate the CI Plus USB device ID' },
+    { name: 'status', type: 'UINT32*', desc: 'status of the card' },
+  ]}
+/>
 
 ## RHAL_CIUSB_GetCardInfo
 ```bash
 CIUSB_STS RHAL_CIUSB_GetCardInfo(void*pUsbId, int interface, CIUSB_IOC_INFO*pInfo);
 ```
+Get the CI Plus card info.
+<ParamTable
+  items={[
+    { name: 'pUsbId', type: 'void*', desc: 'indicate the CI Plus USB device ID' },
+    { name: 'interface', type: 'int', desc: 'indicate the interface of CI Plus' },
+    { name: 'pInfo', type: 'CIUSB_IOC_INFO*', desc: 'indicate the current CI Plus card info' },
+  ]}
+/>
 
 ## RHAL_CIUSB_CardReset
 ```bash
 CIUSB_STS RHAL_CIUSB_CardReset(void*pUsbId);
 ```
+Reset the CI Plus card.
 
 ## RHAL_CIUSB_EnableRW
 ```bash
 void RHAL_CIUSB_EnableRW(void*pUsbId, BOOLEAN bEnable);
 ```
+Enable to read and write the interface.
+<ParamTable
+  items={[
+    { name: 'pUsbId', type: 'void*', desc: 'indicate the CI Plus USB device ID' },
+    { name: 'bEnable', type: 'BOOLEAN', desc: 'Enable or disable the read and write' },
+  ]}
+/>
 
 ## RHAL_CIUSB_SetParam
 ```bash
 void RHAL_CIUSB_SetParam(void*pUsbId, int interface, CIUSB_IOC_PARAM*pParam);
 ```
+Set the param for reading data from USB CAM.
+<ParamTable
+  items={[
+    { name: 'pUsbId', type: 'void*', desc: 'indicate the CI Plus USB device ID' },
+    { name: 'interface', type: 'int', desc: 'indicate the interface of CI Plus' },
+    { name: 'pParam', type: 'CIUSB_IOC_PARAM*', desc: 'timeout: jiffy. 250 Hz; return_FH: decide if return the fragment header info.' },
+  ]}
+/>
 
 ## RHAL_CIUSB_ResetStatistic
 ```bash
 void RHAL_CIUSB_ResetStatistic(void*pUsbId, int interface);
 ```
+Reset statictis data.
+

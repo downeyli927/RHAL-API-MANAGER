@@ -10,21 +10,25 @@ RHAL_AI_EXECUTOR api
 ```bash
 AI_EXE_HANDLE RHAL_AI_EXE_Open(void);
 ```
+Open ai executor to use NPU
 
 ## RHAL_AI_EXE_Close
 ```bash
 BOOLEAN RHAL_AI_EXE_Close(AI_EXE_HANDLE handle);
 ```
+Close ai executor
 
 ## RHAL_AI_EXE_CreateNetwork
 ```bash
 BOOLEAN RHAL_AI_EXE_CreateNetwork(AI_EXE_HANDLE handle, const char*file);
 ```
+Create network
 
 ## RHAL_AI_EXE_CreateNetworkFromMem
 ```bash
 BOOLEAN RHAL_AI_EXE_CreateNetworkFromMem(AI_EXE_HANDLE handle, const UINT8*nbBuf, UINT64 nbSize);
 ```
+Create network from mem
 
 ## RHAL_AI_EXE_QueryInputProperty
 ```bash

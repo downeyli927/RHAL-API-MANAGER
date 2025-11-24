@@ -6,67 +6,105 @@ sidebar_position: 17
 
 RHAL_CRYPTO api
 
-## ChinaDRM_Storage_KeyData
-```bash
-extern int32_t ChinaDRM_Storage_KeyData(char*data, unsigned int len);
-```
-
-## ChinaDRM_Check_KeyData
-```bash
-extern int32_t ChinaDRM_Check_KeyData();
-```
-
-## ChinaDRM_Get_Device_ID
-```bash
-extern int32_t ChinaDRM_Get_Device_ID(char*device_id, unsigned int*len);
-```
-
 ## RHAL_CRYPTO_WriteKey
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_WriteKey(RHAL_TRUSTZONE_KEYS_TYPE_T en_keys_type, UINT8*pu8_keys_data, UINT32 u32_keys_data_len);
 ```
+Write chinaDRM/playready /Widevine key to RPMB or HDCP2.2 key to factory
+<ParamTable
+  items={[
+    { name: 'en_keys_type', type: 'RHAL_TRUSTZONE_KEYS_TYPE_T', desc: 'input key type' },
+    { name: 'pu8_keys_data', type: 'UINT8*', desc: <>input key data.</> },
+    { name: 'u32_keys_data_len', type: 'UINT32', desc: <>input key len.</> },
+  ]}
+/>
 
 ## RHAL_CRYPTO_CertificateKey
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_CertificateKey(RHAL_TRUSTZONE_KEYS_T*pst_keys_data, RHAL_TRUSTZONE_KEY_CERTIFICATE_T*pen_certificate_result);
 ```
+Use for verify ChinaDRM key
+<ParamTable
+  items={[
+    { name: 'pst_keys_data', type: 'RHAL_TRUSTZONE_KEYS_T*', desc: 'input key info' },
+    { name: 'pen_certificate_result', type: 'RHAL_TRUSTZONE_KEY_CERTIFICATE_T*', desc: <>output info, get device ID and key length.</> },
+  ]}
+/>
 
 ## RHAL_CRYPTO_ApplyKey
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_ApplyKey(RHAL_TRUSTZONE_KEYS_TYPE_T en_keys_type);
 ```
+Use for load and Apply key
+<ParamTable
+  items={[
+    { name: 'en_keys_type', type: 'RHAL_TRUSTZONE_KEYS_TYPE_T', desc: 'input key type' },
+  ]}
+/>
 
 ## RHAL_CYRPTO_QUERY_KEY
 ```bash
 DTV_STATUS_T RHAL_CYRPTO_QUERY_KEY(RHAL_TRUSTZONE_KEYS_TYPE_T en_keys_type, UINT8*pu8_keys_ID, UINT32*u32_keys_ID_len);
 ```
+Use for query key has been burn or not
+<ParamTable
+  items={[
+    { name: 'en_keys_type', type: 'RHAL_TRUSTZONE_KEYS_TYPE_T', desc: 'output key type' },
+    { name: 'pu8_keys_ID', type: 'UINT8*', desc: <>output key ID.</> },
+    { name: 'u32_keys_ID_len', type: 'UINT32*', desc: <>output info, ID length.</> },
+  ]}
+/>
 
 ## RHAL_CRYPTO_Get_Unique_Id
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_Get_Unique_Id(UINT8*pBuffer, UINT32*pSize);
 ```
+Use for get unique id key
+<ParamTable
+  items={[
+    { name: 'pBuffer', type: 'UINT8*', desc: 'output buffer, get unique id value' },
+    { name: 'pSize', type: 'UINT32*', desc: <>output size, unique id len.</> },
+  ]}
+/>
 
 ## RHAL_CRYPTO_Set_PMode
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_Set_PMode(UINT32 mode);
 ```
+Set mode to keymint ta
+<ParamTable
+  items={[
+    { name: 'mode', type: 'UINT32', desc: 'mode: 1 as pmode, 0 as not pmode' },
+  ]}
+/>
 
 ## RHAL_CRYPTO_Set_ReleaseMode
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_Set_ReleaseMode();
 ```
+Set system will never enter factory mode again
 
 ## RHAL_CRYPTO_Get_CommonKey
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_Get_CommonKey(int*mode);
 ```
+Get optee use common key or device key
 
 ## RHAL_CRYPTO_Verify_Attestation_ID
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_Verify_Attestation_ID(UINT8*id_data, UINT32 id_data_len, RHAL_TRUSTZONE_ATTESTATION_ID_TYPE_T id_type);
 ```
+Use for verify attestation id
+<ParamTable
+  items={[
+    { name: 'id_data', type: 'UINT8*', desc: 'input attestation id' },
+    { name: 'id_data_len', type: 'UINT32', desc: <>input attestation id length.</> },
+    { name: 'id_type', type: 'RHAL_TRUSTZONE_ATTESTATION_ID_TYPE_T', desc: <>input attestation id type.</> },
+  ]}
+/>
 
 ## RHAL_CRYPTO_CheckKoPair
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_CheckKoPair();
 ```
+check if the ko pair or not in this IC

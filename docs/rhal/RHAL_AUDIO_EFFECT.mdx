@@ -10,6 +10,13 @@ RHAL_AUDIO_EFFECT api
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_Initialize(SINT32*max_eq_band_num, HAL_ATV_CFG*m_atv_cfg);
 ```
+Audio effects initialization
+<ParamTable
+  items={[
+    { name: 'max_eq_band_num', type: 'SINT32*', desc: 'The maximum number of EQ (equalizer) bands.' },
+    { name: 'm_atv_cfg', type: 'HAL_ATV_CFG*', desc: <>ATV config,Volume compensation and thresholds related to BTSC systems, and volume compensation in M/N format (related to BTSC)..</> },
+  ]}
+/>
 
 ## RHAL_QS_AUDIO_Effect_Initialize
 ```bash

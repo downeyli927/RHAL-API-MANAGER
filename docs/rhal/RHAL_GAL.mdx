@@ -10,151 +10,347 @@ RHAL_GAL api
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_Init(void);
 ```
+Initializes GPU module.
 
 ## RHAL_GAL_Finalize
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_Finalize(void);
 ```
+Finalize 2D graphics module.
 
 ## RHAL_GAL_GetDeviceCapability
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetDeviceCapability(HAL_GAL_DEVICE_CAPABILITY_INFO_T*pDeviceCapabilityInfo);
 ```
+Gets 2D graphic capability of device.
+<ParamTable
+  items={[
+    { name: 'pDeviceCapabilityInfo', type: 'HAL_GAL_DEVICE_CAPABILITY_INFO_T*', desc: '2D graphic capability of device.' },
+  ]}
+/>
 
 ## RHAL_GAL_CreateSurface
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_CreateSurface(UINT16 width, UINT16 height, HAL_GAL_PIXEL_FORMAT_T pixelFormat, HAL_GAL_SURFACE_INFO_T*pSurfaceInfo);
 ```
+Allocates memory buffer for a surface in the video memory area. (for using H/W accerated graphics)
+<ParamTable
+  items={[
+    { name: 'width', type: 'UINT16', desc: 'surface width in pixels.' },
+    { name: 'height', type: 'UINT16', desc: 'surface height in pixels.' },
+    { name: 'pixelFormat', type: 'HAL_GAL_PIXEL_FORMAT_T', desc: 'pixel format.' },
+    { name: 'pSurfaceInfo', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'Pointer to a HAL_GAL_SURFACE_INFO_T structure to information about newly allocated surface (video memory offset, pitch, height, etc.)..' },
+  ]}
+/>
 
 ## RHAL_GAL_DestroySurface
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_DestroySurface(HAL_GAL_SURFACE_INFO_T*pSurfaceInfo);
 ```
+Dellocates buffer for a surface in the video memory area.
 
 ## RHAL_GAL_Blit
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_Blit(HAL_GAL_SURFACE_INFO_T*pSrcSurface, HAL_GAL_RECT_T*pSrcRect, HAL_GAL_SURFACE_INFO_T*pDstSurface, UINT16 dx, UINT16 dy, HAL_GAL_BLIT_FLAGS_T*pBlitFlags, HAL_GAL_BLIT_SETTINGS_T*pBlitSettings);
 ```
+Blit an area from one surface to other surface based on blit flags.
+<ParamTable
+  items={[
+    { name: 'pSrcSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'source surface handler.' },
+    { name: 'pSrcRect', type: 'HAL_GAL_RECT_T*', desc: 'source rectangle which represent blited area in the source surface.' },
+    { name: 'pDstSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'destination surface handler.' },
+    { name: 'dx', type: 'UINT16', desc: 'x in destination surface.' },
+    { name: 'dy', type: 'UINT16', desc: 'y in destination surface.' },
+    { name: 'pBlitFlags', type: 'HAL_GAL_BLIT_FLAGS_T*', desc: 'blitFlags blitting flags which indicate various blit operations.' },
+    { name: 'pBlitSettings', type: 'HAL_GAL_BLIT_SETTINGS_T*', desc: 'blitSettings settings for blit operation.' },
+  ]}
+/>
 
 ## RHAL_GAL_StretchBlit
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_StretchBlit(HAL_GAL_SURFACE_INFO_T*pSrcSurface, HAL_GAL_RECT_T*pSrcRect, HAL_GAL_SURFACE_INFO_T*pDstSurface, HAL_GAL_RECT_T*pDstRect, HAL_GAL_BLIT_FLAGS_T*pBlitFlags, HAL_GAL_BLIT_SETTINGS_T*pBlitSettings);
 ```
+Stretch blit an area from one surface to other surface based on blit flags.
+<ParamTable
+  items={[
+    { name: 'pSrcSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'source surface handler.' },
+    { name: 'pSrcRect', type: 'HAL_GAL_RECT_T*', desc: 'source rectangle which represent blited area in the source surface.' },
+    { name: 'pDstSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'destination surface handler.' },
+    { name: 'pDstRect', type: 'HAL_GAL_RECT_T*', desc: 'destination rectangle which represent blited area in the source surface.' },
+    { name: 'pBlitFlags', type: 'HAL_GAL_BLIT_FLAGS_T*', desc: 'blitFlags blitting flags which indicate various blit operations.' },
+    { name: 'pBlitSettings', type: 'HAL_GAL_BLIT_SETTINGS_T*', desc: 'blitSettings settings for blit operation.' },
+  ]}
+/>
 
 ## RHAL_GAL_FillRectangle
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_FillRectangle(HAL_GAL_SURFACE_INFO_T*pDstSurface, HAL_GAL_RECT_T*pDstRect, UINT32 color, HAL_GAL_DRAW_FLAGS_T*pDrawFlags, HAL_GAL_DRAW_SETTINGS_T*pDrawSettings);
 ```
+Fills a rectangle to a destination surface based on drawing flags.
+<ParamTable
+  items={[
+    { name: 'pDstSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'destination surface handler.' },
+    { name: 'pDstRect', type: 'HAL_GAL_RECT_T*', desc: 'rectangle which represent drawing area in the destination surface.' },
+    { name: 'color', type: 'UINT32', desc: 'color value for the drawing.' },
+    { name: 'pDrawFlags', type: 'HAL_GAL_DRAW_FLAGS_T*', desc: 'drawing flags which indicate various blit operations.' },
+    { name: 'pDrawSettings', type: 'HAL_GAL_DRAW_SETTINGS_T*', desc: 'settings for draw operation.' },
+  ]}
+/>
 
 ## RHAL_GAL_DrawRectangle
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_DrawRectangle(HAL_GAL_SURFACE_INFO_T*pDstSurface, HAL_GAL_RECT_T*pDstRect, UINT32 color, HAL_GAL_DRAW_FLAGS_T*pDrawFlags, HAL_GAL_DRAW_SETTINGS_T*pDrawSettings);
 ```
+Fills a rectangle to a destination surface based on drawing flags.
+<ParamTable
+  items={[
+    { name: 'pDstSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'destination surface handler.' },
+    { name: 'pDstRect', type: 'HAL_GAL_RECT_T*', desc: 'rectangle which represent drawing area in the destination surface.' },
+    { name: 'color', type: 'UINT32', desc: 'color value for the drawing.' },
+    { name: 'pDrawFlags', type: 'HAL_GAL_DRAW_FLAGS_T*', desc: 'drawing flags which indicate various blit operations.' },
+    { name: 'pDrawSettings', type: 'HAL_GAL_DRAW_SETTINGS_T*', desc: 'settings for draw operation.' },
+  ]}
+/>
 
 ## RHAL_GAL_DrawLine
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_DrawLine(HAL_GAL_SURFACE_INFO_T*pDSurface, HAL_GAL_LINE_T*pDstLine, UINT32 color, HAL_GAL_DRAW_FLAGS_T*pDrawFlags, HAL_GAL_DRAW_SETTINGS_T*pDrawSettings);
 ```
+Draws a line to a destination surface based on drawing flags.
+<ParamTable
+  items={[
+    { name: 'pDSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'destination surface handler.' },
+    { name: 'pDstLine', type: 'HAL_GAL_LINE_T*', desc: 'line which represent drawing area in the surface.' },
+    { name: 'color', type: 'UINT32', desc: 'color value for the drawing.' },
+    { name: 'pDrawFlags', type: 'HAL_GAL_DRAW_FLAGS_T*', desc: 'drawing flags which indicate various blit operations.' },
+    { name: 'pDrawSettings', type: 'HAL_GAL_DRAW_SETTINGS_T*', desc: 'settings for draw operation.' },
+  ]}
+/>
 
 ## RHAL_GAL_GetSurfacePalette
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetSurfacePalette(HAL_GAL_SURFACE_INFO_T*pSurface, UINT32*pPalette, SINT32 paletteLength);
 ```
+Get surface palette
+<ParamTable
+  items={[
+    { name: 'pSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'surface handler.' },
+    { name: 'pPalette', type: 'UINT32*', desc: 'palette which is array of 32bit ARGB color entries.' },
+    { name: 'paletteLength', type: 'SINT32', desc: 'number of entries of palette.' },
+  ]}
+/>
 
 ## RHAL_GAL_SetSurfacePalette
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetSurfacePalette(HAL_GAL_SURFACE_INFO_T*pSurface, UINT32*pPalette, SINT32 paletteLength);
 ```
+Set surface palette
+<ParamTable
+  items={[
+    { name: 'pSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'surface handler.' },
+    { name: 'pPalette', type: 'UINT32*', desc: 'palette which is array of 32bit ARGB color entries.' },
+    { name: 'paletteLength', type: 'SINT32', desc: 'number of entries of palette.' },
+  ]}
+/>
 
 ## RHAL_GAL_SetFrameBuffer
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFrameBuffer(HAL_GAL_SURFACE_INFO_T*pSurface, UINT32 fbHWControllerIndex);
 ```
+Mapping received surface and hw controller. And chip vendor need to consider to vsync wait to avoid flikerling problem.
+<ParamTable
+  items={[
+    { name: 'pSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'surface handler.' },
+    { name: 'fbHWControllerIndex', type: 'UINT32', desc: 'identifier of framebuffer hw controller(number)' },
+  ]}
+/>
 
 ## RHAL_GAL_SetFrameBufferWithProperty
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFrameBufferWithProperty(HAL_GAL_SURFACE_INFO_T*pSurface, UINT32 fbHWControllerIndex, HAL_GAL_FRAMEBUFFER_PROPERTY_FLAGS_T fbPropertyFlags,HAL_GAL_FRAMEBUFFER_PROPERTY_EXTENDED_INFO_T*pFbPropertyExInfo);
 ```
+Sets region(viewRect/dispRect) and Stereoscope(on/off, stereoscope type) about framebuffer.
+<ParamTable
+  items={[
+    { name: 'pSurface', type: 'HAL_GAL_SURFACE_INFO_T*', desc: 'surface handler.' },
+    { name: 'fbHWControllerIndex', type: 'UINT32', desc: 'identifier of framebuffer hw controller(number)' },
+    { name: 'fbPropertyFlags', type: 'HAL_GAL_FRAMEBUFFER_PROPERTY_FLAGS_T', desc: 'flags for framebuffer property setting.' },
+    { name: 'pFbPropertyExInfo', type: 'HAL_GAL_FRAMEBUFFER_PROPERTY_EXTENDED_INFO_T*', desc: 'information about framebuffer property.' },
+  ]}
+/>
 
 ## RHAL_GAL_ResetFrameBuffer
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_ResetFrameBuffer(UINT32 fbHWControllerIndex);
 ```
+Reset associated resource of FrameBuffer (=disable visibility of FrameBuffer). In case of this, maybe chip vendor dont need to consider to vsync wait.
 
 ## RHAL_GAL_SetFBHWControllerVisibility
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFBHWControllerVisibility(HAL_GAL_FRAMEBUFFER_VISIBILITY_INFO_T*pChangedFbList, UINT32 changedFbNum);
 ```
+conrol to visility of specified pChangedFbList according to number of changedFbNum
+<ParamTable
+  items={[
+    { name: 'pChangedFbList', type: 'HAL_GAL_FRAMEBUFFER_VISIBILITY_INFO_T*', desc: 'changed the framebuffer list.' },
+    { name: 'changedFbNum', type: 'UINT32', desc: 'changed the number of framebuffer list' },
+  ]}
+/>
 
 ## RHAL_GAL_SetFBHWControllerVsync
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFBHWControllerVsync(UINT32 fbHWControllerIndex, BOOLEAN bVsync);
 ```
+Decide whether to use vsync operation of specified FBHWController or not.we will use this function to avoid flikerling problem when flipping between back of framebuffer and front of framebuffer.
+<ParamTable
+  items={[
+    { name: 'fbHWControllerIndex', type: 'UINT32', desc: 'identifier of framebuffer hw controller(number)' },
+    { name: 'bVsync', type: 'BOOLEAN', desc: 'enable or disable Vsync' },
+  ]}
+/>
 
 ## RHAL_GAL_SyncGraphic
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SyncGraphic(void);
 ```
+Waits for the all the H/W accelerated graphics operations to be done.
 
 ## RHAL_GAL_MoveCursor
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_MoveCursor(UINT32 fbHWControllerIndex, HAL_GAL_CURSOR_PROPERTY_INFO_T*pCursorProperty);
 ```
+Move position of cursor
+<ParamTable
+  items={[
+    { name: 'fbHWControllerIndex', type: 'UINT32', desc: 'identifier of framebuffer hw controller(number)' },
+    { name: 'pCursorProperty', type: 'HAL_GAL_CURSOR_PROPERTY_INFO_T*', desc: 'info of the Cursor Property' },
+  ]}
+/>
 
 ## RHAL_GAL_SetFBHWControllerPathMode
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFBHWControllerPathMode(UINT32 fbHWControllerIndex, HAL_GAL_OSD_PATH_MODE_FLAGS_T osdPathMode);
 ```
+Select output path mode of framebuffer HW controller between main chip and external FRC chip.
+<ParamTable
+  items={[
+    { name: 'fbHWControllerIndex', type: 'UINT32', desc: 'identifier of framebuffer hw controller(number)' },
+    { name: 'osdPathMode', type: 'HAL_GAL_OSD_PATH_MODE_FLAGS_T', desc: 'select osd path mode' },
+  ]}
+/>
 
 ## RHAL_GAL_SetFrameBufferProperty
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFrameBufferProperty(UINT32 fbHWControllerIndex, HAL_GAL_FRAMEBUFFER_PROPERTY_FLAGS_T fbPropertyFLags, HAL_GAL_FRAMEBUFFER_PROPERTY_INFO_T*pFbPropertyInfo);
 ```
+Sets region(viewRect/dispRect) about framebuffer.
+<ParamTable
+  items={[
+    { name: 'fbHWControllerIndex', type: 'UINT32', desc: 'identifier of framebuffer hw controller(number)' },
+    { name: 'fbPropertyFLags', type: 'HAL_GAL_FRAMEBUFFER_PROPERTY_FLAGS_T', desc: 'flags for framebuffer property setting' },
+    { name: 'pFbPropertyInfo', type: 'HAL_GAL_FRAMEBUFFER_PROPERTY_INFO_T*', desc: 'information about framebuffer property' },
+  ]}
+/>
 
 ## RHAL_GAL_SetFBHWControllerStereoscope
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFBHWControllerStereoscope(UINT32 fbHWControllerIndex, BOOLEAN bStereoscope, HAL_GAL_STEREOSCOPE_TYPE_T stereoscopeType);
 ```
+Sets region(viewRect/dispRect) about framebuffer.
+<ParamTable
+  items={[
+    { name: 'fbHWControllerIndex', type: 'UINT32', desc: 'identifier of framebuffer hw controller(number)' },
+    { name: 'bStereoscope', type: 'BOOLEAN', desc: ' stereoscope mode on/off' },
+    { name: 'stereoscopeType', type: 'HAL_GAL_STEREOSCOPE_TYPE_T', desc: 'type of stereoscope (2D-to-3D, S3D)' },
+  ]}
+/>
 
 ## RHAL_GAL_SetFrameBufferPixelFormat
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFrameBufferPixelFormat(UINT32 fbHWControllerIndex, HAL_GAL_PIXEL_FORMAT_EX_T pixelFormat);
 ```
+Change pixelFormat of framebuffer
+<ParamTable
+  items={[
+    { name: 'fbHWControllerIndex', type: 'UINT32', desc: 'identifier of framebuffer hw controller(number)' },
+    { name: 'pixelFormat', type: 'HAL_GAL_PIXEL_FORMAT_EX_T', desc: 'pixel format' },
+  ]}
+/>
 
 ## RHAL_GAL_GetFrameBufferPixelFormat
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetFrameBufferPixelFormat(UINT32 fbHWControllerIndex, HAL_GAL_PIXEL_FORMAT_EX_T*pPixelFormat);
 ```
+Get pixelFormat of framebuffer
+<ParamTable
+  items={[
+    { name: 'fbHWControllerIndex', type: 'UINT32', desc: 'identifier of framebuffer hw controller(number)' },
+    { name: 'pPixelFormat', type: 'HAL_GAL_PIXEL_FORMAT_EX_T*', desc: 'pixel format' },
+  ]}
+/>
 
 ## RHAL_GAL_GetFrameBufferList
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetFrameBufferList(HAL_GAL_SURFACE_INFO_T**ppSurfaceInfoList, UINT32*pNumOfSurface);
 ```
+Get frame buffer list
+<ParamTable
+  items={[
+    { name: 'ppSurfaceInfoList', type: 'HAL_GAL_SURFACE_INFO_T**', desc: 'Surface Info List' },
+    { name: 'pNumOfSurface', type: 'UINT32*', desc: 'Num Of Surface' },
+  ]}
+/>
 
 ## RHAL_GAL_GetOSDOutputResolution
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetOSDOutputResolution(HAL_GAL_RECT_T*pOSDOutputResolution);
 ```
+Get graphic output resolution
+<ParamTable
+  items={[
+    { name: 'pOSDOutputResolution', type: 'HAL_GAL_RECT_T*', desc: 'OSD Output resolution' },
+  ]}
+/>
 
 ## RHAL_GAL_SetGraphicOutputResolution
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetGraphicOutputResolution(HAL_GAL_RESOLUTION_T graphicOutputResolution);
 ```
+Set graphic output resolution
+<ParamTable
+  items={[
+    { name: 'pOSDOutputResolution', type: 'HAL_GAL_RECT_T*', desc: 'OSD Output resolution' },
+  ]}
+/>
 
 ## RHAL_GAL_GetFBHWControllerVisibility
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetFBHWControllerVisibility(UINT32 fbHWControllerIndex, BOOLEAN*pbVisibility);
 ```
+Get FB HWController visibility
+<ParamTable
+  items={[
+    { name: 'fbHWControllerIndex', type: 'UINT32', desc: 'identifier of framebuffer hw controller(number)' },
+    { name: 'pbVisibility', type: 'BOOLEAN*', desc: 'visibility of FBHWController' },
+  ]}
+/>
 
 ## RHAL_GAL_SetCursorPosition
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetCursorPosition(HAL_GAL_CURSOR_POSITION_INFO_T*pCursorPosition);
 ```
+This is similar to HAL_GAL_MoveCursor, we are going to replace from MoveCursor to this
 
 ## RHAL_GAL_SetCursorResolution
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetCursorResolution(HAL_GAL_RESOLUTION_T cursorCoordinateResolution, HAL_GAL_RESOLUTION_T cursorImageResolution);
 ```
+Set cursor resolution
+:::tip[tips]
+This will invoke at IM initialize then you set cursor resolution to calculate like below fomular
+width of cursor resolution  = cursorImageResolution.width/cursorCoordinateResolution.width
+height of cursor resolution = cursorImageResolution.height/cursorCoordinateResolution.height
+:::
 
 ## RHAL_GAL_Capture_stch
 ```bash
