@@ -10,158 +10,375 @@ RHAL_SMC api
 ```bash
 void* RHAL_SMC_Open(UINT8 id);
 ```
+Open a SMC IFD
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT8', desc: 'SMC IFD id' },
+  ]}
+/>
 
 ## RHAL_SMC_Close
 ```bash
 SMC_STS RHAL_SMC_Close(void*pSmc);
 ```
+Close a SMC IFD
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+  ]}
+/>
 
 ## RHAL_SMC_SetParam
 ```bash
 SMC_STS RHAL_SMC_SetParam(void*pSmc, HAL_SMC_IFD_PARAM*p_param);
 ```
+Set Parameter of a SMC IFD
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'p_param', type: 'HAL_SMC_IFD_PARAM*', desc: 'p_param to be used' },
+  ]}
+/>
 
 ## RHAL_SMC_GetParam
 ```bash
 SMC_STS RHAL_SMC_GetParam(void*pSmc, HAL_SMC_IFD_PARAM*p_param);
 ```
+Get Parameter of a SMC IFD
 
 ## RHAL_SMC_SetProtocol
 ```bash
 SMC_STS RHAL_SMC_SetProtocol(void*pSmc, HAL_SMC_PROTOCOL Protocol);
 ```
+Set Protocol of a SMC IFD
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'Protocol', type: 'HAL_SMC_PROTOCOL', desc: 'Protocol to be used' },
+  ]}
+/>
+
+:::tip[HAL_SMC_PROTOCOL]
+
+HAL_SMC_PROTOCOL_T0  : T0
+HAL_SMC_PROTOCOL_T1  : T1
+HAL_SMC_PROTOCOL_T14 : T14
+
+:::
 
 ## RHAL_SMC_GetProtocol
 ```bash
 SMC_STS RHAL_SMC_GetProtocol(void*pSmc, HAL_SMC_PROTOCOL*pProtocol);
 ```
+Get Protocol of a SMC IFD
 
 ## RHAL_SMC_SetProtocolParam
 ```bash
 SMC_STS RHAL_SMC_SetProtocolParam(void*pSmc, HAL_SMC_PROTOCOL_PARAM_ID Id, UINT32 Val);
 ```
+Set Protocol parameter of a SMC IFD
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'Id', type: 'HAL_SMC_PROTOCOL_PARAM_ID', desc: 'Protocol Parameter ID' },
+    { name: 'Val', type: 'UINT32', desc: 'Protocol Parameter Value' },
+  ]}
+/>
 
 ## RHAL_SMC_GetProtocolParam
 ```bash
 SMC_STS RHAL_SMC_GetProtocolParam(void*pSmc, HAL_SMC_PROTOCOL_PARAM_ID Id, UINT32*pVal);
 ```
+Get Protocol Parameter of a SMC IFD
 
 ## RHAL_SMC_SetPPS
 ```bash
 SMC_STS RHAL_SMC_SetPPS(void*pSmc, UINT8 fi, UINT8 di);
 ```
+Set PPS
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'fi', type: 'UINT8', desc: 'frequency indicator' },
+    { name: 'di', type: 'UINT8', desc: 'baud rate indicator' },
+  ]}
+/>
 
 ## RHAL_SMC_GetCardStatus
 ```bash
 SMC_STS RHAL_SMC_GetCardStatus(void*pSmc, HAL_SMC_CARD_STATUS*pStatus);
 ```
+Get Card Status of a SMC IFD
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'pStatus', type: 'HAL_SMC_CARD_STATUS*', desc: 'Status output' },
+  ]}
+/>
+:::tip[HAL_SMC_CARD_STATUS]
+
+HAL_SMC_CARD_REMOVED
+HAL_SMC_CARD_DEACTIVATE
+HAL_SMC_CARD_RESET
+HAL_SMC_CARD_RESET_TIMEOUT
+HAL_SMC_CARD_ACTIVATE 
+
+:::
 
 ## RHAL_SMC_PollCardStatus
 ```bash
 SMC_STS RHAL_SMC_PollCardStatus(void*pSmc, HAL_SMC_CARD_STATUS*pStatus);
 ```
+Poll Card Status of a SMC IFD.
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'pStatus', type: 'HAL_SMC_CARD_STATUS*', desc: 'Status output' },
+  ]}
+/>
 
 ## RHAL_SMC_Activate
 ```bash
 SMC_STS RHAL_SMC_Activate(void*pSmc);
 ```
+Activate a Smart card. (Power On)
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+  ]}
+/>
 
 ## RHAL_SMC_Deactivate
 ```bash
 SMC_STS RHAL_SMC_Deactivate(void*pSmc);
 ```
+Deactivate a Smart card. (Power Off)
 
 ## RHAL_SMC_Reset
 ```bash
 SMC_STS RHAL_SMC_Reset(void*pSmc, HAL_SMC_PROTOCOL Protocol);
 ```
+Reset a Smart card.
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'Protocol', type: 'HAL_SMC_PROTOCOL', desc: 'Protocol to be used' },
+  ]}
+/>
 
 ## RHAL_SMC_GetATR
 ```bash
-SMC_STS RHAL_SMC_GetATR(void*pSmc, UINT8*pBuff, UINT32 BuffSize, UINT32*pLen);
+SMC_STS RHAL_SMC_GetATR(void* pSmc, UINT8* pBuff, UINT32 BuffSize, UINT32* pLen);
 ```
+Get ATR from Smart card.
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'pBuff', type: 'UINT8*', desc: 'output buffer' },
+    { name: 'BuffSize', type: 'UINT32', desc: 'Buffer Size' },
+    { name: 'pLen', type: 'UINT32*', desc: 'number of bytes of ATR' },
+  ]}
+/>
 
 ## RHAL_SMC_SetIfdByATR
 ```bash
 SMC_STS RHAL_SMC_SetIfdByATR(void*pSmc, UINT8*pATR, UINT32 pATRLen);
 ```
+Set Smart Card IFD by ATR
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'pATR', type: 'UINT8*', desc: 'atr data ( if atr is NULL means using default ATR)' },
+    { name: 'pATRLen', type: 'UINT32', desc: 'length o atr' },
+  ]}
+/>
 
 ## RHAL_SMC_Read
 ```bash
 SMC_STS RHAL_SMC_Read(void*pSmc, UINT8*pBuff, UINT32 Len, UINT32*pRxLen, UINT32 Timeout);
 ```
+Read Data from Smart card (bypass protocol)
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'pBuff', type: 'UINT8*', desc: 'read data buffer' },
+    { name: 'Len', type: 'UINT32', desc: 'length of bytes to be read' },
+    { name: 'pRxLen', type: 'UINT32', desc: 'number of readed bytes' },
+    { name: 'Timeout', type: 'UINT32', desc: 'wait time (in ms)' },
+  ]}
+/>
 
 ## RHAL_SMC_Write
 ```bash
 SMC_STS RHAL_SMC_Write(void*pSmc, UINT8*pBuff, UINT32 Len);
 ```
+Write Data to Smart card (bypass protocol)
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'pBuff', type: 'UINT8*', desc: 'data to be written' },
+    { name: 'Len', type: 'UINT32', desc: 'length of buff to be written' },
+  ]}
+/>
 
 ## RHAL_SMC_Transfer
 ```bash
 SMC_STS RHAL_SMC_Transfer(void*pSmc, UINT8*pCAPDU, UINT32 APDULen, UINT8*pRAPDU, UINT32*pRAPDULen, UINT32 Timeout);
 ```
+Do APDU layer data exchange
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'pCAPDU', type: 'UINT8*', desc: 'C-APDU to be sent' },
+    { name: 'APDULen', type: 'UINT32', desc: 'Size of C-APDU' },
+    { name: 'pRAPDU', type: 'UINT8*', desc: 'R-APDU buffer' },
+    { name: 'pRAPDULen', type: 'UINT32*', desc: '(In) size of buffer to restire R-APDU / (OUT)size of received R-APDU  ' },
+    { name: 'Timeout', type: 'UINT32', desc: 'command timeout' },
+  ]}
+/>
 
 ## RHAL_SMC_SetClockRate
 ```bash
 SMC_STS RHAL_SMC_SetClockRate(void*pSmc, ULONG ClockHz);
 ```
+Set Clock Frequency of SMC IFD. 
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'ClockHz', type: 'ULONG', desc: 'Clock Frequency of IFD (in Hz)' },
+  ]}
+/>
 
 ## RHAL_SMC_GetClockRate
 ```bash
 SMC_STS RHAL_SMC_GetClockRate(void*pSmc, ULONG*pClockHz);
 ```
+Get Clock Frequency of SMC IFD. 
 
 ## RHAL_SMC_SetETU
 ```bash
 SMC_STS RHAL_SMC_SetETU(void*pSmc, ULONG ETU);
 ```
+Set ETU of SMC IFD. 
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'ETU', type: 'ULONG', desc: 'new ETU setting' },
+  ]}
+/>
 
 ## RHAL_SMC_GetETU
 ```bash
 SMC_STS RHAL_SMC_GetETU(void*pSmc, ULONG*pETU);
 ```
+Get ETU of SMC IFD. 
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'pETU', type: 'ULONG*', desc: 'current ETU output' },
+  ]}
+/>
 
 ## RHAL_SMC_SetVccLvl
 ```bash
 SMC_STS RHAL_SMC_SetVccLvl(void*pSmc, HAL_SMC_VCC_LVL VccLvL);
 ```
+Set VCC Level of SMC IFD. 
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'VccLvL', type: 'HAL_SMC_VCC_LVL', desc: 'new vcc level' },
+  ]}
+/>
+:::tip[HAL_SMC_VCC_LVL]
+
+HAL_SMC_VCC_LVL_3V
+HAL_SMC_VCC_LVL_5V
+
+:::
+
+:::danger[Take care]
+
+The power level will be applied at the next SMC activation
+
+:::
 
 ## RHAL_SMC_GetVccLvl
 ```bash
 SMC_STS RHAL_SMC_GetVccLvl(void*pSmc, HAL_SMC_VCC_LVL*pVccLvl);
 ```
+Get VCC Level of SMC IFD
 
 ## RHAL_SMC_SetConv
 ```bash
 SMC_STS RHAL_SMC_SetConv(void*pSmc, HAL_SMC_CONV Conv);
 ```
+Set Convention of SMC IFD
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'Conv', type: 'HAL_SMC_CONV', desc: 'set convention ' },
+  ]}
+/>
+:::tip[HAL_SMC_CONV]
+
+HAL_SMC_CONV_AUTO
+HAL_SMC_CONV_DIRECT
+HAL_SMC_CONV_INVERSE
+
+:::
 
 ## RHAL_SMC_GetConv
 ```bash
 SMC_STS RHAL_SMC_GetConv(void*pSmc, HAL_SMC_CONV*pConv);
 ```
+Get Convention of SMC IFD
 
 ## RHAL_SMC_SetParity
 ```bash
 SMC_STS RHAL_SMC_SetParity(void*pSmc, HAL_SMC_PARITY Parity);
 ```
+Set Parity of SMC IFD
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'Parity', type: 'HAL_SMC_PARITY', desc: 'new Parity ' },
+  ]}
+/>
+:::tip[HAL_SMC_PARITY]
+
+HAL_SMC_NO_PARITY
+HAL_SMC_ODD_PARITY
+HAL_SMC_EVEN_PARITY
+
+:::
 
 ## RHAL_SMC_GetParity
 ```bash
 SMC_STS RHAL_SMC_GetParity(void*pSmc, HAL_SMC_PARITY*pParity);
 ```
+Get Current Parity setting of SMC IFD
 
 ## RHAL_SMC_SetGuardInterval
 ```bash
 SMC_STS RHAL_SMC_SetGuardInterval(void*pSmc, ULONG GI);
 ```
+Set Current Guard Interval of SMC IFD
+<ParamTable
+  items={[
+    { name: 'pSmc', type: 'void*', desc: 'handle of a Smart Card IFD' },
+    { name: 'GI', type: 'ULONG', desc: 'new Guard Interval (in ETU)' },
+  ]}
+/>
 
 ## RHAL_SMC_GetGuardInterval
 ```bash
 SMC_STS RHAL_SMC_GetGuardInterval(void*pSmc, ULONG*pGI);
 ```
+Get Current Guard Interval of SMC IFD
 
 ## RHAL_SMC_CardStatusStr
 ```bash
 const char* RHAL_SMC_CardStatusStr(HAL_SMC_CARD_STATUS Status);
 ```
+Return Card Status

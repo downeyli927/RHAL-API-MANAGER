@@ -8,40 +8,84 @@ RHAL_LSADC api
 
 ## RHAL_LSADC_SetVoltageMode
 ```bash
-extern DTV_STATUS_T RHAL_LSADC_SetVoltageMode(HAL_LSADC_NAME name, UINT8 voltageMode);
+DTV_STATUS_T RHAL_LSADC_SetVoltageMode(HAL_LSADC_NAME name, UINT8 voltageMode);
 ```
+Set mode for a lsadc port
+<ParamTable
+  items={[
+    { name: 'name', type: 'HAL_LSADC_NAME', desc: 'Specified lsadc pin name' },
+    { name: 'voltageMode', type: 'UINT8', desc: 'voltage mode of lsadc' },
+  ]}
+/>
+:::tip[voltageMode]
+
+value = 1, set lsadc voltage mode
+value = 0, set lsadc current mode
+
+:::
 
 ## RHAL_LSADC_SetActive
 ```bash
-extern DTV_STATUS_T RHAL_LSADC_SetActive(HAL_LSADC_NAME name, UINT8 active);
+DTV_STATUS_T RHAL_LSADC_SetActive(HAL_LSADC_NAME name, UINT8 active);
 ```
+Set active for a lsadc port
+<ParamTable
+  items={[
+    { name: 'name', type: 'HAL_LSADC_NAME', desc: 'Specified lsadc pin name' },
+    { name: 'active', type: 'UINT8', desc: 'set lsadc active or de-active' },
+  ]}
+/>
+:::tip[active]
+
+value = 0, set lsadc de-active
+value = 1, set lsadc active
+
+:::
 
 ## RHAL_LSADC_SetThreshold
 ```bash
-extern DTV_STATUS_T RHAL_LSADC_SetThreshold(HAL_LSADC_NAME name, UINT8 threshold);
+DTV_STATUS_T RHAL_LSADC_SetThreshold(HAL_LSADC_NAME name, UINT8 threshold);
 ```
+Set Threshold for a lsadc port
+<ParamTable
+  items={[
+    { name: 'name', type: 'HAL_LSADC_NAME', desc: 'Specified lsadc pin name' },
+    { name: 'threshold', type: 'UINT8', desc: 'set lsadc thread hold' },
+  ]}
+/>
 
 ## RHAL_LSADC_GetAdcValue
 ```bash
-extern DTV_STATUS_T RHAL_LSADC_GetAdcValue(HAL_LSADC_NAME name, UINT8*value);
+DTV_STATUS_T RHAL_LSADC_GetAdcValue(HAL_LSADC_NAME name, UINT8*value);
 ```
+Get value for a lsadc port
+<ParamTable
+  items={[
+    { name: 'name', type: 'HAL_LSADC_NAME', desc: 'Specified lsadc pin name' },
+    { name: 'value', type: 'UINT8*', desc: 'adc value' },
+  ]}
+/>
 
 ## RHAL_LSADC_GetVoltageMode
 ```bash
-extern DTV_STATUS_T RHAL_LSADC_GetVoltageMode(HAL_LSADC_NAME name, UINT8*voltageMode);
+DTV_STATUS_T RHAL_LSADC_GetVoltageMode(HAL_LSADC_NAME name, UINT8*voltageMode);
 ```
+Get voltage mode for a lsadc port
 
 ## RHAL_LSADC_GetActiveStatus
 ```bash
-extern DTV_STATUS_T RHAL_LSADC_GetActiveStatus(HAL_LSADC_NAME name, UINT8*active);
+DTV_STATUS_T RHAL_LSADC_GetActiveStatus(HAL_LSADC_NAME name, UINT8*active);
 ```
+Get active status for a lsadc port
 
 ## RHAL_LSADC_GetThreshold
 ```bash
-extern DTV_STATUS_T RHAL_LSADC_GetThreshold(HAL_LSADC_NAME name, UINT8*threshold);
+DTV_STATUS_T RHAL_LSADC_GetThreshold(HAL_LSADC_NAME name, UINT8*threshold);
 ```
+Get threshold for a lsadc port
 
 ## RHAL_LSADC_Dump
 ```bash
-extern DTV_STATUS_T RHAL_LSADC_Dump(void);
+DTV_STATUS_T RHAL_LSADC_Dump(void);
 ```
+dump active lsadc pin

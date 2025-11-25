@@ -10,33 +10,78 @@ RHAL_INPUT_DEV api
 ```bash
 SINT32 RHAL_IS_IR_EVENT(const CHAR*device_name);
 ```
+<ParamTable
+  items={[
+    { name: 'device_name', type: 'const CHAR*', desc: 'device name' },
+  ]}
+/>
+:::tip[Tips]
+
+If device name is ir device, the return value is 1.
+If device name is not ir device, the return value is 0.
+
+:::
 
 ## RHAL_IS_IR_TO_MOUSE_EVENT
 ```bash
 SINT32 RHAL_IS_IR_TO_MOUSE_EVENT(const CHAR*device_name);
 ```
+<ParamTable
+  items={[
+    { name: 'device_name', type: 'const CHAR*', desc: 'device name' },
+  ]}
+/>
 
 ## RHAL_OPEN_ALL_INPUT_DEVICES
 ```bash
 DTV_STATUS_T RHAL_OPEN_ALL_INPUT_DEVICES(void);
 ```
+Open all input devices
+:::tip[Tips]
+
+ If the function succeeds, the return value is OK.
+ If the function fails, the return value is NOT_OK.
+ If the function no receive data, the return value is NO_DATA_RECEIVED.
+
+:::
 
 ## RHAL_CLOSE_ALL_INPUT_DEVICES
 ```bash
 DTV_STATUS_T RHAL_CLOSE_ALL_INPUT_DEVICES(void);
 ```
+Close all input devices
 
 ## RHAL_GET_INPUT_EVENT
 ```bash
 DTV_STATUS_T RHAL_GET_INPUT_EVENT(struct input_event*event, CHAR*device_name, UINT32 name_len);
 ```
+Get input event
+<ParamTable
+  items={[
+    { name: 'event', type: 'struct input_even*', desc: 'Received event' },
+    { name: 'device_name', type: 'const CHAR*', desc: 'device name' },
+    { name: 'name_len', type: 'UINT32', desc: 'length of name' },
+  ]}
+/>
 
 ## RHAL_INPUT_REGISTER_INTERCEPT_EVENT
 ```bash
 DTV_STATUS_T RHAL_INPUT_REGISTER_INTERCEPT_EVENT(HAL_EV_TYPE type, UINT32 code, UINT32 value, UINT32 (*keycode_intercept_callback)(HAL_INPUT_EVENT_INFO*ev_info, void*data), void*data, UINT32 flags);
 ```
+Register input intercept callback
+<ParamTable
+  items={[
+    { name: 'type', type: 'HAL_EV_TYPE', desc: 'Type of input intercept event node' },
+    { name: 'code', type: 'UINT32', desc: 'Code of input intercept event node' },
+    { name: 'value', type: 'UINT32', desc: 'Value of input intercept event node' },
+    { name: 'keycode_intercept_callback', type: 'UINT32 (*)(HAL_INPUT_EVENT_INFO *ev_info, void *data)', desc: 'Input intercept callback' },
+    { name: 'date', type: 'void*', desc: 'Data of input intercept event node' },
+    { name: 'flags', type: 'UINT32', desc: 'Flags of input intercept event node' },
+  ]}
+/>
 
 ## RHAL_INPUT_UNREGISTER_INTERCEPT
 ```bash
 DTV_STATUS_T RHAL_INPUT_UNREGISTER_INTERCEPT(HAL_EV_TYPE type, UINT32 code, UINT32 value);
 ```
+UNregister input intercept callback

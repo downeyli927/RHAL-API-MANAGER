@@ -10,18 +10,57 @@ RHAL_I2C api
 ```bash
 extern DTV_STATUS_T RHAL_I2C_GetIdByName(const char*pcbname,UINT8*pchNum);
 ```
+I2C GetIdByName
+<ParamTable
+  items={[
+    { name: 'pcbname', type: 'const char*', desc: 'pcb enum name' },
+    { name: 'pchNum', type: 'UINT8*', desc: 'i2c id' },
+  ]}
+/>
 
 ## RHAL_I2C_Read
 ```bash
 extern DTV_STATUS_T RHAL_I2C_Read(UINT8 chNum, UINT8 slaveAddr, UINT8 subAddrLen, UINT8*subAddr, UINT16 nBytes, UINT8*rxBuf, UINT32 transferFlag, UINT32 retry);
 ```
+I2C Read
+<ParamTable
+  items={[
+    { name: 'chNum', type: 'UINT8', desc: 'bus id/port id' },
+    { name: 'slaveAddr', type: 'UINT8', desc: 'target address (7bits)' },
+    { name: 'subAddrLen', type: 'UINT8', desc: 'number of bytes of sub address' },
+    { name: 'subAddr', type: 'UINT8*', desc: 'sub address' },
+    { name: 'nBytes', type: 'UINT16', desc: 'numver of bytes to read' },
+    { name: 'rxBuf', type: 'UINT8*', desc: 'data to read' },
+    { name: 'transferFlag', type: 'UINT32', desc: 'flag of this i2c xfer' },
+    { name: 'retry', type: 'UINT32', desc: 'retry num' },
+  ]}
+/>
 
 ## RHAL_I2C_Write
 ```bash
 extern DTV_STATUS_T RHAL_I2C_Write(UINT8 chNum, UINT8 slaveAddr, UINT16 nBytes, UINT8*txBuf, UINT32 transferFlag, UINT32 retry);
 ```
+I2C write
+<ParamTable
+  items={[
+    { name: 'chNum', type: 'UINT8', desc: 'bus id/port id' },
+    { name: 'slaveAddr', type: 'UINT8', desc: 'target address (7bits)' },
+    { name: 'nBytes', type: 'UINT16', desc: 'numver of bytes to write' },
+    { name: 'txBuf', type: 'UINT8*', desc: 'data to write' },
+    { name: 'transferFlag', type: 'UINT32', desc: 'flag of this i2c xfer' },
+    { name: 'retry', type: 'UINT32', desc: 'retry num' },
+  ]}
+/>
+
 
 ## RHAL_I2C_SetSpeed
 ```bash
 extern DTV_STATUS_T RHAL_I2C_SetSpeed(UINT8 chNum, UINT32 paramKHz);
 ```
+this function is used to change the operation speed of i2c adapter
+<ParamTable
+  items={[
+    { name: 'chNum', type: 'UINT8', desc: 'bus id/port id' },
+    { name: 'paramKHz', type: 'UINT32', desc: 'operation speed KHz' },
+  ]}
+/>

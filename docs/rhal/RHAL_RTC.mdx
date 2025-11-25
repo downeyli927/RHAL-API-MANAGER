@@ -10,18 +10,32 @@ RHAL_RTC api
 ```bash
 DTV_STATUS_T RHAL_RTC_SetRtcTime(struct rtc_time*p_tm);
 ```
+Use for set rtc time
+<ParamTable
+  items={[
+    { name: 'p_tm', type: 'struct rtc_time*', desc: 'buff for rtc time value' },
+  ]}
+/>
 
 ## RHAL_RTC_ReadRtcTime
 ```bash
 DTV_STATUS_T RHAL_RTC_ReadRtcTime(struct rtc_time*p_tm);
 ```
+Use for get rtc time value
 
 ## RHAL_RTC_SetRtcAlarm
 ```bash
 DTV_STATUS_T RHAL_RTC_SetRtcAlarm(struct rtc_wkalrm*p_alarm);
 ```
+Use for set rtc alarm value.
+<ParamTable
+  items={[
+    { name: 'p_alarm', type: 'struct rtc_wkalrm*', desc: 'buff for rtc alarm value.' },
+  ]}
+/>
 
 ## RHAL_RTC_ReadRtcAlarm
 ```bash
 DTV_STATUS_T RHAL_RTC_ReadRtcAlarm(struct rtc_wkalrm*p_alarm);
 ```
+Use for get rtc alarm value.

@@ -33,30 +33,55 @@ Return IR protocol
 DTV_STATUS_T RHAL_IR_SET_RELEASE_EVENT_INTERVAL(UINT32 interval);
 ```
 Set release event interval(ms)
+<ParamTable
+  items={[
+    { name: 'interval', type: 'UINT32', desc: 'release event interval(ms)' },
+  ]}
+/>
 
 ## RHAL_IR_GET_RELEASE_EVENT_INTERVAL
 ```bash
 DTV_STATUS_T RHAL_IR_GET_RELEASE_EVENT_INTERVAL(UINT32*interval);
 ```
 Get release event interval(ms)
+<ParamTable
+  items={[
+    { name: 'interval', type: 'UINT32', desc: 'release event interval(ms)' },
+  ]}
+/>
 
 ## RHAL_IR_SET_REPEAT_EVNET_EN
 ```bash
 DTV_STATUS_T RHAL_IR_SET_REPEAT_EVNET_EN(UINT32 onoff);
 ```
 Set pepeat event on/off
+<ParamTable
+  items={[
+    { name: 'onoff', type: 'UINT32', desc: 'Enable/disable repeating events' },
+  ]}
+/>
 
 ## RHAL_IR_SET_RAWKEY_EVNET_EN
 ```bash
 DTV_STATUS_T RHAL_IR_SET_RAWKEY_EVNET_EN(UINT32 onoff);
 ```
 Set rawkey event on/off
+<ParamTable
+  items={[
+    { name: 'onoff', type: 'UINT32', desc: 'Enable/disable rawkey events' },
+  ]}
+/>
 
 ## RHAL_IR_SET_MOUSE_EVNET_EN
 ```bash
 DTV_STATUS_T RHAL_IR_SET_MOUSE_EVNET_EN(UINT32 onoff);
 ```
 Set mouse event on/off
+<ParamTable
+  items={[
+    { name: 'onoff', type: 'UINT32', desc: 'Enable/disable mouse events' },
+  ]}
+/>
 
 ## RHAL_IR_GET_MOUSE_EVNET_EN
 ```bash
@@ -69,6 +94,11 @@ Get mouse event on/off
 DTV_STATUS_T RHAL_IR_SET_MOUSE_SPEED(UINT32 pixel);
 ```
 Set mouse speed
+<ParamTable
+  items={[
+    { name: 'pixel', type: 'UINT32', desc: 'mouse speed' },
+  ]}
+/>
 
 ## RHAL_IR_GET_MOUSE_SPEED
 ```bash
@@ -81,34 +111,64 @@ Get mouse speed
 DTV_STATUS_T RHAL_IR_SET_DECODE_KEY_EN(UINT32 onoff);
 ```
 Set decode key on/off
+<ParamTable
+  items={[
+    { name: 'onoff', type: 'UINT32', desc: 'Enable/disable decode key' },
+  ]}
+/>
 
 ## RHAL_Enter_IrWBAdj
 ```bash
 DTV_STATUS_T RHAL_Enter_IrWBAdj(void);
 ```
+Enter user Raw Mode
 
 ## RHAL_Exit_IrWBAdj
 ```bash
 DTV_STATUS_T RHAL_Exit_IrWBAdj(void);
 ```
+Exit user Raw Mode
 
 ## RHAL_Read_IrWBAdj
 ```bash
 DTV_STATUS_T RHAL_Read_IrWBAdj(UINT32*irCmdBuff);
 ```
+Read IR user Raw mode data
 
 ## RHAL_IR_GENERATE_KEYEVENT
 ```bash
 DTV_STATUS_T RHAL_IR_GENERATE_KEYEVENT(UINT32 keycode);
 ```
 Generate keyevent 
+<ParamTable
+  items={[
+    { name: 'keycode', type: 'UINT32', desc: 'ir gen keycode' },
+  ]}
+/>
 
 ## RHAL_IR_REGISTER_KEYCODE_INTERCEPT_CALLBACK
 ```bash
 DTV_STATUS_T RHAL_IR_REGISTER_KEYCODE_INTERCEPT_CALLBACK(UINT32 keycode, UINT32 (*keycode_intercept_callback)(UINT32 keycode, void*data), void*data, UINT32 flags);
 ```
 Register keycode intercept callback function
+<ParamTable
+  items={[
+    { name: 'keycode', type: 'UINT32', desc: 'ir gen keycode' },
+    { name: 'keycode_intercept_callback', type: 'UINT32 ()(UINT32 keycode, void* data)', desc: 'keycode intercept callback function' },
+    { name: 'data', type: 'void*', desc: 'keycode data' },
+    { name: 'flags', type: 'UINT32', desc: 'HAL_KEYCODE_INTERCEPT_FLAGS' },
+  ]}
+/>
 
+:::tip[HAL_KEYCODE_INTERCEPT_FLAGS]
+
+typedef enum {
+    HAL_KEYCODE_INTERCEPT_DISABLE_IRDA_DECODE = 0x00000001,
+    HAL_KEYCODE_INTERCEPT_CALLBACK_ONE_TIME = 0x00010000,
+    HAL_KEYCODE_INTERCEPT_CALLBACK_ALWAYS = 0x00020000,
+}HAL_KEYCODE_INTERCEPT_FLAGS;
+
+:::
 ## RHAL_IR_UNREGISTER_KEYCODE_INTERCEPT_CALLBACK
 ```bash
 DTV_STATUS_T RHAL_IR_UNREGISTER_KEYCODE_INTERCEPT_CALLBACK(UINT32 keycode);

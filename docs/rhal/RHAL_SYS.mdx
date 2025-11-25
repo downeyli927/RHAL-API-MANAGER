@@ -10,138 +10,330 @@ RHAL_SYS api
 ```bash
 DTV_STATUS_T RHAL_SYS_SetRTKAndroidTvWolOnOff(BOOLEAN bOnOff);
 ```
+:::danger[Take care]
+
+Remove RHAL without universality.
+if any one who need emcu function support,
+Please reference JIRA below.
+"https://jira.realtek.com/browse/MM2SWKL-301"
+
+:::
 
 ## RHAL_SYS_SetRTKAndroidTvWowOnOff
 ```bash
 DTV_STATUS_T RHAL_SYS_SetRTKAndroidTvWowOnOff(BOOLEAN bOnOff);
 ```
+:::danger[Take care]
+
+Remove RHAL without universality.
+if any one who need emcu function support,
+Please reference JIRA below.
+"https://jira.realtek.com/browse/MM2SWKL-301"
+
+:::
 
 ## RHAL_SYS_SetRTKAndroidTvStandbyState
 ```bash
 DTV_STATUS_T RHAL_SYS_SetRTKAndroidTvStandbyState(void);
 ```
+:::danger[Take care]
+
+Remove RHAL without universality.
+if any one who need emcu function support,
+Please reference JIRA below.
+"https://jira.realtek.com/browse/MM2SWKL-301"
+
+:::
 
 ## RHAL_SYS_GetVendorDataVersion
 ```bash
 DTV_STATUS_T RHAL_SYS_GetVendorDataVersion(CHAR*version_buffer, UINT32 buffer_len);
 ```
+Get vendor data version info
+<ParamTable
+  items={[
+    { name: 'version_buffer', type: 'CHAR*', desc: 'the buffer for get vendor data version' },
+    { name: 'buffer_len', type: 'UINT32', desc: 'the size of version_buffer' },
+  ]}
+/>
 
 ## RHAL_SYS_IsBootDevice
 ```bash
 BOOLEAN RHAL_SYS_IsBootDevice(CHAR*device_name);
 ```
+Judge input device is boot device or not
+<ParamTable
+  items={[
+    { name: 'device_name', type: 'CHAR*', desc: 'device string' },
+  ]}
+/>
 
 ## RHAL_SYS_UpdateFirmware
 ```bash
 DTV_STATUS_T RHAL_SYS_UpdateFirmware(CHAR*fw_file);
 ```
+Update A/V/S/K/OPTEE firmware
+<ParamTable
+  items={[
+    { name: 'fw_file', type: 'CHAR*', desc: 'the fw pkg file full path' },
+  ]}
+/>
 
 ## RHAL_SYS_UpdateLogo
 ```bash
 DTV_STATUS_T RHAL_SYS_UpdateLogo(CHAR*logo_file,UINT8 is_raw_logo);
 ```
+Update logo firmware
+<ParamTable
+  items={[
+    { name: 'logo_file', type: 'CHAR*', desc: 'logo file path' },
+    { name: 'is_raw_logo', type: 'UINT8', desc: '0-->compress  logo file  1-->raw logo file' },
+  ]}
+/>
 
 ## RHAL_SYS_GetBootParamVaule
 ```bash
 DTV_STATUS_T RHAL_SYS_GetBootParamVaule(BOOT_KEY_TYPE key_name_type,UINT32*key_value, CHAR*key_buf,UINT32 key_buf_len);
 ```
+Get bootparam value
+<ParamTable
+  items={[
+    { name: 'key_name_type', type: 'BOOT_KEY_TYPE', desc: 'get from BOOT_KEY_TYPE' },
+    { name: 'key_value', type: 'UINT32*', desc: 'get key value -->BOOT_KEY_TYPE is int' },
+    { name: 'key_buf', type: 'CHAR*', desc: 'get key buffer -->BOOT_KEY_TYPE is string' },
+    { name: 'key_buf_len', type: 'UINT32', desc: 'key buffer length' },
+  ]}
+/>
 
 ## RHAL_SYS_SetBootParamVaule
 ```bash
 DTV_STATUS_T RHAL_SYS_SetBootParamVaule(BOOT_KEY_TYPE key_name_type, UINT32 key_value, CHAR*key_buf,UINT32 key_buf_len);
 ```
+Set bootparam value
 
 ## RHAL_SYS_SetBootParamVaule_Sync
 ```bash
 DTV_STATUS_T RHAL_SYS_SetBootParamVaule_Sync(BOOT_KEY_TYPE key_name_type, UINT32 key_value, CHAR*key_buf,UINT32 key_buf_len,UINT32 need_sync);
 ```
+Set bootparam value
+<ParamTable
+  items={[
+    { name: 'need_sync', type: 'UINT32', desc: '1-->save to factory 0-->not sync to factory' },
+  ]}
+/>
 
 ## RHAL_SYS_GetCoreTemperature
 ```bash
 DTV_STATUS_T RHAL_SYS_GetCoreTemperature(SINT32*p_value);
 ```
+Get SCPU core temperature, unit is celsius
+<ParamTable
+  items={[
+    { name: 'p_value', type: 'SINT32*', desc: 'the buffer for get SCPU core temperature.' },
+  ]}
+/>
 
 ## RHAL_SYS_GetCpuSpeed
 ```bash
 DTV_STATUS_T RHAL_SYS_GetCpuSpeed(UINT32*p_value);
 ```
+Get SCPU clk, unit is MHz
+<ParamTable
+  items={[
+    { name: 'p_value', type: 'SINT32*', desc: 'the buffer for get SCPU clk.' },
+  ]}
+/>
 
 ## RHAL_SYS_GetCpuVoltage
 ```bash
 DTV_STATUS_T RHAL_SYS_GetCpuVoltage(UINT32*p_value);
 ```
+Get SCPU Voltage, unit is millivolt
+<ParamTable
+  items={[
+    { name: 'p_value', type: 'SINT32*', desc: 'the buffer for get SCPU Voltage.' },
+  ]}
+/>
 
 ## RHAL_SYS_GetGpuSpeed
 ```bash
 DTV_STATUS_T RHAL_SYS_GetGpuSpeed(UINT32*p_value);
 ```
+Get GPU clock, unit is MHz
+<ParamTable
+  items={[
+    { name: 'p_value', type: 'SINT32*', desc: 'the buffer for get GPU clock.' },
+  ]}
+/>
 
 ## RHAL_SYS_SetSpreadSpectrum
 ```bash
 DTV_STATUS_T RHAL_SYS_SetSpreadSpectrum(RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T module, RHAL_SYS_SPREAD_SPECTRUM_RATIO_T ratio);
 ```
+Set ip(DDR) SpreadSpectrum
+<ParamTable
+  items={[
+    { name: 'module', type: 'RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T', desc: 'ip module name.' },
+    { name: 'ratio', type: 'RHAL_SYS_SPREAD_SPECTRUM_RATIO_T', desc: 'the ratio about SpreadSpectrum.' },
+  ]}
+/>
 
 ## RHAL_SYS_GetSpreadSpectrum
 ```bash
 DTV_STATUS_T RHAL_SYS_GetSpreadSpectrum(RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T module, RHAL_SYS_SPREAD_SPECTRUM_RATIO_T*ratio);
 ```
+Get ip(DDR) SpreadSpectrum
 
 ## RHAL_SYS_GetSupportModule
 ```bash
 DTV_STATUS_T RHAL_SYS_GetSupportModule(RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T module, UINT8*module_support);
 ```
+Check module(DDR) is supported
+<ParamTable
+  items={[
+    { name: 'module', type: 'RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T', desc: 'ip module name.' },
+    { name: 'module_support', type: 'UINT8*', desc: 'return support status , 1 is support, 0 is not support.' },
+  ]}
+/>
 
 ## RHAL_SYS_SetDdrPeriod
 ```bash
 DTV_STATUS_T RHAL_SYS_SetDdrPeriod(RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T module, RHAL_SYS_DDR_PERIOD_T period);
 ```
+Set ip(DDR) period
+<ParamTable
+  items={[
+    { name: 'module', type: 'RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T', desc: 'ip module name.' },
+    { name: 'period', type: 'RHAL_SYS_DDR_PERIOD_T', desc: 'the period value.' },
+  ]}
+/>
 
 ## RHAL_SYS_GetDdrPeriod
 ```bash
 DTV_STATUS_T RHAL_SYS_GetDdrPeriod(RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T module, RHAL_SYS_DDR_PERIOD_T*period);
 ```
+Get ip(DDR) period
+<ParamTable
+  items={[
+    { name: 'module', type: 'RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T', desc: 'ip module name.' },
+    { name: 'period', type: 'RHAL_SYS_DDR_PERIOD_T', desc: 'the period value.' },
+  ]}
+/>
 
 ## RHAL_SYS_GetSvnVersion
 ```bash
 DTV_STATUS_T RHAL_SYS_GetSvnVersion(RHAL_SYS_FW_TYPE_E fw_type, UINT8*pSvnVersionBuf, UINT32 max_len);
 ```
+Get fw svn version
+<ParamTable
+  items={[
+    { name: 'fw_type', type: 'RHAL_SYS_FW_TYPE_E', desc: 'fw name.' },
+    { name: 'pSvnVersionBuf', type: 'UINT8*', desc: 'save the string of svn version.' },
+    { name: 'max_len', type: 'UINT32', desc: 'buffer max size.' },
+  ]}
+/>
+:::tip[RHAL_SYS_FW_TYPE_E]
+
+typedef enum
+{
+        RHAL_SYS_FW_TYPE_BOOTCODE = 0,
+        RHAL_SYS_FW_TYPE_LINUX,
+        RHAL_SYS_FW_TYPE_RTK_KDRIVER,
+        RHAL_SYS_FW_TYPE_OPTEE,
+        RHAL_SYS_FW_TYPE_VIDEO,
+        RHAL_SYS_FW_TYPE_AUDIO,
+        RHAL_SYS_FW_TYPE_E_MAX,
+} RHAL_SYS_FW_TYPE_E;
+
+:::
 
 ## RHAL_SYS_GetGitVersion
 ```bash
 DTV_STATUS_T RHAL_SYS_GetGitVersion(RHAL_SYS_FW_TYPE_E fw_type, UINT8*pGitVersionBuf, UINT32 max_len);
 ```
+Get fw git version
+<ParamTable
+  items={[
+    { name: 'fw_type', type: 'RHAL_SYS_FW_TYPE_E', desc: 'fw name.' },
+    { name: 'pGitVersionBuf', type: 'UINT8*', desc: 'save the string of git version.' },
+    { name: 'max_len', type: 'UINT32', desc: 'buffer max size.' },
+  ]}
+/>
 
 ## RHAL_SYS_PowerOff
 ```bash
 DTV_STATUS_T RHAL_SYS_PowerOff(RHAL_SYS_POWER_OFF_MODE_E powerOffMode);
 ```
+set PowerOff mode
+<ParamTable
+  items={[
+    { name: 'powerOffMode', type: 'RHAL_SYS_POWER_OFF_MODE_E', desc: 'power off mode.' },
+  ]}
+/>
 
 ## RHAL_SYS_BurnCapabilityTableFile
 ```bash
 DTV_STATUS_T RHAL_SYS_BurnCapabilityTableFile(UINT8*file_buffer, UINT32 buffer_len);
 ```
+Burn Capability table file to factory area
+<ParamTable
+  items={[
+    { name: 'file_buffer', type: 'UINT8*', desc: 'capability table file data buffer.' },
+    { name: 'buffer_len', type: 'UINT32', desc: 'buffer length (capability table file size).' },
+  ]}
+/>
 
 ## RHAL_SYS_BurnCapabilityTableFile_Ex
 ```bash
 DTV_STATUS_T RHAL_SYS_BurnCapabilityTableFile_Ex(CHAR*path, UINT8*file_buffer, UINT32 buffer_len);
 ```
+Burn Capability table file (the caller define the capability table file path)
+<ParamTable
+  items={[
+    { name: 'path', type: 'CHAR*', desc: 'path of capability table file.' },
+    { name: 'file_buffer', type: 'UINT8*', desc: 'capability table file data buffer.' },
+    { name: 'buffer_len', type: 'UINT32', desc: 'buffer length (capability table file size).' },
+  ]}
+/>
 
 ## RHAL_SYS_VerifyCapabilityTableFile
 ```bash
 DTV_STATUS_T RHAL_SYS_VerifyCapabilityTableFile(CHAR*path);
 ```
+Verify Capability table file
+<ParamTable
+  items={[
+    { name: 'path', type: 'CHAR*', desc: 'path of capability table file.' },
+  ]}
+/>
 
 ## RHAL_SYS_RTDLOG_CONTROL
 ```bash
 DTV_STATUS_T RHAL_SYS_RTDLOG_CONTROL(bool flag);
 ```
+Suspend/resume rtdlog flow
+<ParamTable
+  items={[
+    { name: 'flag', type: 'bool', desc: <> 0 : <code>suspend rtdlog flow</code>, 1 : <code>resume rtdlog flow</code> </> },
+  ]}
+/>
 
 ## RHAL_SYS_Read_RMCA
 ```bash
 DTV_STATUS_T RHAL_SYS_Read_RMCA(CHAR*path, UINT8*file_buffer, UINT32 buffer_len);
 ```
+Read RMCA from given path. If RMCA not existed, load RMCA from RPMB
+<ParamTable
+  items={[
+    { name: 'path', type: 'CHAR*', desc: 'path of RMCA.' },
+    { name: 'file_buffer', type: 'UINT8*', desc: 'RMCA data buffer.' },
+    { name: 'buffer_len', type: 'UINT32', desc: 'buffer length (RMCA size).' },
+  ]}
+/>
 
 ## RHAL_SYS_Verify_RMCA
 ```bash
 DTV_STATUS_T RHAL_SYS_Verify_RMCA(void);
 ```
+Verify RMCA in RPMB is correct
+

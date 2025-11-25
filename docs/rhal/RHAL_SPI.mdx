@@ -10,33 +10,70 @@ RHAL_SPI api
 ```bash
 DTV_STATUS_T RHAL_SPI_LockFlash(void);
 ```
+Lock flash
 
 ## RHAL_SPI_UnLockFlash
 ```bash
 DTV_STATUS_T RHAL_SPI_UnLockFlash(void);
 ```
+UnLock Flash
 
 ## RHAL_SPI_Init
 ```bash
 DTV_STATUS_T RHAL_SPI_Init(RHAL_CS_TYPE_E csType);
 ```
+Init spiflash
+<ParamTable
+  items={[
+    { name: 'csType', type: 'RHAL_CS_TYPE_E', desc: 'cs0 for normal spiflash, cs1 for fcic' },
+  ]}
+/>
 
 ## RHAL_SPI_Read
 ```bash
 DTV_STATUS_T RHAL_SPI_Read(UINT32 u32addrToRead, UINT8*u8dataToRead, UINT32 u32size);
 ```
+Read data from spi to ddr
+<ParamTable
+  items={[
+    { name: 'u32addrToRead', type: 'UINT32', desc: 'set spi offset address' },
+    { name: 'u8dataToRead', type: 'UINT8*', desc: 'set ddr buffer point' },
+    { name: 'u32size', type: 'UINT32', desc: 'read size' },
+  ]}
+/>
 
 ## RHAL_SPI_Write
 ```bash
 DTV_STATUS_T RHAL_SPI_Write(UINT32 u32addrToWrite, UINT8*u8dataToWrite, UINT32 u32size);
 ```
+Write data from ddr to spi
 
 ## RHAL_SPI_GetParameter
 ```bash
 DTV_STATUS_T RHAL_SPI_GetParameter(RHAL_SPI_INIT_PARAM_T*param);
 ```
+Get spi info
+<ParamTable
+  items={[
+    { name: 'param', type: 'RHAL_SPI_INIT_PARAM_T*', desc: 'spi info' },
+  ]}
+/>
+:::tip[RHAL_SPI_INIT_PARAM_T]
+
+param.cs_type: get type is spinor flash or fici
+param.clock: get clock size
+param.flash_size: get flash_size
+param.erase_size: get erase_size
+
+:::
 
 ## RHAL_SPI_SetClock
 ```bash
 DTV_STATUS_T RHAL_SPI_SetClock(UINT32 clock);
 ```
+Set spi clock
+<ParamTable
+  items={[
+    { name: 'clock', type: 'UINT32', desc: 'set clock value' },
+  ]}
+/>
