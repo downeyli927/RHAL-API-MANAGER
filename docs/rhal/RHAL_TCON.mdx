@@ -6,6 +6,35 @@ sidebar_position: 62
 
 RHAL_TCON api
 
+## Custom Data Types
+### OLED_V22_CMD_INFO
+```bash
+typedef struct oled_v22_cmd_info {
+    OLED_V22_CMD_TYPE cmdType;
+    char *reqData;
+    int  reqLen;
+    char *respData;
+    int  respLen;
+    int  delayMs;
+}OLED_V22_CMD_INFO;
+```
+### OLED_V22_CMD_TYPE
+```bash
+typedef enum
+{
+    OLED_V22_CMD_READ_STATUS    = 0,
+    OLED_V22_CMD_RESET          = 1,
+    OLED_V22_CMD_GET_FREE_BUFF  = 2,
+    OLED_V22_CMD_GET_VERSION    = 3,
+    OLED_V22_CMD_AS_START       = 4,
+    OLED_V22_CMD_MANUAL_OS_GAIN = 5,
+    OLED_V22_CMD_TEMP_LUT_UPDATE    = 6,
+    OLED_V22_CMD_GET_LUT_VERSION    = 7,
+    OLED_V22_CMD_FW_USB_UPDATE      = 8,
+    OLED_V22_CMD_LUT_USB_UPDATE     = 9,
+    OLED_V22_CMD_MAX_NUM
+}OLED_V22_CMD_TYPE;
+```
 
 ## Function Declaration
 ### RHAL_TCON_TransferCommand
@@ -18,30 +47,6 @@ Used to send commands to and receive responses from the timing controller (TCON)
     { name: 'oledV22CmdInfo', type: 'OLED_V22_CMD_INFO*', desc: <> A pointer to an OLED_V22_CMD_INFO structure contains the command information to be sent. </> },
   ]}
 />
-typedef struct oled_v22_cmd_info {
-    OLED_V22_CMD_TYPE cmdType;
-    char *reqData;
-    int  reqLen;
-    char *respData;
-    int  respLen;
-    int  delayMs;
-}OLED_V22_CMD_INFO;
-:::tip[OLED_V22_CMD_TYPE]
-
-    OLED_V22_CMD_READ_STATUS    = 0,<br />
-    OLED_V22_CMD_RESET          = 1,<br />
-    OLED_V22_CMD_GET_FREE_BUFF  = 2,<br />
-    OLED_V22_CMD_GET_VERSION    = 3,<br />
-    OLED_V22_CMD_AS_START       = 4,<br />
-    OLED_V22_CMD_MANUAL_OS_GAIN = 5,<br />
-    OLED_V22_CMD_TEMP_LUT_UPDATE    = 6,<br />
-    OLED_V22_CMD_GET_LUT_VERSION    = 7,<br />
-    OLED_V22_CMD_FW_USB_UPDATE      = 8,<br />
-    OLED_V22_CMD_LUT_USB_UPDATE     = 9,<br />
-    OLED_V22_CMD_MAX_NUM
-
-:::
-
 
 ### RHAL_TCON_ExcuteCmd
 ```bash
