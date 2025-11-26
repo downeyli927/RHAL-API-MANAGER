@@ -6,7 +6,8 @@ sidebar_position: 57
 
 RHAL_SMC api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_SMC_Open
 ```bash
 void* RHAL_SMC_Open(UINT8 id);
@@ -18,7 +19,7 @@ Open a SMC IFD
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_Close
 ```bash
 SMC_STS RHAL_SMC_Close(void*pSmc);
@@ -30,7 +31,7 @@ Close a SMC IFD
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_SetParam
 ```bash
 SMC_STS RHAL_SMC_SetParam(void*pSmc, HAL_SMC_IFD_PARAM*p_param);
@@ -43,14 +44,14 @@ Set Parameter of a SMC IFD
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_GetParam
 ```bash
 SMC_STS RHAL_SMC_GetParam(void*pSmc, HAL_SMC_IFD_PARAM*p_param);
 ```
 Get Parameter of a SMC IFD
 
-##Function Declaration
+
 ### RHAL_SMC_SetProtocol
 ```bash
 SMC_STS RHAL_SMC_SetProtocol(void*pSmc, HAL_SMC_PROTOCOL Protocol);
@@ -71,14 +72,14 @@ HAL_SMC_PROTOCOL_T14 : T14
 
 :::
 
-##Function Declaration
+
 ### RHAL_SMC_GetProtocol
 ```bash
 SMC_STS RHAL_SMC_GetProtocol(void*pSmc, HAL_SMC_PROTOCOL*pProtocol);
 ```
 Get Protocol of a SMC IFD
 
-##Function Declaration
+
 ### RHAL_SMC_SetProtocolParam
 ```bash
 SMC_STS RHAL_SMC_SetProtocolParam(void*pSmc, HAL_SMC_PROTOCOL_PARAM_ID Id, UINT32 Val);
@@ -92,14 +93,14 @@ Set Protocol parameter of a SMC IFD
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_GetProtocolParam
 ```bash
 SMC_STS RHAL_SMC_GetProtocolParam(void*pSmc, HAL_SMC_PROTOCOL_PARAM_ID Id, UINT32*pVal);
 ```
 Get Protocol Parameter of a SMC IFD
 
-##Function Declaration
+
 ### RHAL_SMC_SetPPS
 ```bash
 SMC_STS RHAL_SMC_SetPPS(void*pSmc, UINT8 fi, UINT8 di);
@@ -113,7 +114,7 @@ Set PPS
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_GetCardStatus
 ```bash
 SMC_STS RHAL_SMC_GetCardStatus(void*pSmc, HAL_SMC_CARD_STATUS*pStatus);
@@ -135,7 +136,7 @@ HAL_SMC_CARD_ACTIVATE
 
 :::
 
-##Function Declaration
+
 ### RHAL_SMC_PollCardStatus
 ```bash
 SMC_STS RHAL_SMC_PollCardStatus(void*pSmc, HAL_SMC_CARD_STATUS*pStatus);
@@ -148,7 +149,7 @@ Poll Card Status of a SMC IFD.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_Activate
 ```bash
 SMC_STS RHAL_SMC_Activate(void*pSmc);
@@ -160,14 +161,14 @@ Activate a Smart card. (Power On)
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_Deactivate
 ```bash
 SMC_STS RHAL_SMC_Deactivate(void*pSmc);
 ```
 Deactivate a Smart card. (Power Off)
 
-##Function Declaration
+
 ### RHAL_SMC_Reset
 ```bash
 SMC_STS RHAL_SMC_Reset(void*pSmc, HAL_SMC_PROTOCOL Protocol);
@@ -180,7 +181,7 @@ Reset a Smart card.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_GetATR
 ```bash
 SMC_STS RHAL_SMC_GetATR(void* pSmc, UINT8* pBuff, UINT32 BuffSize, UINT32* pLen);
@@ -195,7 +196,7 @@ Get ATR from Smart card.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_SetIfdByATR
 ```bash
 SMC_STS RHAL_SMC_SetIfdByATR(void*pSmc, UINT8*pATR, UINT32 pATRLen);
@@ -209,7 +210,7 @@ Set Smart Card IFD by ATR
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_Read
 ```bash
 SMC_STS RHAL_SMC_Read(void*pSmc, UINT8*pBuff, UINT32 Len, UINT32*pRxLen, UINT32 Timeout);
@@ -225,7 +226,7 @@ Read Data from Smart card (bypass protocol)
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_Write
 ```bash
 SMC_STS RHAL_SMC_Write(void*pSmc, UINT8*pBuff, UINT32 Len);
@@ -239,7 +240,7 @@ Write Data to Smart card (bypass protocol)
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_Transfer
 ```bash
 SMC_STS RHAL_SMC_Transfer(void*pSmc, UINT8*pCAPDU, UINT32 APDULen, UINT8*pRAPDU, UINT32*pRAPDULen, UINT32 Timeout);
@@ -256,7 +257,7 @@ Do APDU layer data exchange
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_SetClockRate
 ```bash
 SMC_STS RHAL_SMC_SetClockRate(void*pSmc, ULONG ClockHz);
@@ -269,14 +270,14 @@ Set Clock Frequency of SMC IFD.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_GetClockRate
 ```bash
 SMC_STS RHAL_SMC_GetClockRate(void*pSmc, ULONG*pClockHz);
 ```
 Get Clock Frequency of SMC IFD. 
 
-##Function Declaration
+
 ### RHAL_SMC_SetETU
 ```bash
 SMC_STS RHAL_SMC_SetETU(void*pSmc, ULONG ETU);
@@ -289,7 +290,7 @@ Set ETU of SMC IFD.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_GetETU
 ```bash
 SMC_STS RHAL_SMC_GetETU(void*pSmc, ULONG*pETU);
@@ -302,7 +303,7 @@ Get ETU of SMC IFD.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_SetVccLvl
 ```bash
 SMC_STS RHAL_SMC_SetVccLvl(void*pSmc, HAL_SMC_VCC_LVL VccLvL);
@@ -327,14 +328,14 @@ The power level will be applied at the next SMC activation
 
 :::
 
-##Function Declaration
+
 ### RHAL_SMC_GetVccLvl
 ```bash
 SMC_STS RHAL_SMC_GetVccLvl(void*pSmc, HAL_SMC_VCC_LVL*pVccLvl);
 ```
 Get VCC Level of SMC IFD
 
-##Function Declaration
+
 ### RHAL_SMC_SetConv
 ```bash
 SMC_STS RHAL_SMC_SetConv(void*pSmc, HAL_SMC_CONV Conv);
@@ -354,14 +355,14 @@ HAL_SMC_CONV_INVERSE
 
 :::
 
-##Function Declaration
+
 ### RHAL_SMC_GetConv
 ```bash
 SMC_STS RHAL_SMC_GetConv(void*pSmc, HAL_SMC_CONV*pConv);
 ```
 Get Convention of SMC IFD
 
-##Function Declaration
+
 ### RHAL_SMC_SetParity
 ```bash
 SMC_STS RHAL_SMC_SetParity(void*pSmc, HAL_SMC_PARITY Parity);
@@ -381,14 +382,14 @@ HAL_SMC_EVEN_PARITY
 
 :::
 
-##Function Declaration
+
 ### RHAL_SMC_GetParity
 ```bash
 SMC_STS RHAL_SMC_GetParity(void*pSmc, HAL_SMC_PARITY*pParity);
 ```
 Get Current Parity setting of SMC IFD
 
-##Function Declaration
+
 ### RHAL_SMC_SetGuardInterval
 ```bash
 SMC_STS RHAL_SMC_SetGuardInterval(void*pSmc, ULONG GI);
@@ -401,14 +402,14 @@ Set Current Guard Interval of SMC IFD
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SMC_GetGuardInterval
 ```bash
 SMC_STS RHAL_SMC_GetGuardInterval(void*pSmc, ULONG*pGI);
 ```
 Get Current Guard Interval of SMC IFD
 
-##Function Declaration
+
 ### RHAL_SMC_CardStatusStr
 ```bash
 const char* RHAL_SMC_CardStatusStr(HAL_SMC_CARD_STATUS Status);

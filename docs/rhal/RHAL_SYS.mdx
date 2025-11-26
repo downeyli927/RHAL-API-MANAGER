@@ -6,7 +6,8 @@ sidebar_position: 61
 
 RHAL_SYS api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_SYS_SetRTKAndroidTvWolOnOff
 ```bash
 DTV_STATUS_T RHAL_SYS_SetRTKAndroidTvWolOnOff(BOOLEAN bOnOff);
@@ -20,7 +21,7 @@ Please reference JIRA below.<br />
 
 :::
 
-##Function Declaration
+
 ### RHAL_SYS_SetRTKAndroidTvWowOnOff
 ```bash
 DTV_STATUS_T RHAL_SYS_SetRTKAndroidTvWowOnOff(BOOLEAN bOnOff);
@@ -34,7 +35,7 @@ Please reference JIRA below.<br />
 
 :::
 
-##Function Declaration
+
 ### RHAL_SYS_SetRTKAndroidTvStandbyState
 ```bash
 DTV_STATUS_T RHAL_SYS_SetRTKAndroidTvStandbyState(void);
@@ -48,7 +49,7 @@ Please reference JIRA below.<br />
 
 :::
 
-##Function Declaration
+
 ### RHAL_SYS_GetVendorDataVersion
 ```bash
 DTV_STATUS_T RHAL_SYS_GetVendorDataVersion(CHAR*version_buffer, UINT32 buffer_len);
@@ -61,7 +62,7 @@ Get vendor data version info
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_IsBootDevice
 ```bash
 BOOLEAN RHAL_SYS_IsBootDevice(CHAR*device_name);
@@ -73,7 +74,7 @@ Judge input device is boot device or not
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_UpdateFirmware
 ```bash
 DTV_STATUS_T RHAL_SYS_UpdateFirmware(CHAR*fw_file);
@@ -85,7 +86,7 @@ Update A/V/S/K/OPTEE firmware
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_UpdateLogo
 ```bash
 DTV_STATUS_T RHAL_SYS_UpdateLogo(CHAR*logo_file,UINT8 is_raw_logo);
@@ -98,7 +99,7 @@ Update logo firmware
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_GetBootParamVaule
 ```bash
 DTV_STATUS_T RHAL_SYS_GetBootParamVaule(BOOT_KEY_TYPE key_name_type,UINT32*key_value, CHAR*key_buf,UINT32 key_buf_len);
@@ -113,14 +114,14 @@ Get bootparam value
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_SetBootParamVaule
 ```bash
 DTV_STATUS_T RHAL_SYS_SetBootParamVaule(BOOT_KEY_TYPE key_name_type, UINT32 key_value, CHAR*key_buf,UINT32 key_buf_len);
 ```
 Set bootparam value
 
-##Function Declaration
+
 ### RHAL_SYS_SetBootParamVaule_Sync
 ```bash
 DTV_STATUS_T RHAL_SYS_SetBootParamVaule_Sync(BOOT_KEY_TYPE key_name_type, UINT32 key_value, CHAR*key_buf,UINT32 key_buf_len,UINT32 need_sync);
@@ -132,7 +133,7 @@ Set bootparam value
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_GetCoreTemperature
 ```bash
 DTV_STATUS_T RHAL_SYS_GetCoreTemperature(SINT32*p_value);
@@ -144,7 +145,7 @@ Get SCPU core temperature, unit is celsius
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_GetCpuSpeed
 ```bash
 DTV_STATUS_T RHAL_SYS_GetCpuSpeed(UINT32*p_value);
@@ -156,7 +157,7 @@ Get SCPU clk, unit is MHz
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_GetCpuVoltage
 ```bash
 DTV_STATUS_T RHAL_SYS_GetCpuVoltage(UINT32*p_value);
@@ -168,7 +169,7 @@ Get SCPU Voltage, unit is millivolt
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_GetGpuSpeed
 ```bash
 DTV_STATUS_T RHAL_SYS_GetGpuSpeed(UINT32*p_value);
@@ -180,7 +181,7 @@ Get GPU clock, unit is MHz
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_SetSpreadSpectrum
 ```bash
 DTV_STATUS_T RHAL_SYS_SetSpreadSpectrum(RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T module, RHAL_SYS_SPREAD_SPECTRUM_RATIO_T ratio);
@@ -193,14 +194,14 @@ Set ip(DDR) SpreadSpectrum
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_GetSpreadSpectrum
 ```bash
 DTV_STATUS_T RHAL_SYS_GetSpreadSpectrum(RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T module, RHAL_SYS_SPREAD_SPECTRUM_RATIO_T*ratio);
 ```
 Get ip(DDR) SpreadSpectrum
 
-##Function Declaration
+
 ### RHAL_SYS_GetSupportModule
 ```bash
 DTV_STATUS_T RHAL_SYS_GetSupportModule(RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T module, UINT8*module_support);
@@ -213,7 +214,7 @@ Check module(DDR) is supported
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_SetDdrPeriod
 ```bash
 DTV_STATUS_T RHAL_SYS_SetDdrPeriod(RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T module, RHAL_SYS_DDR_PERIOD_T period);
@@ -226,7 +227,7 @@ Set ip(DDR) period
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_GetDdrPeriod
 ```bash
 DTV_STATUS_T RHAL_SYS_GetDdrPeriod(RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T module, RHAL_SYS_DDR_PERIOD_T*period);
@@ -239,7 +240,7 @@ Get ip(DDR) period
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_GetSvnVersion
 ```bash
 DTV_STATUS_T RHAL_SYS_GetSvnVersion(RHAL_SYS_FW_TYPE_E fw_type, UINT8*pSvnVersionBuf, UINT32 max_len);
@@ -264,7 +265,7 @@ Get fw svn version
 
 :::
 
-##Function Declaration
+
 ### RHAL_SYS_GetGitVersion
 ```bash
 DTV_STATUS_T RHAL_SYS_GetGitVersion(RHAL_SYS_FW_TYPE_E fw_type, UINT8*pGitVersionBuf, UINT32 max_len);
@@ -278,7 +279,7 @@ Get fw git version
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_PowerOff
 ```bash
 DTV_STATUS_T RHAL_SYS_PowerOff(RHAL_SYS_POWER_OFF_MODE_E powerOffMode);
@@ -290,7 +291,7 @@ set PowerOff mode
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_BurnCapabilityTableFile
 ```bash
 DTV_STATUS_T RHAL_SYS_BurnCapabilityTableFile(UINT8*file_buffer, UINT32 buffer_len);
@@ -303,7 +304,7 @@ Burn Capability table file to factory area
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_BurnCapabilityTableFile_Ex
 ```bash
 DTV_STATUS_T RHAL_SYS_BurnCapabilityTableFile_Ex(CHAR*path, UINT8*file_buffer, UINT32 buffer_len);
@@ -317,7 +318,7 @@ Burn Capability table file (the caller define the capability table file path)
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_VerifyCapabilityTableFile
 ```bash
 DTV_STATUS_T RHAL_SYS_VerifyCapabilityTableFile(CHAR*path);
@@ -329,7 +330,7 @@ Verify Capability table file
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_RTDLOG_CONTROL
 ```bash
 DTV_STATUS_T RHAL_SYS_RTDLOG_CONTROL(bool flag);
@@ -341,7 +342,7 @@ Suspend/resume rtdlog flow
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_Read_RMCA
 ```bash
 DTV_STATUS_T RHAL_SYS_Read_RMCA(CHAR*path, UINT8*file_buffer, UINT32 buffer_len);
@@ -355,7 +356,7 @@ Read RMCA from given path. If RMCA not existed, load RMCA from RPMB
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_SYS_Verify_RMCA
 ```bash
 DTV_STATUS_T RHAL_SYS_Verify_RMCA(void);

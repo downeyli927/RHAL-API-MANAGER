@@ -6,271 +6,272 @@ sidebar_position: 81
 
 RHAL_VFE_AVD api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_AVD_InitializeVBIModule
 ```bash
 DTV_STATUS_T RHAL_AVD_InitializeVBIModule(VFE_AVD_CC_TTX_STATUS_T supportingVBI);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_VBI_SetMessageIDOfACC
 ```bash
 extern DTV_STATUS_T RHAL_VFE_AVD_VBI_SetMessageIDOfACC(OSA_MSGQ_T qid4ACCTx, UINT32 oddMsgID, UINT32 evenMsgID,UINT32 mainSrcID, UINT32 subSrcID);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_Initialize
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_Initialize(VFE_AVD_CC_TTX_STATUS_T supportingVBI);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_Uninitialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_Open
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_Open(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_Close
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_Close(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_Connect
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_Connect(VFE_AVD_SRC_TYPE_T SrcType, UINT8 PinPortNumber);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_Disconnect
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_Disconnect(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_SetSyncDetectionForTuning
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_SetSyncDetectionForTuning(BOOLEAN bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_GetSourcePresentStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_GetSourcePresentStatus(VFE_AVD_SRC_TYPE_T SrcType, UINT8 PinPortNumber, UINT8*pStatus);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_DoesSyncExist
 ```bash
 BOOLEAN RHAL_VFE_AVD_DoesSyncExist(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_ChangeDemodSystem
 ```bash
 BOOLEAN RHAL_VFE_AVD_ChangeDemodSystem(BOOLEAN bChangeDemodSystem);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_SetColorSystem
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_SetColorSystem(VFE_AVD_COLOR_SYSTEM_T colorSystem);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_GetColorSystem
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_GetColorSystem(VFE_AVD_AVDECODER_VIDEO_MODE_T*pColorSystem);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_GetTimingInfo
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_GetTimingInfo(VFE_AVD_TIMING_INFO_T*pInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_GetTimingInfoEx
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_GetTimingInfoEx(VFE_AVD_TIMING_INFO_EX_T*pInfoEx);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_EnableVBI
 ```bash
 extern DTV_STATUS_T RHAL_VFE_AVD_EnableVBI(VFE_AVD_CC_TTX_STATUS_T supportingVBI);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_DisableVBI
 ```bash
 extern DTV_STATUS_T RHAL_VFE_AVD_DisableVBI(VFE_AVD_CC_TTX_STATUS_T supportingVBI);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_RegisterVBICallBackFunction
 ```bash
 extern DTV_STATUS_T RHAL_VFE_AVD_RegisterVBICallBackFunction(VFE_AVD_VBI_TYPE_T type, void*pfnVBICB1);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_Get480iWSS20Bits
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_Get480iWSS20Bits(UINT32*pWss);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_Get576iWSS14Bits
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_Get576iWSS14Bits(UINT16*pWss);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_GetPhysicalSignalStatusOfCopyProtect
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_GetPhysicalSignalStatusOfCopyProtect(VFE_AVD_PHYSICAL_COPY_PROTECT*pPhysical_Copy);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_FlushVBIData
 ```bash
 extern DTV_STATUS_T RHAL_VFE_AVD_FlushVBIData(VFE_AVD_VBI_TYPE_T type);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_GetScartID
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_GetScartID(VFE_AVD_SCART_AR_T*pScartAr);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_GetScartFastBlankingStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_GetScartFastBlankingStatus(VFE_AVD_SCART_FB_STATUS_T*pStatus);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_SendCCData
 ```bash
 extern void RHAL_VFE_AVD_SendCCData(UINT8*buf, UINT32 len);
 ```
 
-##Function Declaration
+
 ### RHAL_AVD_SetDemodType
 ```bash
 DTV_STATUS_T RHAL_AVD_SetDemodType(VFE_AVD_DEMOD_TYPE demodType);
 ```
 
-##Function Declaration
+
 ### RHAL_AVD_Set27MMode
 ```bash
 DTV_STATUS_T RHAL_AVD_Set27MMode(VFE_AVD_27M_MODE mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_SetChannelChange
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_SetChannelChange(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_SetAutoTuneMode
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_SetAutoTuneMode(BOOLEAN bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_GetNoiseMag
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_GetNoiseMag(UINT8*pNoise);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_GetAvOfflineStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_GetAvOfflineStatus(UINT8*offLineStatus);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_DetectTimingInAutoscan
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_DetectTimingInAutoscan(UINT8 a_ucFlag);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_SetFactoryRTKNStdItemValue
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_SetFactoryRTKNStdItemValue(SINT32 itemId, SINT32 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_OpenAvoutBypass
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_OpenAvoutBypass(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_CloseAvoutBypass
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_CloseAvoutBypass(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_GetMacrovision
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_GetMacrovision(unsigned int*macrovision);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_Coarse_Lock
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_Coarse_Lock(int*lockstatus);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_Get625Mode
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_Get625Mode(unsigned int*mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_VBI_TTX_signal
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_VBI_TTX_signal(UINT8*enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_TTX_viraddr
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_TTX_viraddr(UINT8 bCached, UINT32*addr);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_CC_viraddr
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_CC_viraddr(UINT8 bCached,UINT32*addr);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_SoftReset
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_SoftReset(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_CheckATVStable
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_CheckATVStable(UINT8*atvStable);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_AVD_ADC_and_FDF_setting
 ```bash
 DTV_STATUS_T RHAL_VFE_AVD_ADC_and_FDF_setting(VFE_AVD_AV_COEF_T AvCoef);

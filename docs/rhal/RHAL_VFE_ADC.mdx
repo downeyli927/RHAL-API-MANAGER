@@ -6,181 +6,182 @@ sidebar_position: 80
 
 RHAL_VFE_ADC api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_VFE_ADC_Initialize
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_Initialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_Uninitialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_Open
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_Open(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_Close
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_Close(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_Connect
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_Connect(ADC_SRC_T src);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_Disconnect
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_Disconnect(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_GetSourcePresentStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_GetSourcePresentStatus(ADC_SRC_T src, UINT8*pStatus);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_GetTimingInfo
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_GetTimingInfo(ADC_TIMING_INFO_T*pInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_GetTimingInfoEx
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_GetTimingInfoEx(ADC_TIMING_INFO_EX_T*pInfoEx);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_GetCopyProtect
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_GetCopyProtect(ADC_COPY_PROTECT_T*pProtectInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_FlushCopyProtect
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_FlushCopyProtect(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_GetCALData
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_GetCALData(ADC_CAL_DATA_T*pAdcData);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_SetCALData
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_SetCALData(ADC_CAL_DATA_T*pAdcData);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_GetOTPData
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_GetOTPData(ADC_CAL_DATA_T pAdcData[]);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_AdjustCalibration
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_AdjustCalibration(ADC_CAL_TYPE_T adcType);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_ResetCALData
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_ResetCALData(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_FastSwitchingMode
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_FastSwitchingMode(BOOLEAN bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_Resume
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_Resume(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_PC_Get_Value
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_PC_Get_Value(ADJ_PC_ADJ_T*adjust_pc);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_AdjustPC
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_AdjustPC(ADJ_PC_MODE_T mode, SINT16 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_AdjustPCAuto
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_AdjustPCAuto(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_SetPCResolution
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_SetPCResolution(SINT32 remapResolution);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_ReadExternalEDID
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_ReadExternalEDID(UINT8 port, UINT8*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_WriteExternalEDID
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_WriteExternalEDID(UINT8 port, UINT8*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_PC_ReadEDID
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_PC_ReadEDID(UINT8*pData, UINT8 len);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_PC_WriteEDID
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_PC_WriteEDID(UINT8*pData, UINT8 len);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_PC_EnableDDC
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_PC_EnableDDC(BOOLEAN bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_GetCGMSdata
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_GetCGMSdata(UINT32*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_Get480iWSS20Bits
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_Get480iWSS20Bits(UINT32*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_ADC_Get576iWSS14Bits
 ```bash
 DTV_STATUS_T RHAL_VFE_ADC_Get576iWSS14Bits(UINT16*pData);

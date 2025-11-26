@@ -6,25 +6,26 @@ sidebar_position: 67
 
 RHAL_UVC api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_UVC_Mute
 ```bash
 DTV_STATUS_T RHAL_UVC_Mute(BOOLEAN enable);
 ```
 
-##Function Declaration
+
 ### RHAL_UVC_Connect
 ```bash
 DTV_STATUS_T RHAL_UVC_Connect(BOOLEAN enable, VSC_OUTPUT_POSITION_T position, UVC_CAPTURE_FORMAT_TYPE format);
 ```
 
-##Function Declaration
+
 ### RHAL_UVC_Region_Ctrl
 ```bash
 DTV_STATUS_T RHAL_UVC_Region_Ctrl(unsigned int UID, VIDEO_RECT_T crop_window, VIDEO_RECT_T ori_window, VIDEO_RECT_T output_window, VIDEO_RECT_T zoom_window, UVC_WINDOW_ZOOM_TYPE zoom_type, UINT32 outputFrameRate);
 ```
 
-##Function Declaration
+
 ### RHAL_UVC_RegisterTimingChangeCallback
 ```bash
 DTV_STATUS_T RHAL_UVC_RegisterTimingChangeCallback(PFN_UVC_NOTIFY_TIMING_CHANGE_T pfnUvcTimingChange);

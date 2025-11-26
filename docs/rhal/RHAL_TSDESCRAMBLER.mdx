@@ -6,14 +6,15 @@ sidebar_position: 63
 
 RHAL_TSDESCRAMBLER api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_TSDescrambler_Open
 ```bash
 HAL_TSD_HANDLE RHAL_TSDescrambler_Open(void);
 ```
 Open a new TS descrambler instance.
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_Close
 ```bash
 void RHAL_TSDescrambler_Close(HAL_TSD_HANDLE handle);
@@ -25,7 +26,7 @@ Close and release a TS descrambler instance.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_SetAlgorithm
 ```bash
 DTV_STATUS_T RHAL_TSDescrambler_SetAlgorithm(HAL_TSD_HANDLE handle, HAL_DESCRAMBLE_ALGO Algo, HAL_DESCRAMBLE_MODE Mode);
@@ -33,13 +34,13 @@ DTV_STATUS_T RHAL_TSDescrambler_SetAlgorithm(HAL_TSD_HANDLE handle, HAL_DESCRAMB
 Configure the algorithm and mode of the TSDescrambler.
 <ParamTable
   items={[
-    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' }
-    { name: 'Algo', type: 'HAL_DESCRAMBLE_ALGO', desc: 'Descrambling algorithm to be set' }
+    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' },
+    { name: 'Algo', type: 'HAL_DESCRAMBLE_ALGO', desc: 'Descrambling algorithm to be set' },
     { name: 'Mode', type: 'HAL_DESCRAMBLE_MODE', desc: 'Descrambling mode to set' },
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_SetTarget
 ```bash
 DTV_STATUS_T RHAL_TSDescrambler_SetTarget(HAL_TSD_HANDLE handle, HAL_TSD_TARGET*target);
@@ -47,12 +48,12 @@ DTV_STATUS_T RHAL_TSDescrambler_SetTarget(HAL_TSD_HANDLE handle, HAL_TSD_TARGET*
 Set the descrambling target
 <ParamTable
   items={[
-    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' }
-    { name: 'target', type: 'HAL_TSD_TARGET', desc: 'A pointer to a structure containing the target settings' }
+    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' },
+    { name: 'target', type: 'HAL_TSD_TARGET', desc: 'A pointer to a structure containing the target settings' },
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_SetTSPFormat
 ```bash
 DTV_STATUS_T RHAL_TSDescrambler_SetTSPFormat(HAL_TSD_HANDLE handle, unsigned char PacketSize, unsigned char SyncByteOfst);
@@ -60,13 +61,13 @@ DTV_STATUS_T RHAL_TSDescrambler_SetTSPFormat(HAL_TSD_HANDLE handle, unsigned cha
 Sets the TS packet format.
 <ParamTable
   items={[
-    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' }
-    { name: 'PacketSize', type: 'unsigned char', desc: 'TS packet size' }
-    { name: 'SyncByteOfst', type: 'unsigned char', desc: 'Sync byte offset' }
+    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' },
+    { name: 'PacketSize', type: 'unsigned char', desc: 'TS packet size' },
+    { name: 'SyncByteOfst', type: 'unsigned char', desc: 'Sync byte offset' },
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_SetCW
 ```bash
 DTV_STATUS_T RHAL_TSDescrambler_SetCW(HAL_TSD_HANDLE handle, unsigned char KeySet, unsigned char KeySel, unsigned char Val[HAL_MAX_KEY_LENGTH], unsigned char IV[HAL_MAX_IV_LENGTH]);
@@ -74,15 +75,15 @@ DTV_STATUS_T RHAL_TSDescrambler_SetCW(HAL_TSD_HANDLE handle, unsigned char KeySe
 Sets the control word (CW).
 <ParamTable
   items={[
-    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' }
-    { name: 'KeySet', type: 'unsigned char', desc: 'Key set' }
-    { name: 'KeySel', type: 'unsigned char', desc: 'Key selection' }
-    { name: 'Val', type: 'unsigned char', desc: 'Key value array' }
-    { name: 'IV', type: 'unsigned char', desc: 'Initialization vector array' }
+    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' },
+    { name: 'KeySet', type: 'unsigned char', desc: 'Key set' },
+    { name: 'KeySel', type: 'unsigned char', desc: 'Key selection' },
+    { name: 'Val', type: 'unsigned char', desc: 'Key value array' },
+    { name: 'IV', type: 'unsigned char', desc: 'Initialization vector array' },
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_SetCWEx
 ```bash
 DTV_STATUS_T RHAL_TSDescrambler_SetCWEx(HAL_TSD_HANDLE handle, unsigned char KeySet, unsigned char KeySel, HAL_DESCRAMBLE_KEY*pKey);
@@ -90,14 +91,14 @@ DTV_STATUS_T RHAL_TSDescrambler_SetCWEx(HAL_TSD_HANDLE handle, unsigned char Key
 Extended version of the control word setting function.
 <ParamTable
   items={[
-    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' }
-    { name: 'KeySet', type: 'unsigned char', desc: 'Key set' }
-    { name: 'KeySel', type: 'unsigned char', desc: 'Key selection' }
-    { name: 'pKey', type: 'HAL_DESCRAMBLE_KEY*', desc: 'Pointer to HAL_DESCRAMBLE_KEY structure containing more key information' }
+    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' },
+    { name: 'KeySet', type: 'unsigned char', desc: 'Key set' },
+    { name: 'KeySel', type: 'unsigned char', desc: 'Key selection' },
+    { name: 'pKey', type: 'HAL_DESCRAMBLE_KEY*', desc: 'Pointer to HAL_DESCRAMBLE_KEY structure containing more key information' },
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_DescrambleTS
 ```bash
 DTV_STATUS_T RHAL_TSDescrambler_DescrambleTS(HAL_TSD_HANDLE handle, unsigned char*pData, unsigned long Len, unsigned long UserKernelOffset);
@@ -105,14 +106,14 @@ DTV_STATUS_T RHAL_TSDescrambler_DescrambleTS(HAL_TSD_HANDLE handle, unsigned cha
 Descrambles the TS stream.
 <ParamTable
   items={[
-    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' }
-    { name: 'pData', type: 'unsigned char*', desc: 'Pointer to the data to be descrambled' }
-    { name: 'Len', type: 'unsigned long', desc: 'Data length' }
-    { name: 'UserKernelOffset', type: 'unsigned long', desc: 'Offset between user space and kernel space' }
+    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' },
+    { name: 'pData', type: 'unsigned char*', desc: 'Pointer to the data to be descrambled' },
+    { name: 'Len', type: 'unsigned long', desc: 'Data length' },
+    { name: 'UserKernelOffset', type: 'unsigned long', desc: 'Offset between user space and kernel space' },
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_DescrambleTSEx
 ```bash
 DTV_STATUS_T RHAL_TSDescrambler_DescrambleTSEx(HAL_TSD_HANDLE handle, unsigned char*pTSIn, unsigned char*pTSOut, unsigned long Len, unsigned long TSInVirtPhyOffset, unsigned long TSOutVirtPhyOffset);
@@ -120,16 +121,16 @@ DTV_STATUS_T RHAL_TSDescrambler_DescrambleTSEx(HAL_TSD_HANDLE handle, unsigned c
 Extended version of TS stream descrambling function, supporting separate input and output buffers.
 <ParamTable
   items={[
-    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' }
-    { name: 'pTSIn', type: 'unsigned char*', desc: 'Input TS stream pointer' }
-    { name: 'pTSOut', type: 'unsigned char*', desc: 'Output TS stream pointer' }
-    { name: 'Len', type: 'unsigned long', desc: 'Data length' }
-    { name: 'TSInVirtPhyOffset', type: 'unsigned long', desc: 'Virtual-physical offset of the input buffer' }
-    { name: 'TSOutVirtPhyOffset', type: 'unsigned long', desc: 'Virtual-physical offset of the output buffer' }
+    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' },
+    { name: 'pTSIn', type: 'unsigned char*', desc: 'Input TS stream pointer' },
+    { name: 'pTSOut', type: 'unsigned char*', desc: 'Output TS stream pointer' },
+    { name: 'Len', type: 'unsigned long', desc: 'Data length' },
+    { name: 'TSInVirtPhyOffset', type: 'unsigned long', desc: 'Virtual-physical offset of the input buffer' },
+    { name: 'TSOutVirtPhyOffset', type: 'unsigned long', desc: 'Virtual-physical offset of the output buffer' },
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_ScrambleTS
 ```bash
 DTV_STATUS_T RHAL_TSDescrambler_ScrambleTS(HAL_TSD_HANDLE handle, unsigned char KeySel, unsigned char*pData, unsigned long Len, unsigned long UserKernelOffset);
@@ -137,15 +138,15 @@ DTV_STATUS_T RHAL_TSDescrambler_ScrambleTS(HAL_TSD_HANDLE handle, unsigned char 
 Scrambles the TS stream.
 <ParamTable
   items={[
-    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' }
-    { name: 'KeySel', type: 'unsigned char', desc: 'Key selection' }
-    { name: 'pData', type: 'unsigned char*', desc: 'Pointer to the data to be descrambled' }
-    { name: 'Len', type: 'unsigned long', desc: 'Data length' }
-    { name: 'UserKernelOffset', type: 'unsigned long', desc: 'Offset between user space and kernel space' }
+    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' },
+    { name: 'KeySel', type: 'unsigned char', desc: 'Key selection' },
+    { name: 'pData', type: 'unsigned char*', desc: 'Pointer to the data to be descrambled' },
+    { name: 'Len', type: 'unsigned long', desc: 'Data length' },
+    { name: 'UserKernelOffset', type: 'unsigned long', desc: 'Offset between user space and kernel space' },
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_ScrambleTSEx
 ```bash
 DTV_STATUS_T RHAL_TSDescrambler_ScrambleTSEx(HAL_TSD_HANDLE handle, unsigned char KeySel, unsigned char*pTSIn, unsigned char*pTSOut, unsigned long Len, unsigned long TSInVirtPhyOffset, unsigned long TSOutVirtPhyOffset);
@@ -153,17 +154,17 @@ DTV_STATUS_T RHAL_TSDescrambler_ScrambleTSEx(HAL_TSD_HANDLE handle, unsigned cha
 Extended version of TS stream scrambling function, supporting separate input and output buffers.
 <ParamTable
   items={[
-    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' }
-    { name: 'KeySel', type: 'unsigned char', desc: 'Key selection' }
-    { name: 'pTSIn', type: 'unsigned char*', desc: 'Input TS stream pointer' }
-    { name: 'pTSOut', type: 'unsigned char*', desc: 'Output TS stream pointer' }
-    { name: 'Len', type: 'unsigned long', desc: 'Data length' }
-    { name: 'TSInVirtPhyOffset', type: 'unsigned long', desc: 'Virtual-physical offset of the input buffer' }
-    { name: 'TSOutVirtPhyOffset', type: 'unsigned long', desc: 'Virtual-physical offset of the output buffer' }
+    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' },
+    { name: 'KeySel', type: 'unsigned char', desc: 'Key selection' },
+    { name: 'pTSIn', type: 'unsigned char*', desc: 'Input TS stream pointer' },
+    { name: 'pTSOut', type: 'unsigned char*', desc: 'Output TS stream pointer' },
+    { name: 'Len', type: 'unsigned long', desc: 'Data length' },
+    { name: 'TSInVirtPhyOffset', type: 'unsigned long', desc: 'Virtual-physical offset of the input buffer' },
+    { name: 'TSOutVirtPhyOffset', type: 'unsigned long', desc: 'Virtual-physical offset of the output buffer' },
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TSDescrambler_SetParam
 ```bash
 DTV_STATUS_T RHAL_TSDescrambler_SetParam(HAL_TSD_HANDLE handle, HAL_DESCRAMBLE_CONFIG*pConfig);
@@ -171,7 +172,7 @@ DTV_STATUS_T RHAL_TSDescrambler_SetParam(HAL_TSD_HANDLE handle, HAL_DESCRAMBLE_C
 Sets the configuration parameters for the descrambler.
 <ParamTable
   items={[
-    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' }
-    { name: 'pConfig', type: 'HAL_DESCRAMBLE_CONFIG*', desc: 'Pointer to HAL_DESCRAMBLE_CONFIG structure containing configuration information' }
+    { name: 'handle', type: 'HAL_TSD_HANDLE', desc: 'Descrambler instance handle' },
+    { name: 'pConfig', type: 'HAL_DESCRAMBLE_CONFIG*', desc: 'Pointer to HAL_DESCRAMBLE_CONFIG structure containing configuration information' },
   ]}
 />

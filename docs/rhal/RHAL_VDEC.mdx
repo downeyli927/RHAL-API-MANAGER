@@ -6,259 +6,260 @@ sidebar_position: 75
 
 RHAL_VDEC api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_VDEC_Initialize
 ```bash
 DTV_STATUS_T RHAL_VDEC_Initialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Open
 ```bash
 DTV_STATUS_T RHAL_VDEC_Open(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Connect
 ```bash
 DTV_STATUS_T RHAL_VDEC_Connect(UINT8 nPort, UINT8 nSrc, UINT8 nDst);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Close
 ```bash
 DTV_STATUS_T RHAL_VDEC_Close(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Start_Ex
 ```bash
 DTV_STATUS_T RHAL_VDEC_Start_Ex(UINT8 nPort, VDEC_CODEC_T codec);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Stop_Ex
 ```bash
 DTV_STATUS_T RHAL_VDEC_Stop_Ex(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Start
 ```bash
 DTV_STATUS_T RHAL_VDEC_Start(UINT8 nPort, VDEC_CODEC_T codec);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Stop
 ```bash
 DTV_STATUS_T RHAL_VDEC_Stop(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Freeze
 ```bash
 DTV_STATUS_T RHAL_VDEC_Freeze(UINT8 nPort, UINT8 nFreeze);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_StartDripDec
 ```bash
 DTV_STATUS_T RHAL_VDEC_StartDripDec(UINT8 nPort, UINT8*pDripData, UINT32 dripSize, VDEC_DRIP_TYPE_T dripType, VDEC_CODEC_T codecType);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_StopDripDec
 ```bash
 DTV_STATUS_T RHAL_VDEC_StopDripDec(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SaveDripDec
 ```bash
 DTV_STATUS_T RHAL_VDEC_SaveDripDec(UINT8*pDripData, UINT32 dripsize, VDEC_DRIP_TYPE_T driptype, VDEC_CODEC_T codec, SINT32 width, SINT32 height, UINT8*pARGBData);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SaveDripDec
 ```bash
 DTV_STATUS_T RHAL_VDEC_SaveDripDec(UINT8 nPort, UINT8*pDripData, UINT32 dripsize, VDEC_DRIP_TYPE_T driptype, VDEC_CODEC_T codec, UINT8**ppARGBData, UINT32*pDestSize, UINT32*pDestWidth);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SaveDripDec_Free
 ```bash
 void RHAL_VDEC_SaveDripDec_Free(UINT8 nPort, UINT8*pARGBData);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_GetVideoInfo
 ```bash
 SINT32 RHAL_VDEC_GetVideoInfo(UINT8 nPort, VDEC_HDR_T infonum);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_GetDecoderStatus
 ```bash
 DTV_STATUS_T RHAL_VDEC_GetDecoderStatus(UINT8 nPort, VDEC_DECODER_STATUS_T*pStatus);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SyncAV
 ```bash
 DTV_STATUS_T RHAL_VDEC_SyncAV(UINT8 nPort , UINT8 onOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_GetAFD
 ```bash
 VDEC_AFD_MODE_T RHAL_VDEC_GetAFD(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_StartUserData
 ```bash
 DTV_STATUS_T RHAL_VDEC_StartUserData(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_StopUserData
 ```bash
 DTV_STATUS_T RHAL_VDEC_StopUserData(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SetDecodingSpeed
 ```bash
 DTV_STATUS_T RHAL_VDEC_SetDecodingSpeed(UINT8 nPort, VDEC_DECODING_SPEED_T speed);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_RegisterUserdataCallback
 ```bash
 void RHAL_VDEC_RegisterUserdataCallback(UINT8 port, PFN_VDEC_USERDATA_CALLBACK_T pfnCaptionCallback);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SetFrameAdvance
 ```bash
 DTV_STATUS_T RHAL_VDEC_SetFrameAdvance(UINT8 nPort, BOOLEAN bFrameAdvanceOn);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SetStillPicture
 ```bash
 DTV_STATUS_T RHAL_VDEC_SetStillPicture(UINT8 nPort, BOOLEAN bStillPicture);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Reset
 ```bash
 DTV_STATUS_T RHAL_VDEC_Reset(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Flush
 ```bash
 DTV_STATUS_T RHAL_VDEC_Flush(UINT8 nPort, VDEC_FLUSH_MODE_T vFlushMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_GetCurPTS
 ```bash
 DTV_STATUS_T RHAL_VDEC_GetCurPTS(UINT8 nPort, VDEC_PTS_T*pVdecPTS);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SetDecodeMode
 ```bash
 void RHAL_VDEC_SetDecodeMode(UINT8 nPort, VDEC_DECODE_MODE_T decodeMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_IsFrameAdvanced
 ```bash
 BOOLEAN RHAL_VDEC_IsFrameAdvanced(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_DebugMenu
 ```bash
 void RHAL_VDEC_DebugMenu(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_RegisterPicInfoCallback
 ```bash
 DTV_STATUS_T RHAL_VDEC_RegisterPicInfoCallback(UINT8 port, PFN_VDEC_PIC_INFO_T cb);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_RegisterPicInfoCallbackExt
 ```bash
 DTV_STATUS_T RHAL_VDEC_RegisterPicInfoCallbackExt(UINT8 port, PFN_VDEC_PIC_INFO_EXT_T pfnPicInfoCallback);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_RegisterPicInfoCallbackType
 ```bash
 DTV_STATUS_T RHAL_VDEC_RegisterPicInfoCallbackType(UINT8 port, UINT8 type, PFN_VDEC_PIC_INFO_TYPE_T pfnPicInfoCallback);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_RegisterFrameCallback
 ```bash
 DTV_STATUS_T RHAL_VDEC_RegisterFrameCallback(UINT8 port, PFN_VDEC_FRAME_CALLBACK_T cb);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_MirrorOutput
 ```bash
 DTV_STATUS_T RHAL_VDEC_MirrorOutput(UINT8 port, int dest);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_Set_VO_Display
 ```bash
 DTV_STATUS_T RHAL_VDEC_Set_VO_Display(UINT8 nPort,HAL_VDEC_VO_VIDEO_PLANE layer);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SetVODisplayDelay
 ```bash
 DTV_STATUS_T RHAL_VDEC_SetVODisplayDelay(SINT32 handle, SINT32 msec);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SetGlobalParam
 ```bash
 DTV_STATUS_T RHAL_VDEC_SetGlobalParam(UINT32 cmd_type, UINT32 param1, UINT32 param2, UINT32 param3);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SetSubPicPTSOffset
 ```bash
 DTV_STATUS_T RHAL_VDEC_SetSubPicPTSOffset(UINT8 nPort, SINT32 val);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SetParam
 ```bash
 DTV_STATUS_T RHAL_VDEC_SetParam(UINT8 nPort,VDEC_PARAM_T param, SINT32 val);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_GetParam
 ```bash
 DTV_STATUS_T RHAL_VDEC_GetParam(UINT8 nPort,VDEC_PARAM_T param, SINT32*val);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SetVideoCapability
 ```bash
 DTV_STATUS_T RHAL_VDEC_SetVideoCapability(VIDEO_CAP cap);
 ```
 
-##Function Declaration
+
 ### RHAL_VDEC_SetDolbyDTVBuffHandle
 ```bash
 DTV_STATUS_T RHAL_VDEC_SetDolbyDTVBuffHandle(UINT8 nPort, void*handle);

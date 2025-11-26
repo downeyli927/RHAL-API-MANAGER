@@ -6,529 +6,530 @@ sidebar_position: 90
 
 RHAL_VPQ_X api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_VPQ_SetPictureCtrl
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPictureCtrl(VIDEO_WID_T wId, SINT32*pPcVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorTemp
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorTemp(HAL_VPQ_COLOR_TEMP_T*pCscPcCtData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorTemperature
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorTemperature(HAL_VPQ_COLOR_TEMP_T*pCscPcCtData, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetSuperResolution
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetSuperResolution(VIDEO_WID_T wId, UINT16 uSrVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetSharpness
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetSharpness(VIDEO_WID_T wId, UINT16*pShpVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetEdgeEnhance
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetEdgeEnhance(VIDEO_WID_T wId, UINT16 uEeVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Initialize
 ```bash
 DTV_STATUS_T RHAL_VPQ_Initialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VPQ_Uninitialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Open
 ```bash
 DTV_STATUS_T RHAL_VPQ_Open(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Close
 ```bash
 DTV_STATUS_T RHAL_VPQ_Close(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetFreshContrastBypassLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetFreshContrastBypassLUT(SINT32*pDCBypassLUT);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHistoData
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHistoData(HAL_VPQ_DC2P_HISTODATA_INFO_T*pHistoInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetFreshContrast
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetFreshContrast(VIDEO_WID_T wId, UINT16 uDcVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetFreshContrastLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetFreshContrastLUT(SINT32*pAccLUT);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetSaturationLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetSaturationLUT(UINT32*pSaturationX, UINT32*pSaturationY);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_InitColorForAdvanced
 ```bash
 DTV_STATUS_T RHAL_VPQ_InitColorForAdvanced(VIDEO_WID_T wId, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetFreshColor
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetFreshColor(VIDEO_WID_T wId, UINT32 uFcVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPreferredColor
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPreferredColor(VIDEO_WID_T wId, SINT8*pstPfVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetClearWhiteGainCtrl
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetClearWhiteGainCtrl(UINT32*pCwGain);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetClearWhite
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetClearWhite(VIDEO_WID_T wId, UINT8 uCwVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set3DColorCorrection
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set3DColorCorrection(UINT8*pCcVal);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetNoiseReduction
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetNoiseReduction(VIDEO_WID_T wId, UINT16*pNrVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetMpegNoiseReduction
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetMpegNoiseReduction(VIDEO_WID_T wId, UINT16 uMpegNrVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetNoiseLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetNoiseLevel(UINT16*uLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetMotionLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetMotionLevel(UINT32*uLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetFilmMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetFilmMode(VIDEO_WID_T wId, BOOLEAN bFilmMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetRealCinema
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetRealCinema(VIDEO_WID_T wId, BOOLEAN bFilmMode, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetBlackLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetBlackLevel(VIDEO_WID_T wId, UINT8*pBlVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_DeGammaLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_DeGammaLUT(UINT32*pRedGammaTable, UINT32*pGreenGammaTable, UINT32*pBlueGammaTable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetGammaLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetGammaLUT(VIDEO_WID_T wId, UINT32*pRedGammaTable, UINT32*pGreenGammaTable, UINT32*pBlueGammaTable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetGamutLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetGamutLUT(HAL_VPQ_GAMUT_LUT_T*pstGamutLut);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SelGamutSection
 ```bash
 DTV_STATUS_T RHAL_VPQ_SelGamutSection(UINT8 uSecNum);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorGamut
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorGamut(VIDEO_WID_T wId, UINT8*pCgVal);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetGamut
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetGamut(VIDEO_WID_T wId, UINT8*pCgVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorFilter
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorFilter(UINT16 uCfVal);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_InitColorForExpert
 ```bash
 DTV_STATUS_T RHAL_VPQ_InitColorForExpert(VIDEO_WID_T wId, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorManagement
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorManagement(VIDEO_WID_T wId, SINT8*pCmVal, void*pstData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetSplitDemo
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetSplitDemo(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetTwinTvMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetTwinTvMode(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetAplMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetAplMode(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetLowDelayMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetLowDelayMode(BOOLEAN bGameMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorGain
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorGain(VIDEO_WID_T wId, SINT32 uCgVal);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetIREInnerPattern
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetIREInnerPattern(UINT8 patternType, HAL_VPQ_INNER_PATTERN_IRE_T patternIre);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetSrcAplInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetSrcAplInfo(UINT32*pStat);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetApl
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetApl(UINT32*pStat);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_HDR_SetLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_HDR_SetLUT(UINT32*lut);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_HDR_SetDemoMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_HDR_SetDemoMode(BOOLEAN bDemoMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetHDRGamutMatrix
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetHDRGamutMatrix(float pMatrix[9]);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetHDR3DLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetHDR3DLUT(UINT16 pLUT[14739]);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetHDREotf
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetHDREotf(HAL_VPQ_DATA_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetHDROetf
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetHDROetf(HAL_VPQ_DATA_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_HDR_GetPicInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_HDR_GetPicInfo(UINT32*pstPicInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_InvGammaEn
 ```bash
 DTV_STATUS_T RHAL_VPQ_InvGammaEn(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPQModeInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPQModeInfo(HAL_VPQ_DATA_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetInversion
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetInversion(BOOLEAN bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDolbyPictureMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDolbyPictureMode(BOOLEAN bOnOff, UINT8 uPictureMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDolbyBackLight
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDolbyBackLight(BOOLEAN bOnOff, UINT8 uBacklight);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDolbyBrightness
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDolbyBrightness(BOOLEAN bOnOff, UINT8 uBrightness);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDolbyColor
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDolbyColor(BOOLEAN bOnOff, UINT8 uColor);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDolbyContrast
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDolbyContrast(BOOLEAN bOnOff, UINT8 uContrast);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDolbyTuningMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDolbyTuningMode(BOOLEAN bOnOff, UINT8 uTuningMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_InitDolbyPictureConfig
 ```bash
 void RHAL_VPQ_InitDolbyPictureConfig(char*configFilePath[]);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetDolbySWVersion
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetDolbySWVersion(char*pstVersion);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetOdExtentions
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetOdExtentions(HAL_VPQ_DATA_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetOd
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetOd(HAL_VPQ_DATA_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_Demura
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_Demura(HAL_VPQ_DATA_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_Capability_Table
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_Capability_Table(void*data, long size);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_Model_Hash
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_Model_Hash(void*data);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_AmbientLight_Value
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_AmbientLight_Value(int mode, int64_t frontLux);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_DolbyVision_Content_Type
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_DolbyVision_Content_Type(uint8_t content_type[]);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DolbyVision_BestPQConfig_Bin
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DolbyVision_BestPQConfig_Bin(void*best_bin, size_t size);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DolbyVision_PQConfig
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DolbyVision_PQConfig(char*facotry_config_path, char*best_config_path);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DolbyVision_PQ_Text2Bin
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DolbyVision_PQ_Text2Bin(char*facotry_config_path, char*best_config_path, char*buf_pq_bin, size_t*size_pq_bin);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DolbyVision_Dark_Detail
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DolbyVision_Dark_Detail(bool enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_Delay_Matrix_Table
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_Delay_Matrix_Table(HAL_DV_GDBS_DELAY_T*table);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DolbyVision_Enable_PWM
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DolbyVision_Enable_PWM(bool enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DolbyVision_BacklightMapping
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DolbyVision_BacklightMapping(const size_t size, const uint8_t table[]);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetLocalConstrastParam
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetLocalConstrastParam(HAL_VPQ_DATA_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DolbyVision_BlackLight_Mapping_Mode
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DolbyVision_BlackLight_Mapping_Mode(const int mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DolbyVision_GDBS_Mode
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DolbyVision_GDBS_Mode(const int mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_DolbyVisionDTV_Start
 ```bash
 void* RHAL_VPQ_DolbyVisionDTV_Start(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_DolbyVisionDTV_Stop
 ```bash
 DTV_STATUS_T RHAL_VPQ_DolbyVisionDTV_Stop(void*handle);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetDolbyVisionDTVBuffer
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetDolbyVisionDTVBuffer(void*handle, void**BS_RING_BUFFER, void**CMD_RING_BUFFER);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_ReleaseDolbyVisionDTVBuffer
 ```bash
 DTV_STATUS_T RHAL_VPQ_ReleaseDolbyVisionDTVBuffer(void*handle);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_DolbyVision_Set_Input_Format
 ```bash
 DTV_STATUS_T RHAL_VPQ_DolbyVision_Set_Input_Format(dolby_vision_input_format_t input_format);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_DolbyVision_Get_GD_Enable
 ```bash
 DTV_STATUS_T RHAL_VPQ_DolbyVision_Get_GD_Enable(bool*gd_enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDolbyVisionBlackLightType
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDolbyVisionBlackLightType(HAL_DV_BL_TYPE type);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DolbyVision_Backlight_Curve_Value
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DolbyVision_Backlight_Curve_Value(UINT8 uBacklight_curve);

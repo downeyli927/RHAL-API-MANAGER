@@ -6,7 +6,8 @@ sidebar_position: 10
 
 RHAL_AUDIO_EFFECT api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_AUDIO_Effect_Initialize
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_Initialize(SINT32*max_eq_band_num, HAL_ATV_CFG*m_atv_cfg);
@@ -19,199 +20,199 @@ Audio effects initialization
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_QS_AUDIO_Effect_Initialize
 ```bash
 DTV_STATUS_T RHAL_QS_AUDIO_Effect_Initialize(SINT32*max_eq_band_num);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetOutBalance
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetOutBalance(BOOLEAN bOnOff, SINT32 sValue, HAL_AUDIO_PATH path);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetOutVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetOutVolume(uint32_t ch_id, SINT32 dbGains, HAL_AUDIO_PATH path);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetOutMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetOutMute(BOOLEAN bOnOff ,uint32_t ch_id, HAL_AUDIO_PATH path);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetEQBandEnable
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetEQBandEnable(BOOLEAN bOnOff, HAL_EQ_BPF_ALL_BAND eq_band);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetEQParameter
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetEQParameter(HAL_EQ_BPF_ALL_BAND eq_band, HAL_EQ_SAMPLE_FREQ s_sample_freq, HAL_EQ_Set_BAND_ATTR*sEqAttr);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetLoudBandEnable
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetLoudBandEnable(BOOLEAN bOnOff, HAL_LOUD_ALL_BAND loud_band);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetLoudParameter
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetLoudParameter(HAL_LOUD_ALL_BAND loud_band, HAL_EQ_SAMPLE_FREQ s_sample_freq, HAL_Loud_Set_BAND_ATTR*sLoudAttr);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetBassEnable
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetBassEnable(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetBassParameter
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetBassParameter(HAL_EQ_SAMPLE_FREQ s_sample_freq, HAL_Loud_Set_BAND_ATTR*sBassAttr);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetTrebleEnable
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetTrebleEnable(BOOLEAN bOnOff, HAL_LOUD_BPF_BAND band);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetTrebleParameter
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetTrebleParameter(HAL_LOUD_BPF_BAND band, HAL_EQ_SAMPLE_FREQ s_sample_freq, HAL_Loud_Set_BAND_ATTR*sTrebleAttr);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetPrescalerAmp
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetPrescalerAmp(SINT32 sPres, HAL_CH_ID ch_id);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetAVC1
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetAVC1(BOOLEAN bEnable, HAL_AVC_CFG*sAVC1_p);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetAVC2
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetAVC2(BOOLEAN bEnable, HAL_AVC2_CFG*sAVC2_p);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetHwOutLimiter_DAC0
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetHwOutLimiter_DAC0(BOOLEAN bEnable, UINT32 limiterValue);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetHwOutLimiter_DAC1
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetHwOutLimiter_DAC1(BOOLEAN bEnable, UINT32 limiterValue);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetHwOutLimiter_I2S0
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetHwOutLimiter_I2S0(BOOLEAN bEnable, UINT32 limiterValue);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_Set2BandDRC
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_Set2BandDRC(BOOLEAN bEnable, HAL_DRC_LPF_CFG*sLPF_p, HAL_DRC_CFG*sDRC_p);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_Effect_SetSurroundParameter
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_SetSurroundParameter(BOOLEAN bEnable, HAL_SE_CFG*sSurr_p);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_AQ_LoopBack_Verify
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AQ_LoopBack_Verify(RHAL_AIO_HWP_SET_DMA_T Info);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_EarcInit
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EarcInit(void);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_EarcDeinit
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EarcDeinit(void);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_EarcGetConnecState
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EarcGetConnecState(HAL_AUDIO_EARC_STATE_T*State);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_EarcGetRxState
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EarcGetRxState(HAL_AUDIO_EARC_RX_STATUS_T*RxState);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_EarcReadTransaction
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EarcReadTransaction(HAL_AUDIO_EARC_READ_T ReadType, UINT8*ReadData);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_EarcWriteLatency
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EarcWriteLatency(UINT8 WriteData);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_EarcArcSwtich
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EarcArcSwtich(HAL_AUDIO_EARC_ARC_SWITCH_T Mode);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_SET_EARC_EN
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SET_EARC_EN(RHAL_AUDIO_EARC_T en);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_GET_EARC_EN
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GET_EARC_EN(RHAL_AUDIO_EARC_T*en);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_EARC_INFO
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EARC_INFO(RHAL_AUDIO_EARC_INFO_T*Info);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_EARC_SET_ERX_LATENCY_REQ
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EARC_SET_ERX_LATENCY_REQ(RHAL_AUDIO_EARC_INFO_T Info);
 ```
 
-##Function Declaration
+
 ### RHAL_AUDIO_EARC_RESET_HDMI_HPD_BIT
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EARC_RESET_HDMI_HPD_BIT(void);

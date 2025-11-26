@@ -6,7 +6,8 @@ sidebar_position: 37
 
 RHAL_LSADC api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_LSADC_SetVoltageMode
 ```bash
 DTV_STATUS_T RHAL_LSADC_SetVoltageMode(HAL_LSADC_NAME name, UINT8 voltageMode);
@@ -25,7 +26,7 @@ value = 0, set lsadc current mode
 
 :::
 
-##Function Declaration
+
 ### RHAL_LSADC_SetActive
 ```bash
 DTV_STATUS_T RHAL_LSADC_SetActive(HAL_LSADC_NAME name, UINT8 active);
@@ -44,7 +45,7 @@ value = 1, set lsadc active
 
 :::
 
-##Function Declaration
+
 ### RHAL_LSADC_SetThreshold
 ```bash
 DTV_STATUS_T RHAL_LSADC_SetThreshold(HAL_LSADC_NAME name, UINT8 threshold);
@@ -57,7 +58,7 @@ Set Threshold for a lsadc port
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_LSADC_GetAdcValue
 ```bash
 DTV_STATUS_T RHAL_LSADC_GetAdcValue(HAL_LSADC_NAME name, UINT8*value);
@@ -70,28 +71,28 @@ Get value for a lsadc port
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_LSADC_GetVoltageMode
 ```bash
 DTV_STATUS_T RHAL_LSADC_GetVoltageMode(HAL_LSADC_NAME name, UINT8*voltageMode);
 ```
 Get voltage mode for a lsadc port
 
-##Function Declaration
+
 ### RHAL_LSADC_GetActiveStatus
 ```bash
 DTV_STATUS_T RHAL_LSADC_GetActiveStatus(HAL_LSADC_NAME name, UINT8*active);
 ```
 Get active status for a lsadc port
 
-##Function Declaration
+
 ### RHAL_LSADC_GetThreshold
 ```bash
 DTV_STATUS_T RHAL_LSADC_GetThreshold(HAL_LSADC_NAME name, UINT8*threshold);
 ```
 Get threshold for a lsadc port
 
-##Function Declaration
+
 ### RHAL_LSADC_Dump
 ```bash
 DTV_STATUS_T RHAL_LSADC_Dump(void);

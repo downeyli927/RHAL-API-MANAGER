@@ -6,7 +6,8 @@ sidebar_position: 62
 
 RHAL_TCON api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_TCON_TransferCommand
 ```bash
 DTV_STATUS_T RHAL_TCON_TransferCommand(OLED_V22_CMD_INFO*oledV22CmdInfo);
@@ -41,7 +42,7 @@ typedef struct oled_v22_cmd_info {
 
 :::
 
-##Function Declaration
+
 ### RHAL_TCON_ExcuteCmd
 ```bash
 DTV_STATUS_T RHAL_TCON_ExcuteCmd(const char*funName, TCON_CMD_INFO*cmdInfo);
@@ -61,21 +62,21 @@ typedef struct tcon_cmd_info {
     char reserved[4];
 }TCON_CMD_INFO;
 
-##Function Declaration
+
 ### RHAL_TCON_Reload_Setting
 ```bash
 DTV_STATUS_T RHAL_TCON_Reload_Setting(void);
 ```
 Send all tcon cmd for init,reload the TCON (Timing Controller) settings.
 
-##Function Declaration
+
 ### RHAL_TCON_Release_Resource
 ```bash
 DTV_STATUS_T RHAL_TCON_Release_Resource(void);
 ```
 RHAL_TCON_UnInit , free xml
 
-##Function Declaration
+
 ### RHAL_TCON_SetFuncValue
 ```bash
 DTV_STATUS_T RHAL_TCON_SetFuncValue(const char*funName, const char*attrName, int attrVal);
@@ -89,7 +90,7 @@ Configure specific function parameters of TCON (Timing Controller)
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_TCON_GetFuncValue
 ```bash
 DTV_STATUS_T RHAL_TCON_GetFuncValue(const char*funName, const char*attrName, int*attrVal);

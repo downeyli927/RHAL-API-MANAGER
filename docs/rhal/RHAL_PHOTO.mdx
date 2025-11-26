@@ -6,145 +6,146 @@ sidebar_position: 47
 
 RHAL_PHOTO api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_PhotoDecode_GetThumbnail
 ```bash
 DTV_STATUS_T RHAL_PhotoDecode_GetThumbnail(const char*path, int32_t width, int32_t height, unsigned int colorFormat, unsigned int*retWidth, unsigned int*retHeight, unsigned char*retData);
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_Open
 ```bash
 DTV_STATUS_T RHAL_Photo_Open(int panelWidth,int panelHeight);
 ```
 
-##Function Declaration
+
 ### RHAL_PhotoDecode_GetCreateDate
 ```bash
 DTV_STATUS_T RHAL_PhotoDecode_GetCreateDate(const char*url, void*pstCreateDate);
 ```
 
-##Function Declaration
+
 ### RHAL_PhotoDecode_GetExifInfo
 ```bash
 DTV_STATUS_T RHAL_PhotoDecode_GetExifInfo(const char*url, void*pstExifInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_PhotoDecode_GetMediaInfo
 ```bash
 DTV_STATUS_T RHAL_PhotoDecode_GetMediaInfo(const char*url, void*pstMediaInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_Decode_Start
 ```bash
 DTV_STATUS_T RHAL_Photo_Decode_Start(RHAL_PHOTO_OPTION*param);
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_Send_Data
 ```bash
 DTV_STATUS_T RHAL_Photo_Send_Data(unsigned char*buffer, unsigned int size);
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_Decode_Stop
 ```bash
 DTV_STATUS_T RHAL_Photo_Decode_Stop(bool isCancel);
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_Close
 ```bash
 DTV_STATUS_T RHAL_Photo_Close(void);
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_UpRotate
 ```bash
 DTV_STATUS_T RHAL_Photo_UpRotate();
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_DownRotate
 ```bash
 DTV_STATUS_T RHAL_Photo_DownRotate();
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_LeftRotate
 ```bash
 DTV_STATUS_T RHAL_Photo_LeftRotate();
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_RightRotate
 ```bash
 DTV_STATUS_T RHAL_Photo_RightRotate();
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_ZoomIn
 ```bash
 DTV_STATUS_T RHAL_Photo_ZoomIn();
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_ZoomOut
 ```bash
 DTV_STATUS_T RHAL_Photo_ZoomOut();
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_OnZoomMoveUp
 ```bash
 DTV_STATUS_T RHAL_Photo_OnZoomMoveUp();
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_OnZoomMoveDown
 ```bash
 DTV_STATUS_T RHAL_Photo_OnZoomMoveDown();
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_OnZoomMoveLeft
 ```bash
 DTV_STATUS_T RHAL_Photo_OnZoomMoveLeft();
 ```
 
-##Function Declaration
+
 ### RHAL_Photo_OnZoomMoveRight
 ```bash
 DTV_STATUS_T RHAL_Photo_OnZoomMoveRight();
 ```
 
-##Function Declaration
+
 ### RHAL_PhotoDecode_Init
 ```bash
 DTV_STATUS_T RHAL_PhotoDecode_Init(int targetWidth, int targetHeight);
 ```
 
-##Function Declaration
+
 ### RHAL_PhotoDecode_Start
 ```bash
 DTV_STATUS_T RHAL_PhotoDecode_Start();
 ```
 
-##Function Declaration
+
 ### RHAL_PhotoDecode_SendData
 ```bash
 DTV_STATUS_T RHAL_PhotoDecode_SendData(unsigned char*buffer, unsigned int size);
 ```
 
-##Function Declaration
+
 ### RHAL_PhotoDecode_Stop
 ```bash
 DTV_STATUS_T RHAL_PhotoDecode_Stop(bool isCancel, unsigned int*decodedWidth,unsigned int*decodedHeight,unsigned int*pixelFormat,unsigned char*decodedData);
 ```
 
-##Function Declaration
+
 ### RHAL_PhotoDecode_DeInit
 ```bash
 DTV_STATUS_T RHAL_PhotoDecode_DeInit(void);

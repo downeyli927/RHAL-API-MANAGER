@@ -6,7 +6,8 @@ sidebar_position: 34
 
 RHAL_INPUT_DEV api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_IS_IR_EVENT
 ```bash
 SINT32 RHAL_IS_IR_EVENT(const CHAR*device_name);
@@ -23,7 +24,7 @@ If device name is not ir device, the return value is 0.
 
 :::
 
-##Function Declaration
+
 ### RHAL_IS_IR_TO_MOUSE_EVENT
 ```bash
 SINT32 RHAL_IS_IR_TO_MOUSE_EVENT(const CHAR*device_name);
@@ -34,7 +35,7 @@ SINT32 RHAL_IS_IR_TO_MOUSE_EVENT(const CHAR*device_name);
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_OPEN_ALL_INPUT_DEVICES
 ```bash
 DTV_STATUS_T RHAL_OPEN_ALL_INPUT_DEVICES(void);
@@ -48,14 +49,14 @@ Open all input devices
 
 :::
 
-##Function Declaration
+
 ### RHAL_CLOSE_ALL_INPUT_DEVICES
 ```bash
 DTV_STATUS_T RHAL_CLOSE_ALL_INPUT_DEVICES(void);
 ```
 Close all input devices
 
-##Function Declaration
+
 ### RHAL_GET_INPUT_EVENT
 ```bash
 DTV_STATUS_T RHAL_GET_INPUT_EVENT(struct input_event*event, CHAR*device_name, UINT32 name_len);
@@ -69,7 +70,7 @@ Get input event
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_INPUT_REGISTER_INTERCEPT_EVENT
 ```bash
 DTV_STATUS_T RHAL_INPUT_REGISTER_INTERCEPT_EVENT(HAL_EV_TYPE type, UINT32 code, UINT32 value, UINT32 (*keycode_intercept_callback)(HAL_INPUT_EVENT_INFO*ev_info, void*data), void*data, UINT32 flags);
@@ -86,7 +87,7 @@ Register input intercept callback
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_INPUT_UNREGISTER_INTERCEPT
 ```bash
 DTV_STATUS_T RHAL_INPUT_UNREGISTER_INTERCEPT(HAL_EV_TYPE type, UINT32 code, UINT32 value);

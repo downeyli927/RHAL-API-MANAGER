@@ -6,151 +6,152 @@ sidebar_position: 38
 
 RHAL_MCP api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_MCP_AES_Cryption
 ```bash
 SINT32 RHAL_MCP_AES_Cryption(HAL_MCP_CRYPTION_MODE EnDe, HAL_MCP_BCM_MODE Mode, UINT8 Key[16], UINT8 IV[16], ULONG phyDataIn, ULONG phyDataOut, ULONG phyLen);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_AES_DataCryption
 ```bash
 SINT32 RHAL_MCP_AES_DataCryption(HAL_MCP_CRYPTION_MODE EnDe, HAL_MCP_BCM_MODE Mode, UINT8 Key[16], UINT8 IV[16], UINT8*pVirDataIn, UINT8*pVirDataOut, ULONG virLen);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_DataCipher
 ```bash
 SINT32 RHAL_MCP_DataCipher(HAL_MCP_CIPHER_ALGORITHM algo, HAL_MCP_CRYPTION_MODE enc, UINT8*key, UINT8 key_len, UINT8*iv, UINT8 iv_len, HAL_MCP_SBH_MODE sbh, UINT8*pVirDataIn, UINT8*pVirDataOut, ULONG virDatalen);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_DataCipherEx
 ```bash
 SINT32 RHAL_MCP_DataCipherEx(HAL_MCP_CIPHER_ALGORITHM algo, HAL_MCP_CRYPTION_MODE enc, UINT8*key, UINT8 key_len, UINT8*iv, UINT8 iv_len, HAL_MCP_SBH_MODE sbh, UINT8*pVirDataIn, UINT8*pVirDataOut, ULONG virDatalen, ULONG pPhyDataIn, ULONG pPhyDataOut);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_FileHashWithRegion
 ```bash
 SINT32 RHAL_MCP_FileHashWithRegion(HAL_MCP_MD_ALGORITHM algo, const CHAR*fname, UINT8 hash[HAL_MCP_MAX_DIGEST_SIZE], ULONG block_size, ULONG start, ULONG end);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_FileHashWithFragment
 ```bash
 SINT32 RHAL_MCP_FileHashWithFragment(HAL_MCP_MD_ALGORITHM algo, const CHAR*fname, UINT8 hash[HAL_MCP_MAX_DIGEST_SIZE], ULONG frag_sel, ULONG frag_size, ULONG frag_num, ULONG start, ULONG end);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_FileCipher
 ```bash
 SINT32 RHAL_MCP_FileCipher(HAL_MCP_CIPHER_ALGORITHM algo, HAL_MCP_CRYPTION_MODE enc, UINT8*key, UINT8 key_len,UINT8*iv, UINT8 iv_len, HAL_MCP_SBH_MODE sbh, const CHAR*sfile, const CHAR*dfile);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_HMAC_SHA256
 ```bash
 SINT32 RHAL_MCP_HMAC_SHA256(UINT8*keyIn, UINT32 keyIn_len, UINT8*msg, UINT32 msg_len, UINT8*out_hash);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_DataCipher_Widevine
 ```bash
 SINT32 RHAL_MCP_DataCipher_Widevine(HAL_MCP_CIPHER_ALGORITHM algo, HAL_MCP_CRYPTION_MODE enc, UINT8*key, UINT8 key_len, UINT8*iv, UINT8 iv_len, HAL_MCP_SBH_MODE sbh, UINT8*data_in, UINT8*data_out, ULONG len, ULONG offset);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_DataCipher_WidevineEx
 ```bash
 SINT32 RHAL_MCP_DataCipher_WidevineEx(HAL_MCP_CIPHER_ALGORITHM algo, HAL_MCP_CRYPTION_MODE enc, UINT8*key, UINT8 key_len, UINT8*iv, UINT8 iv_len, HAL_MCP_SBH_MODE sbh, UINT8*data_in, UINT8*data_out, ULONG len, ULONG offset, ULONG data_in_phys, ULONG data_out_phys);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_CipherOpen
 ```bash
 HAL_MCP_CIPHER_HANDLE RHAL_MCP_CipherOpen(void);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_CipherClose
 ```bash
 SINT32 RHAL_MCP_CipherClose(HAL_MCP_CIPHER_HANDLE handle);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_CipherInit
 ```bash
 SINT32 RHAL_MCP_CipherInit(HAL_MCP_CIPHER_HANDLE handle, HAL_MCP_CIPHER_ALGORITHM algo, UINT8*key, UINT8 key_len, UINT8*iv, UINT8 iv_len, HAL_MCP_CRYPTION_MODE EnDE);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_CipherInitEx
 ```bash
 SINT32 RHAL_MCP_CipherInitEx(HAL_MCP_CIPHER_HANDLE handle, HAL_MCP_CIPHER_ALGORITHM algo, UINT8*key, UINT8 key_len, UINT8*iv, UINT8 iv_len, HAL_MCP_CRYPTION_MODE EnDE, HAL_MCP_SBH_MODE sbh);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_CipherUpdate
 ```bash
 SINT32 RHAL_MCP_CipherUpdate(HAL_MCP_CIPHER_HANDLE handle, UINT8*pVirDataIn, ULONG virDataLen, UINT8*pVirDataOut);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_CipherUpdateEx
 ```bash
 SINT32 RHAL_MCP_CipherUpdateEx(HAL_MCP_CIPHER_HANDLE handle, UINT8*pVirDataIn, ULONG virDataLen, UINT8*pVirDataOut, ULONG phyDataIn, ULONG phyDataOut);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_CipherFinal
 ```bash
 SINT32 RHAL_MCP_CipherFinal(HAL_MCP_CIPHER_HANDLE handle, UINT8*pVirDataOut);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_CipherFinalEx
 ```bash
 SINT32 RHAL_MCP_CipherFinalEx(HAL_MCP_CIPHER_HANDLE handle, UINT8*pVirDataOut, ULONG phyDataOut);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_CipherFinalIV
 ```bash
 SINT32 RHAL_MCP_CipherFinalIV(HAL_MCP_CIPHER_HANDLE handle, UINT8*iv);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_MD_Open
 ```bash
 HAL_MCP_DIGEST_HANDLE RHAL_MCP_MD_Open(void);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_MD_Close
 ```bash
 SINT32 RHAL_MCP_MD_Close(HAL_MCP_DIGEST_HANDLE handle);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_DigestInit
 ```bash
 SINT32 RHAL_MCP_DigestInit(HAL_MCP_DIGEST_HANDLE handle, HAL_MCP_MD_ALGORITHM type);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_DigestUpdate
 ```bash
 SINT32 RHAL_MCP_DigestUpdate(HAL_MCP_DIGEST_HANDLE handle, UINT8*data, UINT32 len);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_DigestFinal
 ```bash
 SINT32 RHAL_MCP_DigestFinal(HAL_MCP_DIGEST_HANDLE handle, UINT8*pHash, UINT32*pHashLen);
 ```
 
-##Function Declaration
+
 ### RHAL_MCP_DigestPeek
 ```bash
 SINT32 RHAL_MCP_DigestPeek(HAL_MCP_DIGEST_HANDLE handle, UINT8*pHash, UINT32*pHashLen);

@@ -6,313 +6,314 @@ sidebar_position: 88
 
 RHAL_VPQ_LED api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_VPQ_LED_LDGetIsLocalDimming
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDGetIsLocalDimming(UINT8*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDSetIsLocalDimming
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDSetIsLocalDimming(UINT8 pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_Initialize
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_Initialize(HAL_LED_PANEL_INFO_T stPanelInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_Uninitialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDSetDBLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDSetDBLUT(HAL_LED_DB_LUT_T*pstLedDbLut);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDEnable
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDEnable(BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDSetLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDSetLUT(UINT8 lutTableIndex);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDEnablePixelCompensation
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDEnablePixelCompensation(BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDCtrlDemoMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDCtrlDemoMode(LOCALDIMMING_DEMO_TYPE_T bType, BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDCtrlSPI
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDCtrlSPI(UINT8 bitMask, BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDGetFirmwareVersion
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDGetFirmwareVersion(UINT8*pVersion);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDGetAPL
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDGetAPL(UINT16*u16Max, UINT16*u16Min);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDSetClippingValue
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDSetClippingValue(UINT16 u16ClippingValue);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDSetClearPlus
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDSetClearPlus(BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDCtrlStoreDimmingLuxUp
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDCtrlStoreDimmingLuxUp(BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDSetLedPKGControl
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDSetLedPKGControl(BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDSetDutyLimit
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDSetDutyLimit(UINT16 DutyLowLimit, UINT16 DutyHighLimit);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LDSetDuty
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LDSetDuty(UINT16 Duty);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SET_SLR_VIP_TABLE_LD
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SET_SLR_VIP_TABLE_LD(void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SET_SLR_VIP_TABLE_LDCOMP
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SET_SLR_VIP_TABLE_LDCOMP(void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SET_SLR_VIP_TABLE_LDSPI
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SET_SLR_VIP_TABLE_LDSPI(void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SET_SLR_VIP_TABLE_BLPF
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SET_SLR_VIP_TABLE_BLPF(void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SET_SLR_VIP_TABLE_LDINDEXMAP
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SET_SLR_VIP_TABLE_LDINDEXMAP(void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SetCustomerLDBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SetCustomerLDBinPath(char*sLDBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SyncCustomerLDBinPath2Viptable
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SyncCustomerLDBinPath2Viptable(char*sLDBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SetCustomerBLPFBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SetCustomerBLPFBinPath(char*sBLPFBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SyncCustomerBLPFBinPath2Viptable
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SyncCustomerBLPFBinPath2Viptable(char*sBLPFBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SET_LDVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SET_LDVerMiscInfo(RHAL_LD_VER_MISC_INFO*m_pVipLDVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_GET_LDVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_GET_LDVerMiscInfo(RHAL_LD_VER_MISC_INFO*m_pVipLDVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SET_BLPFVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SET_BLPFVerMiscInfo(RHAL_BLPF_VER_MISC_INFO*m_pVipBLPFVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_GET_BLPFVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_GET_BLPFVerMiscInfo(RHAL_BLPF_VER_MISC_INFO*m_pVipBLPFVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SET_LDSPI_SRAM_Data
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SET_LDSPI_SRAM_Data(RHAL_LED_LDSPI_DATASRAM_TYPE*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_SET_LDSPIEnable
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_SET_LDSPIEnable(BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_HDRInitialize
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_HDRInitialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_HDRSetMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_HDRSetMode(UINT8 hdrDCMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_HDRSetDECMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_HDRSetDECMode(UINT8 hdrDECMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_HDRBypassMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_HDRBypassMode(BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_HDRBypassInternalControl
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_HDRBypassInternalControl(BOOLEAN hdrBypass);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_HDRSetSceneChange
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_HDRSetSceneChange(BOOLEAN bIsSceneChange);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_HDRCtrlStoreMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_HDRCtrlStoreMode(BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_HDRGetFirmwareVersion
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_HDRGetFirmwareVersion(UINT8*pVersion);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_WCGInitialize
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_WCGInitialize(HAL_LED_PANEL_INFO_T panelInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_WCGEnable
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_WCGEnable(BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_WCGSetMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_WCGSetMode(UINT8 wcgMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_WCGBypassMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_WCGBypassMode(BOOLEAN bCtrl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_WCGGetFirmwareVersion
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_WCGGetFirmwareVersion(UINT8*pVersion);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_WCGSetLUT
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_WCGSetLUT(UINT8 lutTableIndex);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_Debug
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_Debug(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_OperateExtend
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_OperateExtend(unsigned int operateType, unsigned int dataLen, unsigned char*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_InitLDSPI
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_InitLDSPI(BOOLEAN isSDR);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_Set_LD_Custome_Info
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_Set_LD_Custome_Info(void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_LED_LD_Initialize
 ```bash
 DTV_STATUS_T RHAL_VPQ_LED_LD_Initialize(unsigned char ucvalue);

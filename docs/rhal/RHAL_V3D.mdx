@@ -6,49 +6,50 @@ sidebar_position: 68
 
 RHAL_V3D api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_V3D_Initialize
 ```bash
 DTV_STATUS_T RHAL_V3D_Initialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_V3D_Set3DFMT
 ```bash
 DTV_STATUS_T RHAL_V3D_Set3DFMT(VIDEO_WID_T wid, HAL_V3D_FMT_TYPE_T in_fmt, HAL_V3D_FMT_TYPE_T out_fmt);
 ```
 
-##Function Declaration
+
 ### RHAL_V3D_SetLRSeq
 ```bash
 DTV_STATUS_T RHAL_V3D_SetLRSeq(HAL_V3D_LR_SEQ_T type);
 ```
 
-##Function Declaration
+
 ### RHAL_V3D_CtrlConvergence
 ```bash
 DTV_STATUS_T RHAL_V3D_CtrlConvergence(SINT8 s8ConvValue);
 ```
 
-##Function Declaration
+
 ### RHAL_V3D_CtrlDepth
 ```bash
 DTV_STATUS_T RHAL_V3D_CtrlDepth(UINT8 u8DepthLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_V3D_SetAutoConvEnable
 ```bash
 DTV_STATUS_T RHAL_V3D_SetAutoConvEnable(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_V3D_GetAutoDetectingResult
 ```bash
 DTV_STATUS_T RHAL_V3D_GetAutoDetectingResult(HAL_V3D_FMT_TYPE_T*pVideo3Dtype);
 ```
 
-##Function Declaration
+
 ### RHAL_V3D_SetAutoDetectingType
 ```bash
 DTV_STATUS_T RHAL_V3D_SetAutoDetectingType(HAL_V3D_FORMAT_TYPE_T mode);

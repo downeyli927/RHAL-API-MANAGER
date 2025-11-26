@@ -6,241 +6,242 @@ sidebar_position: 82
 
 RHAL_VFE_DPRX api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_VFE_DPRX_Initialize
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Initialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Uninitialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_Open
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Open(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_Close
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Close(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_Connect
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Connect(UINT8 port);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_Disconnect
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Disconnect(UINT8 port);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_SetWakeupMode
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_SetWakeupMode(HAL_VFE_DP_WAKEUP_MODE_E setMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetRxPortCnt
 ```bash
 UINT8 RHAL_VFE_DPRX_GetRxPortCnt(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetPortCapability
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetPortCapability(UINT8 port, HAL_VFE_DPRX_PORT_CAP_T*pCap);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetLinkStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetLinkStatus(UINT8 port, HAL_VFE_DPRX_PORT_LINK_STATUS_T*pStatus);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetSdpData
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetSdpData(UINT8 port, HAL_VFE_DPRX_SDP_DATA_TYPE_E type, HAL_VFE_DPRX_PORT_SDP_DATA_T*pSdp);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetStreamType
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetStreamType(UINT8 port, HAL_VFE_DPRX_STREAM_TYPE_E*pType);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetFastSwitchSupport
 ```bash
 UINT8 RHAL_VFE_DPRX_GetFastSwitchSupport(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetConnectionState
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetConnectionState(UINT8 port, UINT8*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_EnableHPD
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_EnableHPD(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_DisableHPD
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_DisableHPD(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_SetHotPlug
 ```bash
 UINT8 RHAL_VFE_DPRX_SetHotPlug(UINT8 port, UINT8 hpd);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_ReadEDID
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_ReadEDID(UINT8 port, UINT8*pData, UINT16 Len);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_WriteEDID
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_WriteEDID(UINT8 port, UINT8*pData, UINT16 Len, UINT32 Flags);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetPortAVIInfo
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetPortAVIInfo(UINT8 port, HAL_VFE_DPRX_AVI_INFO_T*pAvi);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetDRMInfo
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetDRMInfo(UINT8 port, HAL_VFE_DPRX_DRM_INFO_T*pstDRM);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetHDCPCapability
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetHDCPCapability(HAL_VFE_DP_HDCP_CAPABILITY_T*pCability);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_WriteHDCPKey
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_WriteHDCPKey(HAL_HDCP_KEY*pKey, UINT32 Flag);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetHDCPStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetHDCPStatus(UINT8 port, HAL_VFE_DPRX_HDCP_STATUS_T*pStatus);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetPortTimingInfo
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetPortTimingInfo(UINT8 port, HAL_VFE_DPRX_TIMING_INFO_T*pInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_Get_PixelEncodingFormat
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Get_PixelEncodingFormat(UINT8 port, HAL_VFE_DP_PIXEL_ENCODING_FORMAT_T*pInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetAudioCodingType
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetAudioCodingType(UINT8 port, UINT8*pCodingType);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_SetVRREnable
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_SetVRREnable(UINT8 port, UINT8 enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_SetDSCEnable
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_SetDSCEnable(UINT8 port, UINT8 enable);
 ```
 
-##Function Declaration
+
 ### RHAL_QS_VFE_DPRX_Initialize
 ```bash
 DTV_STATUS_T RHAL_QS_VFE_DPRX_Initialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetClockStatus
 ```bash
 BOOLEAN RHAL_VFE_DPRX_GetClockStatus(UINT8 port);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_IsHDCP22Supported
 ```bash
 UINT8 RHAL_VFE_DPRX_IsHDCP22Supported(UINT8 port);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetHDCPVersion
 ```bash
 HAL_VFE_HDCP_VERSION RHAL_VFE_DPRX_GetHDCPVersion(UINT8 port);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetSourceKSVData
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetSourceKSVData(UINT8 port, UINT8*pKSVData);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetHDCPReceiverId
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetHDCPReceiverId(UINT8*hdcp_2p2_ReceiverId);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_SetHPDLowDelay
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_SetHPDLowDelay(UINT32 delay);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetCurrentDRRVFrequency
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetCurrentDRRVFrequency(UINT8 port, UINT16*pVFreq_x100);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetAVMute
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetAVMute(BOOLEAN*value);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetAudioStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetAudioStatus(UINT8 port, HAL_VFE_DPRX_AUDIO_STATUS_T*pStatus);
 ```
 
-##Function Declaration
+
 ### RHAL_VFE_DPRX_GetColorDepth
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetColorDepth(UINT8 port, HAL_VFE_DPRX_COLOR_DEPTH_T*color_depth);

@@ -6,85 +6,86 @@ sidebar_position: 72
 
 RHAL_VBE_DISP_TCON api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_VBE_DISP_TCON_Initialize
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_Initialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_Uninitialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_EnableTCon
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_EnableTCon(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_EnableColorTemp
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_EnableColorTemp(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_EnableDGA
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_EnableDGA(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_EnableDither
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_EnableDither(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_SetDitherMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_SetDitherMode(DISP_TCON_DITHER_T mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_SetGammaTable
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_SetGammaTable(UINT32*pRedGammaTable, UINT32*pGreenGammaTable, UINT32*pBlueGammaTable);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_H_Reverse
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_H_Reverse(UINT8 u8Mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_SetClock
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_SetClock(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_WriteRegister
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_WriteRegister(UINT32 u32Address, UINT32 u32Data);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_ReadRegister
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_ReadRegister(UINT32 u32Address, UINT32*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_SetLvdsFormat
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_TCON_SetLvdsFormat(HAL_VBE_DISP_TCON_LVDS_TYPE_T type);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_DISP_TCON_Debug
 ```bash
 void RHAL_VBE_DISP_TCON_Debug(void);

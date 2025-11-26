@@ -6,511 +6,512 @@ sidebar_position: 92
 
 RHAL_VSC api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_QS_VSC_Initialize
 ```bash
 DTV_STATUS_T RHAL_QS_VSC_Initialize(VSC_INPUT_SRC_INFO_T vscInput, VSC_OUTPUT_MODE_T outputmode);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Initialize
 ```bash
 DTV_STATUS_T RHAL_VSC_Initialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VSC_Uninitialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Open
 ```bash
 DTV_STATUS_T RHAL_VSC_Open(VIDEO_WID_T wId);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Close
 ```bash
 DTV_STATUS_T RHAL_VSC_Close(VIDEO_WID_T wId);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Connect
 ```bash
 DTV_STATUS_T RHAL_VSC_Connect(VIDEO_WID_T wId, VSC_INPUT_SRC_INFO_T vscInput, VSC_OUTPUT_MODE_T outputmode);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Disconnect
 ```bash
 DTV_STATUS_T RHAL_VSC_Disconnect(VIDEO_WID_T wId, VSC_INPUT_SRC_INFO_T vscInput, VSC_OUTPUT_MODE_T outputmode);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetWinBlank
 ```bash
 DTV_STATUS_T RHAL_VSC_SetWinBlank(VIDEO_WID_T wId, BOOLEAN bOnOff, VIDEO_DDI_WIN_COLOR_T color);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetWinBlank_Sync_memc
 ```bash
 DTV_STATUS_T RHAL_VSC_SetWinBlank_Sync_memc(VIDEO_WID_T wId, BOOLEAN bOnOff, VIDEO_DDI_WIN_COLOR_T color);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetTestPatternColor
 ```bash
 DTV_STATUS_T RHAL_VSC_SetTestPatternColor(BOOLEAN enable, UINT8 color, UINT8 mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetTestPatternIRE
 ```bash
 DTV_STATUS_T RHAL_VSC_SetTestPatternIRE(BOOLEAN enable, UINT8 ire, UINT8 mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetTestPatternRGBColor
 ```bash
 DTV_STATUS_T RHAL_VSC_SetTestPatternRGBColor(BOOLEAN enable, UINT8 R, UINT8 G, UINT8 B, UINT8 mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetInputRegion_ForAdaptive
 ```bash
 DTV_STATUS_T RHAL_VSC_SetInputRegion_ForAdaptive(VIDEO_WID_T wId, VIDEO_RECT_T inRegion);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_GetInputRegion
 ```bash
 DTV_STATUS_T RHAL_VSC_GetInputRegion(VIDEO_WID_T wId, VIDEO_RECT_T*pInRegion);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetInputRegion
 ```bash
 DTV_STATUS_T RHAL_VSC_SetInputRegion(VIDEO_WID_T wId, VIDEO_RECT_T inRegion);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_GetOutputRegion
 ```bash
 DTV_STATUS_T RHAL_VSC_GetOutputRegion(VIDEO_WID_T wId, VIDEO_RECT_T*pOutRegion);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetOutputRegion
 ```bash
 DTV_STATUS_T RHAL_VSC_SetOutputRegion(VIDEO_WID_T wId, VIDEO_RECT_T outRegion);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetVENCMode
 ```bash
 DTV_STATUS_T RHAL_VSC_SetVENCMode(UINT16 frame_rate, UINT16 scan_type);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetWinFreeze
 ```bash
 DTV_STATUS_T RHAL_VSC_SetWinFreeze(VIDEO_WID_T wId, BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_CaptureVideoFrame
 ```bash
 DTV_STATUS_T RHAL_VSC_CaptureVideoFrame(VIDEO_DDI_CAPTURE_PLACE_T place, VIDEO_DDI_CAPTURE_INFO_T*pCaptureInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_FreezeVideoFrameBuffer
 ```bash
 DTV_STATUS_T RHAL_VSC_FreezeVideoFrameBuffer(VIDEO_WID_T wId, BOOLEAN bFreezeOn);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_ReadVideoFrameBuffer
 ```bash
 DTV_STATUS_T RHAL_VSC_ReadVideoFrameBuffer(VIDEO_WID_T wId, VIDEO_RECT_T*pIn, VIDEO_DDI_PIXEL_STANDARD_COLOR_T*pRead, VIDEO_DDI_COLOR_STANDARD_T*pcolor_standard, VIDEO_DDI_PIXEL_COLOR_FORMAT_T*pPixelColorFormat);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_WriteVideoFrameBuffer
 ```bash
 DTV_STATUS_T RHAL_VSC_WriteVideoFrameBuffer(VIDEO_WID_T wId, VIDEO_RECT_T*pIn, VIDEO_DDI_PIXEL_STANDARD_COLOR_T*pWrite);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetRGB444Mode
 ```bash
 DTV_STATUS_T RHAL_VSC_SetRGB444Mode(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetRGB444Mode_by_display
 ```bash
 DTV_STATUS_T RHAL_VSC_SetRGB444Mode_by_display(VIDEO_WID_T wId, BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Set3DForScaler
 ```bash
 DTV_STATUS_T RHAL_VSC_Set3DForScaler(TRIDTV_SCALER_CTRL_T*p3DCfgInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Set3DpatternMode
 ```bash
 DTV_STATUS_T RHAL_VSC_Set3DpatternMode(VIDEO_WID_T wId, VIDEO_DDI_3D_PATTERN_TYPE_T mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Get3DAutoDetectmode
 ```bash
 DTV_STATUS_T RHAL_VSC_Get3DAutoDetectmode(VIDEO_WID_T wId, VIDEO_DDI_3D_FORMAT_TYPE_T*pVideo3Dtype);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_OpenV2G
 ```bash
 DTV_STATUS_T RHAL_VSC_OpenV2G(VIDEO_WID_T wId);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_CloseV2G
 ```bash
 DTV_STATUS_T RHAL_VSC_CloseV2G(VIDEO_WID_T wId);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_GetV2GFramebuffer
 ```bash
 DTV_STATUS_T RHAL_VSC_GetV2GFramebuffer(VIDEO_WID_T wId, VIDEO_DDI_CAPTURE_INFO_T*pCaptureInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetUDInput
 ```bash
 DTV_STATUS_T RHAL_VSC_SetUDInput(VIDEO_UD_MODE_T videoUDMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetUDOutput
 ```bash
 DTV_STATUS_T RHAL_VSC_SetUDOutput(VIDEO_DDI_DIS_FMT_T disFmt);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_GetVideoDelayedTime
 ```bash
 DTV_STATUS_T RHAL_VSC_GetVideoDelayedTime(VIDEO_WID_T eWinId, UINT16*pDelayedTime);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetTileMode
 ```bash
 DTV_STATUS_T RHAL_VSC_SetTileMode(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetTileMaxRowVal
 ```bash
 DTV_STATUS_T RHAL_VSC_SetTileMaxRowVal(UINT8 uMaxRow, UINT8 uMaxCol);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetTileID
 ```bash
 DTV_STATUS_T RHAL_VSC_SetTileID(UINT8 uTileID);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetAdaptiveStream
 ```bash
 DTV_STATUS_T RHAL_VSC_SetAdaptiveStream(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetAdaptiveStreamEx
 ```bash
 DTV_STATUS_T RHAL_VSC_SetAdaptiveStreamEx(VIDEO_WID_T wId, UINT32 bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetSOCOutputFMT
 ```bash
 DTV_STATUS_T RHAL_VSC_SetSOCOutputFMT(VIDEO_UD_MODE_T videoUDMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetFRCType
 ```bash
 DTV_STATUS_T RHAL_VSC_SetFRCType(UINT8 frcType);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_GetFRCType
 ```bash
 DTV_STATUS_T RHAL_VSC_GetFRCType(UINT8 u8frctype);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_GetMVOPStatus
 ```bash
 DTV_STATUS_T RHAL_VSC_GetMVOPStatus(VIDEO_WID_T wId, BOOLEAN*bMVOPEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_MakeColoredVideo
 ```bash
 DTV_STATUS_T RHAL_VSC_MakeColoredVideo(VSC_VIDEO_COLOR_TYPE_T videoColor);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetZorder
 ```bash
 DTV_STATUS_T RHAL_VSC_SetZorder(VSC_ZORDER_T zOrder[], UINT8 uWindowNo);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_DM_Open
 ```bash
 DTV_STATUS_T RHAL_VSC_DM_Open(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_DM_Close
 ```bash
 DTV_STATUS_T RHAL_VSC_DM_Close(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_DM_Connect
 ```bash
 DTV_STATUS_T RHAL_VSC_DM_Connect(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_DM_Disconnect
 ```bash
 DTV_STATUS_T RHAL_VSC_DM_Disconnect(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_HDR_Connect_Ctrl
 ```bash
 DTV_STATUS_T RHAL_VSC_HDR_Connect_Ctrl(UINT8 enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_HDR_Open
 ```bash
 DTV_STATUS_T RHAL_VSC_HDR_Open(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_HDR_Close
 ```bash
 DTV_STATUS_T RHAL_VSC_HDR_Close(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_HDR_Open_by_win
 ```bash
 DTV_STATUS_T RHAL_VSC_HDR_Open_by_win(VIDEO_WID_T wId);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_HDR_Close_by_win
 ```bash
 DTV_STATUS_T RHAL_VSC_HDR_Close_by_win(VIDEO_WID_T wId);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_HDR_Connect
 ```bash
 DTV_STATUS_T RHAL_VSC_HDR_Connect(VSC_HDR_TYPE_T vsc_hdr_type);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_HDR_Disconnect
 ```bash
 DTV_STATUS_T RHAL_VSC_HDR_Disconnect(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_HDR_Connect_by_win
 ```bash
 DTV_STATUS_T RHAL_VSC_HDR_Connect_by_win(VIDEO_WID_T wId, VSC_HDR_TYPE_T vsc_hdr_type);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_HDR_Disconnect_by_win
 ```bash
 DTV_STATUS_T RHAL_VSC_HDR_Disconnect_by_win(VIDEO_WID_T wId);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetSubWinShape
 ```bash
 DTV_STATUS_T RHAL_VSC_SetSubWinShape(VSC_SUB_MODE_T wId, VIDEO_RECT_T inRegion);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetSubWinMode
 ```bash
 DTV_STATUS_T RHAL_VSC_SetSubWinMode(VSC_SUB_MODE_T mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetSubWinPurpose
 ```bash
 DTV_STATUS_T RHAL_VSC_SetSubWinPurpose(VSC_SUB_PURPOSE_T purpose);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetDelayBuffer
 ```bash
 DTV_STATUS_T RHAL_VSC_SetDelayBuffer(VIDEO_WID_T wId, UINT8 buffer);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Set_VD_PTG
 ```bash
 DTV_STATUS_T RHAL_VSC_Set_VD_PTG(UINT8 bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Get_UZU_CRC
 ```bash
 DTV_STATUS_T RHAL_VSC_Get_UZU_CRC(VIDEO_WID_T wId, UINT32*iCRC_Value);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_isDolbyHDR
 ```bash
 UINT8 RHAL_VSC_isDolbyHDR(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_GetVgipCaptureFlowState
 ```bash
 DTV_STATUS_T RHAL_VSC_GetVgipCaptureFlowState(VSC_INPUT_SRC_INFO_T vscInput, VSC_VGIP_CAPTURE_FLOW_STATE_T*state);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_RegisterMuteOffCallback
 ```bash
 DTV_STATUS_T RHAL_VSC_RegisterMuteOffCallback(PFN_VSC_NOTIFY_MUTE_OFF_T pfnMuteOffCB);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_RegisterMainPathReadyCallback
 ```bash
 DTV_STATUS_T RHAL_VSC_RegisterMainPathReadyCallback(PFN_VSC_NOTIFY_MAIN_PATH_READY_T pfnMainPathReadyCB);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_RotateVideo
 ```bash
 DTV_STATUS_T RHAL_VSC_RotateVideo(VIDEO_WID_T wId, VSC_ROTATE_T rotation);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_GET_SmoothToggle_FinishStatus
 ```bash
 DTV_STATUS_T RHAL_VSC_GET_SmoothToggle_FinishStatus(VIDEO_WID_T wId, UINT32*pstatus);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SET_CobaltResizeAction
 ```bash
 DTV_STATUS_T RHAL_VSC_SET_CobaltResizeAction(VIDEO_WID_T wId, UINT32 onoff);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Setdualdecoder
 ```bash
 DTV_STATUS_T RHAL_VSC_Setdualdecoder(UINT8 enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SET_SDR_MAX_RGB_FLAG
 ```bash
 DTV_STATUS_T RHAL_VSC_SET_SDR_MAX_RGB_FLAG(UINT8 enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_GET_ScalerVideoDelay
 ```bash
 DTV_STATUS_T RHAL_VSC_GET_ScalerVideoDelay(VIDEO_WID_T wId, UINT32*delay_Result);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_RegisterActiveSizeCallback
 ```bash
 DTV_STATUS_T RHAL_VSC_RegisterActiveSizeCallback(VIDEO_WID_T wId, PFN_VSC_NOTIFY_BBD_CALLBACK pfnActiveSizeCB);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_FAKE_SCALER_BY_SRC
 ```bash
 DTV_STATUS_T RHAL_VSC_FAKE_SCALER_BY_SRC(FAKE_CONNECT_INFO_T fake_connect_info);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_FAKE_SCALER
 ```bash
 DTV_STATUS_T RHAL_VSC_FAKE_SCALER(VIDEO_WID_T wId, UINT8 connect, UINT8 lowdelay,UINT8 dolby);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Set_OperateExtend
 ```bash
 DTV_STATUS_T RHAL_VSC_Set_OperateExtend(unsigned int operateType, unsigned int dataLen, unsigned char*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_RegisterVscStateCallback
 ```bash
 DTV_STATUS_T RHAL_VSC_RegisterVscStateCallback(PFN_VSC_NOTIFY_VSC_STATE_CALLBACK pfnVscStateCB);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetPattern
 ```bash
 DTV_STATUS_T RHAL_VSC_SetPattern(unsigned char window, unsigned char on_off, VSC_INPUT_VIDEO_PATTERN_LOCATION_T pattern_location);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_SetAiTransFuncInfo
 ```bash
 DTV_STATUS_T RHAL_VSC_SetAiTransFuncInfo(unsigned short enable, unsigned short delaynum);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Sniper_GetImplmentationMethod
 ```bash
 DTV_STATUS_T RHAL_VSC_Sniper_GetImplmentationMethod(HAL_VSC_SNIPER_METHOD_T*method);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Sniper_Enable
 ```bash
 DTV_STATUS_T RHAL_VSC_Sniper_Enable(VIDEO_RECT_T capture_pos, VIDEO_RECT_T zoom_pos);
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_Sniper_Disable
 ```bash
 DTV_STATUS_T RHAL_VSC_Sniper_Disable();
 ```
 
-##Function Declaration
+
 ### RHAL_VSC_GetVideoPixelMode
 ```bash
 DTV_STATUS_T RHAL_VSC_GetVideoPixelMode(VIDEO_WID_T eWinId, HAL_VIDEO_PIXEL_MODE*pixel_mode);

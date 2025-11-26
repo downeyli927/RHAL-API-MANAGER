@@ -6,61 +6,62 @@ sidebar_position: 36
 
 RHAL_LEDS api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_LEDS_ONOFF_SET
 ```bash
 INT32 RHAL_LEDS_ONOFF_SET(const INT8*pcbname, UINT32 enable);
 ```
 
-##Function Declaration
+
 ### RHAL_LEDS_BLINKONOFF_SET
 ```bash
 INT32 RHAL_LEDS_BLINKONOFF_SET(const INT8*pcbname, UINT32 enable);
 ```
 
-##Function Declaration
+
 ### RHAL_LEDS_BLINK_SET
 ```bash
 INT32 RHAL_LEDS_BLINK_SET(const INT8*pcbname, UINT32 delayon,UINT32 delayoff);
 ```
 
-##Function Declaration
+
 ### RHAL_LEDS_BLINK_SET_ByIndex
 ```bash
 INT32 RHAL_LEDS_BLINK_SET_ByIndex(const led_pin_sel_mask ledIndex_mask, UINT32 delayon, UINT32 delayoff, unsigned int count=0);
 ```
 
-##Function Declaration
+
 ### RHAL_LEDS_SEND_COLOR_DATA
 ```bash
 INT32 RHAL_LEDS_SEND_COLOR_DATA(LED_DATAS led_data);
 ```
 
-##Function Declaration
+
 ### RHAL_LEDS_ONESHOT_SET
 ```bash
 INT32 RHAL_LEDS_ONESHOT_SET(const INT8*pcbname, UINT32 delayon,UINT32 delayoff, UINT32 invert);
 ```
 
-##Function Declaration
+
 ### RHAL_GOOGLE_LED_Enable
 ```bash
 INT32 RHAL_GOOGLE_LED_Enable(bool bInit);
 ```
 
-##Function Declaration
+
 ### RHAL_LIGHTBAR_SET_OPTION
 ```bash
 INT32 RHAL_LIGHTBAR_SET_OPTION(int setting, int control);
 ```
 
-##Function Declaration
+
 ### RHAL_LEDSERIAL_Set_Farfield_led_on_off
 ```bash
 INT32 RHAL_LEDSERIAL_Set_Farfield_led_on_off(bool dmic_led_mute_flag);
 ```
 
-##Function Declaration
+
 ### RHAL_LEDSERIAL_Enable_Led_Control
 ```bash
 INT32 RHAL_LEDSERIAL_Enable_Led_Control(bool enable_led_control);

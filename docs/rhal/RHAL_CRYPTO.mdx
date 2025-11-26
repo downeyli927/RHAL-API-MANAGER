@@ -6,7 +6,8 @@ sidebar_position: 17
 
 RHAL_CRYPTO api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_CRYPTO_WriteKey
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_WriteKey(RHAL_TRUSTZONE_KEYS_TYPE_T en_keys_type, UINT8*pu8_keys_data, UINT32 u32_keys_data_len);
@@ -20,7 +21,7 @@ Write chinaDRM/playready /Widevine key to RPMB or HDCP2.2 key to factory
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_CRYPTO_CertificateKey
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_CertificateKey(RHAL_TRUSTZONE_KEYS_T*pst_keys_data, RHAL_TRUSTZONE_KEY_CERTIFICATE_T*pen_certificate_result);
@@ -33,7 +34,7 @@ Use for verify ChinaDRM key
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_CRYPTO_ApplyKey
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_ApplyKey(RHAL_TRUSTZONE_KEYS_TYPE_T en_keys_type);
@@ -45,7 +46,7 @@ Use for load and Apply key
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_CYRPTO_QUERY_KEY
 ```bash
 DTV_STATUS_T RHAL_CYRPTO_QUERY_KEY(RHAL_TRUSTZONE_KEYS_TYPE_T en_keys_type, UINT8*pu8_keys_ID, UINT32*u32_keys_ID_len);
@@ -59,7 +60,7 @@ Use for query key has been burn or not
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_CRYPTO_Get_Unique_Id
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_Get_Unique_Id(UINT8*pBuffer, UINT32*pSize);
@@ -72,7 +73,7 @@ Use for get unique id key
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_CRYPTO_Set_PMode
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_Set_PMode(UINT32 mode);
@@ -84,21 +85,21 @@ Set mode to keymint ta
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_CRYPTO_Set_ReleaseMode
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_Set_ReleaseMode();
 ```
 Set system will never enter factory mode again
 
-##Function Declaration
+
 ### RHAL_CRYPTO_Get_CommonKey
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_Get_CommonKey(int*mode);
 ```
 Get optee use common key or device key
 
-##Function Declaration
+
 ### RHAL_CRYPTO_Verify_Attestation_ID
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_Verify_Attestation_ID(UINT8*id_data, UINT32 id_data_len, RHAL_TRUSTZONE_ATTESTATION_ID_TYPE_T id_type);
@@ -112,7 +113,7 @@ Use for verify attestation id
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_CRYPTO_CheckKoPair
 ```bash
 DTV_STATUS_T RHAL_CRYPTO_CheckKoPair();

@@ -6,133 +6,134 @@ sidebar_position: 74
 
 RHAL_VBE_TRIDFMT api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_VBE_TRIDFMT_Initialize
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_Initialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_Uninitialize(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_Open
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_Open(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_Close
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_Close(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_SetScreenOnOff
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_SetScreenOnOff(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_SetFMTMode
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_SetFMTMode(HAL_TRIDTV_FMT_CTRL_T*TriFRC);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_Set3DFormat
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_Set3DFormat(HAL_TRIDTV_FORMAT_CTRL_T*p3DFmtInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_Set3DModeOnOff
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_Set3DModeOnOff(HAL_TRIDTV_INPUT_CONFIG_INFO_T*p3DModeInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_ToggleInputLRFrame
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_ToggleInputLRFrame(HAL_TRIDTV_INPUT_LR_SEQ_T type);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_SelectInputFormat
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_SelectInputFormat(HAL_TRIDTV_INPUT_TYPE_T type);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_SetInputFrameRate
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_SetInputFrameRate(HAL_TRIDTV_INPUT_FREQ_T type);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_ToggleOutputLRFrame
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_ToggleOutputLRFrame(HAL_TRIDTV_OUTPUT_LR_SEQ_T type);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_SelectOutputFormat
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_SelectOutputFormat(HAL_TRIDTV_OUTPUT_TYPE_T type);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_SetOutputFrameRate
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_SetOutputFrameRate(HAL_TRIDTV_OUTPUT_FREQ_T type);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_Get3DCfgInfo
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_Get3DCfgInfo(HAL_TRIDTV_CFG_ITEMS_T n3DCfgItems, UINT8*nCurCfgInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_Set3DCfgInfo
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_Set3DCfgInfo(HAL_TRIDTV_INPUT_CONFIG_INFO_T*p3DModeInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_SetConvValue
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_SetConvValue(SINT8 s8ConvValue);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_CtrlDepth
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_CtrlDepth(HAL_TRIDTV_3DMODE_FLAG_T n3Dmode, UINT8 u8DepthLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_AutoConvergenceEnable
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_AutoConvergenceEnable(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_Set3DVideoOutputMode
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_Set3DVideoOutputMode(UINT32 bIsSGMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_Set3DDepthController
 ```bash
 DTV_STATUS_T RHAL_VBE_TRIDFMT_Set3DDepthController(UINT32 bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VBE_TRIDFMT_Debug
 ```bash
 void RHAL_VBE_TRIDFMT_Debug(void);

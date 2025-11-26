@@ -6,67 +6,68 @@ sidebar_position: 85
 
 RHAL_VO api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_VO_Open
 ```bash
 HAL_VO_STATE_T RHAL_VO_Open(unsigned int ch, HAL_VO_PANEL_TYPE def, HAL_VO_PIXEL_FORMAT pixel_format = HAL_VO_PIXEL_FORMAT_ARGB);
 ```
 
-##Function Declaration
+
 ### RHAL_VO_Config
 ```bash
 HAL_VO_STATE_T RHAL_VO_Config(unsigned int ch, HAL_VO_CFG_T*cfg);
 ```
 
-##Function Declaration
+
 ### RHAL_VO_DisplayPicture
 ```bash
 HAL_VO_STATE_T RHAL_VO_DisplayPicture(unsigned int ch, HAL_VO_IMAGE_T*image);
 ```
 
-##Function Declaration
+
 ### RHAL_VO_RedrawPicture
 ```bash
 HAL_VO_STATE_T RHAL_VO_RedrawPicture(unsigned int ch);
 ```
 
-##Function Declaration
+
 ### RHAL_VO_Close
 ```bash
 HAL_VO_STATE_T RHAL_VO_Close(unsigned int ch);
 ```
 
-##Function Declaration
+
 ### RHAL_VO_GetDeviceCapability
 ```bash
 HAL_VO_STATE_T RHAL_VO_GetDeviceCapability(HAL_VO_DEVICE_CAPABILITY_T*capability);
 ```
 
-##Function Declaration
+
 ### RHAL_VO_FB_Initialize
 ```bash
 HAL_VO_STATE_T RHAL_VO_FB_Initialize(unsigned int ch);
 ```
 
-##Function Declaration
+
 ### RHAL_VO_FB_Finalize
 ```bash
 HAL_VO_STATE_T RHAL_VO_FB_Finalize(unsigned int ch);
 ```
 
-##Function Declaration
+
 ### RHAL_VO_FB_GetTargetFrameBuffer
 ```bash
 HAL_VO_STATE_T RHAL_VO_FB_GetTargetFrameBuffer(const unsigned int ch, HAL_VO_FB_FRAMEBUFFER_T*framebuffer);
 ```
 
-##Function Declaration
+
 ### RHAL_VO_FB_UpdateFrameBuffer
 ```bash
 HAL_VO_STATE_T RHAL_VO_FB_UpdateFrameBuffer(const unsigned int ch, const HAL_VO_FB_FRAMEBUFFER_T*framebuffer);
 ```
 
-##Function Declaration
+
 ### RHAL_VO_FB_UpdateFrameBufferProperty
 ```bash
 HAL_VO_STATE_T RHAL_VO_FB_UpdateFrameBufferProperty(const unsigned int ch, const HAL_VO_FB_FRAMEBUFFER_T*framebuffer, const HAL_VO_FB_FRAMEBUFFER_PROPERTY_T*property);

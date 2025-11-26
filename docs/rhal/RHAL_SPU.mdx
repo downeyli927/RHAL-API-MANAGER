@@ -6,49 +6,50 @@ sidebar_position: 59
 
 RHAL_SPU api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_SPU_EnableSubtitleRender
 ```bash
 DTV_STATUS_T RHAL_SPU_EnableSubtitleRender(BOOLEAN bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_SPU_Enable
 ```bash
 DTV_STATUS_T RHAL_SPU_Enable(UINT8 nPort, BOOLEAN bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_SPU_Flush
 ```bash
 DTV_STATUS_T RHAL_SPU_Flush(UINT8 nPort);
 ```
 
-##Function Declaration
+
 ### RHAL_SPU_Show
 ```bash
 DTV_STATUS_T RHAL_SPU_Show(UINT8 nPort, BOOLEAN bShow);
 ```
 
-##Function Declaration
+
 ### RHAL_SPU_Config
 ```bash
 DTV_STATUS_T RHAL_SPU_Config(UINT8 nPort, SINT32 width, SINT32 height);
 ```
 
-##Function Declaration
+
 ### RHAL_SPU_SetPage
 ```bash
 DTV_STATUS_T RHAL_SPU_SetPage(UINT8 nPort, SINT32 compositionPageId, SINT32 ancillaryPageId);
 ```
 
-##Function Declaration
+
 ### RHAL_SPU_RegisterReceiveSubtitleCallback
 ```bash
 DTV_STATUS_T RHAL_SPU_RegisterReceiveSubtitleCallback(UINT8 nPort, PFN_SPU_GOTDATA_CALLBACK_T pfnGotDataCallback);
 ```
 
-##Function Declaration
+
 ### RHAL_SPU_GetSubPicInfo
 ```bash
 GET_SUBPIC_STATUS_T RHAL_SPU_GetSubPicInfo(UINT8 nPort, SUB_PIC_INFO_T*pSubPicInfo);

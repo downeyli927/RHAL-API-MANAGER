@@ -6,7 +6,8 @@ sidebar_position: 46
 
 RHAL_PCMCIA api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_PCMCIA_Open
 ```bash
 void* RHAL_PCMCIA_Open(UINT8 Id);
@@ -23,7 +24,7 @@ every fd can be opened once, if more than one clients open the fd, only the one 
 
 :::
 
-##Function Declaration
+
 ### RHAL_PCMCIA_Close
 ```bash
 PCMCIA_STS RHAL_PCMCIA_Close(void*pPcmcia);
@@ -35,7 +36,7 @@ Close PCMCIA interface
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_PCMCIA_GetCardStatus
 ```bash
 PCMCIA_STS RHAL_PCMCIA_GetCardStatus(void*pPcmcia, UINT32*p_Status);
@@ -57,7 +58,7 @@ RHAL_PCMCIA_STS_ACCESS_FAULT
 
 :::
 
-##Function Declaration
+
 ### RHAL_PCMCIA_CheckCardReady
 ```bash
 PCMCIA_STS RHAL_PCMCIA_CheckCardReady(void*pPcmcia);
@@ -69,7 +70,7 @@ Check PCMCIA Card is ready to use
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_PCMCIA_CardReset
 ```bash
 PCMCIA_STS RHAL_PCMCIA_CardReset(void*pPcmcia, UINT32 WaitTimeMs);
@@ -82,7 +83,7 @@ Reset PCMCIA Card
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_PCMCIA_CardEnable
 ```bash
 PCMCIA_STS RHAL_PCMCIA_CardEnable(void*pPcmcia, UINT8 Enable);
@@ -95,7 +96,7 @@ Enable PCMCIA Card
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_PCMCIA_ReadAttrMem
 ```bash
 PCMCIA_STS RHAL_PCMCIA_ReadAttrMem(void*pPcmcia, UINT16 Addr, UINT8*pData, UINT32 Len);
@@ -110,7 +111,7 @@ Read ATTR memory of PC Card
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_PCMCIA_WriteAttrMem
 ```bash
 PCMCIA_STS RHAL_PCMCIA_WriteAttrMem(void*pPcmcia, UINT16 Addr, UINT8*pData, UINT32 Len);
@@ -125,7 +126,7 @@ Write ATTR memory of PC Card
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_PCMCIA_ReadIOPort
 ```bash
 PCMCIA_STS RHAL_PCMCIA_ReadIOPort(void*pPcmcia, UINT16 Addr, UINT8*pData, UINT32 Len);
@@ -140,7 +141,7 @@ Read IO memory of PC Card
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_PCMCIA_WriteIOPort
 ```bash
 PCMCIA_STS RHAL_PCMCIA_WriteIOPort(void*pPcmcia, UINT16 Addr, UINT8*pData, UINT32 Len);
@@ -155,7 +156,7 @@ Write IO memory of PC Card
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_PCMCIA_PollEvent
 ```bash
 PCMCIA_STS RHAL_PCMCIA_PollEvent(void*pPcmcia, UINT32 Mask, UINT32*pEvent);

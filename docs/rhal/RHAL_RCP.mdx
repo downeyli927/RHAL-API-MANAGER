@@ -6,37 +6,38 @@ sidebar_position: 52
 
 RHAL_RCP api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_RCP_AES_Cipher
 ```bash
 int RHAL_RCP_AES_Cipher(HAL_MCP_CRYPTION_MODE EnDe, HAL_MCP_BCM_MODE Mode, UINT8 Key[16], UINT8 IV[16], UINT8*pVirDataIn, UINT8*pVirDataOut, ULONG virDataLen);
 ```
 
-##Function Declaration
+
 ### RHAL_RCP_WIDEVINE_AES_CBC_Cipher
 ```bash
 int RHAL_RCP_WIDEVINE_AES_CBC_Cipher(HAL_MCP_CRYPTION_MODE EnDe, UINT8 Key[16], UINT8 IV_In[16], UINT8*pVirDataIn, UINT8*pVirDataOut, ULONG virDataLen);
 ```
 
-##Function Declaration
+
 ### RHAL_RCP_AES_CTR_Cipher_EX
 ```bash
 int RHAL_RCP_AES_CTR_Cipher_EX(UINT8 Key[16], UINT8 IV[16], UINT8*pVirDataIn, UINT8*pVirDataOut, ULONG virDataLen, UINT8 ecnt[16], UINT32*num);
 ```
 
-##Function Declaration
+
 ### RHAL_RCP_SET_CW
 ```bash
 int RHAL_RCP_SET_CW(UINT32 cwIndex, UINT8*pData, UINT32 dataLen);
 ```
 
-##Function Declaration
+
 ### RHAL_RCP_GET_CW
 ```bash
 int RHAL_RCP_GET_CW(UINT32 cwIndex, UINT8*pBuffer, UINT32 bufferLen);
 ```
 
-##Function Declaration
+
 ### RHAL_RCP_CW_XOR
 ```bash
 void RHAL_RCP_CW_XOR(UINT32 CwIn1, UINT32 CwIn2, UINT32 CwOut);

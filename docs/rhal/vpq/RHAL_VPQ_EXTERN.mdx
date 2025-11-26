@@ -6,2527 +6,2528 @@ sidebar_position: 87
 
 RHAL_VPQ_EXTERN api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_VPQEX_Init
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Init(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Uninit
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Uninit(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Open
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Open(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Close
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Close(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Init_ProjectID
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Init_ProjectID(UINT32 id);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_LoadOnePanelTables
 ```bash
 DTV_STATUS_T RHAL_VPQEX_LoadOnePanelTables(SINT8*sPanelPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_AutoLoadPanelTables
 ```bash
 DTV_STATUS_T RHAL_VPQEX_AutoLoadPanelTables(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetPicMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetPicMode(HAL_VPQ_PICTURE_MODE*pPicMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPicMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPicMode(HAL_VPQ_PICTURE_MODE PicMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Get_HDR3DLUT_Offset
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Get_HDR3DLUT_Offset(int*offset);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetBrightness
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetBrightness(UINT32*pBrightness);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetBrightness
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetBrightness(UINT32 Brightness);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetContrast
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetContrast(UINT32*pContrast);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetContrast
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetContrast(UINT32 Contrast);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetSaturation
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetSaturation(UINT32*pSaturation);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetSaturation
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetSaturation(UINT32 Saturation);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHue
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHue(UINT32*pHue);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetHue
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetHue(UINT32 Hue);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetNR
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetNR(HAL_VPQ_LEVEL_E*pNRLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetNR
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetNR(HAL_VPQ_LEVEL_E NRLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetSharpness
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetSharpness(UINT32*pSharpness);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetSharpnessExtend
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetSharpnessExtend(UINT32 Sharpness);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetDeBlocking
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetDeBlocking(HAL_VPQ_LEVEL_E*pDblevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDeBlocking
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDeBlocking(HAL_VPQ_LEVEL_E dblevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetDeRinging
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetDeRinging(HAL_VPQ_LEVEL_E*pDrlevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDeRinging
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDeRinging(HAL_VPQ_LEVEL_E drlevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetColorTemp
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetColorTemp(HAL_VPQ_COLOR_TEMP_DATA_S*pColorTemp);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorTempExtend
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorTempExtend(HAL_VPQ_COLOR_TEMP_DATA_S*ColorTemp);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetColorTempLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetColorTempLevel(HAL_VPQ_COLOR_TEMP_LEVEL_E*pColorTempLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorTempLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorTempLevel(HAL_VPQ_COLOR_TEMP_LEVEL_E ColorTempLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetColorTempGainOffset
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetColorTempGainOffset(HAL_VPQ_COLOR_TEMP_DATA_S*pCTGainOffset);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorTempRedGain
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorTempRedGain(UINT32 RGain);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorTempGreenGain
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorTempGreenGain(UINT32 GGain);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorTempBlueGain
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorTempBlueGain(UINT32 BGain);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorTempRedOffset
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorTempRedOffset(UINT32 ROffset);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorTempGreenOffset
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorTempGreenOffset(UINT32 GOffset);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorTempBlueOffset
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorTempBlueOffset(UINT32 BOffset);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetColorGain
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetColorGain(HAL_VPQ_LEVEL_E*pColorGain);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorGainExtend
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorGainExtend(UINT32 ColorGain);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetFleshTone
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetFleshTone(HAL_VPQ_LEVEL_E*pFleshTone);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetFleshTone
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetFleshTone(HAL_VPQ_LEVEL_E fleshTone);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetBackLight
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetBackLight(UINT32*pBackLight);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetBackLight
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetBackLight(UINT32 backLight);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPanelBL
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPanelBL(UINT8 bl);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetGammaNum
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetGammaNum(SINT32*pNumber);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetGamma
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetGamma(SINT32 gammaIndex);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetPQModule
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetPQModule(RTK_PQModule_T*flags);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPQModule
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPQModule(RTK_PQModule_T*flags);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDemo
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDemo(RTK_DEMO_MODE_T*flags);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetDebugMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetDebugMode(BOOLEAN*pOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDebugMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDebugMode(BOOLEAN onOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHistogram
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHistogram(HAL_VPQ_PQ_DCI_HISTGRAM_S*pDCIHistogram);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_Hue_Histogram
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_Hue_Histogram(HAL_VPQ_PQ_HUE_HISTGRAM*pHUEHistogram);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_Sat_Histogram
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_Sat_Histogram(unsigned int*pSatHistogram);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetSRLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetSRLevel(HAL_VPQ_DEMOLEVEL_E*pSrlevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetSRLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetSRLevel(HAL_VPQ_DEMOLEVEL_E srlevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetBlackPatternOutput
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetBlackPatternOutput(BOOLEAN isBlackPattern);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetWhitePatternOutput
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetWhitePatternOutput(BOOLEAN isBlackPattern);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetODLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetODLevel(UINT32*pODLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetODReadEnable
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetODReadEnable(BOOLEAN enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetSrcHdrInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetSrcHdrInfo(UINT32*pGammaType);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetSDR2HDR
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetSDR2HDR(BOOLEAN*pOnoff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetSDR2HDR
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetSDR2HDR(BOOLEAN onoff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHdrType
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHdrType(HAL_VPQ_HDR_TYPE_E*pHdrType);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDciType
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDciType(UINT32 u32DciType);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetDolbyHdrPicMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetDolbyHdrPicMode(HAL_VPQ_DOLBY_HDR_PIC_MODE_E*pPictureMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDolbyHdrPicMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDolbyHdrPicMode(HAL_VPQ_DOLBY_HDR_PIC_MODE_E enPictureMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHdr10Enable
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHdr10Enable(HAL_BOOL*pbEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetHdr10Enable
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetHdr10Enable(HAL_BOOL bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetDOLBYHDREnable
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetDOLBYHDREnable(HAL_BOOL*pbEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDOLBYHDREnable
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDOLBYHDREnable(HAL_BOOL bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDreampanelLogEnable
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDreampanelLogEnable(HAL_BOOL onoff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetDreampanelBackLight
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetDreampanelBackLight(SINT32*backLight);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDreampanelBackLight
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDreampanelBackLight(SINT32 backLight);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetDCCMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetDCCMode(HAL_VPQ_LEVEL_E*pDCCMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetDCCMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetDCCMode(HAL_VPQ_LEVEL_E DCCMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Get_DCC_PICTURE_MODE_WEIGHTING_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Get_DCC_PICTURE_MODE_WEIGHTING_TV030(UINT32*DCC_weighting);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_DCC_PICTURE_MODE_WEIGHTING_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_DCC_PICTURE_MODE_WEIGHTING_TV030(UINT32 DCC_weighting);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Get_DECONTOUR_ENABLE_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Get_DECONTOUR_ENABLE_TV030(HAL_BOOL*penable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_DECONTOUR_ENABLE_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_DECONTOUR_ENABLE_TV030(HAL_BOOL enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetFilmMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetFilmMode(VPQEX_FILM_MODE_E*pFilmMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetFilmMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetFilmMode(VPQEX_FILM_MODE_E FilmMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetHDMIDataRange
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetHDMIDataRange(VPQEX_HDMI_DATA_RANGE_MODE_E Mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetHDRForceMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetHDRForceMode(VPQEX_HDR_FORCE_MODE_E Mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetBlackAdjust
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetBlackAdjust(HAL_VPQ_LEVEL_E*pLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetBlackAdjust
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetBlackAdjust(HAL_VPQ_LEVEL_E Level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetSGamma
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetSGamma(SINT32*pLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetSGamma
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetSGamma(SINT32 Level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetLiveColour
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetLiveColour(HAL_VPQ_LEVEL_E*pLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetLiveColour
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetLiveColour(HAL_VPQ_LEVEL_E Level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetClarityRealityCreation
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetClarityRealityCreation(VPQEX_SR_MODE_E*pMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetClarityRealityCreation
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetClarityRealityCreation(VPQEX_SR_MODE_E Mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetClarityResolution
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetClarityResolution(UINT32*pValue);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetClarityResolution
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetClarityResolution(UINT32 Value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetMastered4K
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetMastered4K(UINT32*pEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetMastered4K
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetMastered4K(UINT32 Enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_IntelligentPictureEnable
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_IntelligentPictureEnable(HAL_VPQ_LEVEL_E Mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_IntelligentPictureOptimization
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_IntelligentPictureOptimization(UINT32 Lv);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_IntelligentSignalLvIndicatorONOFF
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_IntelligentSignalLvIndicatorONOFF(HAL_VPQ_LEVEL_E Mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Get_IntelligentPictureSignalLevel
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Get_IntelligentPictureSignalLevel(UINT32*pLv);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetPQBypassLv
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetPQBypassLv(UINT32 Idx);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_PQ_Source_Type
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_PQ_Source_Type(UINT32 Idx);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_PQ_Extend_Data
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_PQ_Extend_Data(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_ICM_byAP
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_ICM_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_DCC_byAP
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_DCC_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Black_Adjust_byAP
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Black_Adjust_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Sharpness_byAP
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Sharpness_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_CSC_byAP
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_CSC_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_NR_byAP
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_NR_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_WBBL_byAP
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_WBBL_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_WB_BS_byAP
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_WB_BS_byAP(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetOutputGammaSCurve
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetOutputGammaSCurve(UINT32 Idx);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetMagicColorTempByIndex
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetMagicColorTempByIndex(VPQEX_CT_COLOR_E colorIn, UINT32 indexIn, SINT32*pVlaueOut);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetMagicColorTempOffset
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetMagicColorTempOffset(VPQEX_CT_COLOR_E colorIn, UINT32 indexIn, SINT32 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetColorFacOSDMap
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetColorFacOSDMap(HAL_VPQ_COLOR_DATA_FAC_E type, HAL_VPQ_COLOR_DATA_FAC_S*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorFacOSDMap
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorFacOSDMap(HAL_VPQ_COLOR_DATA_FAC_E type, HAL_VPQ_COLOR_DATA_FAC_S data);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorFacOSDMapByLv
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorFacOSDMapByLv(HAL_VPQ_COLOR_DATA_FAC_E type, HAL_VPQ_COLOR_DATA_FAC_LV_E lv, UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_ResetCurPicModeData
 ```bash
 DTV_STATUS_T RHAL_VPQ_ResetCurPicModeData(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_ResetCurColorTempData
 ```bash
 DTV_STATUS_T RHAL_VPQ_ResetCurColorTempData(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_ResetCurColorFacOSDMap
 ```bash
 DTV_STATUS_T RHAL_VPQ_ResetCurColorFacOSDMap(void);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetGamutColorSpace
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetGamutColorSpace(VPQEX_COLOR_SPACE_E value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetCurSource
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetCurSource(VPQEX_SOURCE_E source);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetCurSource
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetCurSource(VPQEX_SOURCE_E*source);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetENGMENU
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetENGMENU(HAL_VPQ_ENG_ITEM_STRUCT*item, HAL_VPQ_ENG_ID_STRUCT*ID);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetENGMENU_size
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetENGMENU_size(HAL_VPQ_ENG_SIZE*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetENG_ID
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetENG_ID(HAL_VPQ_ENG_ID*ID);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetENG_ID
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetENG_ID(HAL_VPQ_ENG_ID*ID);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetGamma_TableSize
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetGamma_TableSize(UINT16*pu16Gamma_r,UINT16*pu16Gamma_g,UINT16*pu16Gamma_b,UINT16 nTableSize);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHistoData_APL
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHistoData_APL(UINT32*pAPL);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetHDMIModeType
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetHDMIModeType(UINT8 mode_type);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetGammaLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetGammaLevel(UINT8 Level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetHigh_Light_Window_forDemo
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetHigh_Light_Window_forDemo(RTK_DEMO_MODE_T*flags);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetBRIGHTNESS_LUT_EOTF
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetBRIGHTNESS_LUT_EOTF(HAL_VPQ_BRIGHTNESS_LUT_EOTF*pLUT);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetBRIGHTNESS_LUT_OETF
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetBRIGHTNESS_LUT_OETF(HAL_VPQ_BRIGHTNESS_LUT_OETF*pLUT);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorSpace_HSI
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorSpace_HSI(UINT8 u8Mode , HAL_VPQ_COLORSPACE_BASIC*color , HAL_VPQ_COLORSPACE_ICMHSI index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetVDPQ_MEMORY
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetVDPQ_MEMORY(HAL_BOOL bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetDynamicRange
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetDynamicRange(UINT8 cur_src_type, UINT8*HdrMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPanoramaType
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPanoramaType(Hal_RATIO_TYPE_E pPanoramaType);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetENG_TWOLAYER_MENU
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetENG_TWOLAYER_MENU(HAL_VPQ_ENG_ITEM_TWOLAYER_STRUCT*item, HAL_VPQ_ENG_ID_STRUCT*ID);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetENG_TWOLAYER_ID
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetENG_TWOLAYER_ID(HAL_VPQ_ENG_TWOLAYER_ID*ID);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetENG_TWOLAYER_ID
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetENG_TWOLAYER_ID(HAL_VPQ_ENG_TWOLAYER_ID*ID);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GDBC_Set_Mode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GDBC_Set_Mode(HAL_VPQ_GDBC_Mode DBC_Mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GDBC_Get_Mode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GDBC_Get_Mode(HAL_VPQ_GDBC_Mode*DBC_Mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GDBC_Set_UI_DCR_BackLight
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GDBC_Set_UI_DCR_BackLight(UINT32 BL_Value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GDBC_Get_DCR_BackLight
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GDBC_Get_DCR_BackLight(UINT32*BL_Value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorMatrixSRGB
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorMatrixSRGB(HAL_COLOR_SRGB_MAPPING_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPatternforAutoGamma
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPatternforAutoGamma(unsigned char Enable, unsigned short r_Val,unsigned short g_Val,unsigned short b_Val);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetOD_TBL
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetOD_TBL(UINT8 od_ctrl[3][289]);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetVALC_TBL
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetVALC_TBL(UINT8 valc_ctrl[6][17][17]);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetDeMura_TBL
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetDeMura_TBL(HAL_DeMura_CTRL*DeMura_CTRL_T);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetOutputGamma_TBL
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetOutputGamma_TBL(UINT32 OutputGamma_Table[4][128]);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_notifyPlatformColorTemp
 ```bash
 DTV_STATUS_T RHAL_VPQEX_notifyPlatformColorTemp(HAL_VPQ_COLOR_TEMP_LEVEL_E colorTempLevel);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_PQ_table_bin_info
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_PQ_table_bin_info(HAL_BOOL onoff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_TCON_table_bin_info
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_TCON_table_bin_info(HAL_BOOL onoff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetPanelPqPath
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetPanelPqPath(SINT8*patch);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetPanelPqName
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetPanelPqName(SINT8*name);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SET_INTERNAL_PARTTEN_1W
 ```bash
 DTV_STATUS_T RHAL_VPQ_SET_INTERNAL_PARTTEN_1W(unsigned char enable,unsigned short r_Val,unsigned short g_Val,unsigned short b_Val);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetMEMCLocalDimming_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetMEMCLocalDimming_TV030(HAL_BOOL*pbEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetMEMCLocalDimming_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetMEMCLocalDimming_TV030(HAL_BOOL bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_LC_BLKHVNUM_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_LC_BLKHVNUM_TV030(UINT8*piRow,UINT8*piCol);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_HDR_GetPicInfo_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_HDR_GetPicInfo_TV030(UINT32*pstPicInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHDR_Histogram_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHDR_Histogram_TV030(float*pHDRNits , UINT32*pstPicInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetSplitDemo_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetSplitDemo_TV030(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetLD_Enable_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetLD_Enable_TV030(HAL_BOOL*pbEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_LC_BLKAPL_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_LC_BLKAPL_TV030(UINT32 iMaxRow,UINT32 iMaxCol, UINT32*pVal);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetLowDelayMode_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetLowDelayMode_TV030(BOOLEAN bGameMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_level_distribution_BackEnd_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_level_distribution_BackEnd_TV030(UINT32*pu16Distribution, UINT8 u8Size);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHistoData_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHistoData_TV030(HAL_VPQ_DC2P_HISTODATA_INFO_TV030*pHistoInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetParttenforAutoGamma_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetParttenforAutoGamma_TV030(UINT8 enable,UINT16 r_Val,UINT16 g_Val,UINT16 b_Val);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetBrightnessVal_OSDLayer_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetBrightnessVal_OSDLayer_TV030(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetContrastVal_OSDLayer_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetContrastVal_OSDLayer_TV030(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetFilmMode_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetFilmMode_TV030(VPQEX_FILM_MODE_E bFilmMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPictureMode_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPictureMode_TV030(unsigned char*picturemode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetMagicGamma_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetMagicGamma_TV030(UINT16*MagicGamma_r,UINT16*MagicGamma_g,UINT16*MagicGamma_b,UINT16 enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetPixelInfo_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetPixelInfo_TV030(HAL_VPQ_SCREEN_PIXEL_INFO_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorSpace
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorSpace(HAL_VPQ_COLORSPACE_INDEX*color);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Setdolbybacklight
 ```bash
 DTV_STATUS_T RHAL_VPQ_Setdolbybacklight(HAL_VPQ_DOBYBAKLIGHT_INI*glob_dolbybacklight_ini);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_ICM_7_Axis_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_ICM_7_Axis_TV030(ICM_H_7axis_table*pdata);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_ICM_7_Axis_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_ICM_7_Axis_TV030(ICM_H_7axis_table data);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetMEMCLocalDimming
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetMEMCLocalDimming(HAL_BOOL*pbEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetMEMCLocalDimming
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetMEMCLocalDimming(HAL_BOOL bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_LC_BLKHVNUM
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_LC_BLKHVNUM(UINT8*piRow,UINT8*piCol);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_HDR_GetPicInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_HDR_GetPicInfo(UINT32*pstPicInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHDR_Histogram
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHDR_Histogram(float*pHDRNits , UINT32*pstPicInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetSplitDemo
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetSplitDemo(BOOLEAN bOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetLD_Enable
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetLD_Enable(HAL_BOOL*pbEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_LC_BLKAPL
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_LC_BLKAPL(UINT32 iMaxRow,UINT32 iMaxCol, UINT32*pVal);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetLowDelayMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetLowDelayMode(BOOLEAN bGameMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_level_distribution_BackEnd
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_level_distribution_BackEnd(UINT32*pu16Distribution, UINT8 u8Size);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHistoInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHistoInfo(HAL_VPQ_DC2P_HISTODATA_INFO*pHistoInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetParttenforAutoGamma
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetParttenforAutoGamma(UINT8 enable,UINT16 r_Val,UINT16 g_Val,UINT16 b_Val);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetBrightnessVal_OSDLayer
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetBrightnessVal_OSDLayer(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetContrastVal_OSDLayer
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetContrastVal_OSDLayer(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetFilmMode_T
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetFilmMode_T(VPQEX_FILM_MODE_E bFilmMode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPictureMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPictureMode(HAL_PQ_MODE_TYPE picturemode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetOSDValueMapFlag
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetOSDValueMapFlag(RHAL_VIP_Flag*Flag);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPanel_Ini
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPanel_Ini(RHAL_VIP_PANEL_DATA_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetVIPSrcResync
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetVIPSrcResync(UINT32*pVIPSrcResync);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetTV002_MagicGamma
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetTV002_MagicGamma(VIP_MAGIC_GAMMA_Curve_Driver_Data*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_SLR_VIP_TABLE
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_SLR_VIP_TABLE(SLR_VIP_TABLE*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_REGISTER_NEW_VIPTABLE
 ```bash
 DTV_STATUS_T RHAL_VPQEX_REGISTER_NEW_VIPTABLE();
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_SLR_VIP_TABLE_CUSTOM_TV001
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_SLR_VIP_TABLE_CUSTOM_TV001(SLR_VIP_TABLE_CUSTOM_TV001*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_VGA_ADCGainOffset
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_VGA_ADCGainOffset(HAL_ADCGainOffset*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_YPBPR_ADCGainOffset
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_YPBPR_ADCGainOffset(HAL_ADCGainOffset*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_PIC_MODE_DATA_defaultPictureModeSet
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_PIC_MODE_DATA_defaultPictureModeSet(HAL_SLR_PICTURE_MODE_DATA*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_PIC_MODE_DATA_DolbyHDRPictureModeSet
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_PIC_MODE_DATA_DolbyHDRPictureModeSet(HAL_SLR_PICTURE_MODE_DATA*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_StructColorDataType_defaultSDColorData
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataType_defaultSDColorData(HAL_StructColorDataType*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_StructColorDataType_defaultHDColorData
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataType_defaultHDColorData(HAL_StructColorDataType*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_COLOR_TEMP_DATA_defColorTempSet
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_COLOR_TEMP_DATA_defColorTempSet(HAL_SLR_COLORTEMP_DATA*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_defaultColorFacMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_defaultColorFacMode(HAL_StructColorDataFacModeType*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_AvColorFacMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_AvColorFacMode(HAL_StructColorDataFacModeType*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_YppColorFacMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_YppColorFacMode(HAL_StructColorDataFacModeType*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_VgaColorFacMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_VgaColorFacMode(HAL_StructColorDataFacModeType*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_HdmiSDColorFacMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_HdmiSDColorFacMode(HAL_StructColorDataFacModeType*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_HdmiColorFacMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacModeType_HdmiColorFacMode(HAL_StructColorDataFacModeType*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetTV002_EXT_FUN_EN
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetTV002_EXT_FUN_EN(UINT32 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetCurSrcFmt
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetCurSrcFmt(UINT32*pSrcFmt);
 ```
 
-##Function Declaration
+
 ### RAHL_VPQEX_GetCurVIPSrcTiming
 ```bash
 DTV_STATUS_T RAHL_VPQEX_GetCurVIPSrcTiming(UINT32*pVIPSrcTiming);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetCurSrcFmt
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetCurSrcFmt(UINT32*pSrcFmt);
 ```
 
-##Function Declaration
+
 ### RAHL_VPQEX_GetCurVIPSrcTiming
 ```bash
 DTV_STATUS_T RAHL_VPQEX_GetCurVIPSrcTiming(UINT32*pVIPSrcTiming);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetVIPSrcResync
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetVIPSrcResync(UINT32 VIPSrcResync);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_IOC_SET_StructColorDataFacMode_EXTERN
 ```bash
 DTV_STATUS_T RHAL_VPQEX_IOC_SET_StructColorDataFacMode_EXTERN(HAL_StructColorDataFacModeType*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetCinemaPicMode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetCinemaPicMode(UINT32 Mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetTV002_SR
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetTV002_SR(HAL_TV002_SR_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetTV002_BLE
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetTV002_BLE(HAL_VPQ_LEVEL_E level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetTV002_sGamma
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetTV002_sGamma(int level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetTV002_LiveColour
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetTV002_LiveColour(HAL_VPQ_LEVEL_E Level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetTV002_Mastered4K
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetTV002_Mastered4K(UINT32 Enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Get_HDR_Type_Flag
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Get_HDR_Type_Flag(UINT32*pHDR_Type_Flag);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetDataAccess
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetDataAccess(RHAL_Data_Access_T*data);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetDDomain3DLUT_Gamma
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetDDomain3DLUT_Gamma(UINT8 index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Init_DDomain3DLUT_Gamma_Table
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Init_DDomain3DLUT_Gamma_Table(UINT8*table);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_TCON_ENABLE_CTRL_TABLE
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_TCON_ENABLE_CTRL_TABLE(UINT8*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_OD_SETTING_TABLE
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_OD_SETTING_TABLE(RHAL_DRV_od_table_mode_t*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_OD_TABLE
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_OD_TABLE(RHAL_DRV_od_table_t*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_DeMura
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_DeMura(RHAL_VIP_DeMura_TBL*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_VALC
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_VALC(UINT8*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_VALCprotectSetting
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_VALCprotectSetting(RHAL_DRV_pcid_valc_t*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_LEDOutGamma
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_LEDOutGamma(UINT16*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_Output_InvOutput_Gamma
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_Output_InvOutput_Gamma(RHAL_VIP_Output_InvOutput_Gamma*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_SLR_HDR_TABLE
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_SLR_HDR_TABLE(UINT8*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_SLR_HDR_TABLE_PANEL_LUMINANCE
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_SLR_HDR_TABLE_PANEL_LUMINANCE(UINT16*panel_luminance);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_SLR_HDR_TABLE_OETF_Setting_Ctrl
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_SLR_HDR_TABLE_OETF_Setting_Ctrl(UINT16*enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_SLR_HDR_TABLE_OETF_Curve_Ctrl
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_SLR_HDR_TABLE_OETF_Curve_Ctrl(UINT16*index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_PQVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_PQVerMiscInfo(RHAL_VPQ_VER_MISC_INFO*m_pVipVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GET_PQVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_GET_PQVerMiscInfo(RHAL_VPQ_VER_MISC_INFO*m_pVipVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_HDRVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_HDRVerMiscInfo(RHAL_VPQ_VER_MISC_INFO_HDR*m_pVipVerMiscInfo_HDR);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GET_HDRVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQ_GET_HDRVerMiscInfo(RHAL_VPQ_VER_MISC_INFO_HDR*m_pVipVerMiscInfo_HDR);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_ExtTable_PQVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_ExtTable_PQVerMiscInfo(RHAL_VPQ_EXT_TABLE_VER_MISC_INFO*m_pVipVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Get_ExtTable_PQVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Get_ExtTable_PQVerMiscInfo(RHAL_VPQ_EXT_TABLE_VER_MISC_INFO*m_pVipVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_WCG_mode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_WCG_mode(UINT32 wcgmode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Gamma_byOffset
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Gamma_byOffset(SINT32 gammaIdx);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_DCC_byIndex
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_DCC_byIndex(UINT32 Index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_ICM_byIndex
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_ICM_byIndex(UINT32 Index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_LC_byIndex
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_LC_byIndex(UINT32 Index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_LC_byLevel
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_LC_byLevel(HAL_VPQ_LEVEL_E level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_LD_byLevel
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_LD_byLevel(HAL_VPQ_LEVEL_E level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_After_Filter
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_After_Filter(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_After_Filter_Enable
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_After_Filter_Enable(UINT8 En);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Blue_Stretch_Level
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Blue_Stretch_Level(HAL_VPQ_LEVEL_E Level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Color_Space
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Color_Space(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_10p_Gamma_Offset
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_10p_Gamma_Offset(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_HDR3DLUT_Offset
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_HDR3DLUT_Offset(int*offset);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_D_3DLUT_Offset
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_D_3DLUT_Offset(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Black_Extension_level
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Black_Extension_level(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_White_Extension_level
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_White_Extension_level(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Data_Range
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Data_Range(UINT8 Range);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_APDEM_INIT_PARA
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_APDEM_INIT_PARA(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_After_Filter_LPF_gain_ColorDataFac
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_After_Filter_LPF_gain_ColorDataFac(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Gamma_PowerCurve_Mapping
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Gamma_PowerCurve_Mapping(unsigned int*powercurve, unsigned int bin, unsigned short*pu8Data, unsigned short*pu8OutData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_VIP_Gamma_Decode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_VIP_Gamma_Decode(UINT16*GOut_R, UINT16*GOut_G, UINT16*GOut_B, VIP_Gamma*gamma);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_VIP_Gamma_Encode
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_VIP_Gamma_Encode(UINT16*curve_Input, UINT32*TBL_Out);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_AI_Face_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_AI_Face_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_AI_SQM_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_AI_SQM_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_AI_Genre_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_AI_Genre_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_AI_Content_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_AI_Content_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_AI_Depth_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_AI_Depth_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_AI_Semantic_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_AI_Semantic_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_AI_Grain_Noise_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_AI_Grain_Noise_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_ACCESS_VPQ_byPara
 ```bash
 DTV_STATUS_T RHAL_VPQEX_ACCESS_VPQ_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_ACCESS_HDR_byPara
 ```bash
 DTV_STATUS_T RHAL_VPQEX_ACCESS_HDR_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_OverDriver_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_OverDriver_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_ACCESS_GLC_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_ACCESS_GLC_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_ACCESS_OUTGAMMA_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_ACCESS_OUTGAMMA_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_ACCESS_VALC_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_ACCESS_VALC_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_ACCESS_LINEOD_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_ACCESS_LINEOD_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_ACCESS_DEMURA_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_ACCESS_DEMURA_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_ACCESS_HDRBoost_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_ACCESS_HDRBoost_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_DeFlick_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_DeFlick_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Internal_PTG_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Internal_PTG_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Dynamic_Black_Equalize_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Dynamic_Black_Equalize_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Shadow_detail_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Shadow_detail_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_DCC_byPara
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_DCC_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_LocalContrast_byPara
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_LocalContrast_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Gamma_byPara
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Gamma_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_RADCR_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_RADCR_Para(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_RADCR_En
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_RADCR_En(UINT32 Enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_RADCR_Backlight_Mapping
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_RADCR_Backlight_Mapping(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetDemo_Mode_byParameter
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetDemo_Mode_byParameter(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetDemo_Mode_byParameter
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetDemo_Mode_byParameter(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetNNSR_byParameter
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetNNSR_byParameter(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Decontour_byParameter
 ```bash
 DTV_STATUS_T RHAL_VPQ_Decontour_byParameter(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### get_iveMatrix
 ```bash
 UINT8 get_iveMatrix(float matrix[3][3], float matrix_inv[3][3]);
 ```
 
-##Function Declaration
+
 ### mul3x1
 ```bash
 UINT8 mul3x1(float a[3][3], float b[3][1], float out[3][1]);
 ```
 
-##Function Declaration
+
 ### mul3x3
 ```bash
 UINT8 mul3x3(float a[3][3], float b[3][3],float out[3][3]);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetBlackExtension
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetBlackExtension(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetWhiteExtension
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetWhiteExtension(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetVideoCurve
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetVideoCurve(HAL_UI_REMAP_CURVE_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetBlueStretch
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetBlueStretch(HAL_VPQ_LEVEL_E Level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetGammaByExponentOffset
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetGammaByExponentOffset(HAL_GAMMA_BY_EXPONENT_OFFSET_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetColorTempAfterGamma
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetColorTempAfterGamma(HAL_VPQ_COLOR_TEMP_DATA_S*ColorTemp);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetICMTableIdx
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetICMTableIdx(UINT8 index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetVDTable
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetVDTable(UINT32*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetColorSpace
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetColorSpace(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetLocalContrast
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetLocalContrast(UINT8 index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetToneMappingTableIdx
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetToneMappingTableIdx(UINT8 index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetICMTable
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetICMTable(UINT32*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetAIPQ_Para
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetAIPQ_Para(UINT32 version, UINT32 length, UINT8 cmd, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetNNSRTable
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetNNSRTable(UINT32 version, UINT32 length, UINT8 cmd, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetVDTable
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetVDTable(UINT32*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_ACCESS_OSD_byPara
 ```bash
 DTV_STATUS_T RHAL_VPQEX_ACCESS_OSD_byPara(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerPQBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerPQBinPath(char*sPQBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerPQBinPath2Viptable
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerPQBinPath2Viptable(char*sPQBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerHDRBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerHDRBinPath(char*sHDRBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerHDRBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerHDRBinPath(char*sHDRBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Sent_PictureMode_Flag
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Sent_PictureMode_Flag(UINT8 pic_mode);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_sRGB33
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_sRGB33(short*sRGB);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetPanoramaType
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetPanoramaType(Hal_RATIO_TYPE_E*pPanoramaType);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_ratio_inner_product
 ```bash
 DTV_STATUS_T RHAL_VPQ_ratio_inner_product(int*vector1, int*vector2, unsigned char length, unsigned int*result);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_EE_test
 ```bash
 DTV_STATUS_T RHAL_VPQ_EE_test(unsigned char*result);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Get_VD_Color
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Get_VD_Color(HAL_VD_COLOR_ST*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_VD_Color
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_VD_Color(HAL_VD_COLOR_ST*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Get_AIPQ_UI_Support
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Get_AIPQ_UI_Support(UINT8*pOnOff);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GetAIPQInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GetAIPQInfo(HAL_VPQ_AI_INFO*info);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Get_Semantic_Ratio
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Get_Semantic_Ratio(UINT8*ratio);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_SLD
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_SLD(UINT32 version, UINT32 length, UINT8 wId, void*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SET_SetICM_7Axis_Adjust_table
 ```bash
 DTV_STATUS_T RHAL_VPQ_SET_SetICM_7Axis_Adjust_table(HAL_VIP_ICM_7Axis_Adjust_table table);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetCOLORSPACEINFO
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetCOLORSPACEINFO(UINT32*info);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SET_Select_PQSource
 ```bash
 DTV_STATUS_T RHAL_VPQ_SET_Select_PQSource(unsigned int index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetICMTableIndex
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetICMTableIndex(UINT32 Index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPanel2matrix
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPanel2matrix(SLR_VIP_TABLE*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerICMBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerICMBinPath(char*sICMBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerICMBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerICMBinPath(char*sICMBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerAIPQBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerAIPQBinPath(char*sAIPQBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerAIPQBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerAIPQBinPath(char*sAIPQBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerODBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerODBinPath(char*sODBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerODBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerODBinPath(char*sODBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_ICMVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_ICMVerMiscInfo(RHAL_ICM_VER_MISC_INFO*m_pVipICMVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_ICMVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_ICMVerMiscInfo(RHAL_ICM_VER_MISC_INFO*m_pVipICMVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_AIPQVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_AIPQVerMiscInfo(RHAL_AIPQ_VER_MISC_INFO*m_pVipAIPQVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_AIPQVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_AIPQVerMiscInfo(RHAL_AIPQ_VER_MISC_INFO*m_pVipAIPQVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_ODVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_ODVerMiscInfo(RHAL_OD_VER_MISC_INFO*m_pVipODVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_ODVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_ODVerMiscInfo(RHAL_OD_VER_MISC_INFO*m_pVipODVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerHDR2BinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerHDR2BinPath(char*sHDR2BinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerHDR2BinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerHDR2BinPath(char*sHDR2BinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_HDR2VerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_HDR2VerMiscInfo(RHAL_HDR2_VER_MISC_INFO*m_pVipHDR2VerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_HDR2VerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_HDR2VerMiscInfo(RHAL_HDR2_VER_MISC_INFO*m_pVipHDR2VerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerSLDBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerSLDBinPath(char*sSLDBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerSLDBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerSLDBinPath(char*sSLDBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_SLDVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_SLDVerMiscInfo(RHAL_SLD_VER_MISC_INFO*m_pVipSLDVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_SLDVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_SLDVerMiscInfo(RHAL_SLD_VER_MISC_INFO*m_pVipSLDVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerGLCBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerGLCBinPath(char*sGLCBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerGLCBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerGLCBinPath(char*sGLCBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_GLCVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_GLCVerMiscInfo(RHAL_GLC_VER_MISC_INFO*m_pVipGLCVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_GLCVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_GLCVerMiscInfo(RHAL_GLC_VER_MISC_INFO*m_pVipGLCVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerOUTGAMMABinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerOUTGAMMABinPath(char*sOUTGAMMABinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerOUTGAMMABinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerOUTGAMMABinPath(char*sOUTGAMMABinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_OUTGAMMAVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_OUTGAMMAVerMiscInfo(RHAL_OUTGAMMA_VER_MISC_INFO*m_pVipOUTGAMMAVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_OUTGAMMAVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_OUTGAMMAVerMiscInfo(RHAL_OUTGAMMA_VER_MISC_INFO*m_pVipOUTGAMMAVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerLINEODBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerLINEODBinPath(char*sLINEODBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerLINEODBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerLINEODBinPath(char*sLINEODBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_LINEODVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_LINEODVerMiscInfo(RHAL_LINEOD_VER_MISC_INFO*m_pVipLINEODVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_LINEODVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_LINEODVerMiscInfo(RHAL_LINEOD_VER_MISC_INFO*m_pVipLINEODVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerVALCBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerVALCBinPath(char*sVALCBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerVALCBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerVALCBinPath(char*sVALCBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_VALCVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_VALCVerMiscInfo(RHAL_VALC_VER_MISC_INFO*m_pVipVALCVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_VALCVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_VALCVerMiscInfo(RHAL_VALC_VER_MISC_INFO*m_pVipVALCVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerHDRBoostBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerHDRBoostBinPath(char*sHDRBoostBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerHDRBoostBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerHDRBoostBinPath(char*sHDRBoostBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_HDRBoostVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_HDRBoostVerMiscInfo(RHAL_HDRBoost_VER_MISC_INFO*m_pVipHDRBoostVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_HDRBoostVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_HDRBoostVerMiscInfo(RHAL_HDRBoost_VER_MISC_INFO*m_pVipHDRBoostVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerNNSRBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerNNSRBinPath(char*sNNSRBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerNNSRBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerNNSRBinPath(char*sNNSRBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_NNSRTableLabel
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_NNSRTableLabel(RHAL_NNSR_TABLE_LABEL*pNNSR_table_label);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_NNSRTableLabel
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_NNSRTableLabel(RHAL_NNSR_TABLE_LABEL*pNNSR_table_label);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerVDIniPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerVDIniPath(char*sVDIniPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerVDIniPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerVDIniPath(char*sICMBinPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_VDVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_VDVerMiscInfo(RHAL_VD_VER_MISC_INFO*m_pVipVDVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_VDVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_VDVerMiscInfo(RHAL_VD_VER_MISC_INFO*m_pVipVDVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetCustomerOSDSRIniPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerOSDSRIniPath(char*sOSDSRIniPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SyncCustomerOSDSRIniPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerOSDSRIniPath(char*sOSDSRIniPath);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_OSDSRVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_OSDSRVerMiscInfo(RHAL_OSDSR_VER_MISC_INFO*m_pVipOSDSRVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_GET_OSDSRVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_OSDSRVerMiscInfo(RHAL_OSDSR_VER_MISC_INFO*m_pVipOSDSRVerMiscInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SetDecontourLevel
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetDecontourLevel(UINT8 value);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_ColorMatrixType
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_ColorMatrixType(UINT32*type);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetColorMatrixEnable
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetColorMatrixEnable(HAL_BOOL enable, HAL_VPQ_COLOR_MATRIX_TYPE index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set3DLutEnable
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set3DLutEnable(HAL_BOOL enable, HAL_VPQ_3DLUT_INDEX index);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetBaseColor
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetBaseColor(HAL_VPQ_COLORSPACE_INDEX*color);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_3DLUT_Data
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_3DLUT_Data(HAL_VPQ_3DLUT_PARAM*lut);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_CurrentMatrix
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_CurrentMatrix(RHAL_VIP_Current_sRGB_Matrix*Currentmatrix);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_DeMura_Enable
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_DeMura_Enable(unsigned char Enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_Demura_Table
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_Demura_Table(unsigned char*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetPatternforAutoGamma_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetPatternforAutoGamma_TV030(unsigned char Enable, unsigned short r_Val,unsigned short g_Val,unsigned short b_Val);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_LocalContrast_LEVEL_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_LocalContrast_LEVEL_TV030(HAL_VPQ_LocalContrast_LEVEL level);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_Set_GammaCurve1024pts
 ```bash
 DTV_STATUS_T RHAL_VPQEX_Set_GammaCurve1024pts(HAL_VPQ_GAMMA_CURVE_T*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetMagicGamma_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetMagicGamma_TV030(UINT16*MagicGamma_r,UINT16*MagicGamma_g,UINT16*MagicGamma_b,UINT16 enable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DLG_OD_Table
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DLG_OD_Table(HAL_DLG_OD_TABLE_TYPE*od_table);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_DLG_ACC_Table
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_DLG_ACC_Table(HAL_DLG_ACC_TABLE_TYPE*acc_table);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQEX_SET_SLR_VIP_OD_TABLE
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_SLR_VIP_OD_TABLE(unsigned char*pData);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_HDR_GetPicInfo_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_HDR_GetPicInfo_TV030(UINT32*pstPicInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Get_Hue_Histogram
 ```bash
 DTV_STATUS_T RHAL_VPQ_Get_Hue_Histogram(HAL_VPQ_PQ_HUE_HISTGRAM*pHUEHistogram);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHistoData_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHistoData_TV030(HAL_VPQ_DC2P_HISTODATA_INFO_TV030*pHistoInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetOSDValueMapFlag
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetOSDValueMapFlag(RHAL_VIP_Flag*Flag);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetHDR_Histogram_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetHDR_Histogram_TV030(float*pHDRNits , UINT32*pstPicInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_SetMEMCLocalDimming_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetMEMCLocalDimming_TV030(HAL_BOOL bEnable);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_GetMEMCLocalDimming_TV030
 ```bash
 DTV_STATUS_T RHAL_VPQ_GetMEMCLocalDimming_TV030(HAL_BOOL*pbEnable);
 ```
 
-##Function Declaration
+
 ### spline
 ```bash
 int spline(float*x, float*y,int n,float yp1, float ypn , float*y2);
 ```
 
-##Function Declaration
+
 ### splint
 ```bash
 int splint(float*xa , float*ya , float*y2a ,int n , float x , float*y);
 ```
 
-##Function Declaration
+
 ### spline1_c
 ```bash
 int spline1_c(float*xi , float*yi , int*nin ,float*xo , float*yo , int*nout);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_RGB_Mode
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_RGB_Mode(HAL_VPQ_COLOR_TEMP_DATA_S*rgb_S);
 ```
 
-##Function Declaration
+
 ### RHAL_VPQ_Set_AISR_Enable
 ```bash
 DTV_STATUS_T RHAL_VPQ_Set_AISR_Enable(unsigned char enable);

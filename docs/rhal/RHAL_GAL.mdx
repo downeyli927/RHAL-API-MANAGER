@@ -6,21 +6,22 @@ sidebar_position: 28
 
 RHAL_GAL api
 
-##Function Declaration
+
+## Function Declaration
 ### RHAL_GAL_Init
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_Init(void);
 ```
 Initializes GPU module.
 
-##Function Declaration
+
 ### RHAL_GAL_Finalize
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_Finalize(void);
 ```
 Finalize 2D graphics module.
 
-##Function Declaration
+
 ### RHAL_GAL_GetDeviceCapability
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetDeviceCapability(HAL_GAL_DEVICE_CAPABILITY_INFO_T*pDeviceCapabilityInfo);
@@ -32,7 +33,7 @@ Gets 2D graphic capability of device.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_CreateSurface
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_CreateSurface(UINT16 width, UINT16 height, HAL_GAL_PIXEL_FORMAT_T pixelFormat, HAL_GAL_SURFACE_INFO_T*pSurfaceInfo);
@@ -47,14 +48,14 @@ Allocates memory buffer for a surface in the video memory area. (for using H/W a
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_DestroySurface
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_DestroySurface(HAL_GAL_SURFACE_INFO_T*pSurfaceInfo);
 ```
 Dellocates buffer for a surface in the video memory area.
 
-##Function Declaration
+
 ### RHAL_GAL_Blit
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_Blit(HAL_GAL_SURFACE_INFO_T*pSrcSurface, HAL_GAL_RECT_T*pSrcRect, HAL_GAL_SURFACE_INFO_T*pDstSurface, UINT16 dx, UINT16 dy, HAL_GAL_BLIT_FLAGS_T*pBlitFlags, HAL_GAL_BLIT_SETTINGS_T*pBlitSettings);
@@ -72,7 +73,7 @@ Blit an area from one surface to other surface based on blit flags.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_StretchBlit
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_StretchBlit(HAL_GAL_SURFACE_INFO_T*pSrcSurface, HAL_GAL_RECT_T*pSrcRect, HAL_GAL_SURFACE_INFO_T*pDstSurface, HAL_GAL_RECT_T*pDstRect, HAL_GAL_BLIT_FLAGS_T*pBlitFlags, HAL_GAL_BLIT_SETTINGS_T*pBlitSettings);
@@ -89,7 +90,7 @@ Stretch blit an area from one surface to other surface based on blit flags.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_FillRectangle
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_FillRectangle(HAL_GAL_SURFACE_INFO_T*pDstSurface, HAL_GAL_RECT_T*pDstRect, UINT32 color, HAL_GAL_DRAW_FLAGS_T*pDrawFlags, HAL_GAL_DRAW_SETTINGS_T*pDrawSettings);
@@ -105,7 +106,7 @@ Fills a rectangle to a destination surface based on drawing flags.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_DrawRectangle
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_DrawRectangle(HAL_GAL_SURFACE_INFO_T*pDstSurface, HAL_GAL_RECT_T*pDstRect, UINT32 color, HAL_GAL_DRAW_FLAGS_T*pDrawFlags, HAL_GAL_DRAW_SETTINGS_T*pDrawSettings);
@@ -121,7 +122,7 @@ Fills a rectangle to a destination surface based on drawing flags.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_DrawLine
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_DrawLine(HAL_GAL_SURFACE_INFO_T*pDSurface, HAL_GAL_LINE_T*pDstLine, UINT32 color, HAL_GAL_DRAW_FLAGS_T*pDrawFlags, HAL_GAL_DRAW_SETTINGS_T*pDrawSettings);
@@ -137,7 +138,7 @@ Draws a line to a destination surface based on drawing flags.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_GetSurfacePalette
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetSurfacePalette(HAL_GAL_SURFACE_INFO_T*pSurface, UINT32*pPalette, SINT32 paletteLength);
@@ -151,7 +152,7 @@ Get surface palette
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SetSurfacePalette
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetSurfacePalette(HAL_GAL_SURFACE_INFO_T*pSurface, UINT32*pPalette, SINT32 paletteLength);
@@ -165,7 +166,7 @@ Set surface palette
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SetFrameBuffer
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFrameBuffer(HAL_GAL_SURFACE_INFO_T*pSurface, UINT32 fbHWControllerIndex);
@@ -178,7 +179,7 @@ Mapping received surface and hw controller. And chip vendor need to consider to 
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SetFrameBufferWithProperty
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFrameBufferWithProperty(HAL_GAL_SURFACE_INFO_T*pSurface, UINT32 fbHWControllerIndex, HAL_GAL_FRAMEBUFFER_PROPERTY_FLAGS_T fbPropertyFlags,HAL_GAL_FRAMEBUFFER_PROPERTY_EXTENDED_INFO_T*pFbPropertyExInfo);
@@ -193,14 +194,14 @@ Sets region(viewRect/dispRect) and Stereoscope(on/off, stereoscope type) about f
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_ResetFrameBuffer
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_ResetFrameBuffer(UINT32 fbHWControllerIndex);
 ```
 Reset associated resource of FrameBuffer (=disable visibility of FrameBuffer). In case of this, maybe chip vendor dont need to consider to vsync wait.
 
-##Function Declaration
+
 ### RHAL_GAL_SetFBHWControllerVisibility
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFBHWControllerVisibility(HAL_GAL_FRAMEBUFFER_VISIBILITY_INFO_T*pChangedFbList, UINT32 changedFbNum);
@@ -213,7 +214,7 @@ conrol to visility of specified pChangedFbList according to number of changedFbN
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SetFBHWControllerVsync
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFBHWControllerVsync(UINT32 fbHWControllerIndex, BOOLEAN bVsync);
@@ -226,14 +227,14 @@ Decide whether to use vsync operation of specified FBHWController or not.we will
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SyncGraphic
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SyncGraphic(void);
 ```
 Waits for the all the H/W accelerated graphics operations to be done.
 
-##Function Declaration
+
 ### RHAL_GAL_MoveCursor
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_MoveCursor(UINT32 fbHWControllerIndex, HAL_GAL_CURSOR_PROPERTY_INFO_T*pCursorProperty);
@@ -246,7 +247,7 @@ Move position of cursor
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SetFBHWControllerPathMode
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFBHWControllerPathMode(UINT32 fbHWControllerIndex, HAL_GAL_OSD_PATH_MODE_FLAGS_T osdPathMode);
@@ -259,7 +260,7 @@ Select output path mode of framebuffer HW controller between main chip and exter
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SetFrameBufferProperty
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFrameBufferProperty(UINT32 fbHWControllerIndex, HAL_GAL_FRAMEBUFFER_PROPERTY_FLAGS_T fbPropertyFLags, HAL_GAL_FRAMEBUFFER_PROPERTY_INFO_T*pFbPropertyInfo);
@@ -273,7 +274,7 @@ Sets region(viewRect/dispRect) about framebuffer.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SetFBHWControllerStereoscope
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFBHWControllerStereoscope(UINT32 fbHWControllerIndex, BOOLEAN bStereoscope, HAL_GAL_STEREOSCOPE_TYPE_T stereoscopeType);
@@ -287,7 +288,7 @@ Sets region(viewRect/dispRect) about framebuffer.
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SetFrameBufferPixelFormat
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetFrameBufferPixelFormat(UINT32 fbHWControllerIndex, HAL_GAL_PIXEL_FORMAT_EX_T pixelFormat);
@@ -300,7 +301,7 @@ Change pixelFormat of framebuffer
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_GetFrameBufferPixelFormat
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetFrameBufferPixelFormat(UINT32 fbHWControllerIndex, HAL_GAL_PIXEL_FORMAT_EX_T*pPixelFormat);
@@ -313,7 +314,7 @@ Get pixelFormat of framebuffer
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_GetFrameBufferList
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetFrameBufferList(HAL_GAL_SURFACE_INFO_T**ppSurfaceInfoList, UINT32*pNumOfSurface);
@@ -326,7 +327,7 @@ Get frame buffer list
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_GetOSDOutputResolution
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetOSDOutputResolution(HAL_GAL_RECT_T*pOSDOutputResolution);
@@ -338,7 +339,7 @@ Get graphic output resolution
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SetGraphicOutputResolution
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetGraphicOutputResolution(HAL_GAL_RESOLUTION_T graphicOutputResolution);
@@ -350,7 +351,7 @@ Set graphic output resolution
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_GetFBHWControllerVisibility
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetFBHWControllerVisibility(UINT32 fbHWControllerIndex, BOOLEAN*pbVisibility);
@@ -363,14 +364,14 @@ Get FB HWController visibility
   ]}
 />
 
-##Function Declaration
+
 ### RHAL_GAL_SetCursorPosition
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetCursorPosition(HAL_GAL_CURSOR_POSITION_INFO_T*pCursorPosition);
 ```
 This is similar to HAL_GAL_MoveCursor, we are going to replace from MoveCursor to this
 
-##Function Declaration
+
 ### RHAL_GAL_SetCursorResolution
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetCursorResolution(HAL_GAL_RESOLUTION_T cursorCoordinateResolution, HAL_GAL_RESOLUTION_T cursorImageResolution);
@@ -382,79 +383,79 @@ width of cursor resolution  = cursorImageResolution.width/cursorCoordinateResolu
 height of cursor resolution = cursorImageResolution.height/cursorCoordinateResolution.height
 :::
 
-##Function Declaration
+
 ### RHAL_GAL_Capture_stch
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_Capture_stch(HAL_GAL_SURFACE_INFO_T*pDstSurface ,HAL_GAL_RECT_T*pCapRect ,HAL_GAL_RECT_T*pStchRect);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_Capture
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_Capture(HAL_GAL_SURFACE_INFO_T*pDSurface ,HAL_GAL_RECT_T*pDstRect);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_GetOSDInfo
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetOSDInfo(HAL_GAL_OSD_NUM_TYPE_T osdn, HAL_GAL_RECT_T*posdinfo ,HAL_GAL_RECT_T*poutputinfo);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_GetOSDStatus
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetOSDStatus(UINT32*status);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_OSDSettings
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_OSDSettings(HAL_GAL_OSD_NUM_TYPE_T osdn, HAL_GAL_OSD_CTRL_TYPE_T type, void*args);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_SetOSDDetectionParameter
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetOSDDetectionParameter(HAL_GAL_OSD_DETECTION_PARAMETER_T*pDetectionThreshold);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_GetOSDDetectionStatus
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_GetOSDDetectionStatus(int*pStatus);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_VFLIP
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_VFLIP(UINT32 osdn, bool en);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_SetRecoverBlending
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetRecoverBlending(unsigned int enable);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_NV12_StretchBlit
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_NV12_StretchBlit(HAL_GAL_SCALE_CMD*cmd);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_CaptureFrameBuffer
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_CaptureFrameBuffer(HAL_GAL_SURFACE_INFO_T*pDstfaceInfo);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_SetMixerVideoColorRange
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_SetMixerVideoColorRange(HAL_GAL_VIDEO_COLORKEY_PARA video_color);
 ```
 
-##Function Declaration
+
 ### RHAL_GAL_Set_OSD1_MixerEnable
 ```bash
 HAL_GAL_STATE_T RHAL_GAL_Set_OSD1_MixerEnable(bool enable);
