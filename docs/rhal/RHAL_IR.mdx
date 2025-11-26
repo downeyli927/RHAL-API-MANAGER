@@ -6,6 +6,87 @@ sidebar_position: 35
 
 RHAL_IR api
 
+## Custom Data Types
+### FOR_EACH_IR_PROTOCOL
+```bash
+#define FOR_EACH_IR_PROTOCOL(PROTOCOL) \
+    PROTOCOL(IR_PROTOCOL_NEC),       \
+    PROTOCOL(IR_PROTOCOL_RC5),       \
+    PROTOCOL(IR_PROTOCOL_SHARP),     \
+    PROTOCOL(IR_PROTOCOL_SONY),      \
+    PROTOCOL(IR_PROTOCOL_C03),       \
+    PROTOCOL(IR_PROTOCOL_RC6),       \
+    PROTOCOL(IR_PROTOCOL_RAW_NEC),   \
+    PROTOCOL(IR_PROTOCOL_RCA),       \
+    PROTOCOL(IR_PROTOCOL_PANASONIC), \
+    PROTOCOL(IR_PROTOCOL_KONKA),     \
+    PROTOCOL(IR_PROTOCOL_RAW_RC6),   \
+    PROTOCOL(IR_PROTOCOL_TSB),       \
+    PROTOCOL(IR_PROTOCOL_RAW_TSB),   \
+    PROTOCOL(IR_PROTOCOL_RAW_RCA),   \
+    PROTOCOL(IR_PROTOCOL_RAW_C03),   \
+    PROTOCOL(IR_PROTOCOL_RAW_KONKA), \
+    PROTOCOL(IR_PROTOCOL_RAW_SONY),  \
+    PROTOCOL(IR_PROTOCOL_AEHA),      \
+```
+
+### EIR_PROTOCOL
+```bash
+typedef enum _e_ir_protocol{
+    IR_PROTOCOL_NONE = 0,
+    FOR_EACH_IR_PROTOCOL(GENERATE_ENUM)
+    IR_PROTOCOL_MAX,
+} EIR_PROTOCOL;
+#define GENERATE_ENUM(ENUM)         ENUM
+```
+
+### g_ir_protocol_str
+```bash
+static const char *g_ir_protocol_str[] = {
+        "IR_PROTOCOL_NONE",
+        FOR_EACH_IR_PROTOCOL(GENERATE_STRING)
+        "IR_PROTOCOL_MAX",
+};
+#define GENERATE_STRING(STRING)     #STRING
+```
+
+### EIR_KEY_VALUE
+```bash
+typedef enum _e_ir_key_value {
+    IR_KEY_VALUE_UP  = 0,
+    IR_KEY_VALUE_DOWN ,
+    IR_KEY_VALUE_REPEAT,
+    IR_KEY_VALUE_MAX,
+} EIR_KEY_VALUE;
+```
+
+### HAL_KEYCODE_INTERCEPT_FLAGS
+```bash
+typedef enum {
+    HAL_KEYCODE_INTERCEPT_DISABLE_IRDA_DECODE = 0x00000001,
+    HAL_KEYCODE_INTERCEPT_CALLBACK_ONE_TIME = 0x00010000,
+    HAL_KEYCODE_INTERCEPT_CALLBACK_ALWAYS = 0x00020000,
+}HAL_KEYCODE_INTERCEPT_FLAGS;
+```
+
+### HAL_KEYCODE_INTERCEPT_ACTION
+```bash
+typedef enum {
+    HAL_KEYCODE_INTERCEPT_DO_NONETHING = 0,
+    HAL_KEYCODE_INTERCEPT_REGEN_KEYCODE,
+}HAL_KEYCODE_INTERCEPT_ACTION;
+```
+
+### Constants
+```bash
+#define IR_DEV_NAME                     "venus_IR_input"
+#define DEV_NAME_LEN_MIN            64
+
+enum {
+    HAL_IRDA_DECODE_ON = 0,
+    HAL_IRDA_DECODE_OFF = 1,
+};
+```
 
 ## Function Declaration
 ### RHAL_IR_SET_PROTOCOL
@@ -176,14 +257,6 @@ Register keycode intercept callback function
     { name: 'flags', type: 'UINT32', desc: 'HAL_KEYCODE_INTERCEPT_FLAGS' },
   ]}
 />
-
-:::tip[HAL_KEYCODE_INTERCEPT_FLAGS]
-
-    HAL_KEYCODE_INTERCEPT_DISABLE_IRDA_DECODE = 0x00000001,<br />
-    HAL_KEYCODE_INTERCEPT_CALLBACK_ONE_TIME = 0x00010000,<br />
-    HAL_KEYCODE_INTERCEPT_CALLBACK_ALWAYS = 0x00020000,
-
-:::
 
 ### RHAL_IR_UNREGISTER_KEYCODE_INTERCEPT_CALLBACK
 ```bash

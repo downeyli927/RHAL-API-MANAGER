@@ -6,6 +6,27 @@ sidebar_position: 58
 
 RHAL_SPI api
 
+## Custom Data Types
+### RHAL_CS_TYPE_E
+```bash
+typedef enum
+{
+        RHAL_CS0_SPIFLASH = 0,
+        RHAL_CS1_FCIC,
+        RHAL_CS_MAX,
+}RHAL_CS_TYPE_E;
+```
+
+### RHAL_SPI_INIT_PARAM_T
+```bash
+typedef struct
+{
+        RHAL_CS_TYPE_E cs_type;
+        UINT32 clock;
+        UINT32 flash_size;
+        UINT32 erase_size;
+} RHAL_SPI_INIT_PARAM_T;
+```
 
 ## Function Declaration
 ### RHAL_SPI_LockFlash

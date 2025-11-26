@@ -6,6 +6,16 @@ sidebar_position: 46
 
 RHAL_PCMCIA api
 
+## Custom Data Types
+### PCMCIA_STS
+```bash
+typedef enum {
+    HAL_PCMCIA_OK     =      0,
+    HAL_PCMCIA_FAIL   =     -1,
+    HAL_PCMCIA_NODEV  =     -2,
+}PCMCIA_STS;
+```
+
 
 ## Function Declaration
 ### RHAL_PCMCIA_Open

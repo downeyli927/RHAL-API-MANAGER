@@ -6,6 +6,172 @@ sidebar_position: 61
 
 RHAL_SYS api
 
+## Custom Data Types
+### RHAL_SYS_FW_TYPE_E
+```bash
+typedef enum
+{
+        RHAL_SYS_FW_TYPE_BOOTCODE = 0,
+        RHAL_SYS_FW_TYPE_LINUX,
+        RHAL_SYS_FW_TYPE_RTK_KDRIVER,
+        RHAL_SYS_FW_TYPE_OPTEE,
+        RHAL_SYS_FW_TYPE_VIDEO,
+        RHAL_SYS_FW_TYPE_AUDIO,
+        RHAL_SYS_FW_TYPE_E_MAX,
+} RHAL_SYS_FW_TYPE_E;
+```
+### SUSPEND_MODE_T
+```bash
+typedef enum
+{
+        SUSPEND_MODE_SNAPSHOT           = 0,    // SNAPSHOT mode
+        SUSPEND_MODE_HIBERNATION        = 1,    // HIBERNATION/IBOOT mode
+} SUSPEND_MODE_T;
+```
+
+### BOOT_KEY_TYPE
+```bash
+typedef enum {
+        BOOT_POWER_ON_MODE=0,
+        BOOT_LOGO_ENABLE,
+        BOOT_MUSIC_ENABLE,
+        BOOT_CUSTOM_AUDIO1_LENG,
+        BOOT_CUSTOM_AUDIO2_LENG,
+        BOOT_CUSTOM_VIDEO1_LENG,
+        BOOT_CUSTOM_VIDEO2_LENG,
+        BOOT_LOCAL_UPGRADE_EN,
+        BOOT_INSTALL_FILE_NAME,
+        BOOT_KEYPAD_LOCK,
+        BOOT_MAC_ADDRESS,
+        BOOT_WIFI_ENABLE,
+        BOOT_RJ45_ENABLE,
+        BOOT_LED_TYPE,
+        BOOT_STANDY_LED_TYPE,
+        BOOT_WORKING_LED_TYPE,
+        BOOT_STANDYING_LED_TYPE,
+        BOOT_LED_PARAM1,
+        BOOT_STR_MAX_COUNT,
+        BOOT_STR_MAX_HOURS,
+        BOOT_RCU_SWTICH_REQUEST,
+        BOOT_BOOTUP_POLICY,
+        BOOT_CUSTOM_IMAGE_LENG,
+        BOOT_BACKLIGHT_VALUE,
+        BOOT_VOL,
+        BOOT_POWER_ON_SPECIAL_MODE_STATE,
+        BOOT_ENABLE_FACTORY_BOOTLOGO,
+        BOOT_FACTORY_BOOTLOGO_TIME,
+        BOOT_WOWL,
+        BOOT_WOL,
+        BOOT_UART0_ENABLE,
+        BOOT_RUNNING_TIME_TOTAL,
+        BOOT_RUNNING_TIME_RECORD,
+        BOOT_BACKLIGHT_ONOFF_MODE,
+        BOOT_FACTORY_SKD_MODE,
+        BOOT_MAIN_POWER_ERROR,
+        BOOT_AUD_ERROR,
+        BOOT_PANEL_ID_ERROR,
+        BOOT_BACKLIGHT_ERROR,
+        BOOT_ETI1_TIME,
+        BOOT_POWER_ON_COUNT,
+        BOOT_ETI2_TIME,
+        BOOT_SHUTDOWN_DISABLE,
+        BOOT_IRDA_DEFAULT_REMOTER,
+        BOOT_IRDA_DEFAULT_REMOTER1,
+        BOOT_IRDA_POWER_UP_KEY,
+        BOOT_IRDA_POWER_UP_KEY1,
+        BOOT_IRDA_IRDA_FILTER,
+        BOOT_AMP_MODEL,
+        BOOT_LVDS_SPREAD_SPECTRUM_ENABLE,
+        BOOT_LVDS_SPREAD_SPECTRUM_STEP,
+        BOOT_LVDS_SPREAD_SPECTRUM_SPAN,
+        BOOT_TP0_FE,
+        BOOT_TP1_FE,
+        BOOT_AMP_MODEL2,
+        BOOT_UART_SETTING,
+        BOOT_FACTORY_LOCAL_UPGRADE_EN,
+        BOOT_AMP_MODEL3,
+        BOOT_AMP_MODEL4,
+        BOOT_LIGHTBAR_SETTING,
+        BOOT_AMP_INIT_STAGE,
+        BOOT_AMP_EQ_MODE,
+        BOOT_FACTORY_SITA_P,
+        BOOT_FACTORY_USB_UPGRADE_MODE,
+        BOOT_RESET_SHOP_STANDBY_FLAG,
+        BOOT_POWER_MODE_LAST_FLAG,
+        BOOT_ODM_SKU,
+        BOOT_MAX
+}BOOT_KEY_TYPE;
+```
+
+### RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T
+```bash
+typedef enum
+{
+        RHAL_SYS_SPREAD_SPECTRUM_MODULE_DDR = 0,                // include ddr1 only
+        RHAL_SYS_SPREAD_SPECTRUM_MODULE_DDR2,                          // include ddr2 only
+        RHAL_SYS_SPREAD_SPECTRUM_MODULE_DDR3,
+        RHAL_SYS_SPREAD_SPECTRUM_MODULE_MAX,
+} RHAL_SYS_SPREAD_SPRECTRUM_MODULE_T;
+```
+
+### RHAL_SYS_SPREAD_SPECTRUM_RATIO_T
+```bash
+typedef enum
+{
+        RHAL_SYS_SPREAD_SPECTRUM_OFF = 0,               // 0.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_0_25,        // -0.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_0_50,        // -0.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_0_75,        // -0.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_1_00,        // -1.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_1_25,        // -1.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_1_50,        // -1.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_1_75,        // -1.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_2_00,        // -2.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_2_25,        // -2.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_2_50,        // -2.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_2_75,        // -2.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_3_00,        // -3.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_3_25,        // -3.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_3_50,        // -3.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_3_75,        // -3.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_4_00,        // -4.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_4_25,        // -4.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_4_50,        // -4.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_4_75,        // -4.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_5_00,        // -5.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_5_25,        // -5.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_5_50,        // -5.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_5_75,        // -5.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_6_00,        // -6.00%
+
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_0_25,        // +0.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_0_50,        // +0.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_0_75,        // +0.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_1_00,        // +1.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_1_25,        // +1.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_1_50,        // +1.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_1_75,        // +1.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_2_00,        // +2.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_2_25,        // +2.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_2_50,        // +2.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_2_75,        // +2.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_3_00,        // +3.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_3_25,        // +3.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_3_50,        // +3.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_3_75,        // +3.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_4_00,        // +4.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_4_25,        // +4.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_4_50,        // +4.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_4_75,        // +4.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_5_00,        // +5.00%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_5_25,        // +5.25%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_5_50,        // +5.50%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_5_75,        // +5.75%
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_up_6_00,        // +6.00%
+
+        RHAL_SYS_SPREAD_SPECTRUM_RATIO_MAX,
+} RHAL_SYS_SPREAD_SPECTRUM_RATIO_T;
+```
 
 ## Function Declaration
 ### RHAL_SYS_SetRTKAndroidTvWolOnOff
@@ -253,18 +419,6 @@ Get fw svn version
     { name: 'max_len', type: 'UINT32', desc: 'buffer max size.' },
   ]}
 />
-:::tip[RHAL_SYS_FW_TYPE_E]
-
-        RHAL_SYS_FW_TYPE_BOOTCODE = 0,<br />
-        RHAL_SYS_FW_TYPE_LINUX,<br />
-        RHAL_SYS_FW_TYPE_RTK_KDRIVER,<br />
-        RHAL_SYS_FW_TYPE_OPTEE,<br />
-        RHAL_SYS_FW_TYPE_VIDEO,<br />
-        RHAL_SYS_FW_TYPE_AUDIO,<br />
-        RHAL_SYS_FW_TYPE_E_MAX,
-
-:::
-
 
 ### RHAL_SYS_GetGitVersion
 ```bash

@@ -6,6 +6,137 @@ sidebar_position: 57
 
 RHAL_SMC api
 
+## Custom Data Types
+### SMC_STS
+```bash
+typedef enum
+{
+    HAL_SMC_OK = 0,
+    HAL_SMC_FAIL = -1,
+    HAL_SMC_TIMEOUT = -2,
+    HAL_SMC_ERR_NO_ICC = -3,
+    HAL_SMC_ERR_ICC_DEACTIVATE = -4,
+    HAL_SMC_ERR_IFD_DISABLED = -5,
+    HAL_SMC_ERR_ATR_TIMEOUT = -6,
+    HAL_SMC_ERR_EDC_OR_PARITY_ERROR = -7,
+}SMC_STS;
+```
+
+### HAL_SMC_PARITY
+```bash
+typedef enum
+{
+    HAL_SMC_NO_PARITY = 0,
+    HAL_SMC_ODD_PARITY,
+    HAL_SMC_EVEN_PARITY,
+}HAL_SMC_PARITY;
+```
+
+### HAL_SMC_VCC_LVL
+```bash
+typedef enum
+{
+    HAL_SMC_VCC_LVL_3V = 0,
+    HAL_SMC_VCC_LVL_5V
+}HAL_SMC_VCC_LVL;
+```
+
+### HAL_SMC_CONV
+```bash
+typedef enum
+{
+    HAL_SMC_CONV_AUTO = 0,
+    HAL_SMC_CONV_DIRECT,
+    HAL_SMC_CONV_INVERSE
+}HAL_SMC_CONV;
+```
+
+### HAL_SMC_IFD_PARAM_ID
+```bash
+typedef enum
+{
+    HAL_SMC_IFD_PARAM_VCC_LVL = 0,
+    HAL_SMC_IFD_PARAM_CLOCK,
+    HAL_SMC_IFD_PARAM_ETU,
+    HAL_SMC_IFD_PARAM_CONV,
+    HAL_SMC_IFD_PARAM_PARITY,
+    HAL_SMC_IFD_PARAM_GUARD_INTERVAL,
+    HAL_SMC_IFD_PARAM_FLOW_CONTROL,          // used for SMC with Flow Control (ICAM SMC)
+    HAL_SMC_IFD_PARAM_EXTENDED_IO_CONTROL,   // used for SMC with Extend IO Control (ICAM SMC)
+}HAL_SMC_IFD_PARAM_ID;
+```
+
+### HAL_SMC_CARD_STATUS
+```bash
+typedef enum {
+    HAL_SMC_CARD_REMOVED = 0,        // ICC does not exist
+    HAL_SMC_CARD_DEACTIVATE,         // ICC exists, but has not been activated
+    HAL_SMC_CARD_RESET,              // ICC is reseting and waiting for ATR
+    HAL_SMC_CARD_RESET_TIMEOUT,      // ICC Reset failed, due to no ATR responsed
+    HAL_SMC_CARD_ACTIVATE,           // ICC has been activated successfully
+    HAL_SMC_CARD_UNKNOWN,            // ICC has some error...
+}HAL_SMC_CARD_STATUS;
+```
+
+### HAL_SMC_PROTOCOL
+```bash
+typedef enum {
+    HAL_SMC_PROTOCOL_T0 = 0,
+    HAL_SMC_PROTOCOL_T1 = 1,
+    HAL_SMC_PROTOCOL_T14 = 14,
+    HAL_SMC_PROTOCOL_MAX,
+}HAL_SMC_PROTOCOL;
+```
+
+### HAL_SMC_PROTOCOL_PARAM_ID
+```bash
+typedef enum
+{
+    HAL_SMC_PROTOCOL_PARAM_T1_IFSC = 0x100,                      // IFSC : Information Field Size of Card
+    HAL_SMC_PROTOCOL_PARAM_T1_IFSD = 0x102,                      // IFSD : Information Field Size of Device
+    HAL_SMC_PROTOCOL_PARAM_T1_EDC_ALGO = 0x101,                  // EDC mode : 0 : LRC, others: CRC
+    HAL_SMC_PROTOCOL_PARAM_T1_SEQUENCE_COUNTER_ENABLE = 0x110,   // Sequence counter mode : 0 : Disable, 1 : Enable
+    HAL_SMC_PROTOCOL_PARAM_T1_DATA_CHAINING = 0x111,             // Data Chaining mode : 0 : Disable , 1 : Enable
+}HAL_SMC_PROTOCOL_PARAM_ID;
+```
+
+### HAL_SMC_PROTOCOL_PARAM_T1
+```bash
+typedef struct
+{
+    UINT8  flags;
+    #define DISABLE_SEQUENCE_COUNTER        0x80
+    #define DISABLE_DATA_CHAINING           0x40
+    UINT8  ifsc;
+}HAL_SMC_PROTOCOL_PARAM_T1;
+```
+
+### HAL_SMC_PROTOCOL_PARAM
+```bash
+typedef struct
+{
+    HAL_SMC_PROTOCOL     protocol;
+
+    union
+    {
+        HAL_SMC_PROTOCOL_PARAM_T1 T1;
+    };
+
+}HAL_SMC_PROTOCOL_PARAM;
+```
+
+### HAL_SMC_IFD_PARAM
+```bash
+typedef struct
+{
+    unsigned long       clk;
+    unsigned long       etu;
+    HAL_SMC_VCC_LVL     vcc_lvl;
+    HAL_SMC_CONV        conv;
+    HAL_SMC_PARITY      parity;
+    unsigned long       guard_interval;
+}HAL_SMC_IFD_PARAM;
+```
 
 ## Function Declaration
 ### RHAL_SMC_Open
@@ -64,15 +195,6 @@ Set Protocol of a SMC IFD
   ]}
 />
 
-:::tip[HAL_SMC_PROTOCOL]
-
-HAL_SMC_PROTOCOL_T0  : T0<br />
-HAL_SMC_PROTOCOL_T1  : T1<br />
-HAL_SMC_PROTOCOL_T14 : T14
-
-:::
-
-
 ### RHAL_SMC_GetProtocol
 ```bash
 SMC_STS RHAL_SMC_GetProtocol(void*pSmc, HAL_SMC_PROTOCOL*pProtocol);
@@ -126,16 +248,6 @@ Get Card Status of a SMC IFD
     { name: 'pStatus', type: 'HAL_SMC_CARD_STATUS*', desc: 'Status output' },
   ]}
 />
-:::tip[HAL_SMC_CARD_STATUS]
-
-HAL_SMC_CARD_REMOVED<br />
-HAL_SMC_CARD_DEACTIVATE<br />
-HAL_SMC_CARD_RESET<br />
-HAL_SMC_CARD_RESET_TIMEOUT<br />
-HAL_SMC_CARD_ACTIVATE 
-
-:::
-
 
 ### RHAL_SMC_PollCardStatus
 ```bash
@@ -315,13 +427,6 @@ Set VCC Level of SMC IFD.
     { name: 'VccLvL', type: 'HAL_SMC_VCC_LVL', desc: 'new vcc level' },
   ]}
 />
-:::tip[HAL_SMC_VCC_LVL]
-
-HAL_SMC_VCC_LVL_3V<br />
-HAL_SMC_VCC_LVL_5V
-
-:::
-
 :::danger[Take care]
 
 The power level will be applied at the next SMC activation
@@ -347,14 +452,6 @@ Set Convention of SMC IFD
     { name: 'Conv', type: 'HAL_SMC_CONV', desc: 'set convention ' },
   ]}
 />
-:::tip[HAL_SMC_CONV]
-
-HAL_SMC_CONV_AUTO<br />
-HAL_SMC_CONV_DIRECT<br />
-HAL_SMC_CONV_INVERSE
-
-:::
-
 
 ### RHAL_SMC_GetConv
 ```bash
@@ -374,14 +471,6 @@ Set Parity of SMC IFD
     { name: 'Parity', type: 'HAL_SMC_PARITY', desc: 'new Parity ' },
   ]}
 />
-:::tip[HAL_SMC_PARITY]
-
-HAL_SMC_NO_PARITY<br />
-HAL_SMC_ODD_PARITY<br />
-HAL_SMC_EVEN_PARITY
-
-:::
-
 
 ### RHAL_SMC_GetParity
 ```bash
