@@ -35,6 +35,16 @@ typedef enum
     OLED_V22_CMD_MAX_NUM
 }OLED_V22_CMD_TYPE;
 ```
+### TCON_CMD_INFO
+```bash
+typedef struct tcon_cmd_info {
+    char *reqData;
+    int  reqLen;
+    unsigned char *respData;
+    unsigned short  *respLen;
+    char reserved[4];
+}TCON_CMD_INFO;
+```
 
 ## Function Declaration
 ### RHAL_TCON_TransferCommand
@@ -59,14 +69,6 @@ Commands used to execute TCON (Timing Controller) related commands.
     { name: 'cmdInfo', type: 'TCON_CMD_INFO*', desc: <> A pointer to a TCON_CMD_INFO structure, which contains the command request data and a buffer for storing the response data. </> },
   ]}
 />
-typedef struct tcon_cmd_info {
-    char *reqData;
-    int  reqLen;
-    unsigned char *respData;
-    unsigned short  *respLen;
-    char reserved[4];
-}TCON_CMD_INFO;
-
 
 ### RHAL_TCON_Reload_Setting
 ```bash
