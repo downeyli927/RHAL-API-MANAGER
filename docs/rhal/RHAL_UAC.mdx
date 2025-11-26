@@ -6,17 +6,9 @@ sidebar_position: 64
 
 RHAL_UAC api
 
-##Function Declaration
-### RHAL_UAC_RegisterSampleChangeCallback
+## Custom Data Types
+### KADP_UAC_SAMPLE_MSG_TYPE_T
 ```bash
-DTV_STATUS_T RHAL_UAC_RegisterSampleChangeCallback(PFN_UAC_NOTIFY_SAMPLE_CHANGE_T pfnUacSampleChange);
-```
-Register a callback function that will notify the caller when the sampling rate of a USB audio device (UAC, USB Audio Class) changes
-<ParamTable
-  items={[
-    { name: 'pfnUacSampleChange', type: 'PFN_UAC_NOTIFY_SAMPLE_CHANGE_T', desc: 'A function pointer of type PFN_UAC_NOTIFY_SAMPLE_CHANGE_T, which is a user-defined callback function that will be called when the sampling rate changes.' },
-  ]}
-/>
 typedef struct KADP_UAC_SAMPLE_MSG_TYPE
 {
         UINT8  device;
@@ -28,3 +20,17 @@ typedef struct KADP_UAC_SAMPLE_MSG_TYPE
 } KADP_UAC_SAMPLE_MSG_TYPE_T;
 
 typedef void (*KADP_PFN_UAC_NOTIFY_SAMPLE_CHANGE_T) (KADP_UAC_SAMPLE_MSG_TYPE_T *pMsg);//for uac sample change callback
+```
+
+## Function Declaration
+### RHAL_UAC_RegisterSampleChangeCallback
+```bash
+DTV_STATUS_T RHAL_UAC_RegisterSampleChangeCallback(PFN_UAC_NOTIFY_SAMPLE_CHANGE_T pfnUacSampleChange);
+```
+Register a callback function that will notify the caller when the sampling rate of a USB audio device (UAC, USB Audio Class) changes
+<ParamTable
+  items={[
+    { name: 'pfnUacSampleChange', type: 'PFN_UAC_NOTIFY_SAMPLE_CHANGE_T', desc: 'A function pointer of type PFN_UAC_NOTIFY_SAMPLE_CHANGE_T, which is a user-defined callback function that will be called when the sampling rate changes.' },
+  ]}
+/>
+
