@@ -6,157 +6,188 @@ sidebar_position: 89
 
 RHAL_VPQ_MEMC api
 
-## RHAL_VPQ_MEMC_Initialize
+##Function Declaration
+### RHAL_VPQ_MEMC_Initialize
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_Initialize(void);
 ```
 
-## RHAL_VPQ_MEMC_Uninitialize
+##Function Declaration
+### RHAL_VPQ_MEMC_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_Uninitialize(void);
 ```
 
-## RHAL_VPQ_MEMC_SetMotionComp
+##Function Declaration
+### RHAL_VPQ_MEMC_SetMotionComp
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetMotionComp(UINT8 blurLevel, UINT8 judderLevel, HAL_MEMC_TYPE_T motion);
 ```
 
-## RHAL_VPQ_MEMC_SetBlurLevel
+##Function Declaration
+### RHAL_VPQ_MEMC_SetBlurLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetBlurLevel(UINT8 blurLevel);
 ```
 
-## RHAL_VPQ_MEMC_SetJudderLevel
+##Function Declaration
+### RHAL_VPQ_MEMC_SetJudderLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetJudderLevel(UINT8 judderLevel);
 ```
 
-## RHAL_VPQ_MEMC_SetBlur_UI_Level
+##Function Declaration
+### RHAL_VPQ_MEMC_SetBlur_UI_Level
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetBlur_UI_Level(UINT8 blurLevel);
 ```
 
-## RHAL_VPQ_MEMC_SetJudder_UI_Level
+##Function Declaration
+### RHAL_VPQ_MEMC_SetJudder_UI_Level
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetJudder_UI_Level(UINT8 judderLevel);
 ```
 
-## RHAL_VPQ_MEMC_SetBlur_Motion_Level
+##Function Declaration
+### RHAL_VPQ_MEMC_SetBlur_Motion_Level
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetBlur_Motion_Level(HAL_MEMC_LEVEL_E blurLevel);
 ```
 
-## RHAL_VPQ_MEMC_SetJudder_Motion_Level
+##Function Declaration
+### RHAL_VPQ_MEMC_SetJudder_Motion_Level
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetJudder_Motion_Level(HAL_MEMC_LEVEL_E judderLevel);
 ```
 
-## RHAL_VPQ_MEMC_MotionCompOnOff
+##Function Declaration
+### RHAL_VPQ_MEMC_MotionCompOnOff
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_MotionCompOnOff(BOOLEAN bOnOff);
 ```
 
-## RHAL_VPQ_MEMC_LowDelayMode
+##Function Declaration
+### RHAL_VPQ_MEMC_LowDelayMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_LowDelayMode(UINT8 type);
 ```
 
-## RHAL_VPQ_MEMC_SetRGBYUVMode
+##Function Declaration
+### RHAL_VPQ_MEMC_SetRGBYUVMode
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetRGBYUVMode(UINT8 mode);
 ```
 
-## RHAL_VPQ_MEMC_GetFrameDelay
+##Function Declaration
+### RHAL_VPQ_MEMC_GetFrameDelay
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_GetFrameDelay(UINT16*pFrameDelay);
 ```
 
-## RHAL_VPQ_MEMC_SetVideoBlock
+##Function Declaration
+### RHAL_VPQ_MEMC_SetVideoBlock
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetVideoBlock(MEMC_MUTE_TYPE_T type, BOOLEAN bOnOff);
 ```
 
-## RHAL_VPQ_MEMC_SetTrueMotionDemo
+##Function Declaration
+### RHAL_VPQ_MEMC_SetTrueMotionDemo
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetTrueMotionDemo(UINT8 type);
 ```
 
-## RHAL_VPQ_MEMC_GetFirmwareVersion
+##Function Declaration
+### RHAL_VPQ_MEMC_GetFirmwareVersion
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_GetFirmwareVersion(UINT32*pVersion);
 ```
 
-## RHAL_VPQ_MEMC_GetFirmwareVersion
+##Function Declaration
+### RHAL_VPQ_MEMC_GetFirmwareVersion
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_GetFirmwareVersion(UINT16*pVersion);
 ```
 
-## RHAL_VPQ_MEMC_SetBypassRegion
+##Function Declaration
+### RHAL_VPQ_MEMC_SetBypassRegion
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetBypassRegion(BOOLEAN bOnOff, HAL_BYPASS_REGION_T region, HAL_BYPASS_REGION_RECT_T rect);
 ```
 
-## RHAL_VPQ_MEMC_SetReverseControl
+##Function Declaration
+### RHAL_VPQ_MEMC_SetReverseControl
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetReverseControl(UINT8 u8Mode);
 ```
 
-## RHAL_VPQ_MEMC_Freeze
+##Function Declaration
+### RHAL_VPQ_MEMC_Freeze
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_Freeze(UINT8 type);
 ```
 
-## RHAL_VPQ_MEMC_SetDemoBar
+##Function Declaration
+### RHAL_VPQ_MEMC_SetDemoBar
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_SetDemoBar(BOOLEAN bOnOff, UINT8 r, UINT8 g, UINT8 b);
 ```
 
-## RHAL_VPQ_MEMC_DEBUG
+##Function Declaration
+### RHAL_VPQ_MEMC_DEBUG
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_DEBUG(void);
 ```
 
-## RHAL_VPQ_MEMC_GetMotion
+##Function Declaration
+### RHAL_VPQ_MEMC_GetMotion
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_GetMotion(UINT16*motion);
 ```
 
-## RHAL_VPQ_MEMC_setLevel
+##Function Declaration
+### RHAL_VPQ_MEMC_setLevel
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_setLevel(UINT8 level);
 ```
 
-## RHAL_VPQ_MEMC_Force24to48
+##Function Declaration
+### RHAL_VPQ_MEMC_Force24to48
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_Force24to48(BOOLEAN bOnOff);
 ```
 
-## RHAL_VPQ_MEMC_Get_MEMC_UI_Support
+##Function Declaration
+### RHAL_VPQ_MEMC_Get_MEMC_UI_Support
 ```bash
 DTV_STATUS_T RHAL_VPQ_MEMC_Get_MEMC_UI_Support(unsigned char*bOnOff);
 ```
 
-## RHAL_VPQEX_SetMEMCTable
+##Function Declaration
+### RHAL_VPQEX_SetMEMCTable
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SetMEMCTable(UINT32 version, UINT32 length, UINT8 cmd, void*pData);
 ```
 
-## RHAL_VPQ_SetCustomerMEMCBinPath
+##Function Declaration
+### RHAL_VPQ_SetCustomerMEMCBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SetCustomerMEMCBinPath(char*sMEMCBinPath);
 ```
 
-## RHAL_VPQ_SyncCustomerMEMCBinPath
+##Function Declaration
+### RHAL_VPQ_SyncCustomerMEMCBinPath
 ```bash
 DTV_STATUS_T RHAL_VPQ_SyncCustomerMEMCBinPath(char*sMEMCBinPath);
 ```
 
-## RHAL_VPQEX_SET_MEMCVerMiscInfo
+##Function Declaration
+### RHAL_VPQEX_SET_MEMCVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_SET_MEMCVerMiscInfo(RHAL_MEMC_VER_MISC_INFO*m_pVipMEMCVerMiscInfo);
 ```
 
-## RHAL_VPQEX_GET_MEMCVerMiscInfo
+##Function Declaration
+### RHAL_VPQEX_GET_MEMCVerMiscInfo
 ```bash
 DTV_STATUS_T RHAL_VPQEX_GET_MEMCVerMiscInfo(RHAL_MEMC_VER_MISC_INFO*m_pVipMEMCVerMiscInfo);
 ```

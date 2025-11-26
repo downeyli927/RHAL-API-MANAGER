@@ -6,7 +6,8 @@ sidebar_position: 29
 
 RHAL_GPIO api
 
-## RHAL_GPIO_Init
+##Function Declaration
+### RHAL_GPIO_Init
 ```bash
 DTV_STATUS_T RHAL_GPIO_Init(UINT8 boardType);
 ```
@@ -17,7 +18,8 @@ Initializes the GPIO device driver.
   ]}
 />
 
-## RHAL_GPIO_SetPortOutput
+##Function Declaration
+### RHAL_GPIO_SetPortOutput
 ```bash
 DTV_STATUS_T RHAL_GPIO_SetPortOutput(HAL_GPIO_NAME pcbname, UINT8 value);
 ```
@@ -29,7 +31,8 @@ Set output value of a Given GPIO port
   ]}
 />
 
-## RHAL_GPIO_GetPortOutput
+##Function Declaration
+### RHAL_GPIO_GetPortOutput
 ```bash
 DTV_STATUS_T RHAL_GPIO_GetPortOutput(HAL_GPIO_NAME pcbname, UINT8*value);
 ```
@@ -41,7 +44,8 @@ Get output value of a Given GPIO port
   ]}
 />
 
-## RHAL_GPIO_GetPortInput
+##Function Declaration
+### RHAL_GPIO_GetPortInput
 ```bash
 DTV_STATUS_T RHAL_GPIO_GetPortInput(HAL_GPIO_NAME pcbname, UINT8*value);
 ```
@@ -53,7 +57,8 @@ Read value of a Given GPIO port
   ]}
 />
 
-## RHAL_GPIO_SetPortDirectionEx
+##Function Declaration
+### RHAL_GPIO_SetPortDirectionEx
 ```bash
 DTV_STATUS_T RHAL_GPIO_SetPortDirectionEx(HAL_GPIO_NAME pcbname, UINT8 direction);
 ```
@@ -65,13 +70,15 @@ Set Direction of a Given GPIO port
   ]}
 />
 
-## RHAL_GPIO_GetPortDirectionEx
+##Function Declaration
+### RHAL_GPIO_GetPortDirectionEx
 ```bash
 DTV_STATUS_T RHAL_GPIO_GetPortDirectionEx(HAL_GPIO_NAME pcbname, UINT8*direction);
 ```
 Get Direction of a Given GPIO port
 
-## RHAL_GPIO_SetIrqCallBackEx
+##Function Declaration
+### RHAL_GPIO_SetIrqCallBackEx
 ```bash
 DTV_STATUS_T RHAL_GPIO_SetIrqCallBackEx(HAL_GPIO_NAME pcbname, void(*pfnGPIO_CB)(UINT32), UINT8 enable, RHAL_GPIO_TRIGGER trigger_type);
 ```
@@ -85,12 +92,14 @@ Set Callback of a Given GPIO port
   ]}
 />
 
-## RHAL_GPIO_SetIrqCallBack
+##Function Declaration
+### RHAL_GPIO_SetIrqCallBack
 ```bash
 DTV_STATUS_T RHAL_GPIO_SetIrqCallBack(HAL_GPIO_NAME pcbname, void(*pfnGPIO_CB)(UINT32), UINT8 enable);
 ```
 
-## RHAL_GPIO_GetGPIOList
+##Function Declaration
+### RHAL_GPIO_GetGPIOList
 ```bash
 DTV_STATUS_T RHAL_GPIO_GetGPIOList(RHAL_GPIO_DESC*pGPIOList, UINT8*count);
 ```

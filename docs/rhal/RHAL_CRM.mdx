@@ -6,107 +6,128 @@ sidebar_position: 16
 
 RHAL_CRM api
 
-## RHAL_CRM_InitDefault
+##Function Declaration
+### RHAL_CRM_InitDefault
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_InitDefault();
 ```
 
-## RHAL_CRM_Init
+##Function Declaration
+### RHAL_CRM_Init
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_Init(const CHAR*pszXmlPath);
 ```
 
-## RHAL_CRM_CodecTypeFromName
+##Function Declaration
+### RHAL_CRM_CodecTypeFromName
 ```bash
 RHAL_CRM_CODEC_TYPE RHAL_CRM_CodecTypeFromName(const char*pszName);
 ```
 
-## RHAL_CRM_CodecTypeFromMIME
+##Function Declaration
+### RHAL_CRM_CodecTypeFromMIME
 ```bash
 RHAL_CRM_CODEC_TYPE RHAL_CRM_CodecTypeFromMIME(const char*pszMIME);
 ```
 
-## RHAL_CRM_CodecTypeToName
+##Function Declaration
+### RHAL_CRM_CodecTypeToName
 ```bash
 const char* RHAL_CRM_CodecTypeToName(RHAL_CRM_CODEC_TYPE eCodecType);
 ```
 
-## RHAL_CRM_ClientInit
+##Function Declaration
+### RHAL_CRM_ClientInit
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_ClientInit(RHAL_CRM_CLIENT*ppHandle, const char*pszNickName, RHAL_CRM_RECLAIM_CALLBACK pfnReclaimCallback, RHAL_CRM_PRIORITY_CALLBACK pfnPriorityCallback, void*pvCallbackData);
 ```
 
-## RHAL_CRM_ClientFree
+##Function Declaration
+### RHAL_CRM_ClientFree
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_ClientFree(RHAL_CRM_CLIENT*ppHandle);
 ```
 
-## RHAL_CRM_ClientGetUniqueId
+##Function Declaration
+### RHAL_CRM_ClientGetUniqueId
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_ClientGetUniqueId(RHAL_CRM_CLIENT pHandle, RHAL_CRM_UNIQUEID*pUniqueId);
 ```
 
-## RHAL_CRM_ClientAcquireResource
+##Function Declaration
+### RHAL_CRM_ClientAcquireResource
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_ClientAcquireResource(RHAL_CRM_CLIENT pHandle, const RHAL_CRM_CODEC_INFO*pCodecInfo);
 ```
 
-## RHAL_CRM_ClientTryAcquireResource
+##Function Declaration
+### RHAL_CRM_ClientTryAcquireResource
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_ClientTryAcquireResource(RHAL_CRM_CLIENT pHandle, const RHAL_CRM_CODEC_INFO*pCodecInfo);
 ```
 
-## RHAL_CRM_ClientClearResource
+##Function Declaration
+### RHAL_CRM_ClientClearResource
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_ClientClearResource(RHAL_CRM_CLIENT pHandle, const RHAL_CRM_CODEC_RESOURCE*pResource);
 ```
 
-## RHAL_CRM_ClientReleaseResource
+##Function Declaration
+### RHAL_CRM_ClientReleaseResource
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_ClientReleaseResource(RHAL_CRM_CLIENT pHandle);
 ```
 
-## RHAL_CRM_ClientGetResource
+##Function Declaration
+### RHAL_CRM_ClientGetResource
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_ClientGetResource(RHAL_CRM_CLIENT pHandle, RHAL_CRM_CODEC_RESOURCE*pResource);
 ```
 
-## RHAL_CRM_ClientCheckSupport
+##Function Declaration
+### RHAL_CRM_ClientCheckSupport
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_ClientCheckSupport(RHAL_CRM_CLIENT pHandle, const RHAL_CRM_CODEC_INFO*pCodecInfo);
 ```
 
-## RHAL_CRM_ClientCheckCapability
+##Function Declaration
+### RHAL_CRM_ClientCheckCapability
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_ClientCheckCapability(RHAL_CRM_CLIENT pHandle, const char*pszCapability);
 ```
 
-## RHAL_CRM_MonitorInit
+##Function Declaration
+### RHAL_CRM_MonitorInit
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_MonitorInit(RHAL_CRM_MONITOR*ppHandle, const char*pszNickName, RHAL_CRM_RECLAIM_CALLBACK pfnCallback, void*pvCallbackData);
 ```
 
-## RHAL_CRM_MonitorFree
+##Function Declaration
+### RHAL_CRM_MonitorFree
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_MonitorFree(RHAL_CRM_MONITOR*ppHandle);
 ```
 
-## RHAL_CRM_MonitorRegisterResource
+##Function Declaration
+### RHAL_CRM_MonitorRegisterResource
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_MonitorRegisterResource(RHAL_CRM_MONITOR pHandle, RHAL_CRM_UNIQUEID hUniqueId, const RHAL_CRM_CODEC_RESOURCE*pResource);
 ```
 
-## RHAL_CRM_MonitorReleaseResource
+##Function Declaration
+### RHAL_CRM_MonitorReleaseResource
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_MonitorReleaseResource(RHAL_CRM_MONITOR pHandle);
 ```
 
-## RHAL_CRM_MonitorGetResource
+##Function Declaration
+### RHAL_CRM_MonitorGetResource
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_MonitorGetResource(RHAL_CRM_MONITOR pHandle, RHAL_CRM_CODEC_RESOURCE*pResource);
 ```
 
-## RHAL_CRM_MonitorResourceChange
+##Function Declaration
+### RHAL_CRM_MonitorResourceChange
 ```bash
 RHAL_CRM_STATUS RHAL_CRM_MonitorResourceChange(RHAL_CRM_MONITOR pHandle, RHAL_CRM_RESOURCE_CHANGE_CALLBACK pfnResChangeCallback);
 ```

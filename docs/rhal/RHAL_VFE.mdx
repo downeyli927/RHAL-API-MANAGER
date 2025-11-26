@@ -6,42 +6,50 @@ sidebar_position: 79
 
 RHAL_VFE api
 
-## RHAL_VFE_GetSourcePresentStatus
+##Function Declaration
+### RHAL_VFE_GetSourcePresentStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_GetSourcePresentStatus(HAL_VFE_SRC_ID src, UINT8*pSrcPresent);
 ```
 
-## RHAL_VFE_SrcPresentMonitorEnable
+##Function Declaration
+### RHAL_VFE_SrcPresentMonitorEnable
 ```bash
 DTV_STATUS_T RHAL_VFE_SrcPresentMonitorEnable(HAL_VFE_SRC_PRESENT_MONITOR*p_this);
 ```
 
-## RHAL_VFE_SrcPresentMonitorDisable
+##Function Declaration
+### RHAL_VFE_SrcPresentMonitorDisable
 ```bash
 DTV_STATUS_T RHAL_VFE_SrcPresentMonitorDisable(HAL_VFE_SRC_PRESENT_MONITOR*p_this);
 ```
 
-## RHAL_VFE_GetSrcTypeName
+##Function Declaration
+### RHAL_VFE_GetSrcTypeName
 ```bash
 const char* RHAL_VFE_GetSrcTypeName(HAL_VFE_SRC_TYPE type);
 ```
 
-## RHAL_VFE_GetVcCount
+##Function Declaration
+### RHAL_VFE_GetVcCount
 ```bash
 DTV_STATUS_T RHAL_VFE_GetVcCount(UINT8*p_VcCount);
 ```
 
-## RHAL_VFE_VcConnect
+##Function Declaration
+### RHAL_VFE_VcConnect
 ```bash
 DTV_STATUS_T RHAL_VFE_VcConnect(RHAL_VFE_VC_ID vc_idx, HAL_VFE_SRC_ID vfe_sel);
 ```
 
-## RHAL_VFE_GetVcConnectSrc
+##Function Declaration
+### RHAL_VFE_GetVcConnectSrc
 ```bash
 DTV_STATUS_T RHAL_VFE_GetVcConnectSrc(RHAL_VFE_VC_ID vc_idx, HAL_VFE_SRC_ID*p_vfe_sel);
 ```
 
-## RHAL_VFE_GeExtInfo
+##Function Declaration
+### RHAL_VFE_GeExtInfo
 ```bash
 DTV_STATUS_T RHAL_VFE_GeExtInfo(HAL_VFE_EXT_ID id, UINT32*p_value);
 ```

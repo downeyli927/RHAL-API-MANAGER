@@ -6,102 +6,122 @@ sidebar_position: 25
 
 RHAL_DEMOD_ISDBT api
 
-## RHAL_DEMOD_VQI_ISDBT_ProbeEx
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_ProbeEx
 ```bash
 extern UINT32 RHAL_DEMOD_VQI_ISDBT_ProbeEx(UINT8 portI2C);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_Initialize
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_Initialize
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_Initialize(void);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_ChangeTransSystem
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_ChangeTransSystem
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_ChangeTransSystem(HAL_DEMOD_TRANS_SYSTEM_T transSystem);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_SetDemod
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_SetDemod
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_SetDemod(HAL_DEMOD_ISDBT_SET_PARAM_T paramStruct);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_TunePostJob
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_TunePostJob
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_TunePostJob(BOOLEAN*pFinished);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_CheckLock
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_CheckLock
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_CheckLock(HAL_DEMOD_LOCK_STATE_T*pLockState);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_CheckSpecialData
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_CheckSpecialData
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_CheckSpecialData(HAL_DEMOD_SPECDATA_ISDBT_T*pSpecISDB);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_CheckSignalStatus
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_CheckSignalStatus
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_CheckSignalStatus(HAL_DEMOD_SIGNAL_STATE_T*pSignalState);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_CheckFrequencyOffset
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_CheckFrequencyOffset
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_CheckFrequencyOffset(SINT32*pFreqOffset);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_ControlTSMode
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_ControlTSMode
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_ControlTSMode(BOOLEAN bIsSerial);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_ControlOutput
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_ControlOutput
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_ControlOutput(BOOLEAN bEnableOutput);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_Monitor
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_Monitor
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_Monitor(HAL_DEMOD_LOCK_STATE_T*pLockState);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_GetFWVersion
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_GetFWVersion
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_GetFWVersion(UINT32*pFWVersion);
 ```
 
-## RHAL_DEMOD_ISDBT_DebugMenu
+##Function Declaration
+### RHAL_DEMOD_ISDBT_DebugMenu
 ```bash
 extern int RHAL_DEMOD_ISDBT_DebugMenu(void);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_GetSQI
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_GetSQI
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_GetSQI(UINT8*pSQI);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_GetPacketError
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_GetPacketError
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_GetPacketError(UINT32*pPacketError);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_GetBER
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_GetBER
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_GetBER(UINT32*pBER);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_GetAGC
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_GetAGC
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_GetAGC(UINT32*pAGC);
 ```
 
-## RHAL_DEMOD_VQI_ISDBT_GetSNR
+##Function Declaration
+### RHAL_DEMOD_VQI_ISDBT_GetSNR
 ```bash
 extern int RHAL_DEMOD_VQI_ISDBT_GetSNR(UINT32*pSNR);
 ```
 
-## RHAL_DEMOD_GetEmergencyAlertFlagStatus
+##Function Declaration
+### RHAL_DEMOD_GetEmergencyAlertFlagStatus
 ```bash
 extern BOOLEAN RHAL_DEMOD_GetEmergencyAlertFlagStatus(void);
 ```

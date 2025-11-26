@@ -6,62 +6,74 @@ sidebar_position: 78
 
 RHAL_VENC api
 
-## RHAL_VENC_Open
+##Function Declaration
+### RHAL_VENC_Open
 ```bash
 DTV_STATUS_T RHAL_VENC_Open(void);
 ```
 
-## RHAL_VENC_Close
+##Function Declaration
+### RHAL_VENC_Close
 ```bash
 DTV_STATUS_T RHAL_VENC_Close(void);
 ```
 
-## RHAL_VENC_Connect
+##Function Declaration
+### RHAL_VENC_Connect
 ```bash
 DTV_STATUS_T RHAL_VENC_Connect(UINT8 port, VENC_INPUT_TYPE_T input);
 ```
 
-## RHAL_VENC_Start
+##Function Declaration
+### RHAL_VENC_Start
 ```bash
 DTV_STATUS_T RHAL_VENC_Start(UINT8 port);
 ```
 
-## RHAL_VENC_Stop
+##Function Declaration
+### RHAL_VENC_Stop
 ```bash
 DTV_STATUS_T RHAL_VENC_Stop(UINT8 port);
 ```
 
-## RHAL_VENC_SetParam
+##Function Declaration
+### RHAL_VENC_SetParam
 ```bash
 DTV_STATUS_T RHAL_VENC_SetParam(UINT8 port, VENC_INFO_T info, SINT32 value);
 ```
 
-## RHAL_VENC_GetParam
+##Function Declaration
+### RHAL_VENC_GetParam
 ```bash
 DTV_STATUS_T RHAL_VENC_GetParam(UINT8 port, VENC_INFO_T info, void*pValue);
 ```
 
-## RHAL_VENC_RegisterEncoderCallback
+##Function Declaration
+### RHAL_VENC_RegisterEncoderCallback
 ```bash
 DTV_STATUS_T RHAL_VENC_RegisterEncoderCallback(UINT8 port, pfnVENCDataHandlingCB pfnCallBack);
 ```
 
-## RHAL_VENC_CopyData
+##Function Declaration
+### RHAL_VENC_CopyData
 ```bash
 DTV_STATUS_T RHAL_VENC_CopyData(UINT8 port, UINT8*pDest, UINT8*pBufAddr, UINT32 datasize, UINT8*pRStart, UINT8*pREnd);
 ```
 
-## RHAL_VENC_ReleaseData
+##Function Declaration
+### RHAL_VENC_ReleaseData
 ```bash
 DTV_STATUS_T RHAL_VENC_ReleaseData(UINT8 port, UINT8*pBufAddr,UINT32 datasize);
 ```
 
-## RHAL_VENC_GetThumbnail
+##Function Declaration
+### RHAL_VENC_GetThumbnail
 ```bash
 DTV_STATUS_T RHAL_VENC_GetThumbnail(UINT8 port, UINT32 width, UINT32 height, UINT8*pBufAddr, UINT32 datasize);
 ```
 
-## RHAL_VENC_DEBUG_Menu
+##Function Declaration
+### RHAL_VENC_DEBUG_Menu
 ```bash
 void RHAL_VENC_DEBUG_Menu(void);
 ```

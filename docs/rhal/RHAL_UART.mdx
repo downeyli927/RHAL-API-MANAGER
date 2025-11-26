@@ -6,52 +6,140 @@ sidebar_position: 65
 
 RHAL_UART api
 
-## RHAL_UART_GetDftCfg
+## Custom Data Types
 ```bash
-extern DTV_STATUS_T RHAL_UART_GetDftCfg(struct termios*pCfg);
+typedef enum
+{
+        PORT_STATUS_CLOSE = 0,
+        PORT_STATUS_OPEN = 1,
+}PORT_STATUS_T;
 ```
 
-## RHAL_UART_SwitchUart
+##Function Declaration
+### RHAL_UART_GetDftCfg
 ```bash
-extern DTV_STATUS_T RHAL_UART_SwitchUart(SINT32 port_id);
+DTV_STATUS_T RHAL_UART_GetDftCfg(struct termios*pCfg);
 ```
+Get default config param for uart
+<ParamTable
+  items={[
+    { name: 'pCfg', type: 'struct termios*', desc: 'pointer to the uart param' },
+  ]}
+/>
 
-## RHAL_UART_OpenUart
+##Function Declaration
+### RHAL_UART_SwitchUart
 ```bash
-extern DTV_STATUS_T RHAL_UART_OpenUart(SINT32 port_id, struct termios*pCfg);
+DTV_STATUS_T RHAL_UART_SwitchUart(SINT32 port_id);
 ```
+Switch uart pinmux to another port
+<ParamTable
+  items={[
+    { name: 'port_id', type: 'SINT32', desc: 'which uart port need switch' },
+  ]}
+/>
 
-## RHAL_UART_CloseUart
+##Function Declaration
+### RHAL_UART_OpenUart
 ```bash
-extern DTV_STATUS_T RHAL_UART_CloseUart(SINT32 port_id);
+DTV_STATUS_T RHAL_UART_OpenUart(SINT32 port_id, struct termios*pCfg);
 ```
+Open an uart port
+<ParamTable
+  items={[
+    { name: 'port_id', type: 'SINT32', desc: 'which uart port need open' },
+    { name: 'pCfg', type: 'struct termios*', desc: 'uart param when it open,if pCfg is NULL,will use a default uart param' },
+  ]}
+/>
 
-## RHAL_UART_ReadUart
+##Function Declaration
+### RHAL_UART_CloseUart
 ```bash
-extern DTV_STATUS_T RHAL_UART_ReadUart(SINT32 port_id, UINT8*pbuff, SINT32*content_size, UINT32 read_size);
+DTV_STATUS_T RHAL_UART_CloseUart(SINT32 port_id);
 ```
+Close an uart port
+<ParamTable
+  items={[
+    { name: 'port_id', type: 'SINT32', desc: 'which uart port need close' },
+  ]}
+/>
 
-## RHAL_UART_WriteUart
+##Function Declaration
+### RHAL_UART_ReadUart
 ```bash
-extern DTV_STATUS_T RHAL_UART_WriteUart(SINT32 port_id, const UINT8*pbuff, UINT32 write_size);
+DTV_STATUS_T RHAL_UART_ReadUart(SINT32 port_id, UINT8*pbuff, SINT32*content_size, UINT32 read_size);
 ```
+Read data from a uart port
+<ParamTable
+  items={[
+    { name: 'port_id', type: 'SINT32', desc: 'which uart port need open' },
+    { name: 'pbuff', type: 'UINT8*', desc: 'the buffer to save read content' },
+    { name: 'content_size', type: 'SINT32*', desc: 'the length read from uart' },
+    { name: 'read_size', type: 'UINT32', desc: 'max length read from uart' },
+  ]}
+/>
 
-## RHAL_UART_GetPortStatus
+##Function Declaration
+### RHAL_UART_WriteUart
 ```bash
-extern DTV_STATUS_T RHAL_UART_GetPortStatus(SINT32 port_id, PORT_STATUS_T*pStat);
+DTV_STATUS_T RHAL_UART_WriteUart(SINT32 port_id, const UINT8*pbuff, UINT32 write_size);
 ```
+Write data to a uart port
+<ParamTable
+  items={[
+    { name: 'port_id', type: 'SINT32', desc: 'which uart port need write' },
+    { name: 'pbuff', type: 'UINT8*', desc: 'the buffer to save write content' },
+    { name: 'write_size', type: 'UINT32', desc: 'the content length write to uart' },
+  ]}
+/>
 
-## RHAL_UART_GetPortCfg
+##Function Declaration
+### RHAL_UART_GetPortStatus
 ```bash
-extern DTV_STATUS_T RHAL_UART_GetPortCfg(SINT32 port_id, struct termios*pCfg);
+DTV_STATUS_T RHAL_UART_GetPortStatus(SINT32 port_id, PORT_STATUS_T*pStat);
 ```
+Get port open/close status
+<ParamTable
+  items={[
+    { name: 'port_id', type: 'SINT32', desc: 'which uart port need write' },
+    { name: 'pStat', type: 'PORT_STATUS_T*', desc: 'pointer to status data' },
+  ]}
+/>
 
-## RHAL_UART_SetPortCfg
+##Function Declaration
+### RHAL_UART_GetPortCfg
 ```bash
-extern DTV_STATUS_T RHAL_UART_SetPortCfg(SINT32 port_id, struct termios*pCfg);
+DTV_STATUS_T RHAL_UART_GetPortCfg(SINT32 port_id, struct termios*pCfg);
 ```
+Get port config param
+<ParamTable
+  items={[
+    { name: 'port_id', type: 'SINT32', desc: 'which uart port to get' },
+    { name: 'pCfg', type: 'struct termios*', desc: 'pointer to status data' },
+  ]}
+/>
 
-## RHAL_UART_GetDftPort
+##Function Declaration
+### RHAL_UART_SetPortCfg
 ```bash
-extern DTV_STATUS_T RHAL_UART_GetDftPort(SINT32*port_id);
+DTV_STATUS_T RHAL_UART_SetPortCfg(SINT32 port_id, struct termios*pCfg);
 ```
+Set port config param
+<ParamTable
+  items={[
+    { name: 'port_id', type: 'SINT32', desc: 'which uart port to set' },
+    { name: 'pCfg', type: 'struct termios*', desc: 'pointer to status data' },
+  ]}
+/>
+
+##Function Declaration
+### RHAL_UART_GetDftPort
+```bash
+DTV_STATUS_T RHAL_UART_GetDftPort(SINT32*port_id);
+```
+Get default uart port 
+<ParamTable
+  items={[
+    { name: 'port_id', type: 'SINT32', desc: 'default uart port' },
+  ]}
+/>

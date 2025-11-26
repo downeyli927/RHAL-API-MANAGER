@@ -6,7 +6,8 @@ sidebar_position: 13
 
 RHAL_CIUSB api
 
-## RHAL_CIUSB_Open
+##Function Declaration
+### RHAL_CIUSB_Open
 ```bash
 void* RHAL_CIUSB_Open(UINT8 Id);
 ```
@@ -17,12 +18,14 @@ Open CI Plus USB interface
   ]}
 />
 
-## RHAL_CIUSB_Close
+##Function Declaration
+### RHAL_CIUSB_Close
 ```bash
 CIUSB_STS RHAL_CIUSB_Close(void*pUsbId);
 ```
 
-## RHAL_CIUSB_Read
+##Function Declaration
+### RHAL_CIUSB_Read
 ```bash
 ssize_t RHAL_CIUSB_Read(void*pUsbId, int interface, UINT8*buffer, int len);
 ```
@@ -36,7 +39,8 @@ Read data from CI Plus USB device
   ]}
 />
 
-## RHAL_CIUSB_Write
+##Function Declaration
+### RHAL_CIUSB_Write
 ```bash
 ssize_t RHAL_CIUSB_Write(void*pUsbId, int interface, const UINT8*buffer, int len);
 ```
@@ -50,7 +54,8 @@ Write data to CI Plus USB device
   ]}
 />
 
-## RHAL_CIUSB_GetCardStatus
+##Function Declaration
+### RHAL_CIUSB_GetCardStatus
 ```bash
 CIUSB_STS RHAL_CIUSB_GetCardStatus(void*pUsbId, UINT32*status);
 ```
@@ -62,7 +67,8 @@ Get the connect status.
   ]}
 />
 
-## RHAL_CIUSB_GetCardInfo
+##Function Declaration
+### RHAL_CIUSB_GetCardInfo
 ```bash
 CIUSB_STS RHAL_CIUSB_GetCardInfo(void*pUsbId, int interface, CIUSB_IOC_INFO*pInfo);
 ```
@@ -75,13 +81,15 @@ Get the CI Plus card info.
   ]}
 />
 
-## RHAL_CIUSB_CardReset
+##Function Declaration
+### RHAL_CIUSB_CardReset
 ```bash
 CIUSB_STS RHAL_CIUSB_CardReset(void*pUsbId);
 ```
 Reset the CI Plus card.
 
-## RHAL_CIUSB_EnableRW
+##Function Declaration
+### RHAL_CIUSB_EnableRW
 ```bash
 void RHAL_CIUSB_EnableRW(void*pUsbId, BOOLEAN bEnable);
 ```
@@ -93,7 +101,8 @@ Enable to read and write the interface.
   ]}
 />
 
-## RHAL_CIUSB_SetParam
+##Function Declaration
+### RHAL_CIUSB_SetParam
 ```bash
 void RHAL_CIUSB_SetParam(void*pUsbId, int interface, CIUSB_IOC_PARAM*pParam);
 ```
@@ -106,7 +115,8 @@ Set the param for reading data from USB CAM.
   ]}
 />
 
-## RHAL_CIUSB_ResetStatistic
+##Function Declaration
+### RHAL_CIUSB_ResetStatistic
 ```bash
 void RHAL_CIUSB_ResetStatistic(void*pUsbId, int interface);
 ```

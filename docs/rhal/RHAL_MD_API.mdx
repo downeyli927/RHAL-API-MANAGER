@@ -6,47 +6,56 @@ sidebar_position: 40
 
 RHAL_MD_API api
 
-## RHAL_MD_OPEN
+##Function Declaration
+### RHAL_MD_OPEN
 ```bash
 void RHAL_MD_OPEN(void);
 ```
 
-## RHAL_MD_CLOSE
+##Function Declaration
+### RHAL_MD_CLOSE
 ```bash
 void RHAL_MD_CLOSE(void);
 ```
 
-## RHAL_MD_MEMCPY
+##Function Declaration
+### RHAL_MD_MEMCPY
 ```bash
 MD_CMD_HANDLE RHAL_MD_MEMCPY(void*lpDst, void*lpSrc, SINT32 len, BOOLEAN forward);
 ```
 
-## RHAL_MD_MEMSET
+##Function Declaration
+### RHAL_MD_MEMSET
 ```bash
 MD_CMD_HANDLE RHAL_MD_MEMSET(void*lpDst, UINT8 data, SINT32 len);
 ```
 
-## RHAL_MD_CHECK_FINISH
+##Function Declaration
+### RHAL_MD_CHECK_FINISH
 ```bash
 BOOLEAN RHAL_MD_CHECK_FINISH(MD_CMD_HANDLE handle);
 ```
 
-## RHAL_MD_WAIT_COMPLETE
+##Function Declaration
+### RHAL_MD_WAIT_COMPLETE
 ```bash
 void RHAL_MD_WAIT_COMPLETE();
 ```
 
-## RHAL_MD_MEMCPYEX
+##Function Declaration
+### RHAL_MD_MEMCPYEX
 ```bash
 MD_CMD_HANDLE RHAL_MD_MEMCPYEX(void*pvDestAddress, void*pvSrcAddress, UINT32 dwDataLength, BOOLEAN bForward, UINT32 dwSrcPitchValue, UINT32 dwDestPitchValue, UINT32 dwDataHeight, UINT32 dwDataWidth);
 ```
 
-## RHAL_MD_MEMSETEX
+##Function Declaration
+### RHAL_MD_MEMSETEX
 ```bash
 MD_CMD_HANDLE RHAL_MD_MEMSETEX(void*pvDestAddress, UINT8 dwConstData, UINT32 dwDataLength, UINT32 dwSrcPitchValue, UINT32 dwDestPitchValue, UINT32 dwDataHeight, UINT32 dwDataWidth);
 ```
 
-## RHAL_MD_MEM_SWAP_CPYEX
+##Function Declaration
+### RHAL_MD_MEM_SWAP_CPYEX
 ```bash
 MD_CMD_HANDLE RHAL_MD_MEM_SWAP_CPYEX(void*pvDestAddress, void*pvSrcAddress, UINT32 dwDataLength, UINT32 dwDestPitchValue, UINT32 dwSrcPitchValue, UINT32 dwDataHeight, UINT32 dwDataWidth, UINT32 dwByteMode);
 ```

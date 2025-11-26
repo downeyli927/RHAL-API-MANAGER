@@ -6,116 +6,138 @@ sidebar_position: 5
 
 RHAL_AI_EXECUTOR api
 
-## RHAL_AI_EXE_Open
+##Function Declaration
+### RHAL_AI_EXE_Open
 ```bash
 AI_EXE_HANDLE RHAL_AI_EXE_Open(void);
 ```
 Open ai executor to use NPU
 
-## RHAL_AI_EXE_Close
+##Function Declaration
+### RHAL_AI_EXE_Close
 ```bash
 BOOLEAN RHAL_AI_EXE_Close(AI_EXE_HANDLE handle);
 ```
 Close ai executor
 
-## RHAL_AI_EXE_CreateNetwork
+##Function Declaration
+### RHAL_AI_EXE_CreateNetwork
 ```bash
 BOOLEAN RHAL_AI_EXE_CreateNetwork(AI_EXE_HANDLE handle, const char*file);
 ```
 Create network
 
-## RHAL_AI_EXE_CreateNetworkFromMem
+##Function Declaration
+### RHAL_AI_EXE_CreateNetworkFromMem
 ```bash
 BOOLEAN RHAL_AI_EXE_CreateNetworkFromMem(AI_EXE_HANDLE handle, const UINT8*nbBuf, UINT64 nbSize);
 ```
 Create network from mem
 
-## RHAL_AI_EXE_QueryInputProperty
+##Function Declaration
+### RHAL_AI_EXE_QueryInputProperty
 ```bash
 BOOLEAN RHAL_AI_EXE_QueryInputProperty(AI_EXE_HANDLE handle, UINT32 index, TENSOR_PROP_T*prop);
 ```
 
-## RHAL_AI_EXE_QueryOutputProperty
+##Function Declaration
+### RHAL_AI_EXE_QueryOutputProperty
 ```bash
 BOOLEAN RHAL_AI_EXE_QueryOutputProperty(AI_EXE_HANDLE handle, UINT32 index, TENSOR_PROP_T*prop);
 ```
 
-## RHAL_AI_EXE_QueryInputDims
+##Function Declaration
+### RHAL_AI_EXE_QueryInputDims
 ```bash
 BOOLEAN RHAL_AI_EXE_QueryInputDims(AI_EXE_HANDLE handle, UINT32 index, UINT32*num_of_dims, UINT32**size_of_dims);
 ```
 
-## RHAL_AI_EXE_QueryOutputDims
+##Function Declaration
+### RHAL_AI_EXE_QueryOutputDims
 ```bash
 BOOLEAN RHAL_AI_EXE_QueryOutputDims(AI_EXE_HANDLE handle, UINT32 index, UINT32*num_of_dims, UINT32**size_of_dims);
 ```
 
-## RHAL_AI_EXE_GetMaxCoreNum
+##Function Declaration
+### RHAL_AI_EXE_GetMaxCoreNum
 ```bash
 UINT32 RHAL_AI_EXE_GetMaxCoreNum(AI_EXE_HANDLE handle);
 ```
 
-## RHAL_AI_EXE_ConfigCoreIndex
+##Function Declaration
+### RHAL_AI_EXE_ConfigCoreIndex
 ```bash
 BOOLEAN RHAL_AI_EXE_ConfigCoreIndex(AI_EXE_HANDLE handle, UINT32 index);
 ```
 
-## RHAL_AI_EXE_FinalizeConfig
+##Function Declaration
+### RHAL_AI_EXE_FinalizeConfig
 ```bash
 BOOLEAN RHAL_AI_EXE_FinalizeConfig(AI_EXE_HANDLE handle);
 ```
 
-## RHAL_AI_EXE_RunNetwork
+##Function Declaration
+### RHAL_AI_EXE_RunNetwork
 ```bash
 BOOLEAN RHAL_AI_EXE_RunNetwork(AI_EXE_HANDLE handle);
 ```
 
-## RHAL_AI_EXE_CreateInput
+##Function Declaration
+### RHAL_AI_EXE_CreateInput
 ```bash
 AI_TENSOR_HANDLE RHAL_AI_EXE_CreateInput(AI_EXE_HANDLE handle, UINT32 index);
 ```
 
-## RHAL_AI_EXE_CreateOutput
+##Function Declaration
+### RHAL_AI_EXE_CreateOutput
 ```bash
 AI_TENSOR_HANDLE RHAL_AI_EXE_CreateOutput(AI_EXE_HANDLE handle, UINT32 index);
 ```
 
-## RHAL_AI_EXE_CreateInputWithDirectBuffer
+##Function Declaration
+### RHAL_AI_EXE_CreateInputWithDirectBuffer
 ```bash
 AI_TENSOR_HANDLE RHAL_AI_EXE_CreateInputWithDirectBuffer(AI_EXE_HANDLE handle, UINT32 index, UINT64 pa, UINT64 size);
 ```
 
-## RHAL_AI_EXE_CreateOutputWithDirectBuffer
+##Function Declaration
+### RHAL_AI_EXE_CreateOutputWithDirectBuffer
 ```bash
 AI_TENSOR_HANDLE RHAL_AI_EXE_CreateOutputWithDirectBuffer(AI_EXE_HANDLE handle, UINT32 index, UINT64 pa, UINT64 size);
 ```
 
-## RHAL_AI_EXE_CopyDataFromTensor
+##Function Declaration
+### RHAL_AI_EXE_CopyDataFromTensor
 ```bash
 BOOLEAN RHAL_AI_EXE_CopyDataFromTensor(AI_TENSOR_HANDLE handle, void*data, UINT64 size);
 ```
 
-## RHAL_AI_EXE_CopyDataToTensor
+##Function Declaration
+### RHAL_AI_EXE_CopyDataToTensor
 ```bash
 BOOLEAN RHAL_AI_EXE_CopyDataToTensor(AI_TENSOR_HANDLE handle, void*data, UINT64 size);
 ```
 
-## RHAL_AI_EXE_GetBufferFromTensor
+##Function Declaration
+### RHAL_AI_EXE_GetBufferFromTensor
 ```bash
 const void* RHAL_AI_EXE_GetBufferFromTensor(AI_TENSOR_HANDLE handle);
 ```
 
-## RHAL_AI_EXE_FlushBuffer
+##Function Declaration
+### RHAL_AI_EXE_FlushBuffer
 ```bash
 BOOLEAN RHAL_AI_EXE_FlushBuffer(AI_TENSOR_HANDLE handle);
 ```
 
-## RHAL_AI_EXE_InvalidateBuffer
+##Function Declaration
+### RHAL_AI_EXE_InvalidateBuffer
 ```bash
 BOOLEAN RHAL_AI_EXE_InvalidateBuffer(AI_TENSOR_HANDLE handle);
 ```
 
-## RHAL_AI_EXE_GetBufferSize
+##Function Declaration
+### RHAL_AI_EXE_GetBufferSize
 ```bash
 UINT32 RHAL_AI_EXE_GetBufferSize(AI_TENSOR_HANDLE handle);
 ```

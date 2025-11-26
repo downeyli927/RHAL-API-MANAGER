@@ -6,32 +6,99 @@ sidebar_position: 62
 
 RHAL_TCON api
 
-## RHAL_TCON_TransferCommand
+##Function Declaration
+### RHAL_TCON_TransferCommand
 ```bash
 DTV_STATUS_T RHAL_TCON_TransferCommand(OLED_V22_CMD_INFO*oledV22CmdInfo);
 ```
+Used to send commands to and receive responses from the timing controller (TCON) of the OLED display.
+<ParamTable
+  items={[
+    { name: 'oledV22CmdInfo', type: 'OLED_V22_CMD_INFO*', desc: <> A pointer to an OLED_V22_CMD_INFO structure contains the command information to be sent. </> },
+  ]}
+/>
+typedef struct oled_v22_cmd_info {
+    OLED_V22_CMD_TYPE cmdType;
+    char *reqData;
+    int  reqLen;
+    char *respData;
+    int  respLen;
+    int  delayMs;
+}OLED_V22_CMD_INFO;
+:::tip[OLED_V22_CMD_TYPE]
 
-## RHAL_TCON_ExcuteCmd
+    OLED_V22_CMD_READ_STATUS    = 0,<br />
+    OLED_V22_CMD_RESET          = 1,<br />
+    OLED_V22_CMD_GET_FREE_BUFF  = 2,<br />
+    OLED_V22_CMD_GET_VERSION    = 3,<br />
+    OLED_V22_CMD_AS_START       = 4,<br />
+    OLED_V22_CMD_MANUAL_OS_GAIN = 5,<br />
+    OLED_V22_CMD_TEMP_LUT_UPDATE    = 6,<br />
+    OLED_V22_CMD_GET_LUT_VERSION    = 7,<br />
+    OLED_V22_CMD_FW_USB_UPDATE      = 8,<br />
+    OLED_V22_CMD_LUT_USB_UPDATE     = 9,<br />
+    OLED_V22_CMD_MAX_NUM
+
+:::
+
+##Function Declaration
+### RHAL_TCON_ExcuteCmd
 ```bash
 DTV_STATUS_T RHAL_TCON_ExcuteCmd(const char*funName, TCON_CMD_INFO*cmdInfo);
 ```
+Commands used to execute TCON (Timing Controller) related commands.
+<ParamTable
+  items={[
+    { name: 'funName', type: 'const char*', desc: <> A string representing the name of the function to be executed. This name is used to locate the corresponding command information in the XML configuration file. </> },
+    { name: 'cmdInfo', type: 'TCON_CMD_INFO*', desc: <> A pointer to a TCON_CMD_INFO structure, which contains the command request data and a buffer for storing the response data. </> },
+  ]}
+/>
+typedef struct tcon_cmd_info {
+    char *reqData;
+    int  reqLen;
+    unsigned char *respData;
+    unsigned short  *respLen;
+    char reserved[4];
+}TCON_CMD_INFO;
 
-## RHAL_TCON_Reload_Setting
+##Function Declaration
+### RHAL_TCON_Reload_Setting
 ```bash
 DTV_STATUS_T RHAL_TCON_Reload_Setting(void);
 ```
+Send all tcon cmd for init,reload the TCON (Timing Controller) settings.
 
-## RHAL_TCON_Release_Resource
+##Function Declaration
+### RHAL_TCON_Release_Resource
 ```bash
 DTV_STATUS_T RHAL_TCON_Release_Resource(void);
 ```
+RHAL_TCON_UnInit , free xml
 
-## RHAL_TCON_SetFuncValue
+##Function Declaration
+### RHAL_TCON_SetFuncValue
 ```bash
 DTV_STATUS_T RHAL_TCON_SetFuncValue(const char*funName, const char*attrName, int attrVal);
 ```
+Configure specific function parameters of TCON (Timing Controller)
+<ParamTable
+  items={[
+    { name: 'funName', type: 'const char*', desc: <> The function name to be set corresponds to a specific function element in the XML file. </> },
+    { name: 'attrName', type: 'const char*', desc: <> The name of the attribute to be set </> },
+    { name: 'attrVal', type: 'int', desc: <> The attribute value to be set. </> },
+  ]}
+/>
 
-## RHAL_TCON_GetFuncValue
+##Function Declaration
+### RHAL_TCON_GetFuncValue
 ```bash
 DTV_STATUS_T RHAL_TCON_GetFuncValue(const char*funName, const char*attrName, int*attrVal);
 ```
+Retrieve specific function parameter values ​​from TCON (Timing Controller)
+<ParamTable
+  items={[
+    { name: 'funName', type: 'const char*', desc: <> The name of the function to query, corresponding to a specific function element in the XML file. </> },
+    { name: 'attrName', type: 'const char*', desc: <> The name of the attribute to query. </> },
+    { name: 'attrVal', type: 'int', desc: <> A pointer to an integer used to store the retrieved attribute value. </> },
+  ]}
+/>

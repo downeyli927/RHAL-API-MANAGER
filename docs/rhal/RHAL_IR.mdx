@@ -6,7 +6,8 @@ sidebar_position: 35
 
 RHAL_IR api
 
-## RHAL_IR_SET_PROTOCOL
+##Function Declaration
+### RHAL_IR_SET_PROTOCOL
 ```bash
 DTV_STATUS_T RHAL_IR_SET_PROTOCOL(UINT32 protocol);
 ```
@@ -17,7 +18,8 @@ Set IR protocol
   ]}
 />
 
-## RHAL_IR_GET_PROTOCOL
+##Function Declaration
+### RHAL_IR_GET_PROTOCOL
 ```bash
 DTV_STATUS_T RHAL_IR_GET_PROTOCOL(UINT32*protocol);
 ```
@@ -28,7 +30,8 @@ Return IR protocol
   ]}
 />
 
-## RHAL_IR_SET_RELEASE_EVENT_INTERVAL
+##Function Declaration
+### RHAL_IR_SET_RELEASE_EVENT_INTERVAL
 ```bash
 DTV_STATUS_T RHAL_IR_SET_RELEASE_EVENT_INTERVAL(UINT32 interval);
 ```
@@ -39,7 +42,8 @@ Set release event interval(ms)
   ]}
 />
 
-## RHAL_IR_GET_RELEASE_EVENT_INTERVAL
+##Function Declaration
+### RHAL_IR_GET_RELEASE_EVENT_INTERVAL
 ```bash
 DTV_STATUS_T RHAL_IR_GET_RELEASE_EVENT_INTERVAL(UINT32*interval);
 ```
@@ -50,7 +54,8 @@ Get release event interval(ms)
   ]}
 />
 
-## RHAL_IR_SET_REPEAT_EVNET_EN
+##Function Declaration
+### RHAL_IR_SET_REPEAT_EVNET_EN
 ```bash
 DTV_STATUS_T RHAL_IR_SET_REPEAT_EVNET_EN(UINT32 onoff);
 ```
@@ -61,7 +66,8 @@ Set pepeat event on/off
   ]}
 />
 
-## RHAL_IR_SET_RAWKEY_EVNET_EN
+##Function Declaration
+### RHAL_IR_SET_RAWKEY_EVNET_EN
 ```bash
 DTV_STATUS_T RHAL_IR_SET_RAWKEY_EVNET_EN(UINT32 onoff);
 ```
@@ -72,7 +78,8 @@ Set rawkey event on/off
   ]}
 />
 
-## RHAL_IR_SET_MOUSE_EVNET_EN
+##Function Declaration
+### RHAL_IR_SET_MOUSE_EVNET_EN
 ```bash
 DTV_STATUS_T RHAL_IR_SET_MOUSE_EVNET_EN(UINT32 onoff);
 ```
@@ -83,13 +90,15 @@ Set mouse event on/off
   ]}
 />
 
-## RHAL_IR_GET_MOUSE_EVNET_EN
+##Function Declaration
+### RHAL_IR_GET_MOUSE_EVNET_EN
 ```bash
 DTV_STATUS_T RHAL_IR_GET_MOUSE_EVNET_EN(UINT32*onoff);
 ```
 Get mouse event on/off
 
-## RHAL_IR_SET_MOUSE_SPEED
+##Function Declaration
+### RHAL_IR_SET_MOUSE_SPEED
 ```bash
 DTV_STATUS_T RHAL_IR_SET_MOUSE_SPEED(UINT32 pixel);
 ```
@@ -100,13 +109,15 @@ Set mouse speed
   ]}
 />
 
-## RHAL_IR_GET_MOUSE_SPEED
+##Function Declaration
+### RHAL_IR_GET_MOUSE_SPEED
 ```bash
 DTV_STATUS_T RHAL_IR_GET_MOUSE_SPEED(UINT32*pixel);
 ```
 Get mouse speed
 
-## RHAL_IR_SET_DECODE_KEY_EN
+##Function Declaration
+### RHAL_IR_SET_DECODE_KEY_EN
 ```bash
 DTV_STATUS_T RHAL_IR_SET_DECODE_KEY_EN(UINT32 onoff);
 ```
@@ -117,25 +128,29 @@ Set decode key on/off
   ]}
 />
 
-## RHAL_Enter_IrWBAdj
+##Function Declaration
+### RHAL_Enter_IrWBAdj
 ```bash
 DTV_STATUS_T RHAL_Enter_IrWBAdj(void);
 ```
 Enter user Raw Mode
 
-## RHAL_Exit_IrWBAdj
+##Function Declaration
+### RHAL_Exit_IrWBAdj
 ```bash
 DTV_STATUS_T RHAL_Exit_IrWBAdj(void);
 ```
 Exit user Raw Mode
 
-## RHAL_Read_IrWBAdj
+##Function Declaration
+### RHAL_Read_IrWBAdj
 ```bash
 DTV_STATUS_T RHAL_Read_IrWBAdj(UINT32*irCmdBuff);
 ```
 Read IR user Raw mode data
 
-## RHAL_IR_GENERATE_KEYEVENT
+##Function Declaration
+### RHAL_IR_GENERATE_KEYEVENT
 ```bash
 DTV_STATUS_T RHAL_IR_GENERATE_KEYEVENT(UINT32 keycode);
 ```
@@ -146,7 +161,8 @@ Generate keyevent
   ]}
 />
 
-## RHAL_IR_REGISTER_KEYCODE_INTERCEPT_CALLBACK
+##Function Declaration
+### RHAL_IR_REGISTER_KEYCODE_INTERCEPT_CALLBACK
 ```bash
 DTV_STATUS_T RHAL_IR_REGISTER_KEYCODE_INTERCEPT_CALLBACK(UINT32 keycode, UINT32 (*keycode_intercept_callback)(UINT32 keycode, void*data), void*data, UINT32 flags);
 ```
@@ -167,7 +183,8 @@ Register keycode intercept callback function
     HAL_KEYCODE_INTERCEPT_CALLBACK_ALWAYS = 0x00020000,
 
 :::
-## RHAL_IR_UNREGISTER_KEYCODE_INTERCEPT_CALLBACK
+##Function Declaration
+### RHAL_IR_UNREGISTER_KEYCODE_INTERCEPT_CALLBACK
 ```bash
 DTV_STATUS_T RHAL_IR_UNREGISTER_KEYCODE_INTERCEPT_CALLBACK(UINT32 keycode);
 ```

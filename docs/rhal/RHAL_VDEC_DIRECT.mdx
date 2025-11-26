@@ -6,42 +6,50 @@ sidebar_position: 76
 
 RHAL_VDEC_DIRECT api
 
-## RHAL_VDEC_DIRECT_Open
+##Function Declaration
+### RHAL_VDEC_DIRECT_Open
 ```bash
 HAL_DVDEC_T* RHAL_VDEC_DIRECT_Open(unsigned int fourcc, int width, int height, HAL_VDEC_DIRECT_3D_TYPE_T trid_type);
 ```
 
-## RHAL_VDEC_DIRECT_SetDEId
+##Function Declaration
+### RHAL_VDEC_DIRECT_SetDEId
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_SetDEId(HAL_DVDEC_T*vdec, int deid);
 ```
 
-## RHAL_VDEC_DIRECT_Play
+##Function Declaration
+### RHAL_VDEC_DIRECT_Play
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_Play(HAL_DVDEC_T*vdec, void*data, int size);
 ```
 
-## RHAL_VDEC_DIRECT_Stop
+##Function Declaration
+### RHAL_VDEC_DIRECT_Stop
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_Stop(HAL_DVDEC_T*vdec);
 ```
 
-## RHAL_VDEC_DIRECT_Close
+##Function Declaration
+### RHAL_VDEC_DIRECT_Close
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_Close(HAL_DVDEC_T*vdec);
 ```
 
-## RHAL_VDEC_DIRECT_GetVideoInfo
+##Function Declaration
+### RHAL_VDEC_DIRECT_GetVideoInfo
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_GetVideoInfo(HAL_DVDEC_T*vdec, struct HAL_VDEC_DIRECT_VideoInfo*info);
 ```
 
-## RHAL_VDEC_DIRECT_SetCallback
+##Function Declaration
+### RHAL_VDEC_DIRECT_SetCallback
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_SetCallback(HAL_DVDEC_T*vdec, void(*callback)(unsigned long long buffID));
 ```
 
-## RHAL_VDEC_DIRECT_PlayWithCallback
+##Function Declaration
+### RHAL_VDEC_DIRECT_PlayWithCallback
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_PlayWithCallback(HAL_DVDEC_T*vdec, void*data, int size, unsigned long long buffID);
 ```

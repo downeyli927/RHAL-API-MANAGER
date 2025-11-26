@@ -6,1272 +6,1526 @@ sidebar_position: 9
 
 RHAL_AUDIO api
 
-## RHAL_AUDIO_SetMS12Version
+##Function Declaration
+### RHAL_AUDIO_SetMS12Version
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetMS12Version(HAL_AUDIO_MS12_VERSION_T eMS12Version);
 ```
 
-## RHAL_AUDIO_InitializeModule
+##Function Declaration
+### RHAL_AUDIO_InitializeModule
 ```bash
 DTV_STATUS_T RHAL_AUDIO_InitializeModule(HAL_AUDIO_SIF_TYPE_T eSifType);
 ```
 
-## RHAL_QS_AUDIO_InitializeModule
+##Function Declaration
+### RHAL_QS_AUDIO_InitializeModule
 ```bash
 DTV_STATUS_T RHAL_QS_AUDIO_InitializeModule(HAL_AUDIO_SIF_TYPE_T eSifType);
 ```
 
-## RHAL_AUDIO_SetSPKOutput
+##Function Declaration
+### RHAL_AUDIO_SetSPKOutput
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetSPKOutput(UINT8 i2sNumber, HAL_AUDIO_SAMPLING_FREQ_T samplingFreq);
 ```
 
-## RHAL_AUDIO_TP_Open
+##Function Declaration
+### RHAL_AUDIO_TP_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TP_Open(HAL_AUDIO_TP_INDEX_T tpIndex);
 ```
 
-## RHAL_AUDIO_TP_Close
+##Function Declaration
+### RHAL_AUDIO_TP_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TP_Close(HAL_AUDIO_TP_INDEX_T tpIndex);
 ```
 
-## RHAL_AUDIO_ADC_Open
+##Function Declaration
+### RHAL_AUDIO_ADC_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ADC_Open(HAL_AUDIO_BBADC_SRC portNum);
 ```
 
-## RHAL_AUDIO_ADC_Close
+##Function Declaration
+### RHAL_AUDIO_ADC_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ADC_Close(HAL_AUDIO_BBADC_SRC portNum);
 ```
 
-## RHAL_AUDIO_HDMI_Open
+##Function Declaration
+### RHAL_AUDIO_HDMI_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_Open(void);
 ```
 
-## RHAL_AUDIO_HDMI_Close
+##Function Declaration
+### RHAL_AUDIO_HDMI_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_Close(void);
 ```
 
-## RHAL_AUDIO_DP_Open
+##Function Declaration
+### RHAL_AUDIO_DP_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DP_Open(void);
 ```
 
-## RHAL_AUDIO_DP_Close
+##Function Declaration
+### RHAL_AUDIO_DP_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DP_Close(void);
 ```
 
-## RHAL_AUDIO_I2SIN_Open
+##Function Declaration
+### RHAL_AUDIO_I2SIN_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_I2SIN_Open(void);
 ```
 
-## RHAL_AUDIO_I2SIN_Close
+##Function Declaration
+### RHAL_AUDIO_I2SIN_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_I2SIN_Close(void);
 ```
 
-## RHAL_AUDIO_UACIN_Open
+##Function Declaration
+### RHAL_AUDIO_UACIN_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_UACIN_Open(void);
 ```
 
-## RHAL_AUDIO_UACIN_Close
+##Function Declaration
+### RHAL_AUDIO_UACIN_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_UACIN_Close(void);
 ```
 
-## RHAL_AUDIO_SPDIFIN_Open
+##Function Declaration
+### RHAL_AUDIO_SPDIFIN_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SPDIFIN_Open(void);
 ```
 
-## RHAL_AUDIO_SPDIFIN_Close
+##Function Declaration
+### RHAL_AUDIO_SPDIFIN_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SPDIFIN_Close(void);
 ```
 
-## RHAL_AUDIO_HDMI_OpenPort
+##Function Declaration
+### RHAL_AUDIO_HDMI_OpenPort
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_OpenPort(HAL_AUDIO_HDMI_INDEX_T hdmiIndex);
 ```
 
-## RHAL_AUDIO_HDMI_ClosePort
+##Function Declaration
+### RHAL_AUDIO_HDMI_ClosePort
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_ClosePort(HAL_AUDIO_HDMI_INDEX_T hdmiIndex);
 ```
 
-## RHAL_AUDIO_DP_OpenPort
+##Function Declaration
+### RHAL_AUDIO_DP_OpenPort
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DP_OpenPort(HAL_AUDIO_DP_INDEX_T DPIndex);
 ```
 
-## RHAL_AUDIO_DP_ClosePort
+##Function Declaration
+### RHAL_AUDIO_DP_ClosePort
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DP_ClosePort(HAL_AUDIO_DP_INDEX_T DPIndex);
 ```
 
-## RHAL_AUDIO_AAD_Open
+##Function Declaration
+### RHAL_AUDIO_AAD_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AAD_Open(void);
 ```
 
-## RHAL_AUDIO_AAD_Close
+##Function Declaration
+### RHAL_AUDIO_AAD_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AAD_Close(void);
 ```
 
-## RHAL_AUDIO_SYSTEM_Open
+##Function Declaration
+### RHAL_AUDIO_SYSTEM_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SYSTEM_Open(void);
 ```
 
-## RHAL_AUDIO_SYSTEM_Close
+##Function Declaration
+### RHAL_AUDIO_SYSTEM_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SYSTEM_Close(void);
 ```
 
-## RHAL_AUDIO_ADEC_Open
+##Function Declaration
+### RHAL_AUDIO_ADEC_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ADEC_Open(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_ADEC_Close
+##Function Declaration
+### RHAL_AUDIO_ADEC_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ADEC_Close(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_AENC_Open
+##Function Declaration
+### RHAL_AUDIO_AENC_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_Open(HAL_AUDIO_AENC_INDEX_T aencIndex);
 ```
 
-## RHAL_AUDIO_AENC_Close
+##Function Declaration
+### RHAL_AUDIO_AENC_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_Close(HAL_AUDIO_AENC_INDEX_T aencIndex);
 ```
 
-## RHAL_AUDIO_SE_Open
+##Function Declaration
+### RHAL_AUDIO_SE_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SE_Open(void);
 ```
 
-## RHAL_AUDIO_SE_Close
+##Function Declaration
+### RHAL_AUDIO_SE_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SE_Close(void);
 ```
 
-## RHAL_AUDIO_SNDOUT_Open
+##Function Declaration
+### RHAL_AUDIO_SNDOUT_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SNDOUT_Open(HAL_AUDIO_SNDOUT_T soundOutType);
 ```
 
-## RHAL_AUDIO_SNDOUT_Close
+##Function Declaration
+### RHAL_AUDIO_SNDOUT_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SNDOUT_Close(HAL_AUDIO_SNDOUT_T soundOutType);
 ```
 
-## RHAL_AUDIO_TP_Connect
+##Function Declaration
+### RHAL_AUDIO_TP_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TP_Connect(HAL_AUDIO_RESOURCE_T currentConnect, HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_TP_Disconnect
+##Function Declaration
+### RHAL_AUDIO_TP_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TP_Disconnect(HAL_AUDIO_RESOURCE_T currentConnect, HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_ADC_Connect
+##Function Declaration
+### RHAL_AUDIO_ADC_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ADC_Connect(HAL_AUDIO_BBADC_SRC portNum);
 ```
 
-## RHAL_AUDIO_ADC_Disconnect
+##Function Declaration
+### RHAL_AUDIO_ADC_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ADC_Disconnect(HAL_AUDIO_BBADC_SRC portNum);
 ```
 
-## RHAL_AUDIO_HDMI_Connect
+##Function Declaration
+### RHAL_AUDIO_HDMI_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_Connect(void);
 ```
 
-## RHAL_AUDIO_HDMI_Disconnect
+##Function Declaration
+### RHAL_AUDIO_HDMI_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_Disconnect(void);
 ```
 
-## RHAL_AUDIO_DP_Connect
+##Function Declaration
+### RHAL_AUDIO_DP_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DP_Connect(void);
 ```
 
-## RHAL_AUDIO_DP_Disconnect
+##Function Declaration
+### RHAL_AUDIO_DP_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DP_Disconnect(void);
 ```
 
-## RHAL_AUDIO_DP_ConnectPort
+##Function Declaration
+### RHAL_AUDIO_DP_ConnectPort
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DP_ConnectPort(HAL_AUDIO_DP_INDEX_T DPIndex);
 ```
 
-## RHAL_AUDIO_DP_DisconnectPort
+##Function Declaration
+### RHAL_AUDIO_DP_DisconnectPort
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DP_DisconnectPort(HAL_AUDIO_DP_INDEX_T DPIndex);
 ```
 
-## RHAL_AUDIO_HDMI_ConnectPort
+##Function Declaration
+### RHAL_AUDIO_HDMI_ConnectPort
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_ConnectPort(HAL_AUDIO_HDMI_INDEX_T hdmiIndex);
 ```
 
-## RHAL_AUDIO_HDMI_DisconnectPort
+##Function Declaration
+### RHAL_AUDIO_HDMI_DisconnectPort
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_DisconnectPort(HAL_AUDIO_HDMI_INDEX_T hdmiIndex);
 ```
 
-## RHAL_AUDIO_AAD_Connect
+##Function Declaration
+### RHAL_AUDIO_AAD_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AAD_Connect(void);
 ```
 
-## RHAL_AUDIO_AAD_Disconnect
+##Function Declaration
+### RHAL_AUDIO_AAD_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AAD_Disconnect(void);
 ```
 
-## RHAL_AUDIO_SYSTEM_Connect
+##Function Declaration
+### RHAL_AUDIO_SYSTEM_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SYSTEM_Connect(void);
 ```
 
-## RHAL_AUDIO_SYSTEM_Disconnect
+##Function Declaration
+### RHAL_AUDIO_SYSTEM_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SYSTEM_Disconnect(void);
 ```
 
-## RHAL_AUDIO_I2SIN_Connect
+##Function Declaration
+### RHAL_AUDIO_I2SIN_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_I2SIN_Connect(void);
 ```
 
-## RHAL_AUDIO_I2SIN_Disconnect
+##Function Declaration
+### RHAL_AUDIO_I2SIN_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_I2SIN_Disconnect(void);
 ```
 
-## RHAL_AUDIO_UACIN_Connect
+##Function Declaration
+### RHAL_AUDIO_UACIN_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_UACIN_Connect(void);
 ```
 
-## RHAL_AUDIO_UACIN_Disconnect
+##Function Declaration
+### RHAL_AUDIO_UACIN_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_UACIN_Disconnect(void);
 ```
 
-## RHAL_AUDIO_SPDIFIN_Connect
+##Function Declaration
+### RHAL_AUDIO_SPDIFIN_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SPDIFIN_Connect(void);
 ```
 
-## RHAL_AUDIO_SPDIFIN_Disconnect
+##Function Declaration
+### RHAL_AUDIO_SPDIFIN_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SPDIFIN_Disconnect(void);
 ```
 
-## RHAL_AUDIO_ADEC_Connect
+##Function Declaration
+### RHAL_AUDIO_ADEC_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ADEC_Connect(HAL_AUDIO_RESOURCE_T currentConnect, HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_ADEC_Disconnect
+##Function Declaration
+### RHAL_AUDIO_ADEC_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ADEC_Disconnect(HAL_AUDIO_RESOURCE_T currentConnect, HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_AMIX_Connect
+##Function Declaration
+### RHAL_AUDIO_AMIX_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AMIX_Connect(HAL_AUDIO_RESOURCE_T currentConnect, HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_AMIX_Disconnect
+##Function Declaration
+### RHAL_AUDIO_AMIX_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AMIX_Disconnect(HAL_AUDIO_RESOURCE_T currentConnect, HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_AENC_Connect
+##Function Declaration
+### RHAL_AUDIO_AENC_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_Connect(HAL_AUDIO_RESOURCE_T currentConnect, HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_AENC_Disconnect
+##Function Declaration
+### RHAL_AUDIO_AENC_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_Disconnect(HAL_AUDIO_RESOURCE_T currentConnect, HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_SE_Connect
+##Function Declaration
+### RHAL_AUDIO_SE_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SE_Connect(HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_SE_Disconnect
+##Function Declaration
+### RHAL_AUDIO_SE_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SE_Disconnect(HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_SNDOUT_Connect
+##Function Declaration
+### RHAL_AUDIO_SNDOUT_Connect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SNDOUT_Connect(HAL_AUDIO_RESOURCE_T currentConnect, HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_SNDOUT_Disconnect
+##Function Declaration
+### RHAL_AUDIO_SNDOUT_Disconnect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SNDOUT_Disconnect(HAL_AUDIO_RESOURCE_T currentConnect, HAL_AUDIO_RESOURCE_T inputConnect);
 ```
 
-## RHAL_AUDIO_StartDecoding
+##Function Declaration
+### RHAL_AUDIO_StartDecoding
 ```bash
 DTV_STATUS_T RHAL_AUDIO_StartDecoding(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_SRC_TYPE_T audioType);
 ```
 
-## RHAL_AUDIO_StopDecoding
+##Function Declaration
+### RHAL_AUDIO_StopDecoding
 ```bash
 DTV_STATUS_T RHAL_AUDIO_StopDecoding(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_SetMainDecoderOutput
+##Function Declaration
+### RHAL_AUDIO_SetMainDecoderOutput
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetMainDecoderOutput(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_SetMainAudioOutput
+##Function Declaration
+### RHAL_AUDIO_SetMainAudioOutput
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetMainAudioOutput(HAL_AUDIO_INDEX_T audioIndex);
 ```
 
-## RHAL_AUDIO_SetMultiViewMainAudioOutput
+##Function Declaration
+### RHAL_AUDIO_SetMultiViewMainAudioOutput
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetMultiViewMainAudioOutput(HAL_AUDIO_MIX_INDEX_T audioIndex);
 ```
 
-## RHAL_AUDIO_SetMainAudioSndoutDevice
+##Function Declaration
+### RHAL_AUDIO_SetMainAudioSndoutDevice
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetMainAudioSndoutDevice(HAL_AUDIO_SNDOUT_T sndoutdevice);
 ```
 
-## RHAL_AUDIO_HDMI_GetAudioMode
+##Function Declaration
+### RHAL_AUDIO_HDMI_GetAudioMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_GetAudioMode(HAL_AUDIO_HDMI_TYPE_T*pHDMIMode);
 ```
 
-## RHAL_AUDIO_HDMI_SetAudioReturnChannel
+##Function Declaration
+### RHAL_AUDIO_HDMI_SetAudioReturnChannel
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_SetAudioReturnChannel(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_HDMI_SetEnhancedAudioReturnChannel
+##Function Declaration
+### RHAL_AUDIO_HDMI_SetEnhancedAudioReturnChannel
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_SetEnhancedAudioReturnChannel(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_HDMI_GetCopyInfo
+##Function Declaration
+### RHAL_AUDIO_HDMI_GetCopyInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_GetCopyInfo(HAL_AUDIO_SPDIF_COPYRIGHT_T*pCopyInfo);
 ```
 
-## RHAL_AUDIO_HDMI_SetFullCapPort
+##Function Declaration
+### RHAL_AUDIO_HDMI_SetFullCapPort
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_SetFullCapPort(HAL_AUDIO_HDMI_INDEX_T hdmiIndex);
 ```
 
-## RHAL_AUDIO_PauseAdec
+##Function Declaration
+### RHAL_AUDIO_PauseAdec
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PauseAdec(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_ResumeAdec
+##Function Declaration
+### RHAL_AUDIO_ResumeAdec
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ResumeAdec(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_FlushAdec
+##Function Declaration
+### RHAL_AUDIO_FlushAdec
 ```bash
 DTV_STATUS_T RHAL_AUDIO_FlushAdec(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_SetDolbyDRCMode
+##Function Declaration
+### RHAL_AUDIO_SetDolbyDRCMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDolbyDRCMode(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_DOLBY_DRC_MODE_T drcMode);
 ```
 
-## RHAL_AUDIO_SetDownMixMode
+##Function Declaration
+### RHAL_AUDIO_SetDownMixMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDownMixMode(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_DOWNMIX_MODE_T downmixMode);
 ```
 
-## RHAL_AUDIO_GetDecodingType
+##Function Declaration
+### RHAL_AUDIO_GetDecodingType
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetDecodingType(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_SRC_TYPE_T*pAudioType);
 ```
 
-## RHAL_AUDIO_GetAdecStatus
+##Function Declaration
+### RHAL_AUDIO_GetAdecStatus
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetAdecStatus(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_ADEC_INFO_T*pAudioAdecInfo);
 ```
 
-## RHAL_AUDIO_SetDualMonoOutMode
+##Function Declaration
+### RHAL_AUDIO_SetDualMonoOutMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDualMonoOutMode(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_DUALMONO_MODE_T outputMode);
 ```
 
-## RHAL_AUDIO_TP_GetESInfo
+##Function Declaration
+### RHAL_AUDIO_TP_GetESInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TP_GetESInfo(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_ES_INFO_T*pAudioESInfo);
 ```
 
-## RHAL_AUDIO_TP_IsESExist
+##Function Declaration
+### RHAL_AUDIO_TP_IsESExist
 ```bash
 BOOLEAN RHAL_AUDIO_TP_IsESExist(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_TP_GetAudioPTS
+##Function Declaration
+### RHAL_AUDIO_TP_GetAudioPTS
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TP_GetAudioPTS(HAL_AUDIO_ADEC_INDEX_T adecIndex, UINT32*pPts);
 ```
 
-## RHAL_AUDIO_TP_GetAudioPTS64
+##Function Declaration
+### RHAL_AUDIO_TP_GetAudioPTS64
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TP_GetAudioPTS64(HAL_AUDIO_ADEC_INDEX_T adecIndex, UINT64*pPts);
 ```
 
-## RHAL_AUDIO_TP_SetAudioDescriptionMain
+##Function Declaration
+### RHAL_AUDIO_TP_SetAudioDescriptionMain
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TP_SetAudioDescriptionMain(HAL_AUDIO_ADEC_INDEX_T adecIndex, BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetTrickMode
+##Function Declaration
+### RHAL_AUDIO_SetTrickMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetTrickMode(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_TRICK_MODE_T eTrickMode);
 ```
 
-## RHAL_AUDIO_TP_GetBufferStatus
+##Function Declaration
+### RHAL_AUDIO_TP_GetBufferStatus
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TP_GetBufferStatus(HAL_AUDIO_ADEC_INDEX_T adecIndex, UINT32*pMaxSize, UINT32*pFreeSize);
 ```
 
-## RHAL_AUDIO_SetDecoderInputGain
+##Function Declaration
+### RHAL_AUDIO_SetDecoderInputGain
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDecoderInputGain(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_SetDecoderDelayTime
+##Function Declaration
+### RHAL_AUDIO_SetDecoderDelayTime
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDecoderDelayTime(HAL_AUDIO_ADEC_INDEX_T adecIndex, UINT32 delayTime);
 ```
 
-## RHAL_AUDIO_SetMixerInputGain
+##Function Declaration
+### RHAL_AUDIO_SetMixerInputGain
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetMixerInputGain(HAL_AUDIO_MIXER_INDEX_T mixerIndex, HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_SetGlobalDecoderGain
+##Function Declaration
+### RHAL_AUDIO_SetGlobalDecoderGain
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetGlobalDecoderGain(HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_SetDmicGain
+##Function Declaration
+### RHAL_AUDIO_SetDmicGain
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDmicGain(HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_SetSPKOutVolume
+##Function Declaration
+### RHAL_AUDIO_SetSPKOutVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetSPKOutVolume(HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_SetSPDIFOutVolume
+##Function Declaration
+### RHAL_AUDIO_SetSPDIFOutVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetSPDIFOutVolume(HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_SetHPOutVolume
+##Function Declaration
+### RHAL_AUDIO_SetHPOutVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetHPOutVolume(HAL_AUDIO_VOLUME_T volume, BOOLEAN bForced);
 ```
 
-## RHAL_AUDIO_SetSCARTOutVolume
+##Function Declaration
+### RHAL_AUDIO_SetSCARTOutVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetSCARTOutVolume(HAL_AUDIO_VOLUME_T volume, BOOLEAN bForced);
 ```
 
-## RHAL_AUDIO_SetAudioDescriptionVolume
+##Function Declaration
+### RHAL_AUDIO_SetAudioDescriptionVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetAudioDescriptionVolume(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_SetUACOut1Volume
+##Function Declaration
+### RHAL_AUDIO_SetUACOut1Volume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetUACOut1Volume(HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_SetUACOut2Volume
+##Function Declaration
+### RHAL_AUDIO_SetUACOut2Volume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetUACOut2Volume(HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_SetDecoderInputMute
+##Function Declaration
+### RHAL_AUDIO_SetDecoderInputMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDecoderInputMute(HAL_AUDIO_ADEC_INDEX_T adecIndex, BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetDecoderInputESMute
+##Function Declaration
+### RHAL_AUDIO_SetDecoderInputESMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDecoderInputESMute(HAL_AUDIO_ADEC_INDEX_T adecIndex, BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetMixerInputMute
+##Function Declaration
+### RHAL_AUDIO_SetMixerInputMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetMixerInputMute(HAL_AUDIO_MIXER_INDEX_T mixerIndex, BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetSPKOutMute
+##Function Declaration
+### RHAL_AUDIO_SetSPKOutMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetSPKOutMute(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SPK_SetI2SMute
+##Function Declaration
+### RHAL_AUDIO_SPK_SetI2SMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SPK_SetI2SMute(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetSPDIFOutMute
+##Function Declaration
+### RHAL_AUDIO_SetSPDIFOutMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetSPDIFOutMute(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetHPOutMute
+##Function Declaration
+### RHAL_AUDIO_SetHPOutMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetHPOutMute(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetSCARTOutMute
+##Function Declaration
+### RHAL_AUDIO_SetSCARTOutMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetSCARTOutMute(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_Effect_MuteProtect
+##Function Declaration
+### RHAL_AUDIO_Effect_MuteProtect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Effect_MuteProtect(void);
 ```
 
-## RHAL_AUDIO_Set_Output_SPK_ARC
+##Function Declaration
+### RHAL_AUDIO_Set_Output_SPK_ARC
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Set_Output_SPK_ARC(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetUACOut1Mute
+##Function Declaration
+### RHAL_AUDIO_SetUACOut1Mute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetUACOut1Mute(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetUACOut2Mute
+##Function Declaration
+### RHAL_AUDIO_SetUACOut2Mute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetUACOut2Mute(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_GetDecoderInputGain
+##Function Declaration
+### RHAL_AUDIO_GetDecoderInputGain
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetDecoderInputGain(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_VOLUME_T*volume);
 ```
 
-## RHAL_AUDIO_GetMixerInputGain
+##Function Declaration
+### RHAL_AUDIO_GetMixerInputGain
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetMixerInputGain(HAL_AUDIO_MIXER_INDEX_T mixerIndex, HAL_AUDIO_VOLUME_T*volume);
 ```
 
-## RHAL_AUDIO_GetDecoderInputMute
+##Function Declaration
+### RHAL_AUDIO_GetDecoderInputMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetDecoderInputMute(HAL_AUDIO_ADEC_INDEX_T adecIndex, BOOLEAN*bOnOff);
 ```
 
-## RHAL_AUDIO_GetMixerInputMute
+##Function Declaration
+### RHAL_AUDIO_GetMixerInputMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetMixerInputMute(HAL_AUDIO_MIXER_INDEX_T mixerIndex, BOOLEAN*bOnOff);
 ```
 
-## RHAL_AUDIO_GetSPKOutMuteStatus
+##Function Declaration
+### RHAL_AUDIO_GetSPKOutMuteStatus
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetSPKOutMuteStatus(BOOLEAN*pOnOff);
 ```
 
-## RHAL_AUDIO_GetSPDIFOutMuteStatus
+##Function Declaration
+### RHAL_AUDIO_GetSPDIFOutMuteStatus
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetSPDIFOutMuteStatus(BOOLEAN*pOnOff);
 ```
 
-## RHAL_AUDIO_GetHPOutMuteStatus
+##Function Declaration
+### RHAL_AUDIO_GetHPOutMuteStatus
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetHPOutMuteStatus(BOOLEAN*pOnOff);
 ```
 
-## RHAL_AUDIO_GetSCARTOutMuteStatus
+##Function Declaration
+### RHAL_AUDIO_GetSCARTOutMuteStatus
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetSCARTOutMuteStatus(BOOLEAN*pOnOff);
 ```
 
-## RHAL_AUDIO_SetSPKOutDelayTime
+##Function Declaration
+### RHAL_AUDIO_SetSPKOutDelayTime
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetSPKOutDelayTime(UINT32 delayTime, BOOLEAN bForced);
 ```
 
-## RHAL_AUDIO_SetSPDIFOutDelayTime
+##Function Declaration
+### RHAL_AUDIO_SetSPDIFOutDelayTime
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetSPDIFOutDelayTime(UINT32 delayTime, BOOLEAN bForced);
 ```
 
-## RHAL_AUDIO_SetHPOutDelayTime
+##Function Declaration
+### RHAL_AUDIO_SetHPOutDelayTime
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetHPOutDelayTime(UINT32 delayTime, BOOLEAN bForced);
 ```
 
-## RHAL_AUDIO_SetSCARTOutDelayTime
+##Function Declaration
+### RHAL_AUDIO_SetSCARTOutDelayTime
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetSCARTOutDelayTime(UINT32 delayTime, BOOLEAN bForced);
 ```
 
-## RHAL_AUDIO_GetStatusInfo
+##Function Declaration
+### RHAL_AUDIO_GetStatusInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetStatusInfo(HAL_AUDIO_COMMON_INFO_T*pAudioStatusInfo);
 ```
 
-## RHAL_AUDIO_SNDOUT_GetLatency
+##Function Declaration
+### RHAL_AUDIO_SNDOUT_GetLatency
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SNDOUT_GetLatency(HAL_AUDIO_SNDOUT_T soundOutType, int*latency_ms);
 ```
 
-## RHAL_AUDIO_SNDOUT_MixSrc
+##Function Declaration
+### RHAL_AUDIO_SNDOUT_MixSrc
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SNDOUT_MixSrc(HAL_AUDIO_SNDOUT_T sndoutdevice, HAL_AUDIO_MIX_INDEX_T mixsrc);
 ```
 
-## RHAL_AUDIO_AndroidDolbyDynamicRange
+##Function Declaration
+### RHAL_AUDIO_AndroidDolbyDynamicRange
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AndroidDolbyDynamicRange(UINT32 bMode);
 ```
 
-## RHAL_AUDIO_AndroidHEAACDynamicRange
+##Function Declaration
+### RHAL_AUDIO_AndroidHEAACDynamicRange
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AndroidHEAACDynamicRange(UINT32 bMode);
 ```
 
-## RHAL_AUDIO_AndroidMPEGAudioLevel
+##Function Declaration
+### RHAL_AUDIO_AndroidMPEGAudioLevel
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AndroidMPEGAudioLevel(UINT32 bValue);
 ```
 
-## RHAL_AUDIO_AndroidHEAACAudioLevel
+##Function Declaration
+### RHAL_AUDIO_AndroidHEAACAudioLevel
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AndroidHEAACAudioLevel(UINT32 bValue);
 ```
 
-## RHAL_AUDIO_SPDIF_SetOutputType
+##Function Declaration
+### RHAL_AUDIO_SPDIF_SetOutputType
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SPDIF_SetOutputType(HAL_AUDIO_SPDIF_MODE_T eSPDIFMode, BOOLEAN bForced);
 ```
 
-## RHAL_AUDIO_SPDIF_SetCopyInfo
+##Function Declaration
+### RHAL_AUDIO_SPDIF_SetCopyInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SPDIF_SetCopyInfo(HAL_AUDIO_SPDIF_COPYRIGHT_T copyInfo);
 ```
 
-## RHAL_AUDIO_SPDIF_SetCategoryCode
+##Function Declaration
+### RHAL_AUDIO_SPDIF_SetCategoryCode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SPDIF_SetCategoryCode(UINT8 categoryCode);
 ```
 
-## RHAL_AUDIO_ARC_SetOutputType
+##Function Declaration
+### RHAL_AUDIO_ARC_SetOutputType
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ARC_SetOutputType(HAL_AUDIO_ARC_MODE_T eARCMode, BOOLEAN bForced);
 ```
 
-## RHAL_AUDIO_SPDIF_SetEnable
+##Function Declaration
+### RHAL_AUDIO_SPDIF_SetEnable
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SPDIF_SetEnable(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_ARC_SetEnable
+##Function Declaration
+### RHAL_AUDIO_ARC_SetEnable
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ARC_SetEnable(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_ATMOS_EncodeOnOff
+##Function Declaration
+### RHAL_AUDIO_ATMOS_EncodeOnOff
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ATMOS_EncodeOnOff(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SIF_SetInputSource
+##Function Declaration
+### RHAL_AUDIO_SIF_SetInputSource
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_SetInputSource(HAL_AUDIO_SIF_INPUT_T sifSource);
 ```
 
-## RHAL_AUDIO_SIF_SetHighDevMode
+##Function Declaration
+### RHAL_AUDIO_SIF_SetHighDevMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_SetHighDevMode(BOOLEAN bOnOff);
 ```
 
-## RHAL_Audio_ATV_VERIFY_SET_PATH
+##Function Declaration
+### RHAL_Audio_ATV_VERIFY_SET_PATH
 ```bash
 DTV_STATUS_T RHAL_Audio_ATV_VERIFY_SET_PATH(void);
 ```
 
-## RHAL_Audio_SIF_SET_MTS_PRIORITY
+##Function Declaration
+### RHAL_Audio_SIF_SET_MTS_PRIORITY
 ```bash
 DTV_STATUS_T RHAL_Audio_SIF_SET_MTS_PRIORITY(HAL_SIF_MTS_PRIORITY_T Priority);
 ```
 
-## RHAL_Audio_ScanFmRadioMode
+##Function Declaration
+### RHAL_Audio_ScanFmRadioMode
 ```bash
 DTV_STATUS_T RHAL_Audio_ScanFmRadioMode(HAL_AUDIO_SIF_STANDARD_T*SoundSTD, HAL_AUDIO_SIF_CARRIER_INFO_T*SIF_CARRIER_INFO);
 ```
 
-## RHAL_Audio_SetFmRadioMode
+##Function Declaration
+### RHAL_Audio_SetFmRadioMode
 ```bash
 DTV_STATUS_T RHAL_Audio_SetFmRadioMode(HAL_AUDIO_ATV_FM_RADIO_MODE Enable);
 ```
 
-## RHAL_AUDIO_SIF_GetSoundInfo
+##Function Declaration
+### RHAL_AUDIO_SIF_GetSoundInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_GetSoundInfo(HAL_ATV_SOUND_INFO_T*SoundInfo);
 ```
 
-## RHAL_AUDIO_SIF_SetBandSetup
+##Function Declaration
+### RHAL_AUDIO_SIF_SetBandSetup
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_SetBandSetup(HAL_AUDIO_SIF_TYPE_T eSifType, HAL_AUDIO_SIF_SOUNDSYSTEM_T sifBand);
 ```
 
-## RHAL_AUDIO_SIF_SetModeSetup
+##Function Declaration
+### RHAL_AUDIO_SIF_SetModeSetup
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_SetModeSetup(HAL_AUDIO_SIF_STANDARD_T sifStandard);
 ```
 
-## RHAL_AUDIO_SIF_SetUserAnalogMode
+##Function Declaration
+### RHAL_AUDIO_SIF_SetUserAnalogMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_SetUserAnalogMode(HAL_AUDIO_SIF_MODE_SET_T sifAudioMode);
 ```
 
-## RHAL_AUDIO_SIF_SetA2ThresholdLevel
+##Function Declaration
+### RHAL_AUDIO_SIF_SetA2ThresholdLevel
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_SetA2ThresholdLevel(UINT16 thrLevel);
 ```
 
-## RHAL_AUDIO_SIF_SetNicamThresholdLevel
+##Function Declaration
+### RHAL_AUDIO_SIF_SetNicamThresholdLevel
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_SetNicamThresholdLevel(UINT16 thrLevel);
 ```
 
-## RHAL_AUDIO_SIF_GetBandDetect
+##Function Declaration
+### RHAL_AUDIO_SIF_GetBandDetect
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_GetBandDetect(HAL_AUDIO_SIF_SOUNDSYSTEM_T soundSystem, UINT32*pBandStrength);
 ```
 
-## RHAL_AUDIO_SIF_DetectSoundSystem
+##Function Declaration
+### RHAL_AUDIO_SIF_DetectSoundSystem
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_DetectSoundSystem(HAL_AUDIO_SIF_SOUNDSYSTEM_T setSoundSystem, BOOLEAN bManualMode, HAL_AUDIO_SIF_SOUNDSYSTEM_T*pDetectSoundSystem, UINT32*pSignalQuality);
 ```
 
-## RHAL_AUDIO_SIF_DetectSoundSystemStd
+##Function Declaration
+### RHAL_AUDIO_SIF_DetectSoundSystemStd
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_DetectSoundSystemStd(HAL_AUDIO_SIF_SOUNDSYSTEM_T setSoundSystem, BOOLEAN bManualMode, HAL_AUDIO_SIF_SOUNDSYSTEM_T*pDetectSoundSystem, HAL_AUDIO_SIF_STANDARD_T*pDetectSoundStd, UINT32*pSignalQuality);
 ```
 
-## RHAL_AUDIO_SIF_NoSignalMute
+##Function Declaration
+### RHAL_AUDIO_SIF_NoSignalMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_NoSignalMute(BOOLEAN Enable);
 ```
 
-## RHAL_AUDIO_SIF_AutoChangeSoundMode
+##Function Declaration
+### RHAL_AUDIO_SIF_AutoChangeSoundMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_AutoChangeSoundMode(BOOLEAN Enable);
 ```
 
-## RHAL_AUDIO_SIF_AutoChangeSoundStd
+##Function Declaration
+### RHAL_AUDIO_SIF_AutoChangeSoundStd
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_AutoChangeSoundStd(BOOLEAN Enable);
 ```
 
-## RHAL_AUDIO_SIF_FirstTimePlayMono
+##Function Declaration
+### RHAL_AUDIO_SIF_FirstTimePlayMono
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_FirstTimePlayMono(BOOLEAN Enable);
 ```
 
-## RHAL_AUDIO_SIF_SetFwPriority
+##Function Declaration
+### RHAL_AUDIO_SIF_SetFwPriority
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_SetFwPriority(UINT16 Priority);
 ```
 
-## RHAL_AUDIO_SIF_CheckNicamDigital
+##Function Declaration
+### RHAL_AUDIO_SIF_CheckNicamDigital
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_CheckNicamDigital(HAL_AUDIO_SIF_EXISTENCE_INFO_T*pIsNicamDetect);
 ```
 
-## RHAL_AUDIO_SIF_CheckAvailableSystem
+##Function Declaration
+### RHAL_AUDIO_SIF_CheckAvailableSystem
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_CheckAvailableSystem(HAL_AUDIO_SIF_AVAILE_STANDARD_T standard, HAL_AUDIO_SIF_EXISTENCE_INFO_T*pAvailability);
 ```
 
-## RHAL_AUDIO_SIF_CheckA2DK
+##Function Declaration
+### RHAL_AUDIO_SIF_CheckA2DK
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_CheckA2DK(HAL_AUDIO_SIF_STANDARD_T standard, HAL_AUDIO_SIF_EXISTENCE_INFO_T*pAvailability);
 ```
 
-## RHAL_AUDIO_SIF_GetA2StereoLevel
+##Function Declaration
+### RHAL_AUDIO_SIF_GetA2StereoLevel
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_GetA2StereoLevel(UINT16*pLevel);
 ```
 
-## RHAL_AUDIO_SIF_GetNicamThresholdLevel
+##Function Declaration
+### RHAL_AUDIO_SIF_GetNicamThresholdLevel
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_GetNicamThresholdLevel(UINT16*pLevel);
 ```
 
-## RHAL_AUDIO_SIF_GetNicamStable
+##Function Declaration
+### RHAL_AUDIO_SIF_GetNicamStable
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_GetNicamStable(UINT16*IsStable);
 ```
 
-## RHAL_AUDIO_SIF_GetCurAnalogMode
+##Function Declaration
+### RHAL_AUDIO_SIF_GetCurAnalogMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_GetCurAnalogMode(HAL_AUDIO_SIF_MODE_GET_T*pSifAudioMode);
 ```
 
-## RHAL_AUDIO_SIF_IsSIFExist
+##Function Declaration
+### RHAL_AUDIO_SIF_IsSIFExist
 ```bash
 BOOLEAN RHAL_AUDIO_SIF_IsSIFExist(void);
 ```
 
-## RHAL_AUDIO_SIF_SetAudioEQMode
+##Function Declaration
+### RHAL_AUDIO_SIF_SetAudioEQMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_SetAudioEQMode(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_AENC_Start
+##Function Declaration
+### RHAL_AUDIO_AENC_Start
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_Start(HAL_AUDIO_AENC_INDEX_T aencIndex, HAL_AUDIO_AENC_ENCODING_FORMAT_T audioType);
 ```
 
-## RHAL_AUDIO_AENC_Stop
+##Function Declaration
+### RHAL_AUDIO_AENC_Stop
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_Stop(HAL_AUDIO_AENC_INDEX_T aencIndex);
 ```
 
-## RHAL_AUDIO_AENC_RegCallback
+##Function Declaration
+### RHAL_AUDIO_AENC_RegCallback
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_RegCallback(HAL_AUDIO_AENC_INDEX_T aencIndex, pfnAENCDataHandling pfnCallBack);
 ```
 
-## RHAL_AUDIO_AENC_SetInfo
+##Function Declaration
+### RHAL_AUDIO_AENC_SetInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_SetInfo(HAL_AUDIO_AENC_INDEX_T aencIndex, HAL_AUDIO_AENC_INFO_T info);
 ```
 
-## RHAL_AUDIO_AENC_GetInfo
+##Function Declaration
+### RHAL_AUDIO_AENC_GetInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_GetInfo(HAL_AUDIO_AENC_INDEX_T aencIndex, HAL_AUDIO_AENC_INFO_T*pInfo);
 ```
 
-## RHAL_AUDIO_AENC_SetVolume
+##Function Declaration
+### RHAL_AUDIO_AENC_SetVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_SetVolume(HAL_AUDIO_AENC_INDEX_T aencIndex, HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_AENC_CopyData
+##Function Declaration
+### RHAL_AUDIO_AENC_CopyData
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_CopyData(HAL_AUDIO_AENC_INDEX_T aencIndex, UINT8*pDest, UINT8*pBufAddr, UINT32 datasize, UINT8*pRStart, UINT8*pREnd);
 ```
 
-## RHAL_AUDIO_AENC_ReleaseData
+##Function Declaration
+### RHAL_AUDIO_AENC_ReleaseData
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AENC_ReleaseData(HAL_AUDIO_AENC_INDEX_T aencIndex, UINT8*pBufAddr, UINT32 datasize);
 ```
 
-## RHAL_AUDIO_HDMI_FMT_NTFY_Open
+##Function Declaration
+### RHAL_AUDIO_HDMI_FMT_NTFY_Open
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_FMT_NTFY_Open(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_HDMI_FMT_NTFY_Close
+##Function Declaration
+### RHAL_AUDIO_HDMI_FMT_NTFY_Close
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_FMT_NTFY_Close();
 ```
 
-## RHAL_AUDIO_HDMI_FMT_NTFY_Start
+##Function Declaration
+### RHAL_AUDIO_HDMI_FMT_NTFY_Start
 ```bash
 DTV_STATUS_T RHAL_AUDIO_HDMI_FMT_NTFY_Start(pfnHdmiFmtNotify pfnCallBack);
 ```
 
-## RHAL_AUDIO_PCM_StartUpload
+##Function Declaration
+### RHAL_AUDIO_PCM_StartUpload
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PCM_StartUpload(HAL_AUDIO_PCM_INPUT_T apcmIndex);
 ```
 
-## RHAL_AUDIO_PCM_StopUpload
+##Function Declaration
+### RHAL_AUDIO_PCM_StopUpload
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PCM_StopUpload(HAL_AUDIO_PCM_INPUT_T apcmIndex);
 ```
 
-## RHAL_AUDIO_PCM_RegSendPCMCallback
+##Function Declaration
+### RHAL_AUDIO_PCM_RegSendPCMCallback
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PCM_RegSendPCMCallback(HAL_AUDIO_PCM_INPUT_T apcmIndex, pfnPCMSending pfnCallBack);
 ```
 
-## RHAL_AUDIO_PCM_RegUploadCallBack
+##Function Declaration
+### RHAL_AUDIO_PCM_RegUploadCallBack
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PCM_RegUploadCallBack(HAL_AUDIO_PCM_INPUT_T apcmIndex, pfnPCMDataHandling pfnCallBack);
 ```
 
-## RHAL_AUDIO_PCM_SetVolume
+##Function Declaration
+### RHAL_AUDIO_PCM_SetVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PCM_SetVolume(HAL_AUDIO_PCM_INPUT_T apcmIndex, HAL_AUDIO_VOLUME_T volume);
 ```
 
-## RHAL_AUDIO_PCM_SetVolume_ByPin
+##Function Declaration
+### RHAL_AUDIO_PCM_SetVolume_ByPin
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PCM_SetVolume_ByPin(HAL_AUDIO_PCM_INPUT_T apcmIndex, HAL_AUDIO_VOLUME_T volume, HAL_AUDIO_BT_OUT_PIN pinID);
 ```
 
-## RHAL_AUDIO_PCM_SetMute_ByPin
+##Function Declaration
+### RHAL_AUDIO_PCM_SetMute_ByPin
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PCM_SetMute_ByPin(BOOLEAN bOnOff, HAL_AUDIO_BT_OUT_PIN pinID);
 ```
 
-## RHAL_AUDIO_PCM_SetDataCount
+##Function Declaration
+### RHAL_AUDIO_PCM_SetDataCount
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PCM_SetDataCount(HAL_AUDIO_PCM_INPUT_T apcmIndex, UINT8 count);
 ```
 
-## RHAL_AUDIO_PCM_SetInfo
+##Function Declaration
+### RHAL_AUDIO_PCM_SetInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PCM_SetInfo(HAL_AUDIO_PCM_INPUT_T apcmIndex, HAL_AUDIO_PCM_INFO_T info);
 ```
 
-## RHAL_AUDIO_PCM_GetInfo
+##Function Declaration
+### RHAL_AUDIO_PCM_GetInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PCM_GetInfo(HAL_AUDIO_PCM_INPUT_T apcmIndex, HAL_AUDIO_PCM_INFO_T*pInfo);
 ```
 
-## RHAL_AUDIO_FinalizeModule
+##Function Declaration
+### RHAL_AUDIO_FinalizeModule
 ```bash
 DTV_STATUS_T RHAL_AUDIO_FinalizeModule(void);
 ```
 
-## RHAL_AUDIO_SIF_GetSoundStandard
+##Function Declaration
+### RHAL_AUDIO_SIF_GetSoundStandard
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_GetSoundStandard(HAL_AUDIO_SIF_STANDARD_T*standard);
 ```
 
-## RHAL_AUDIO_SIF_DetectComplete
+##Function Declaration
+### RHAL_AUDIO_SIF_DetectComplete
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_DetectComplete(SINT32*isOff);
 ```
 
-## RHAL_AUDIO_SIF_SetOverDeviation
+##Function Declaration
+### RHAL_AUDIO_SIF_SetOverDeviation
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SIF_SetOverDeviation(HAL_SIF_OVER_DEVIATION_E overDeviation);
 ```
 
-## RHAL_AUDIO_GetDigitalInfo
+##Function Declaration
+### RHAL_AUDIO_GetDigitalInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetDigitalInfo(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_DIGITAL_INFO_T*pAudioDigitalInfo);
 ```
 
-## RHAL_AUDIO_SwpSetSRS_TrusurroundHD
+##Function Declaration
+### RHAL_AUDIO_SwpSetSRS_TrusurroundHD
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SwpSetSRS_TrusurroundHD(BOOLEAN para, HAL_APP_TSXT_CFG*pTSXT);
 ```
 
-## RHAL_AUDIO_DBXTV_SET_TABLE
+##Function Declaration
+### RHAL_AUDIO_DBXTV_SET_TABLE
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DBXTV_SET_TABLE(UINT32*table, UINT32 size);
 ```
 
-## RHAL_AUDIO_DBXTV_SET_SOUND_EFFECT
+##Function Declaration
+### RHAL_AUDIO_DBXTV_SET_SOUND_EFFECT
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DBXTV_SET_SOUND_EFFECT(HAL_AUDIO_DBXTV_PARAM_TYPE paramType, UINT8 mode);
 ```
 
-## RHAL_AUDIO_DBXTV_DEBUG_CMD
+##Function Declaration
+### RHAL_AUDIO_DBXTV_DEBUG_CMD
 ```bash
 DTV_STATUS_T RHAL_AUDIO_DBXTV_DEBUG_CMD(UINT32 cmd, UINT32*param, UINT32 paramSize);
 ```
 
-## RHAL_AUDIO_PauseAndStopFlowAdec
+##Function Declaration
+### RHAL_AUDIO_PauseAndStopFlowAdec
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PauseAndStopFlowAdec(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_ResumeAndRunAdec
+##Function Declaration
+### RHAL_AUDIO_ResumeAndRunAdec
 ```bash
 DTV_STATUS_T RHAL_AUDIO_ResumeAndRunAdec(HAL_AUDIO_ADEC_INDEX_T adecIndex);
 ```
 
-## RHAL_AUDIO_SetBassBack
+##Function Declaration
+### RHAL_AUDIO_SetBassBack
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetBassBack(BOOLEAN para, HAL_AUDIO_BASSBACK_TV_MODE_T*pBass);
 ```
 
-## RHAL_AUDIO_SetBassBackGain
+##Function Declaration
+### RHAL_AUDIO_SetBassBackGain
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetBassBackGain(UINT32 bassGain);
 ```
 
-## RHAL_AUDIO_SetBassBack_PCBU
+##Function Declaration
+### RHAL_AUDIO_SetBassBack_PCBU
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetBassBack_PCBU(BOOLEAN para, HAL_AUDIO_BASSBACK_PCBU_MODE_T*pBass);
 ```
 
-## RHAL_AUDIO_SetInputVolume
+##Function Declaration
+### RHAL_AUDIO_SetInputVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetInputVolume(HAL_AUDIO_INPUT_SOURCE_T eSource,SINT32 sVol);
 ```
 
-## RHAL_AUDIO_setTrackMode
+##Function Declaration
+### RHAL_AUDIO_setTrackMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_setTrackMode(HAL_TRACK_MODE eMode);
 ```
 
-## RHAL_AUDIO_SendConfig
+##Function Declaration
+### RHAL_AUDIO_SendConfig
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SendConfig(HAL_AUDIO_CONFIG_COMMAND_T*audioConfig);
 ```
 
-## RHAL_AUDIO_PrivateInfo
+##Function Declaration
+### RHAL_AUDIO_PrivateInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_PrivateInfo(HAL_AUDIO_RPC_PRIVATEINFO_PARAMETERS_T*parameter, HAL_AUDIO_RPC_PRIVATEINFO_RETURNVAL_T*ret);
 ```
 
-## RHAL_AUDIO_SetAudioSpectrumData
+##Function Declaration
+### RHAL_AUDIO_SetAudioSpectrumData
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetAudioSpectrumData(HAL_AUDIO_SPECTRUM_CFG_T*config);
 ```
 
-## RHAL_AUDIO_SetAudioAuthorityKey
+##Function Declaration
+### RHAL_AUDIO_SetAudioAuthorityKey
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetAudioAuthorityKey(SLONG customer_key);
 ```
 
-## RHAL_AUDIO_SetAudioCapability
+##Function Declaration
+### RHAL_AUDIO_SetAudioCapability
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetAudioCapability(AUDIO_CAP cap);
 ```
 
-## RHAL_AUDIO_SetModelHash
+##Function Declaration
+### RHAL_AUDIO_SetModelHash
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetModelHash(char*model_hash);
 ```
 
-## RHAL_AUDIO_SetAVSyncOffset
+##Function Declaration
+### RHAL_AUDIO_SetAVSyncOffset
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetAVSyncOffset(HAL_AUDIO_HDMI_OUT_VSDB_DATA_T*info);
 ```
 
-## RHAL_AUDIO_SetVolumeWithFade
+##Function Declaration
+### RHAL_AUDIO_SetVolumeWithFade
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetVolumeWithFade(HAL_AUDIO_VOLUME_T volume, UINT8 duration, UINT8 easing);
 ```
 
-## RHAL_AUDIO_SetDTSDecoderParam
+##Function Declaration
+### RHAL_AUDIO_SetDTSDecoderParam
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDTSDecoderParam(HAL_AUDIO_DTS_DEC_PARAM_TYPE paramType, UINT32 paramValue);
 ```
 
-## RHAL_AUDIO_SetTruVolume
+##Function Declaration
+### RHAL_AUDIO_SetTruVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetTruVolume(BOOLEAN para, HAL_AUDIO_TRUVOLUME_MODE_T*pTruVolume);
 ```
 
-## RHAL_AUDIO_GetESInfo
+##Function Declaration
+### RHAL_AUDIO_GetESInfo
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetESInfo(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_ES_INFO_T*pAudioESInfo);
 ```
 
-## RHAL_AUDIO_SetDAPParam
+##Function Declaration
+### RHAL_AUDIO_SetDAPParam
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDAPParam(HAL_AUDIO_DAP_PARAM_TYPE paramType, void*paramValue, int paramValueSize);
 ```
 
-## RHAL_AUDIO_GetDAPParam
+##Function Declaration
+### RHAL_AUDIO_GetDAPParam
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetDAPParam(HAL_AUDIO_DAP_PARAM_TYPE paramType, void*paramValue, int paramValueSize);
 ```
 
-## RHAL_AUDIO_SetDAPTuningData
+##Function Declaration
+### RHAL_AUDIO_SetDAPTuningData
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDAPTuningData(void*pData, int dataBytes);
 ```
 
-## RHAL_AUDIO_VX_SetParameter
+##Function Declaration
+### RHAL_AUDIO_VX_SetParameter
 ```bash
 DTV_STATUS_T RHAL_AUDIO_VX_SetParameter(HAL_AUDIO_VX_PARAM_TYPE_T param_type, void*value);
 ```
 
-## RHAL_AUDIO_VX_GetParameter
+##Function Declaration
+### RHAL_AUDIO_VX_GetParameter
 ```bash
 DTV_STATUS_T RHAL_AUDIO_VX_GetParameter(HAL_AUDIO_VX_PARAM_TYPE_T param_type, void*value);
 ```
 
-## RHAL_AUDIO_TruvolumeHD_SetParameter
+##Function Declaration
+### RHAL_AUDIO_TruvolumeHD_SetParameter
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TruvolumeHD_SetParameter(HAL_AUDIO_TRUVOLUMEHD_PARAM_TYPE_T param_type, void*value);
 ```
 
-## RHAL_AUDIO_TruvolumeHD_GetParameter
+##Function Declaration
+### RHAL_AUDIO_TruvolumeHD_GetParameter
 ```bash
 DTV_STATUS_T RHAL_AUDIO_TruvolumeHD_GetParameter(HAL_AUDIO_TRUVOLUMEHD_PARAM_TYPE_T param_type, void*value);
 ```
 
-## RHAL_AUDIO_SetDolbyOTTMode
+##Function Declaration
+### RHAL_AUDIO_SetDolbyOTTMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetDolbyOTTMode(BOOLEAN bIsOTTEnable, BOOLEAN bIsATMOSLockingEnable);
 ```
 
-## RHAL_AUDIO_SetAnalogAdjDB
+##Function Declaration
+### RHAL_AUDIO_SetAnalogAdjDB
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetAnalogAdjDB(HAL_AUDIO_AREA_TYPE_T area_type);
 ```
 
-## RHAL_AUDIO_AC4_SetAutoPresentationFirstLanguage
+##Function Declaration
+### RHAL_AUDIO_AC4_SetAutoPresentationFirstLanguage
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AC4_SetAutoPresentationFirstLanguage(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_LANG_CODE_TYPE_T enCodeType, UINT32 firstLang);
 ```
 
-## RHAL_AUDIO_AC4_SetAutoPresentationSecondLanguage
+##Function Declaration
+### RHAL_AUDIO_AC4_SetAutoPresentationSecondLanguage
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AC4_SetAutoPresentationSecondLanguage(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_LANG_CODE_TYPE_T enCodeType, UINT32 secondLang);
 ```
 
-## RHAL_AUDIO_AC4_SetAutoPresentationADMixing
+##Function Declaration
+### RHAL_AUDIO_AC4_SetAutoPresentationADMixing
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AC4_SetAutoPresentationADMixing(HAL_AUDIO_ADEC_INDEX_T adecIndex, BOOLEAN bIsEnable);
 ```
 
-## RHAL_AUDIO_AC4_SetAutoPresentationADType
+##Function Declaration
+### RHAL_AUDIO_AC4_SetAutoPresentationADType
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AC4_SetAutoPresentationADType(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_AC4_AD_TYPE_T enADType);
 ```
 
-## RHAL_AUDIO_AC4_SetAutoPresentationPrioritizeADType
+##Function Declaration
+### RHAL_AUDIO_AC4_SetAutoPresentationPrioritizeADType
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AC4_SetAutoPresentationPrioritizeADType(HAL_AUDIO_ADEC_INDEX_T adecIndex, BOOLEAN bIsEnable);
 ```
 
-## RHAL_AUDIO_AC4_SetPresentationGroupIndex
+##Function Declaration
+### RHAL_AUDIO_AC4_SetPresentationGroupIndex
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AC4_SetPresentationGroupIndex(HAL_AUDIO_ADEC_INDEX_T adecIndex, UINT32 pres_group_idx);
 ```
 
-## RHAL_AUDIO_AC4_SetDialogueEnhancementGain
+##Function Declaration
+### RHAL_AUDIO_AC4_SetDialogueEnhancementGain
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AC4_SetDialogueEnhancementGain(HAL_AUDIO_ADEC_INDEX_T adecIndex, UINT8 dialEnhanceGain);
 ```
 
-## RHAL_AUDIO_Single_OAMD_Setting
+##Function Declaration
+### RHAL_AUDIO_Single_OAMD_Setting
 ```bash
 DTV_STATUS_T RHAL_AUDIO_Single_OAMD_Setting(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SoundConfig_Data
+##Function Declaration
+### RHAL_AUDIO_SoundConfig_Data
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SoundConfig_Data(UINT32*pData1, UINT32 size1, UINT32*pData2, UINT32 size2);
 ```
 
-## RHAL_AUDIO_SoundEffect_Level
+##Function Declaration
+### RHAL_AUDIO_SoundEffect_Level
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SoundEffect_Level(UINT32 param1, UINT32 param2, UINT32 param3);
 ```
 
-## RHAL_AUDIO_SetLowLatencyMode
+##Function Declaration
+### RHAL_AUDIO_SetLowLatencyMode
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetLowLatencyMode(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetAECReference_Source
+##Function Declaration
+### RHAL_AUDIO_SetAECReference_Source
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetAECReference_Source(HAL_AUDIO_AEC_SOURCE_T aec_source);
 ```
 
-## RHAL_AUDIO_AISound_Enable
+##Function Declaration
+### RHAL_AUDIO_AISound_Enable
 ```bash
 DTV_STATUS_T RHAL_AUDIO_AISound_Enable(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_BTMic_Enable
+##Function Declaration
+### RHAL_AUDIO_BTMic_Enable
 ```bash
 DTV_STATUS_T RHAL_AUDIO_BTMic_Enable(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetAEC
+##Function Declaration
+### RHAL_AUDIO_SetAEC
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetAEC(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetConfig
+##Function Declaration
+### RHAL_AUDIO_SetConfig
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetConfig(char*str);
 ```
 
-## RHAL_AUDIO_SetPBOutVolume
+##Function Declaration
+### RHAL_AUDIO_SetPBOutVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetPBOutVolume(SINT32 dbGains, UINT32 ch_id);
 ```
 
-## RHAL_AUDIO_SetTSOutVolume
+##Function Declaration
+### RHAL_AUDIO_SetTSOutVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetTSOutVolume(SINT32 dbGains);
 ```
 
-## RHAL_AUDIO_SetPBOutMute
+##Function Declaration
+### RHAL_AUDIO_SetPBOutMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetPBOutMute(BOOLEAN bOnOff, UINT32 ch_id);
 ```
 
-## RHAL_AUDIO_SetTSOutMute
+##Function Declaration
+### RHAL_AUDIO_SetTSOutMute
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetTSOutMute(BOOLEAN bOnOff);
 ```
 
-## RHAL_AUDIO_SetPreScaleVolume
+##Function Declaration
+### RHAL_AUDIO_SetPreScaleVolume
 ```bash
 DTV_STATUS_T RHAL_AUDIO_SetPreScaleVolume(SINT32 vol, UINT32 ch_id);
 ```
 
-## RHAL_AUDIO_BTMic_Threshold
+##Function Declaration
+### RHAL_AUDIO_BTMic_Threshold
 ```bash
 DTV_STATUS_T RHAL_AUDIO_BTMic_Threshold(UINT32 drop_thd);
 ```
 
-## RHAL_AUDIO_EARC_MultiPCMOut
+##Function Declaration
+### RHAL_AUDIO_EARC_MultiPCMOut
 ```bash
 DTV_STATUS_T RHAL_AUDIO_EARC_MultiPCMOut(BOOLEAN bEnable);
 ```
 
-## RHAL_AUDIO_GetDecExtraStatus
+##Function Declaration
+### RHAL_AUDIO_GetDecExtraStatus
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetDecExtraStatus(HAL_AUDIO_ADEC_INDEX_T adecIndex, HAL_AUDIO_DEC_EXTRA_STATUS*pRetFlag);
 ```
 
-## RHAL_AUDIO_GetDMICStatus
+##Function Declaration
+### RHAL_AUDIO_GetDMICStatus
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetDMICStatus(int*isSilent, int*isHWError);
 ```
 
-## RHAL_AUDIO_GetI2SOutStatus
+##Function Declaration
+### RHAL_AUDIO_GetI2SOutStatus
 ```bash
 DTV_STATUS_T RHAL_AUDIO_GetI2SOutStatus(int*isSilent, int*isHWError);
 ```

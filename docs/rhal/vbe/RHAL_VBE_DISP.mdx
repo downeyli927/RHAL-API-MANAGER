@@ -6,297 +6,356 @@ sidebar_position: 70
 
 RHAL_VBE_DISP api
 
-## RHAL_VBE_DISP_Initialize
+##Function Declaration
+### RHAL_VBE_DISP_Initialize
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_Initialize(DISP_PANEL_INFO_T panelInfo);
 ```
 
-## RHAL_VBE_DISP_Uninitialize
+##Function Declaration
+### RHAL_VBE_DISP_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_Uninitialize(void);
 ```
 
-## RHAL_QS_VBE_DISP_Initialize
+##Function Declaration
+### RHAL_QS_VBE_DISP_Initialize
 ```bash
 DTV_STATUS_T RHAL_QS_VBE_DISP_Initialize(DISP_PANEL_INFO_T panelInfo);
 ```
 
-## RHAL_VBE_DISP_Resume
+##Function Declaration
+### RHAL_VBE_DISP_Resume
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_Resume(DISP_PANEL_INFO_T panelInfo);
 ```
 
-## RHAL_VBE_DISP_Connect
+##Function Declaration
+### RHAL_VBE_DISP_Connect
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_Connect(DISP_WINDOW_T wId);
 ```
 
-## RHAL_VBE_DISP_Disconnect
+##Function Declaration
+### RHAL_VBE_DISP_Disconnect
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_Disconnect(DISP_WINDOW_T wId);
 ```
 
-## RHAL_VBE_DISP_SetDisplayOutput
+##Function Declaration
+### RHAL_VBE_DISP_SetDisplayOutput
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetDisplayOutput(BOOLEAN bOnOff);
 ```
 
-## RHAL_VBE_DISP_SetMute
+##Function Declaration
+### RHAL_VBE_DISP_SetMute
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetMute(BOOLEAN bOnOff);
 ```
 
-## RHAL_VBE_DISP_SetSpreadSpectrum
+##Function Declaration
+### RHAL_VBE_DISP_SetSpreadSpectrum
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetSpreadSpectrum(BOOLEAN bEnable, UINT16 u16Percent, UINT16 u16Period);
 ```
 
-## RHAL_VBE_DISP_SetVideoMirror
+##Function Declaration
+### RHAL_VBE_DISP_SetVideoMirror
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetVideoMirror(BOOLEAN bIsH, BOOLEAN bIsV);
 ```
 
-## RHAL_VBE_DISP_SetDisplayFormat
+##Function Declaration
+### RHAL_VBE_DISP_SetDisplayFormat
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetDisplayFormat(DISP_PANEL_ATTRIBUTE_T*pPanelAttr, UINT8 frameRate);
 ```
 
-## RHAL_VBE_DISP_GetOutputFrameRate
+##Function Declaration
+### RHAL_VBE_DISP_GetOutputFrameRate
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_GetOutputFrameRate(UINT16*pFrameRate);
 ```
 
-## RHAL_VBE_DISP_SetFrameRate
+##Function Declaration
+### RHAL_VBE_DISP_SetFrameRate
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetFrameRate(BOOLEAN isForceFreeRun, UINT16 frameRates);
 ```
 
-## RHAL_VBE_DISP_SetBackgroundColor
+##Function Declaration
+### RHAL_VBE_DISP_SetBackgroundColor
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetBackgroundColor(UINT8 red, UINT8 green, UINT8 blue);
 ```
 
-## RHAL_VBE_DISP_SetODTable
+##Function Declaration
+### RHAL_VBE_DISP_SetODTable
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetODTable(UINT8*pTable, UINT16 size);
 ```
 
-## RHAL_VBE_DISP_SetPCIDTable
+##Function Declaration
+### RHAL_VBE_DISP_SetPCIDTable
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetPCIDTable(UINT8*pTable, UINT16 size);
 ```
 
-## RHAL_VBE_DISP_EnableOD
+##Function Declaration
+### RHAL_VBE_DISP_EnableOD
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_EnableOD(BOOLEAN bOnOff);
 ```
 
-## RHAL_VBE_DISP_EnablePCID
+##Function Declaration
+### RHAL_VBE_DISP_EnablePCID
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_EnablePCID(BOOLEAN bOnOff);
 ```
 
-## RHAL_VBE_DISP_OLED_SetOrbit
+##Function Declaration
+### RHAL_VBE_DISP_OLED_SetOrbit
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_OLED_SetOrbit(BOOLEAN bOnOff);
 ```
 
-## RHAL_VBE_DISP_SetBOEMode
+##Function Declaration
+### RHAL_VBE_DISP_SetBOEMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetBOEMode(UINT8*pFwData, UINT32 size);
 ```
 
-## RHAL_VBE_DISP_GetPanelSize
+##Function Declaration
+### RHAL_VBE_DISP_GetPanelSize
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_GetPanelSize(DISP_PANEL_SIZE_T*disp_size);
 ```
 
-## RHAL_VBE_DISP_GetBOEVersion
+##Function Declaration
+### RHAL_VBE_DISP_GetBOEVersion
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_GetBOEVersion(DISP_BOE_VERSION_T*pstRomVer, DISP_BOE_VERSION_T*pstFwVer);
 ```
 
-## RHAL_VBE_DISP_SetMLEMode
+##Function Declaration
+### RHAL_VBE_DISP_SetMLEMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetMLEMode(DISP_MLE_MODE_T index);
 ```
 
-## RHAL_VBE_DISP_SetInnerPattern
+##Function Declaration
+### RHAL_VBE_DISP_SetInnerPattern
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetInnerPattern(UINT8 bOnOff, DISP_INNER_PTG_BLOCK_T block, DISP_INNER_PTG_TYPE_T type);
 ```
 
-## RHAL_VBE_DISP_SetBOERGBWBypass
+##Function Declaration
+### RHAL_VBE_DISP_SetBOERGBWBypass
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetBOERGBWBypass(BOOLEAN bOnOff);
 ```
 
-## RHAL_VBE_DISP_SetPanelTiMode
+##Function Declaration
+### RHAL_VBE_DISP_SetPanelTiMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetPanelTiMode(UINT8 table);
 ```
 
-## RHAL_VBE_DISP_SetPanelBitMode
+##Function Declaration
+### RHAL_VBE_DISP_SetPanelBitMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetPanelBitMode(UINT8 bitMode);
 ```
 
-## RHAL_VBE_DISP_SetPanelSwapMode
+##Function Declaration
+### RHAL_VBE_DISP_SetPanelSwapMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetPanelSwapMode(UINT8 bSwap);
 ```
 
-## RHAL_VBE_DISP_SetPanelDualMode
+##Function Declaration
+### RHAL_VBE_DISP_SetPanelDualMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetPanelDualMode(UINT8 dualMode);
 ```
 
-## RHAL_VBE_DISP_GetPanelTiMode
+##Function Declaration
+### RHAL_VBE_DISP_GetPanelTiMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_GetPanelTiMode(UINT8*table);
 ```
 
-## RHAL_VBE_DISP_GetPanelBitMode
+##Function Declaration
+### RHAL_VBE_DISP_GetPanelBitMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_GetPanelBitMode(UINT8*bitmode);
 ```
 
-## RHAL_VBE_DISP_GetPanelDualMode
+##Function Declaration
+### RHAL_VBE_DISP_GetPanelDualMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_GetPanelDualMode(UINT8*dualmode);
 ```
 
-## RHAL_VBE_DISP_GetPanelSwapMode
+##Function Declaration
+### RHAL_VBE_DISP_GetPanelSwapMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_GetPanelSwapMode(UINT8*bSwap);
 ```
 
-## RHAL_VBE_SetDGA4CH
+##Function Declaration
+### RHAL_VBE_SetDGA4CH
 ```bash
 DTV_STATUS_T RHAL_VBE_SetDGA4CH(UINT32*pRedGammaTable, UINT32*pGreenGammaTable, UINT32*pBlueGammaTable, UINT32*pWhiteGammaTable);
 ```
 
-## RHAL_VBE_LVDS2HDMI_PANEL
+##Function Declaration
+### RHAL_VBE_LVDS2HDMI_PANEL
 ```bash
 DTV_STATUS_T RHAL_VBE_LVDS2HDMI_PANEL(DISP_PANEL_ATTRIBUTE_T*pPanelAttr, UINT8 frameRate);
 ```
 
-## RHAL_VBE_Factory_SetLvdsSsc
+##Function Declaration
+### RHAL_VBE_Factory_SetLvdsSsc
 ```bash
 DTV_STATUS_T RHAL_VBE_Factory_SetLvdsSsc(UINT8 panel_type_set,UINT8 enable);
 ```
 
-## RHAL_VBE_DISP_SetPanelBackgroundColor
+##Function Declaration
+### RHAL_VBE_DISP_SetPanelBackgroundColor
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetPanelBackgroundColor(UINT8 enable, UINT8 red, UINT8 green, UINT8 blue);
 ```
 
-## RHAL_VBE_DISP_GetSpreadSpectrum
+##Function Declaration
+### RHAL_VBE_DISP_GetSpreadSpectrum
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_GetSpreadSpectrum(BOOLEAN*bEnable, UINT16*u16Percent, UINT16*u16Period);
 ```
 
-## RHAL_VBE_DISP_ScreenShift
+##Function Declaration
+### RHAL_VBE_DISP_ScreenShift
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_ScreenShift(BOOLEAN bOnOff);
 ```
 
-## RHAL_VBE_DISP_SetLanePowerMode
+##Function Declaration
+### RHAL_VBE_DISP_SetLanePowerMode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetLanePowerMode(BOOLEAN bOnOff);
 ```
 
-## RHAL_VBE_SET_FORCEBG_COLOR
+##Function Declaration
+### RHAL_VBE_SET_FORCEBG_COLOR
 ```bash
 DTV_STATUS_T RHAL_VBE_SET_FORCEBG_COLOR(UINT32 display, UINT32 rgb);
 ```
 
-## RHAL_VBE_SET_PANEL_SFG
+##Function Declaration
+### RHAL_VBE_SET_PANEL_SFG
 ```bash
 DTV_STATUS_T RHAL_VBE_SET_PANEL_SFG(UINT8 enable);
 ```
 
-## RHAL_VBE_DISP_SetLVDScurrent
+##Function Declaration
+### RHAL_VBE_DISP_SetLVDScurrent
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetLVDScurrent(UINT32 current_val);
 ```
 
-## RHAL_VBE_DISP_Set_Swing
+##Function Declaration
+### RHAL_VBE_DISP_Set_Swing
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_Set_Swing(UINT32*current_val,UINT32 u32len);
 ```
 
-## RHAL_VBE_DISP_Get_Swing
+##Function Declaration
+### RHAL_VBE_DISP_Get_Swing
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_Get_Swing(UINT32*current_val, UINT32 u32len);
 ```
 
-## RHAL_VBE_DISP_SetPreEmphasis
+##Function Declaration
+### RHAL_VBE_DISP_SetPreEmphasis
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetPreEmphasis(UINT32*current_val,UINT32 u32len);
 ```
 
-## RHAL_VBE_DISP_GetPreEmphasis
+##Function Declaration
+### RHAL_VBE_DISP_GetPreEmphasis
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_GetPreEmphasis(UINT32*current_val,UINT32 u32len);
 ```
 
-## RHAL_VBE_DISP_SetPause
+##Function Declaration
+### RHAL_VBE_DISP_SetPause
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetPause(void);
 ```
 
-## RHAL_VBE_DISP_SetAdaptiveStreamFrameRate
+##Function Declaration
+### RHAL_VBE_DISP_SetAdaptiveStreamFrameRate
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetAdaptiveStreamFrameRate(UINT8 frameRate);
 ```
 
-## RHAL_VBE_DISP_SetDlgEnable
+##Function Declaration
+### RHAL_VBE_DISP_SetDlgEnable
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetDlgEnable(BOOLEAN dlgMode);
 ```
 
-## RHAL_VBE_DISP_GetPanelInfo
+##Function Declaration
+### RHAL_VBE_DISP_GetPanelInfo
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_GetPanelInfo(DISP_PANEL_INFO_T*panelInfo);
 ```
 
-## RHAL_VBE_DISP_Panel_2P_Out
+##Function Declaration
+### RHAL_VBE_DISP_Panel_2P_Out
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_Panel_2P_Out(UINT8*pixelMode);
 ```
 
-## RHAL_VBE_DISP_SetMprtEnable
+##Function Declaration
+### RHAL_VBE_DISP_SetMprtEnable
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_SetMprtEnable(BOOLEAN mprtEnable);
 ```
 
-## RHAL_VBE_DISP_Set_Eco_Mode
+##Function Declaration
+### RHAL_VBE_DISP_Set_Eco_Mode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_Set_Eco_Mode(UINT32 enable);
 ```
 
-## RHAL_VBE_DISP_Get_Eco_Mode
+##Function Declaration
+### RHAL_VBE_DISP_Get_Eco_Mode
 ```bash
 DTV_STATUS_T RHAL_VBE_DISP_Get_Eco_Mode(UINT32*enable);
 ```
 
-## RHAL_VBE_RegisterVby1SplitStatusCallback
+##Function Declaration
+### RHAL_VBE_RegisterVby1SplitStatusCallback
 ```bash
 DTV_STATUS_T RHAL_VBE_RegisterVby1SplitStatusCallback(PFN_VBE_VBY1_SPLIT_STATUS_T pfnSplitStatusCB);
 ```
 
-## RHAL_VBE_VBY1_VIDOE_OSD_SPLIT
+##Function Declaration
+### RHAL_VBE_VBY1_VIDOE_OSD_SPLIT
 ```bash
 DTV_STATUS_T RHAL_VBE_VBY1_VIDOE_OSD_SPLIT(BOOLEAN bOnOff);
 ```
 
-## RHAL_VBE_BypassMemcCmaAlloc
+##Function Declaration
+### RHAL_VBE_BypassMemcCmaAlloc
 ```bash
 DTV_STATUS_T RHAL_VBE_BypassMemcCmaAlloc(UINT8 enable);
 ```
 
-## RHAL_VBE_Motion_Blur_Reduction
+##Function Declaration
+### RHAL_VBE_Motion_Blur_Reduction
 ```bash
 DTV_STATUS_T RHAL_VBE_Motion_Blur_Reduction(UINT8 enable);
 ```

@@ -6,19 +6,22 @@ sidebar_position: 58
 
 RHAL_SPI api
 
-## RHAL_SPI_LockFlash
+##Function Declaration
+### RHAL_SPI_LockFlash
 ```bash
 DTV_STATUS_T RHAL_SPI_LockFlash(void);
 ```
 Lock flash
 
-## RHAL_SPI_UnLockFlash
+##Function Declaration
+### RHAL_SPI_UnLockFlash
 ```bash
 DTV_STATUS_T RHAL_SPI_UnLockFlash(void);
 ```
 UnLock Flash
 
-## RHAL_SPI_Init
+##Function Declaration
+### RHAL_SPI_Init
 ```bash
 DTV_STATUS_T RHAL_SPI_Init(RHAL_CS_TYPE_E csType);
 ```
@@ -29,7 +32,8 @@ Init spiflash
   ]}
 />
 
-## RHAL_SPI_Read
+##Function Declaration
+### RHAL_SPI_Read
 ```bash
 DTV_STATUS_T RHAL_SPI_Read(UINT32 u32addrToRead, UINT8*u8dataToRead, UINT32 u32size);
 ```
@@ -42,13 +46,15 @@ Read data from spi to ddr
   ]}
 />
 
-## RHAL_SPI_Write
+##Function Declaration
+### RHAL_SPI_Write
 ```bash
 DTV_STATUS_T RHAL_SPI_Write(UINT32 u32addrToWrite, UINT8*u8dataToWrite, UINT32 u32size);
 ```
 Write data from ddr to spi
 
-## RHAL_SPI_GetParameter
+##Function Declaration
+### RHAL_SPI_GetParameter
 ```bash
 DTV_STATUS_T RHAL_SPI_GetParameter(RHAL_SPI_INIT_PARAM_T*param);
 ```
@@ -67,7 +73,8 @@ param.erase_size: get erase_size
 
 :::
 
-## RHAL_SPI_SetClock
+##Function Declaration
+### RHAL_SPI_SetClock
 ```bash
 DTV_STATUS_T RHAL_SPI_SetClock(UINT32 clock);
 ```

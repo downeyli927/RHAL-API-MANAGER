@@ -6,57 +6,68 @@ sidebar_position: 6
 
 RHAL_AI_SCHEDULING api
 
-## RHAL_AI_SCHED_Init
+##Function Declaration
+### RHAL_AI_SCHED_Init
 ```bash
 void* RHAL_AI_SCHED_Init(void);
 ```
 
-## RHAL_AI_SCHED_Deinit
+##Function Declaration
+### RHAL_AI_SCHED_Deinit
 ```bash
 void RHAL_AI_SCHED_Deinit(void*THIS);
 ```
 
-## RHAL_AI_SCHED_GetSpec
+##Function Declaration
+### RHAL_AI_SCHED_GetSpec
 ```bash
 SCHED_SPEC RHAL_AI_SCHED_GetSpec(void*THIS);
 ```
 
-## RHAL_AI_SCHED_SetBandwidth
+##Function Declaration
+### RHAL_AI_SCHED_SetBandwidth
 ```bash
 BOOLEAN RHAL_AI_SCHED_SetBandwidth(void*THIS, UINT64 bw);
 ```
 
-## RHAL_AI_SCHED_SetCoreIndex
+##Function Declaration
+### RHAL_AI_SCHED_SetCoreIndex
 ```bash
 BOOLEAN RHAL_AI_SCHED_SetCoreIndex(void*THIS, UINT32 index);
 ```
 
-## RHAL_AI_SCHED_SetPriority
+##Function Declaration
+### RHAL_AI_SCHED_SetPriority
 ```bash
 BOOLEAN RHAL_AI_SCHED_SetPriority(void*THIS, SCHED_GID gid, SCHED_DESC desc);
 ```
 
-## RHAL_AI_SCHED_SetReady
+##Function Declaration
+### RHAL_AI_SCHED_SetReady
 ```bash
 BOOLEAN RHAL_AI_SCHED_SetReady(void*THIS, SCHED_GID gid);
 ```
 
-## RHAL_AI_SCHED_Lock
+##Function Declaration
+### RHAL_AI_SCHED_Lock
 ```bash
 SINT32 RHAL_AI_SCHED_Lock(void*THIS, SCHED_GID gid);
 ```
 
-## RHAL_AI_SCHED_Lock_timeout
+##Function Declaration
+### RHAL_AI_SCHED_Lock_timeout
 ```bash
 SCHED_LOCK_STATUS RHAL_AI_SCHED_Lock_timeout(void*THIS, SCHED_GID gid, UINT32 ms);
 ```
 
-## RHAL_AI_SCHED_UnLock
+##Function Declaration
+### RHAL_AI_SCHED_UnLock
 ```bash
 BOOLEAN RHAL_AI_SCHED_UnLock(void*THIS, SCHED_GID gid);
 ```
 
-## RHAL_AI_SCHED_Cancel
+##Function Declaration
+### RHAL_AI_SCHED_Cancel
 ```bash
 BOOLEAN RHAL_AI_SCHED_Cancel(void*THIS, SCHED_GID gid);
 ```

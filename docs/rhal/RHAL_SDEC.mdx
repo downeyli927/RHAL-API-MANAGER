@@ -6,342 +6,410 @@ sidebar_position: 55
 
 RHAL_SDEC api
 
-## RHAL_SDEC_InitializeModule
+##Function Declaration
+### RHAL_SDEC_InitializeModule
 ```bash
 DTV_STATUS_T RHAL_SDEC_InitializeModule(void);
 ```
 
-## RHAL_SDEC_FinalizeModule
+##Function Declaration
+### RHAL_SDEC_FinalizeModule
 ```bash
 DTV_STATUS_T RHAL_SDEC_FinalizeModule(void);
 ```
 
-## RHAL_SDEC_InitChannel
+##Function Declaration
+### RHAL_SDEC_InitChannel
 ```bash
 DTV_STATUS_T RHAL_SDEC_InitChannel(SDEC_CHANNEL_T ch);
 ```
 
-## RHAL_SDEC_UninitChannel
+##Function Declaration
+### RHAL_SDEC_UninitChannel
 ```bash
 DTV_STATUS_T RHAL_SDEC_UninitChannel(SDEC_CHANNEL_T ch);
 ```
 
-## RHAL_SDEC_Run
+##Function Declaration
+### RHAL_SDEC_Run
 ```bash
 DTV_STATUS_T RHAL_SDEC_Run(SDEC_CHANNEL_T ch);
 ```
 
-## RHAL_SDEC_Stop
+##Function Declaration
+### RHAL_SDEC_Stop
 ```bash
 DTV_STATUS_T RHAL_SDEC_Stop(SDEC_CHANNEL_T ch);
 ```
 
-## RHAL_SDEC_SetBufferOwner
+##Function Declaration
+### RHAL_SDEC_SetBufferOwner
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetBufferOwner(SDEC_CHANNEL_T ch, SINT8 mastership);
 ```
 
-## RHAL_SDEC_TPOutEnable
+##Function Declaration
+### RHAL_SDEC_TPOutEnable
 ```bash
 DTV_STATUS_T RHAL_SDEC_TPOutEnable(UINT8 bEnable);
 ```
 
-## RHAL_SDEC_SetInputConfig
+##Function Declaration
+### RHAL_SDEC_SetInputConfig
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetInputConfig(SDEC_CHANNEL_T ch, SDEC_INPUT_PORT_T portType, SDEC_INPUT_TYPE_T inputType, SDEC_CAS_TYPE_T casType);
 ```
 
-## RHAL_SDEC_GetInputConfig
+##Function Declaration
+### RHAL_SDEC_GetInputConfig
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetInputConfig(SDEC_CHANNEL_T ch, SDEC_INPUT_PORT_T*pPortType, SDEC_INPUT_TYPE_T*pInputType, SDEC_CAS_TYPE_T*pCasType);
 ```
 
-## RHAL_SDEC_ResetFilters
+##Function Declaration
+### RHAL_SDEC_ResetFilters
 ```bash
 DTV_STATUS_T RHAL_SDEC_ResetFilters(SDEC_CHANNEL_T ch, SDEC_CLEANING_SCOPE_T scope);
 ```
 
-## RHAL_SDEC_SetPID
+##Function Declaration
+### RHAL_SDEC_SetPID
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetPID(SDEC_CHANNEL_T ch, SDEC_PID_TYPE_T pidType, UINT16 pid, SDEC_PES_DEST_T dest);
 ```
 
-## RHAL_SDEC_GetPID
+##Function Declaration
+### RHAL_SDEC_GetPID
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetPID(SDEC_CHANNEL_T ch, SDEC_PID_TYPE_T pidType, SDEC_PES_DEST_T dest, UINT16*pPid);
 ```
 
-## RHAL_SDEC_RequestSection
+##Function Declaration
+### RHAL_SDEC_RequestSection
 ```bash
 DTV_STATUS_T RHAL_SDEC_RequestSection(SDEC_CHANNEL_T ch, SDEC_SECTION_FILTER_T*pSectionFilter, UINT8*pSecfIndex, UINT32 gpbSize, pfnSDECDataHandlingCB pfnCallBack);
 ```
 
-## RHAL_SDEC_RequestSection_Ex
+##Function Declaration
+### RHAL_SDEC_RequestSection_Ex
 ```bash
 DTV_STATUS_T RHAL_SDEC_RequestSection_Ex(SDEC_CHANNEL_T ch, SDEC_SECTION_FILTER_EX_T*pSectionFilterEx, UINT8*pSecfIndex, UINT32 gpbSize, pfnSDECDataHandlingCB pfnCallBack);
 ```
 
-## RHAL_SDEC_CancelSection
+##Function Declaration
+### RHAL_SDEC_CancelSection
 ```bash
 DTV_STATUS_T RHAL_SDEC_CancelSection(SDEC_CHANNEL_T ch, UINT8 secfIndex);
 ```
 
-## RHAL_SDEC_CopySectionData
+##Function Declaration
+### RHAL_SDEC_CopySectionData
 ```bash
 DTV_STATUS_T RHAL_SDEC_CopySectionData(SDEC_CHANNEL_T ch, UINT8 secfIndex, UINT16 pid, UINT8*pDest, UINT8*pBufAddr, UINT32 dataSize);
 ```
 
-## RHAL_SDEC_ReturnSectionBuffer
+##Function Declaration
+### RHAL_SDEC_ReturnSectionBuffer
 ```bash
 DTV_STATUS_T RHAL_SDEC_ReturnSectionBuffer(SDEC_CHANNEL_T ch, UINT8 secfIndex, UINT16 pid, UINT8*pBufAddr, UINT32 dataSize);
 ```
 
-## RHAL_SDEC_RequestPES
+##Function Declaration
+### RHAL_SDEC_RequestPES
 ```bash
 DTV_STATUS_T RHAL_SDEC_RequestPES(SDEC_CHANNEL_T ch, SDEC_PID_TYPE_T pidType, UINT16 pesPid, UINT8*pPesfIndex, UINT32 gpbSize, pfnSDECDataHandlingCB pfnCallBack);
 ```
 
-## RHAL_SDEC_CancelPES
+##Function Declaration
+### RHAL_SDEC_CancelPES
 ```bash
 DTV_STATUS_T RHAL_SDEC_CancelPES(SDEC_CHANNEL_T ch, UINT8 pesfIndex);
 ```
 
-## RHAL_SDEC_CopyPESData
+##Function Declaration
+### RHAL_SDEC_CopyPESData
 ```bash
 DTV_STATUS_T RHAL_SDEC_CopyPESData(SDEC_CHANNEL_T ch, UINT8 pesfIndex, UINT16 pid, UINT8*pDest, UINT8*pBufAddr, UINT32 dataSize);
 ```
 
-## RHAL_SDEC_ReturnPESBuffer
+##Function Declaration
+### RHAL_SDEC_ReturnPESBuffer
 ```bash
 DTV_STATUS_T RHAL_SDEC_ReturnPESBuffer(SDEC_CHANNEL_T ch, UINT8 pesfIndex, UINT16 pid, UINT8*pBufAddr, UINT32 dataSize);
 ```
 
-## RHAL_SDEC_SetMultiPID
+##Function Declaration
+### RHAL_SDEC_SetMultiPID
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetMultiPID(SDEC_CHANNEL_T ch, UINT8 count, SDEC_SET_PID_T*pList);
 ```
 
-## RHAL_SDEC_RemoveMultiPID
+##Function Declaration
+### RHAL_SDEC_RemoveMultiPID
 ```bash
 DTV_STATUS_T RHAL_SDEC_RemoveMultiPID(SDEC_CHANNEL_T ch, UINT8 count, SDEC_SET_PID_T*pList);
 ```
 
-## RHAL_SDEC_SetPidActive
+##Function Declaration
+### RHAL_SDEC_SetPidActive
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetPidActive(SDEC_CHANNEL_T ch, UINT16 pid, SDEC_PID_TYPE_T pidType, SDEC_PES_DEST_T dest);
 ```
 
-## RHAL_SDEC_StartPCRRecovery
+##Function Declaration
+### RHAL_SDEC_StartPCRRecovery
 ```bash
 DTV_STATUS_T RHAL_SDEC_StartPCRRecovery(SDEC_CHANNEL_T ch);
 ```
 
-## RHAL_SDEC_StopPCRRecovery
+##Function Declaration
+### RHAL_SDEC_StopPCRRecovery
 ```bash
 DTV_STATUS_T RHAL_SDEC_StopPCRRecovery(SDEC_CHANNEL_T ch);
 ```
 
-## RHAL_SDEC_StartScrambleCheck
+##Function Declaration
+### RHAL_SDEC_StartScrambleCheck
 ```bash
 DTV_STATUS_T RHAL_SDEC_StartScrambleCheck(SDEC_CHANNEL_T ch, SDEC_PID_TYPE_T pidType, UINT16 pid);
 ```
 
-## RHAL_SDEC_StopScrambleCheck
+##Function Declaration
+### RHAL_SDEC_StopScrambleCheck
 ```bash
 DTV_STATUS_T RHAL_SDEC_StopScrambleCheck(SDEC_CHANNEL_T ch, SDEC_PID_TYPE_T pidType, UINT16 pid);
 ```
 
-## RHAL_SDEC_CheckScrambledStatus
+##Function Declaration
+### RHAL_SDEC_CheckScrambledStatus
 ```bash
 DTV_STATUS_T RHAL_SDEC_CheckScrambledStatus(SDEC_CHANNEL_T ch, SDEC_PID_TYPE_T pidType, UINT16 pid, UINT8*bScrambled);
 ```
 
-## RHAL_SDEC_GetCurSTC
+##Function Declaration
+### RHAL_SDEC_GetCurSTC
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetCurSTC(SDEC_CHANNEL_T ch, UINT32*pStc_hi, UINT32*pStc_lo);
 ```
 
-## RHAL_SDEC_SetParam
+##Function Declaration
+### RHAL_SDEC_SetParam
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetParam(SDEC_CHANNEL_T ch, HAL_SDEC_PARAM_T param, SINT32 val);
 ```
 
-## RHAL_SDEC_GetParam
+##Function Declaration
+### RHAL_SDEC_GetParam
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetParam(SDEC_CHANNEL_T ch, HAL_SDEC_PARAM_T param, SINT32*val);
 ```
 
-## RHAL_SDEC_InitDescrambler
+##Function Declaration
+### RHAL_SDEC_InitDescrambler
 ```bash
 DTV_STATUS_T RHAL_SDEC_InitDescrambler(SDEC_CHANNEL_T ch, SDEC_DESC_SETTING_T*p_desc_setting);
 ```
 
-## RHAL_SDEC_SetDescramblerKey
+##Function Declaration
+### RHAL_SDEC_SetDescramblerKey
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetDescramblerKey(SDEC_CHANNEL_T ch, UINT32 pid_filter_idx, SDEC_DESC_KEY_T key_type, UINT8*p_key, UINT32 key_size);
 ```
 
-## RHAL_SDEC_GetPidFilterIndex
+##Function Declaration
+### RHAL_SDEC_GetPidFilterIndex
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetPidFilterIndex(SDEC_CHANNEL_T ch, UINT32*p_pid_filter_idx, SDEC_PID_TYPE_T pid_type, UINT16 pid, SDEC_PES_DEST_T pes_dest);
 ```
 
-## RHAL_SDEC_SetPIDDescrambler
+##Function Declaration
+### RHAL_SDEC_SetPIDDescrambler
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetPIDDescrambler(SDEC_CHANNEL_T ch, SDEC_PID_TYPE_T pidType, UINT16 pid, SDEC_PES_DEST_T dest, UINT32 pid_filter_idx, BOOLEAN bEnable);
 ```
 
-## RHAL_SDEC_ClearPIDDescrambler
+##Function Declaration
+### RHAL_SDEC_ClearPIDDescrambler
 ```bash
 DTV_STATUS_T RHAL_SDEC_ClearPIDDescrambler(SDEC_CHANNEL_T ch, SDEC_PID_TYPE_T pidType, UINT16 pid, UINT32 pid_filter_idx);
 ```
 
-## RHAL_SDEC_EnableDescrambler
+##Function Declaration
+### RHAL_SDEC_EnableDescrambler
 ```bash
 DTV_STATUS_T RHAL_SDEC_EnableDescrambler(SDEC_CHANNEL_T ch, UINT32 pid_filter_idx, UINT16 pid, BOOLEAN bEnable);
 ```
 
-## RHAL_SDEC_DescrambleControl
+##Function Declaration
+### RHAL_SDEC_DescrambleControl
 ```bash
 DTV_STATUS_T RHAL_SDEC_DescrambleControl(SDEC_CHANNEL_T ch, SDEC_DESCRAMBLE_MODE_T mode);
 ```
 
-## RHAL_SDEC_IsPidActive
+##Function Declaration
+### RHAL_SDEC_IsPidActive
 ```bash
 DTV_STATUS_T RHAL_SDEC_IsPidActive(SDEC_CHANNEL_T ch, UINT16 pid, SDEC_PID_TYPE_T pidType, UINT32*pid_filter_idx);
 ```
 
-## RHAL_SDEC_SetDescrambleAlgorithm
+##Function Declaration
+### RHAL_SDEC_SetDescrambleAlgorithm
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetDescrambleAlgorithm(SDEC_CHANNEL_T ch, SDEC_DESCRAMBLE_ALGORITHM_T algo);
 ```
 
-## RHAL_SDEC_GetDescramblerIndex
+##Function Declaration
+### RHAL_SDEC_GetDescramblerIndex
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetDescramblerIndex(SDEC_CHANNEL_T ch, UINT32*pDescId, SDEC_PID_TYPE_T pid_type, UINT16 pid, SDEC_PES_DEST_T pes_dest);
 ```
 
-## RHAL_SDEC_FreeDescramblerIndex
+##Function Declaration
+### RHAL_SDEC_FreeDescramblerIndex
 ```bash
 DTV_STATUS_T RHAL_SDEC_FreeDescramblerIndex(SDEC_CHANNEL_T ch, UINT32 descId);
 ```
 
-## RHAL_SDEC_GetPresentationInfo
+##Function Declaration
+### RHAL_SDEC_GetPresentationInfo
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetPresentationInfo(SDEC_CHANNEL_T ch, SDEC_PRESENTATION_INFO_T*pInfo);
 ```
 
-## RHAL_SDEC_AcquireChannel
+##Function Declaration
+### RHAL_SDEC_AcquireChannel
 ```bash
 SDEC_CHANNEL_T RHAL_SDEC_AcquireChannel(const CHAR*pOwner, SINT32 priority);
 ```
 
-## RHAL_SDEC_ReleaseChannel
+##Function Declaration
+### RHAL_SDEC_ReleaseChannel
 ```bash
 DTV_STATUS_T RHAL_SDEC_ReleaseChannel(SDEC_CHANNEL_T ch);
 ```
 
-## RHAL_SDEC_SetDecoderBuffer
+##Function Declaration
+### RHAL_SDEC_SetDecoderBuffer
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetDecoderBuffer(SDEC_CHANNEL_T ch, SDEC_PES_DEST_T dest, UINT32 bsHeaderPhyAddr, SINT32 bsHeaderSize, UINT32 cmdHeaderPhyAddr, SINT32 cmdHeaderSize);
 ```
 
-## RHAL_SDEC_ReleaseDecoderBuffer
+##Function Declaration
+### RHAL_SDEC_ReleaseDecoderBuffer
 ```bash
 DTV_STATUS_T RHAL_SDEC_ReleaseDecoderBuffer(SDEC_CHANNEL_T ch, SDEC_PES_DEST_T dest);
 ```
 
-## RHAL_SDEC_PrivateInfo
+##Function Declaration
+### RHAL_SDEC_PrivateInfo
 ```bash
 DTV_STATUS_T RHAL_SDEC_PrivateInfo(SDEC_CHANNEL_T ch, SDEC_PES_DEST_T dest, int infoId, ULONG*pInfoData, ULONG infoSize);
 ```
 
-## RHAL_SDEC_EnableTimeStampPadding
+##Function Declaration
+### RHAL_SDEC_EnableTimeStampPadding
 ```bash
 DTV_STATUS_T RHAL_SDEC_EnableTimeStampPadding(SDEC_CHANNEL_T ch, BOOLEAN bEnable);
 ```
 
-## RHAL_SDEC_GetPCR
+##Function Declaration
+### RHAL_SDEC_GetPCR
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetPCR(SDEC_CHANNEL_T ch, SINT64*pPCR, SINT64*pSTC);
 ```
 
-## RHAL_SDEC_GetLastPTS
+##Function Declaration
+### RHAL_SDEC_GetLastPTS
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetLastPTS(SDEC_CHANNEL_T ch, SINT64*pAudioPTS, SINT64*pSubAudioPTS, SINT64*pVideoPTS);
 ```
 
-## RHAL_SDEC_SetRecordStatus
+##Function Declaration
+### RHAL_SDEC_SetRecordStatus
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetRecordStatus(SDEC_CHANNEL_T ch, BOOLEAN bStartRec);
 ```
 
-## RHAL_SDEC_GetRecordBufferInfo
+##Function Declaration
+### RHAL_SDEC_GetRecordBufferInfo
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetRecordBufferInfo(SDEC_CHANNEL_T ch, SDEC_BUFFER_INFO*pBufferInfo);
 ```
 
-## RHAL_SDEC_GetRecordBuffer
+##Function Declaration
+### RHAL_SDEC_GetRecordBuffer
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetRecordBuffer(SDEC_CHANNEL_T ch, SDEC_REC_CHUNK*pChunk, SINT32 requireSize);
 ```
 
-## RHAL_SDEC_ReturnRecordBuffer
+##Function Declaration
+### RHAL_SDEC_ReturnRecordBuffer
 ```bash
 DTV_STATUS_T RHAL_SDEC_ReturnRecordBuffer(SDEC_CHANNEL_T ch, SDEC_REC_CHUNK chunk);
 ```
 
-## RHAL_SDEC_SetPatternSearchPID
+##Function Declaration
+### RHAL_SDEC_SetPatternSearchPID
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetPatternSearchPID(SDEC_CHANNEL_T ch, UINT16 pid);
 ```
 
-## RHAL_SDEC_SetPbStreamSource
+##Function Declaration
+### RHAL_SDEC_SetPbStreamSource
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetPbStreamSource(SDEC_CHANNEL_T ch, SDEC_PB_STREAM_SRC_T src);
 ```
 
-## RHAL_SDEC_SetPvrPlaybackSpeed
+##Function Declaration
+### RHAL_SDEC_SetPvrPlaybackSpeed
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetPvrPlaybackSpeed(SDEC_CHANNEL_T ch, SINT32 speed);
 ```
 
-## RHAL_SDEC_SetPvrPlayStatus
+##Function Declaration
+### RHAL_SDEC_SetPvrPlayStatus
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetPvrPlayStatus(SDEC_CHANNEL_T ch, BOOLEAN bStartPlay);
 ```
 
-## RHAL_SDEC_GetPbBufferInfo
+##Function Declaration
+### RHAL_SDEC_GetPbBufferInfo
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetPbBufferInfo(SDEC_CHANNEL_T ch, SDEC_BUFFER_INFO*pBufferInfo);
 ```
 
-## RHAL_SDEC_ReleasePbBuffer
+##Function Declaration
+### RHAL_SDEC_ReleasePbBuffer
 ```bash
 DTV_STATUS_T RHAL_SDEC_ReleasePbBuffer(SDEC_CHANNEL_T ch);
 ```
 
-## RHAL_SDEC_FlushPbBuffer
+##Function Declaration
+### RHAL_SDEC_FlushPbBuffer
 ```bash
 DTV_STATUS_T RHAL_SDEC_FlushPbBuffer(SDEC_CHANNEL_T ch);
 ```
 
-## RHAL_SDEC_SetPbWriteUnitSize
+##Function Declaration
+### RHAL_SDEC_SetPbWriteUnitSize
 ```bash
 DTV_STATUS_T RHAL_SDEC_SetPbWriteUnitSize(SDEC_CHANNEL_T ch, UINT32 unitSize);
 ```
 
-## RHAL_SDEC_GetPbBufferStatus
+##Function Declaration
+### RHAL_SDEC_GetPbBufferStatus
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetPbBufferStatus(SDEC_CHANNEL_T ch, ULONG*pWritePtr, SINT32*pContiguousWritableSize, SINT32*pWritableSize);
 ```
 
-## RHAL_SDEC_ReturnPbBuffer
+##Function Declaration
+### RHAL_SDEC_ReturnPbBuffer
 ```bash
 DTV_STATUS_T RHAL_SDEC_ReturnPbBuffer(SDEC_CHANNEL_T ch, ULONG writePtr, SINT32 size);
 ```
 
-## RHAL_SDEC_GetTPBufferStatus
+##Function Declaration
+### RHAL_SDEC_GetTPBufferStatus
 ```bash
 DTV_STATUS_T RHAL_SDEC_GetTPBufferStatus(SDEC_CHANNEL_T ch, SINT32*pTPbufferSize, SINT32*pWritableSize);
 ```

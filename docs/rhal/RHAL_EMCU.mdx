@@ -6,247 +6,296 @@ sidebar_position: 27
 
 RHAL_EMCU api
 
-## RHAL_EMCU_SHOW_SHARE_MEM
+##Function Declaration
+### RHAL_EMCU_SHOW_SHARE_MEM
 ```bash
 DTV_STATUS_T RHAL_EMCU_SHOW_SHARE_MEM(void);
 ```
 
-## RHAL_EMCU_SET_SHAREMEM
+##Function Declaration
+### RHAL_EMCU_SET_SHAREMEM
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_SHAREMEM(UINT8 addr,UINT32 value);
 ```
 
-## RHAL_EMCU_SET_SHAREMEM_MASK
+##Function Declaration
+### RHAL_EMCU_SET_SHAREMEM_MASK
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_SHAREMEM_MASK(UINT8 addr,UINT32 mask,UINT32 value);
 ```
 
-## RHAL_EMCU_CLR_SHAREMEM
+##Function Declaration
+### RHAL_EMCU_CLR_SHAREMEM
 ```bash
 DTV_STATUS_T RHAL_EMCU_CLR_SHAREMEM(void);
 ```
 
-## RHAL_EMCU_CLR_PM_TASK
+##Function Declaration
+### RHAL_EMCU_CLR_PM_TASK
 ```bash
 DTV_STATUS_T RHAL_EMCU_CLR_PM_TASK(UINT32 loc);
 ```
 
-## RHAL_EMCU_SET_RTC
+##Function Declaration
+### RHAL_EMCU_SET_RTC
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_RTC(void);
 ```
 
-## RHAL_EMCU_SET_CEC
+##Function Declaration
+### RHAL_EMCU_SET_CEC
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_CEC(UINT32 param);
 ```
 
-## RHAL_EMCU_SET_WIFI_DG
+##Function Declaration
+### RHAL_EMCU_SET_WIFI_DG
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WIFI_DG(UINT64 param);
 ```
 
-## RHAL_EMCU_SET_WOL
+##Function Declaration
+### RHAL_EMCU_SET_WOL
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WOL(UINT32 param);
 ```
 
-## RHAL_EMCU_GET_WOL_SETUP
+##Function Declaration
+### RHAL_EMCU_GET_WOL_SETUP
 ```bash
 DTV_STATUS_T RHAL_EMCU_GET_WOL_SETUP(UINT32*wol_setup);
 ```
 
-## RHAL_EMCU_SET_WOWLAN
+##Function Declaration
+### RHAL_EMCU_SET_WOWLAN
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WOWLAN(UINT64 param);
 ```
 
-## RHAL_EMCU_SET_MHL
+##Function Declaration
+### RHAL_EMCU_SET_MHL
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_MHL(UINT32 param);
 ```
 
-## RHAL_EMCU_SET_EWBS
+##Function Declaration
+### RHAL_EMCU_SET_EWBS
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_EWBS(UINT32 param);
 ```
 
-## RHAL_EMCU_SET_UART
+##Function Declaration
+### RHAL_EMCU_SET_UART
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_UART(UINT32 param);
 ```
 
-## RHAL_EMCU_SET_WOV
+##Function Declaration
+### RHAL_EMCU_SET_WOV
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WOV(UINT32 param);
 ```
 
-## RHAL_EMCU_SET_PPSOURCE
+##Function Declaration
+### RHAL_EMCU_SET_PPSOURCE
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_PPSOURCE(UINT32 pp_source);
 ```
 
-## RHAL_EMCU_SET_IRDA
+##Function Declaration
+### RHAL_EMCU_SET_IRDA
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_IRDA(UINT32 protocol ,UINT32 key_num,UINT32*key_array);
 ```
 
-## RHAL_EMCU_SET_IR_IN_CODE
+##Function Declaration
+### RHAL_EMCU_SET_IR_IN_CODE
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_IR_IN_CODE(UINT32 key_num,UINT32*key_array);
 ```
 
-## RHAL_EMCU_SET_POWER_EN
+##Function Declaration
+### RHAL_EMCU_SET_POWER_EN
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_POWER_EN(UINT32 pw_num,UINT64*pw_array);
 ```
 
-## RHAL_EMCU_SET_POWER_EN_IN_NAME
+##Function Declaration
+### RHAL_EMCU_SET_POWER_EN_IN_NAME
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_POWER_EN_IN_NAME(UINT32 pw_num,CHAR*key_string);
 ```
 
-## RHAL_EMCU_SET_CUR_TIME
+##Function Declaration
+### RHAL_EMCU_SET_CUR_TIME
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_CUR_TIME(SINT32 hours,SINT32 mins,SINT32 sec);
 ```
 
-## RHAL_EMCU_GET_REC_TIME
+##Function Declaration
+### RHAL_EMCU_GET_REC_TIME
 ```bash
 DTV_STATUS_T RHAL_EMCU_GET_REC_TIME(UINT32*ret_time);
 ```
 
-## RHAL_EMCU_GET_SLEEP_DUR
+##Function Declaration
+### RHAL_EMCU_GET_SLEEP_DUR
 ```bash
 DTV_STATUS_T RHAL_EMCU_GET_SLEEP_DUR(DUR_TIME_T*dur_ary);
 ```
 
-## RHAL_EMCU_SET_KEYPAD_MULTI
+##Function Declaration
+### RHAL_EMCU_SET_KEYPAD_MULTI
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_KEYPAD_MULTI(UINT32 num,UINT64*param);
 ```
 
-## RHAL_EMCU_GET_KEYPAD_MULTI
+##Function Declaration
+### RHAL_EMCU_GET_KEYPAD_MULTI
 ```bash
 DTV_STATUS_T RHAL_EMCU_GET_KEYPAD_MULTI(UINT32 num,key_table_t*key_tbl);
 ```
 
-## RHAL_EMCU_SET_WAKEUP_MIN
+##Function Declaration
+### RHAL_EMCU_SET_WAKEUP_MIN
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WAKEUP_MIN(UINT32 mins);
 ```
 
-## RHAL_EMCU_SET_WAKEUP_SEC
+##Function Declaration
+### RHAL_EMCU_SET_WAKEUP_SEC
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WAKEUP_SEC(UINT32 sec);
 ```
 
-## RHAL_EMCU_GET_WAKEUP_SOURCE
+##Function Declaration
+### RHAL_EMCU_GET_WAKEUP_SOURCE
 ```bash
 DTV_STATUS_T RHAL_EMCU_GET_WAKEUP_SOURCE(UINT32*wk_source);
 ```
 
-## RHAL_EMCU_GET_WAKEUP_STATUS
+##Function Declaration
+### RHAL_EMCU_GET_WAKEUP_STATUS
 ```bash
 DTV_STATUS_T RHAL_EMCU_GET_WAKEUP_STATUS(UINT32*wk_status);
 ```
 
-## RHAL_EMCU_GET_WAKEUP_STATUS_KEYCODE
+##Function Declaration
+### RHAL_EMCU_GET_WAKEUP_STATUS_KEYCODE
 ```bash
 DTV_STATUS_T RHAL_EMCU_GET_WAKEUP_STATUS_KEYCODE(UINT32*wk_status);
 ```
 
-## RHAL_EMCU_SET_WAKEUP_SOURCE_UNDEF
+##Function Declaration
+### RHAL_EMCU_SET_WAKEUP_SOURCE_UNDEF
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WAKEUP_SOURCE_UNDEF(void);
 ```
 
-## RHAL_EMCU_SET_GPO_RENO
+##Function Declaration
+### RHAL_EMCU_SET_GPO_RENO
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_GPO_RENO(UINT32 cnt,UINT64*pcb_param);
 ```
 
-## RHAL_EMCU_SET_KEYPAD_RENO
+##Function Declaration
+### RHAL_EMCU_SET_KEYPAD_RENO
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_KEYPAD_RENO(UINT32 cnt,UINT64*pcb_param);
 ```
 
-## RHAL_EMCU_SET_WOL_RENO
+##Function Declaration
+### RHAL_EMCU_SET_WOL_RENO
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WOL_RENO(UINT32 enable,UINT64 pcb_param);
 ```
 
-## RHAL_EMCU_SET_WOV_RENO
+##Function Declaration
+### RHAL_EMCU_SET_WOV_RENO
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WOV_RENO(UINT32 enable,UINT64 pcb_param);
 ```
 
-## RHAL_EMCU_SET_CEC_RENO
+##Function Declaration
+### RHAL_EMCU_SET_CEC_RENO
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_CEC_RENO(UINT32 enable);
 ```
 
-## RHAL_EMCU_SET_IRDA_RENO
+##Function Declaration
+### RHAL_EMCU_SET_IRDA_RENO
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_IRDA_RENO(UINT32 cnt, UINT64*key_array , UINT32 irda1 , UINT32 irda2);
 ```
 
-## RHAL_EMCU_SET_WUT_RENO
+##Function Declaration
+### RHAL_EMCU_SET_WUT_RENO
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WUT_RENO(UINT32 minute);
 ```
 
-## RHAL_EMCU_SET_ERR_STATUS
+##Function Declaration
+### RHAL_EMCU_SET_ERR_STATUS
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_ERR_STATUS(UINT32 err_enevt);
 ```
 
-## RHAL_EMCU_GET_ERR_STATUS
+##Function Declaration
+### RHAL_EMCU_GET_ERR_STATUS
 ```bash
 DTV_STATUS_T RHAL_EMCU_GET_ERR_STATUS(UINT32*err_enevt);
 ```
 
-## RHAL_EMCU_GET_AC_ALERT
+##Function Declaration
+### RHAL_EMCU_GET_AC_ALERT
 ```bash
 DTV_STATUS_T RHAL_EMCU_GET_AC_ALERT(UINT32*ac_alert);
 ```
 
-## RHAL_EMCU_SET_LED_FLASH
+##Function Declaration
+### RHAL_EMCU_SET_LED_FLASH
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_LED_FLASH(UINT32 enable);
 ```
 
-## RHAL_EMCU_SET_HDMI_DET_WAK
+##Function Declaration
+### RHAL_EMCU_SET_HDMI_DET_WAK
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_HDMI_DET_WAK(UINT32 port, UINT32 enable);
 ```
 
-## RHAL_EMCU_ENABLE_PD_DRVING
+##Function Declaration
+### RHAL_EMCU_ENABLE_PD_DRVING
 ```bash
 DTV_STATUS_T RHAL_EMCU_ENABLE_PD_DRVING(UINT32 enable);
 ```
 
-## RHAL_EMCU_ENABLE_MDNS_VIDEO_HANDLE
+##Function Declaration
+### RHAL_EMCU_ENABLE_MDNS_VIDEO_HANDLE
 ```bash
 DTV_STATUS_T RHAL_EMCU_ENABLE_MDNS_VIDEO_HANDLE(UINT32 enable);
 ```
 
-## RHAL_EMCU_ENABLE_USB_WAKE
+##Function Declaration
+### RHAL_EMCU_ENABLE_USB_WAKE
 ```bash
 DTV_STATUS_T RHAL_EMCU_ENABLE_USB_WAKE(UINT32 enable);
 ```
 
-## RHAL_EMCU_SET_WAKE_LOCK
+##Function Declaration
+### RHAL_EMCU_SET_WAKE_LOCK
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_WAKE_LOCK(UINT32 enable);
 ```
 
-## RHAL_EMCU_SET_DATA
+##Function Declaration
+### RHAL_EMCU_SET_DATA
 ```bash
 DTV_STATUS_T RHAL_EMCU_SET_DATA(UINT64 param[5]);
 ```
 
-## RHAL_EMCU_GET_TYPEC_DEVICE_INFO
+##Function Declaration
+### RHAL_EMCU_GET_TYPEC_DEVICE_INFO
 ```bash
 DTV_STATUS_T RHAL_EMCU_GET_TYPEC_DEVICE_INFO(UINT32 port,UINT32*vid,UINT32*pid,UINT32*pdo);
 ```
