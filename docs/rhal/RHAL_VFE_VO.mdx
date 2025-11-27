@@ -6,6 +6,116 @@ sidebar_position: 84
 
 RHAL_VFE_VO api
 
+## Custom Data Types
+### HAL_VO_VIDEO_PLANE 
+```bash
+enum HAL_VO_VIDEO_PLANE {
+        HAL_VO_VIDEO_PLANE_V1 = 0,
+        HAL_VO_VIDEO_PLANE_V2 = 1,
+        HAL_VO_VIDEO_PLANE_V3 = 2,
+        HAL_VO_VIDEO_PLANE_SUB1 = 3,
+        HAL_VO_VIDEO_PLANE_NONE = 255,
+        };
+typedef enum HAL_VO_VIDEO_PLANE HAL_VO_VIDEO_PLANE;
+```
+
+### HAL_SLR_AFD_TYPE 
+```bash
+typedef enum {
+        HAL_SLR_AFD_RESERVE1= 0,
+        HAL_SLR_AFD_RESERVE2,
+        HAL_SLR_AFD_BOX_16X9,
+        HAL_SLR_AFD_BOX_14X9,
+        HAL_SLR_AFD_BOX_G16X9,
+        HAL_SLR_AFD_RESERVE3,
+        HAL_SLR_AFD_RESERVE4,
+        HAL_SLR_AFD_RESERVE5,
+        HAL_SLR_AFD_SAME_AS_FRAME,      //same as code frame
+        HAL_SLR_AFD_4X3,
+        HAL_SLR_AFD_16X9,
+        HAL_SLR_AFD_14X9,
+        HAL_SLR_AFD_RESERVE6,
+        HAL_SLR_AFD_4X3_SP,                     //4:3(with shoot&protect 14:9 center)
+        HAL_SLR_AFD_16X9_SP,            //16:9(with shoot&protect 14:9 center)
+        HAL_SLR_AFD_16X9_SP_4X3,        //16:9(with shoot&protect 4:3 center)
+} HAL_SLR_AFD_TYPE;
+```
+
+### HAL_DRB_VOINFO
+```bash
+typedef struct __HAL_DRB_VOINFO{
+        HAL_VO_VIDEO_PLANE                                              plane;                  ///< vo plane
+        unsigned int                                            port;                   ///< vsc port
+        unsigned int                                            mode;                   ///< current mode
+        unsigned int h_freq;
+        unsigned int v_freq;
+        unsigned int h_total;
+        unsigned int v_total;
+        unsigned int h_width;
+        unsigned int v_length;
+        unsigned int h_start;
+        unsigned int v_start;
+        unsigned int src_h_wid;
+        unsigned int src_v_len;
+        unsigned int    progressive;            ///< progressive or interlace
+        unsigned int    pixelAR_hor;            ///< pixel aspect ratio - horizontal
+        unsigned int    pixelAR_ver;            ///< pixel aspect ratio - vertical
+        unsigned int    i_ratio;                ///< aspect ratio of input source, 1) 4:3, 0) 16:9 (use panel's definition)
+        HAL_SLR_AFD_TYPE  afd;
+        unsigned int     voinfo_state;
+
+        // keep "launcher" last for avoid compare in equal timing decesion (Scaler_DO_VO_timing_Equal())
+        unsigned int                                            launcher;               ///< 0) VO, 1) scaler request, keep last for avoid compare in equal timing decesion
+} HAL_DRB_VOINFO;
+```
+
+### HAL_VO_VOINFO
+```bash
+typedef struct __HAL_VO_VOINFO{
+        unsigned int maxcll;
+        unsigned int maxfall;
+
+        unsigned int color_transf;
+        unsigned int coeffs_overscan;
+        unsigned int dispX0;
+        unsigned int dispX1;
+        unsigned int dispX2;
+        unsigned int dispY0;
+        unsigned int dispY1;
+        unsigned int dispY2;
+        unsigned int whitePointX;
+        unsigned int whitePointY;
+        unsigned int maxL;
+        unsigned int minL;
+        unsigned int dolbyVision;
+        } HAL_VO_VOINFO;
+```
+
+### HAL_VO_VOINFO_EXT_A0
+```bash
+typedef struct __HAL_VO_VOINFO_EXT_A0{
+        unsigned int maxcll;
+        unsigned int maxfall;
+
+        unsigned int color_transf;
+        unsigned int coeffs_overscan;
+        unsigned int dispX0;
+        unsigned int dispX1;
+        unsigned int dispX2;
+        unsigned int dispY0;
+        unsigned int dispY1;
+        unsigned int dispY2;
+        unsigned int whitePointX;
+        unsigned int whitePointY;
+        unsigned int maxL;
+        unsigned int minL;
+        unsigned int dolbyVision;
+        unsigned int transfer_characteristics;
+        unsigned int colour_primaries;
+        unsigned int depth;
+        unsigned int src_fmt;
+        } HAL_VO_VOINFO_EXT_A0;
+```
 
 ## Function Declaration
 ### RHAL_VFE_VO_GetDRBInfo

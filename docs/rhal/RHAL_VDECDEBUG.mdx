@@ -6,21 +6,122 @@ sidebar_position: 77
 
 RHAL_VDECDEBUG api
 
+## Custom Data Types
+### VDECDBGFunctionList
+```bash
+static RTK_CASE_T VDECDBGFunctionList[] =
+{
+    {0x000, "RHAL_VDEC_GetDecoderStatus",         ""},
+    {0x020, "Enable/Disable Msg",                ""},
+    {0x021, "Turn on/off CB Message",            ""},
+    {0x022, "Turn on/off Close Caption Message", ""},
+    {0x023, "Set VDEC debug Level",              "echo fw@ enable_video_print > /dev/rtkvdec"},
+    {0x030, "Vdec Dump ES buffer",               ""},
+    {0x031, "Vdec Dump I-Frame",                 ""},
+    {0x032, "Turn on/off Dump CC Data",          ""},
+    {0x040, "Pause Video decoding",              ""},
+    {0x041, "Video Freeze Command",              ""},
+    {0x042, "Turn on/off AV-Sync",               ""},
+    {0x050, "Vdec Start KR3D Demo [mpeg2+h.264]",""},
+    {0x051, "Vdec Start KR3D Demo [h.264+mpeg2]",""},
+    {0x052, "Vdec Stop  KR3D Demo",              ""},
+    {0x060, "Enable Drop Error Frame",           ""},
+    {0x070, "Check Semaphore Status",           ""},
+};
+```
+
+### RTK_VDEC_MUTEX_T
+```bash
+typedef struct
+{
+    uintptr_t mutexPtr;
+    UINT8 mutexUse;
+    char mutexName[VDEC_THREAD_NAME_LENGTH];
+    char mutexThreadName[VDEC_THREAD_NAME_LENGTH];
+    char mutexFuncName[VDEC_THREAD_NAME_LENGTH];
+}RTK_VDEC_MUTEX_T;
+```
+
+### RTK_CASE_T
+```bash
+typedef struct
+{
+    UINT32 ID;
+    char name[MAX_NAME_LENGTH];
+    char description[MAX_DESCRIPTION_LENGTH];
+}RTK_CASE_T;
+```
+
+### Constants
+```bash
+#define MAX_NAME_LENGTH  128
+#define MAX_DESCRIPTION_LENGTH  256
+
+#define ANSI_COLOR_RED      "\x1b[31m"
+#define ANSI_COLOR_GREEN    "\x1b[32m"
+#define ANSI_COLOR_YELLOW   "\x1b[33m"
+#define ANSI_COLOR_BLUE     "\x1b[34m"
+#define ANSI_COLOR_MAGENTA  "\x1b[35m"
+#define ANSI_COLOR_CYAN     "\x1b[36m"
+#define ANSI_COLOR_RESET    "\x1b[0m"
+
+
+FILE* g_VDEC_dumpCC_Fd = NULL;
+#define VDEC_MAX_MUTEX_SIZE 8
+#define VDEC_THREAD_NAME_LENGTH                 32
+```
 
 ## Function Declaration
 ### RRHAL_VDEC_DebugMenu
 ```bash
 extern DTV_STATUS_T RRHAL_VDEC_DebugMenu(void);
 ```
-
+Displays the debug main menu for the video decoder (VDEC).
 
 ### RRHAL_VDEC_DebugMenu_Transfer2Fn
 ```bash
 extern DTV_STATUS_T RRHAL_VDEC_DebugMenu_Transfer2Fn(UINT32 level1);
 ```
+Executes the corresponding debug function based on the user's menu selection.
+<ParamTable
+  items={[
+    { name: 'level1', type: 'UINT32', desc: 'Menu item number selected by the user' },
+  ]}
+/>
 
+```jsx title="isVaildChar"
+BOOLEAN isVaildChar(char letter)
+{
+    if     (letter == '0')    return TRUE;
+    else if(letter == '1')    return TRUE;
+    else if(letter == '2')    return TRUE;
+    else if(letter == '3')    return TRUE;
+    else if(letter == '4')    return TRUE;
+    else if(letter == '5')    return TRUE;
+    else if(letter == '6')    return TRUE;
+    else if(letter == '7')    return TRUE;
+    else if(letter == '8')    return TRUE;
+    else if(letter == '9')    return TRUE;
+    else if(letter == 'a')    return TRUE;
+    else if(letter == 'b')    return TRUE;
+    else if(letter == 'c')    return TRUE;
+    else if(letter == 'd')    return TRUE;
+    else if(letter == 'e')    return TRUE;
+    else if(letter == 'f')    return TRUE;
+    else                      return FALSE;
+}
+```
 
 ### RRHAL_VDEC_SetMutexStatus
 ```bash
 extern DTV_STATUS_T RRHAL_VDEC_SetMutexStatus(void*mutex, bool bLocked, const char*mutexName, const char*funcName);
 ```
+Sets the status of a mutex and records related information.
+<ParamTable
+  items={[
+    { name: 'mutex', type: 'void*', desc: 'Pointer to the mutex' },
+    { name: 'bLocked', type: 'bool', desc: 'Whether the mutex is locked' },
+    { name: 'mutexName', type: 'const char*', desc: 'Name of the mutex' },
+    { name: 'funcName', type: 'const char*', desc: 'Name of the calling function' },
+  ]}
+/>

@@ -6,69 +6,298 @@ sidebar_position: 85
 
 RHAL_VO api
 
+## Custom Data Types
+### HAL_VO_STATE_T 
+```bash
+/**
+ * @brief This enumeration describes the VO API return types.
+ **/
+typedef enum {
+    HAL_VO_STATE_OK = 0, /* from OK */
+    HAL_VO_STATE_ERROR,  /* from ERROR */
+    HAL_VO_STATE_INVALID_PARAM,  /* from PARAMETER ERROR */
+    HAL_VO_STATE_NOT_AVAILABLE,  /* from NOT ENOUGH RESOURCE */
+    HAL_VO_STATE_NOT_CALLABLE,   /* from NOT SUPPORTED */
+    HAL_VO_STATE_ERR_LENGTH, /* from NOT PERMITTED */
+    HAL_VO_STATE_TIMEOUT,    /* from TIMEOUT */
+    HAL_VO_STATE_OBJ_DELETED,    /* from OBJECT DELETED */
+} HAL_VO_STATE_T;
+```
+
+### HAL_VO_PIXEL_FORMAT
+```bash
+/**
+ * @brief This enumeration describes the supported pixel formats.
+ **/
+typedef enum {
+    HAL_VO_PIXEL_FORMAT_NONE = 0,   /* none of these */
+    HAL_VO_PIXEL_FORMAT_PALETTE,    /* palette color type */
+    HAL_VO_PIXEL_FORMAT_GRAYSCALE,  /* 8bit gray scale */
+    HAL_VO_PIXEL_FORMAT_RGB,    /* 24bit RGB */
+    HAL_VO_PIXEL_FORMAT_BGR,    /* 24bit RGB */
+    HAL_VO_PIXEL_FORMAT_ARGB,   /* 32bit ARGB */
+    HAL_VO_PIXEL_FORMAT_ABGR,   /* 32bit ABGR */
+    HAL_VO_PIXEL_FORMAT_YUV444P,  /* planar format with each U/V values plane (YYYY UUUU VVVV) */
+    HAL_VO_PIXEL_FORMAT_YUV444I,  /* planar format with interleaved U/V values (YYYY UVUVUVUV) */
+    HAL_VO_PIXEL_FORMAT_YUV422P,  /* semi-planar format with each U/V values plane (2x1 subsampling ; YYYY UU VV) */
+    HAL_VO_PIXEL_FORMAT_YUV422I,  /* semi-planar format with interleaved U/V values (2x1 subsampling ; YYYY UVUV) */
+    HAL_VO_PIXEL_FORMAT_YUV422YUYV, /* interleaved YUV values (Y0U0Y0V0Y1U1Y1V1) */
+    HAL_VO_PIXEL_FORMAT_YUV420P,  /* semi-planar format with each U/V values plane (2x2 subsampling ; YYYYYYYY UU VV) */
+    HAL_VO_PIXEL_FORMAT_YUV420I,  /* semi-planar format with interleaved U/V values (2x2 subsampling ; YYYYYYYY UVUV) */
+    HAL_VO_PIXEL_FORMAT_YUV400,   /* 8bit Y plane without U/V values */
+    HAL_VO_PIXEL_FORMAT_YUV224P,  /* semi-planar format with each U/V values plane, 1 Ysamples has 2 U/V samples to horizontal (Y0Y1 U0U0U1U1V0V0V1V1) */
+    HAL_VO_PIXEL_FORMAT_YUV224I,  /* semi-planar format with interleaved U/V values (Y0Y1 U0V0U0V0U1V1U1V1) */
+    HAL_VO_PIXEL_FORMAT_YUV444SP,  /* sequential packed with non-planar (YUVYUVYUV...) */
+    HAL_VO_PIXEL_FORMAT_ALPHAGRAYSCALE,    /* gray scale with alpha */
+    HAL_VO_PIXEL_FORMAT_MAX,    /* maximum number of HAL_VO_PIXEL_FORMAT */
+} HAL_VO_PIXEL_FORMAT;
+```
+
+### HAL_VO_PANEL_TYPE
+```bash
+/**
+ * @brief This enumeration describes a video output (VO) configuration set.
+ **/
+typedef enum {
+    HAL_VO_PANEL_TYPE_NONE = 0, /* none of these */
+    HAL_VO_PANEL_TYPE_FHD,  /* full HD panel (1920x1080) */
+    HAL_VO_PANEL_TYPE_UHD,  /* ultra HD panel (3840x2160) */
+    HAL_VO_PANEL_TYPE_HD1024X768,   /* HD panel (1024x768) */
+    HAL_VO_PANEL_TYPE_HD1280X720,   /* HD panel (1280x720) */
+    HAL_VO_PANEL_TYPE_HD1366X768,   /* HD panel (1366x768) */
+    HAL_VO_PANEL_TYPE_MAX,  /* maximum number of HAL_VO_PANEL_TYPE */
+} HAL_VO_PANEL_TYPE;
+```
+
+### HAL_VO_CFG_TYPE
+```bash
+/**
+ * @brief This enumeration describes a video output (VO) configuration set.
+ **/
+typedef enum {
+    HAL_VO_CFG_TYPE_NONE = 0,   /* none of these */
+    HAL_VO_CFG_TYPE_ALPHA_BLEND,    /* set alpha blend */
+    HAL_VO_CFG_TYPE_PIXEL_FORMAT,   /* set pixel format of video source */
+        HAL_VO_CFG_TYPE_INPUT_RECT, /* set video input source */
+    HAL_VO_CFG_TYPE_OUTPUT_RECT,    /* set video output source */
+    HAL_VO_CFG_TYPE_MAX,    /* maximum number of HAL_VO_CONFIG_TYPE */
+} HAL_VO_CFG_TYPE;
+```
+
+### HAL_VO_SUPPORT_PIXEL_FORMAT_T
+```bash
+/**
+ * @brief This enumeration describes supported pixel format for a video output (VO).
+ **/
+typedef enum {
+    HAL_VO_SUPPORT_PIXEL_FORMAT_NONE = 0x00000000, /* none of these */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_PALETTE = 0x00000001,    /* palette color type */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_GRAYSCALE = 0x00000002,    /* 8bit gray scale */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_RGB = 0x00000004,  /* 24bit RGB */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_BGR = 0x00000008,  /* 24bit BGR */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_ARGB = 0x00000010, /* 32bit ARGB */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_ABGR = 0x00000020, /* 32bit ABGR */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV444P = 0x00000040,  /* planar format with each U/V values plane (YYYY UUUU VVVV) */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV444I = 0x00000080,  /* planar format with interleaved U/V values (YYYY UVUVUVUV) */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV422P = 0x00000100,  /* semi-planar format with each U/V values plane (2x1 subsampling ; YYYY UU VV) */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV422I = 0x00000200,  /* semi-planar format with interleaved U/V values (2x1 subsampling ; YYYY UVUV) */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV422YUYV = 0x00000400,   /* interleaved YUV values (Y0U0Y0V0Y1U1Y1V1) */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV420P = 0x00000800,  /* semi-planar format with each U/V values plane (2x2 subsampling ; YYYYYYYY UU VV) */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV420I = 0x00001000,  /* semi-planar format with interleaved U/V values (2x2 subsampling ; YYYYYYYY UVUV) */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV400 = 0x00002000,   /* 8bit Y plane without U/V values */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV224P = 0x00004000,  /* semi-planar format with each U/V values plane, 1 Ysamples has 2 U/V samples to horizontal (Y0Y1 U0U0U1U1V0V0V1V1) */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV224I = 0x00008000,  /* semi-planar format with interleaved U/V values (Y0Y1 U0V0U0V0U1V1U1V1) */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_YUV444SP = 0x00010000,  /* sequential packed with non-planar (YUVYUVYUV...) */
+    HAL_VO_SUPPORT_PIXEL_FORMAT_ALPHAGRAYSCALE = 0x00020000,    /* gray scale with alpha */
+} HAL_VO_SUPPORT_PIXEL_FORMAT_T;
+```
+
+### HAL_VO_SUPPORT_PANEL_TYPE_T
+```bash
+/**
+ * @brief This enumeration describes supported panel type for a video output (VO).
+ **/
+typedef enum {
+    HAL_VO_SUPPORT_PANEL_TYPE_NONE = 0x00000000,
+    HAL_VO_SUPPORT_PANEL_TYPE_HD1024X768 = 0x00000001,  /* HD panel (1024x768) */
+    HAL_VO_SUPPORT_PANEL_TYPE_HD1280X720 = 0x00000002,  /* HD panel (1280x720) */
+    HAL_VO_SUPPORT_PANEL_TYPE_HD1366X768 = 0x00000004,  /* HD panel (1366x768) */
+    HAL_VO_SUPPORT_PANEL_TYPE_FHD = 0x00000008,         /* full HD panel (1920x1080) */
+    HAL_VO_SUPPORT_PANEL_TYPE_UHD = 0x00000010,         /* ultra HD panel (3840x2160) */
+} HAL_VO_SUPPORT_PANEL_TYPE_T;
+```
+
+### HAL_VO_FB_FRAMEBUFFER_PROPERTY_FLAGS_T
+```bash
+/**
+ * @brief This enumeration describes a framebuffer property flags for the video output (VO).
+ **/
+typedef enum {
+    HAL_VO_FB_FRAMEBUFFER_PROPERTY_FLAGS_NONE = 0x00000000,
+        HAL_VO_FB_FRAMEBUFFER_PROPERTY_FLAGS_COLORSPACE = 0x00000001,
+        HAL_VO_FB_FRAMEBUFFER_PROPERTY_FLAGS_ALPHABLENDING = 0x00000002,
+        HAL_VO_FB_FRAMEBUFFER_PROPERTY_FLAGS_INPUTRECT = 0x00000004,
+        HAL_VO_FB_FRAMEBUFFER_PROPERTY_FLAGS_OUTPUTRECT = 0x00000008,
+} HAL_VO_FB_FRAMEBUFFER_PROPERTY_FLAGS_T;
+```
+
+### HAL_VO_RECT_T
+```bash
+/**
+ * @brief This structure describes a rectangle specified by a point and a dimension.
+ **/
+typedef struct {
+    unsigned int x; /* x coordinate of its top-left point */
+    unsigned int y; /* y coordinate of its top-left point */
+    unsigned int w; /* width of it */
+    unsigned int h; /* height of it */
+} HAL_VO_RECT_T;
+```
+
+### HAL_VO_IMAGE_T
+```bash
+/**
+ * @brief This structure describes a image information to VO.
+ **/
+typedef struct {
+    unsigned char *buf; /* buffer pointer of decoded raw data */
+    unsigned char *ofs_y;   /* offset of Y component */
+    unsigned char *ofs_uv;  /* offset of UV components */
+    unsigned int len_buf;   /* buffer length of decoded raw data */
+    unsigned int stride;    /* stride size of decoded raw data */
+    HAL_VO_RECT_T rect; /* image data rectangular */
+    HAL_VO_PIXEL_FORMAT pixel_format;   /* pixel format of image */
+} HAL_VO_IMAGE_T;
+```
+
+### HAL_VO_CFG_VALUE_T
+```bash
+/**
+ * @brief This struct describes a value set for the configuration type.
+ **/
+typedef struct {
+    unsigned int alpha; /* alpha blending factor (0~255) */
+    HAL_VO_RECT_T rect; /* rectangular information for the video source */
+    HAL_VO_PIXEL_FORMAT pixel_format;   /* pixel format of image */
+} HAL_VO_CFG_VALUE_T;
+```
+
+### HAL_VO_CFG_T
+```bash
+/**
+ * @brief This structure describes a video output (VO) configuration set.
+ **/
+typedef struct {
+    HAL_VO_CFG_TYPE type;   /* configuration type to set VO */
+    HAL_VO_CFG_VALUE_T value;   /* configuration value */
+} HAL_VO_CFG_T;
+```
+
+### HAL_VO_DEVICE_CAPABILITY_T 
+```bash
+/**
+ * @brief This structure describes a video output (VO) capability of device.
+ **/
+typedef struct {
+    HAL_VO_SUPPORT_PANEL_TYPE_T support_panel_type;     /* supported panel type */
+    unsigned int support_pixel_format; /*HAL_VO_SUPPORT_PIXEL_FORMAT_T  supported pixel format */
+    unsigned char is_seperated_vo_port;                 /* whether to be seperated vo port */
+    unsigned char is_changeable_cs_dynamically;                 /* whether to be able to change color space dynamically */
+    unsigned int vo_port_nb;                            /* the number of vo ports */
+    unsigned int framebuffer_length;                    /* the length of framebuffer */
+    HAL_VO_RECT_T framebuffer_rect;                     /* the rect of framebuffer */
+} HAL_VO_DEVICE_CAPABILITY_T;
+```
+
+### HAL_VO_FB_FRAMEBUFFER_T
+```bash
+/**
+ * @brief This structure describes a framebuffer for the video output (VO).
+ **/
+typedef struct {
+    unsigned char* buf;                 /* buffer pointer of the framebuffer */
+    unsigned int buf_length;            /* the length of buffer */
+    unsigned int stride;                /* stride size of the framebuffer */
+    HAL_VO_RECT_T resolution;           /* resolution of the framebuffer */
+    HAL_VO_PIXEL_FORMAT pixel_format;   /* pixel format of the framebuffer */
+} HAL_VO_FB_FRAMEBUFFER_T;
+```
+
+### HAL_VO_FB_FRAMEBUFFER_PROPERTY_T
+```bash
+/**
+ * @brief This structure describes a framebuffer property for the video output (VO).
+ **/
+typedef struct {
+    HAL_VO_FB_FRAMEBUFFER_PROPERTY_FLAGS_T flags;       /* framebuffer property flags */
+        HAL_VO_PIXEL_FORMAT pixel_format;                               /* pixel format of the framebuffer */
+        unsigned int alpha;                                                             /* value for the alpha blending */
+        HAL_VO_RECT_T input;                                                    /* input rect of source */
+        HAL_VO_RECT_T output;                                                   /* output rect of source */
+} HAL_VO_FB_FRAMEBUFFER_PROPERTY_T;
+```
 
 ## Function Declaration
 ### RHAL_VO_Open
 ```bash
 HAL_VO_STATE_T RHAL_VO_Open(unsigned int ch, HAL_VO_PANEL_TYPE def, HAL_VO_PIXEL_FORMAT pixel_format = HAL_VO_PIXEL_FORMAT_ARGB);
 ```
-
+Open the video output module.
+<ParamTable
+  items={[
+    { name: 'ch', type: 'unsigned int', desc: 'channel port number to connect with display engine' },
+    { name: 'def', type: 'HAL_VO_PANEL_TYPE', desc: 'panel type' },
+  ]}
+/>
 
 ### RHAL_VO_Config
 ```bash
 HAL_VO_STATE_T RHAL_VO_Config(unsigned int ch, HAL_VO_CFG_T*cfg);
 ```
-
+Configure the video output
+<ParamTable
+  items={[
+    { name: 'ch', type: 'unsigned int', desc: 'channel port number to connect with display engine' },
+    { name: 'cfg', type: 'HAL_VO_CFG_T*', desc: 'configuration to set video output' },
+  ]}
+/>
 
 ### RHAL_VO_DisplayPicture
 ```bash
 HAL_VO_STATE_T RHAL_VO_DisplayPicture(unsigned int ch, HAL_VO_IMAGE_T*image);
 ```
-
+display intput image
+<ParamTable
+  items={[
+    { name: 'ch', type: 'unsigned int', desc: 'channel port number to connect with display engine' },
+    { name: 'image', type: 'HAL_VO_IMAGE_T*', desc: 'image to display at video' },
+  ]}
+/>
 
 ### RHAL_VO_RedrawPicture
 ```bash
 HAL_VO_STATE_T RHAL_VO_RedrawPicture(unsigned int ch);
 ```
-
+re-flush video output
+<ParamTable
+  items={[
+    { name: 'ch', type: 'unsigned int', desc: 'channel port number to connect with display engine' },
+  ]}
+/>
 
 ### RHAL_VO_Close
 ```bash
 HAL_VO_STATE_T RHAL_VO_Close(unsigned int ch);
 ```
-
+Close the video output module
 
 ### RHAL_VO_GetDeviceCapability
 ```bash
 HAL_VO_STATE_T RHAL_VO_GetDeviceCapability(HAL_VO_DEVICE_CAPABILITY_T*capability);
 ```
-
-
-### RHAL_VO_FB_Initialize
-```bash
-HAL_VO_STATE_T RHAL_VO_FB_Initialize(unsigned int ch);
-```
-
-
-### RHAL_VO_FB_Finalize
-```bash
-HAL_VO_STATE_T RHAL_VO_FB_Finalize(unsigned int ch);
-```
-
-
-### RHAL_VO_FB_GetTargetFrameBuffer
-```bash
-HAL_VO_STATE_T RHAL_VO_FB_GetTargetFrameBuffer(const unsigned int ch, HAL_VO_FB_FRAMEBUFFER_T*framebuffer);
-```
-
-
-### RHAL_VO_FB_UpdateFrameBuffer
-```bash
-HAL_VO_STATE_T RHAL_VO_FB_UpdateFrameBuffer(const unsigned int ch, const HAL_VO_FB_FRAMEBUFFER_T*framebuffer);
-```
-
-
-### RHAL_VO_FB_UpdateFrameBufferProperty
-```bash
-HAL_VO_STATE_T RHAL_VO_FB_UpdateFrameBufferProperty(const unsigned int ch, const HAL_VO_FB_FRAMEBUFFER_T*framebuffer, const HAL_VO_FB_FRAMEBUFFER_PROPERTY_T*property);
-```
+Get a video output (VO) capability of device
+<ParamTable
+  items={[
+    { name: 'capability', type: 'HAL_VO_DEVICE_CAPABILITY_T*', desc: 'pointer of the device capability instance' },
+  ]}
+/>

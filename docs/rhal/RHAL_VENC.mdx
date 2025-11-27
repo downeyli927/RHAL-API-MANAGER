@@ -6,75 +6,278 @@ sidebar_position: 78
 
 RHAL_VENC api
 
+## Custom Data Types
+### VENC_MSG_TYPE_T 
+```bash
+/**
+ * @brief infomation of recored frame
+ */
+typedef struct VENC_MSG_TYPE
+{
+        UINT32  channel;        /**< Port Id */
+        UINT8   pictype;        /**< Picture Type IDC:1 I:2 P:4 B:8 */
+        UINT64  pts;            /**< PTS */
+        UINT8   *pData;         /**< pointer to Video Data */
+        UINT32  dataLen;        /**< Video Data Length */
+        UINT8   *pRStart;       /**< start pointer of buffer */
+        UINT8   *pREnd;         /**< end pointer of buffer */
+}VENC_MSG_TYPE_T;
+```
+
+### DTV_STATUS_T
+```bash
+/**
+ * @brief recoding data callback function Type
+ */
+typedef DTV_STATUS_T (*pfnVENCDataHandlingCB)(VENC_MSG_TYPE_T *pMsg);
+```
+
+### VENC_INPUT_TYPE_T
+```bash
+/**
+ * @brief recoding input source types
+ */
+typedef enum
+{
+        VENC_INPUT_MAIN = 0,/**< Main Video source */
+        VENC_INPUT_SUB,         /**< Sub Video source */
+        VENC_INPUT_EXT,         /**< Extra Video source */
+        VENC_INPUT_NUM
+}VENC_INPUT_TYPE_T;
+```
+
+### VENC_CODEC_T
+```bash
+/**
+ * @brief venc codec formats
+ */
+typedef enum
+{
+        VENC_CODEC_H264 = 0,/**< H264 format */
+        VENC_CODEC_VP8          /**< VP8 format */
+}VENC_CODEC_T;
+```
+
+### VENC_FRAMERATE_T
+```bash
+/**
+ * @brief recoding frame rate
+ */
+typedef enum
+{
+        VENC_FRAMERATE_AUTO = 0,        // Optimal frame rate for this Encoder. (60p -> 30p, 50p -> 25p...)
+        VENC_FRAMERATE_ASIS,    // Use original framerate
+        VENC_FRAMERATE_60P,     //60Hz progressive (reserved not used)
+        VENC_FRAMERATE_60I,     //60Hz interlaced (reserved not used)
+        VENC_FRAMERATE_50P,     //50Hz progressive (reserved not used)
+        VENC_FRAMERATE_50I,     //50Hz interlaced (reserved not used)
+        VENC_FRAMERATE_30P,     //30Hz progressive
+        VENC_FRAMERATE_30I,     //30Hz interlaced (reserved not used)
+        VENC_FRAMERATE_25P,     //25Hz progressive (reserved not used)
+        VENC_FRAMERATE_25I,     //25Hz interlaced (reserved not used)
+        VENC_FRAMERATE_24P,     //24Hz progressive (reserved not used)
+        VENC_FRAMERATE_24I,     //24Hz interlaced (reserved not used)
+        VENC_FRAMERATE_INVALID
+}VENC_FRAMERATE_T;
+```
+
+### VENC_PROFILE_T
+```bash
+/**
+ * @brief venc profiles
+ */
+typedef enum
+{
+        VENC_PROFILE_BASE = 0,
+        VENC_PROFILE_MAIN,
+        VENC_PROFILE_EXT,
+        VENC_PROFILE_HIGH
+}VENC_PROFILE_T;
+```
+
+### VENC_PROFILELEVEL_T
+```bash
+/**
+ * @brief profile levels
+ */
+typedef enum
+{
+        VENC_PROFILELEVEL_30 = 0,
+        VENC_PROFILELEVEL_31,
+        VENC_PROFILELEVEL_40,
+        VENC_PROFILELEVEL_41
+}VENC_PROFILELEVEL_T;
+```
+
+### VENC_RATECONTROL_T
+```bash
+/**
+ * @brief Rate conotrol mode
+ */
+typedef enum {
+        VENC_RATECONTROL_VBR = 0,       /**< Variable Bit Rate (VBR) mode */
+        VENC_RATECONTROL_CBR = 1,       /**< Constant Bit Rate (CBR) mode */
+} VENC_RATECONTROL_T;
+```
+
+### VENC_INFO_T
+```bash
+/**
+ * @brief venc recoding parameter types
+ */
+typedef enum {
+        VENC_INFO_FRAMERATE = 0,
+        VENC_INFO_WIDTH,
+        VENC_INFO_HEIGHT,
+        VENC_INFO_ASPECTRATIOIDC,
+        VENC_INFO_SARWIDTH,
+        VENC_INFO_SARHEIGHT,
+        VENC_INFO_INPUT,
+        VENC_INFO_BITRATE,
+        VENC_INFO_PROFILE,
+        VENC_INFO_PROFILELEVEL,
+        VENC_INFO_CODEC,
+        VENC_INFO_RATECONTROL,
+        VENC_INFO_GOPLENGTH,
+        VENC_INFO_QP,
+    VENC_INFO_CAP_MODE,
+        VENC_INFO_NUM
+}VENC_INFO_T;
+```
+
+
 
 ## Function Declaration
 ### RHAL_VENC_Open
 ```bash
 DTV_STATUS_T RHAL_VENC_Open(void);
 ```
-
+VENC Open for recoding
 
 ### RHAL_VENC_Close
 ```bash
 DTV_STATUS_T RHAL_VENC_Close(void);
 ```
-
+VENC Finalizing after recoding
 
 ### RHAL_VENC_Connect
 ```bash
 DTV_STATUS_T RHAL_VENC_Connect(UINT8 port, VENC_INPUT_TYPE_T input);
 ```
-
+Select Video source
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
+    { name: 'input', type: 'VENC_INPUT_TYPE_T', desc: 'input source' },
+  ]}
+/>
 
 ### RHAL_VENC_Start
 ```bash
 DTV_STATUS_T RHAL_VENC_Start(UINT8 port);
 ```
-
+Start Video Encoding
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
+  ]}
+/>
 
 ### RHAL_VENC_Stop
 ```bash
 DTV_STATUS_T RHAL_VENC_Stop(UINT8 port);
 ```
-
+Stop Video Encoding
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
+  ]}
+/>
 
 ### RHAL_VENC_SetParam
 ```bash
 DTV_STATUS_T RHAL_VENC_SetParam(UINT8 port, VENC_INFO_T info, SINT32 value);
 ```
-
+Set Parameter
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
+    { name: 'info', type: 'VENC_INFO_T', desc: 'type of info to set' },
+    { name: 'value', type: 'SINT32', desc: 'value to set' },
+  ]}
+/>
 
 ### RHAL_VENC_GetParam
 ```bash
 DTV_STATUS_T RHAL_VENC_GetParam(UINT8 port, VENC_INFO_T info, void*pValue);
 ```
-
+VENC Get infomation
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
+    { name: 'info', type: 'VENC_INFO_T', desc: 'type of info to set' },
+    { name: 'pValue', type: 'void*', desc: 'Pointer to set result value' },
+  ]}
+/>
 
 ### RHAL_VENC_RegisterEncoderCallback
 ```bash
 DTV_STATUS_T RHAL_VENC_RegisterEncoderCallback(UINT8 port, pfnVENCDataHandlingCB pfnCallBack);
 ```
-
+Register Callback function for every frame
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
+    { name: 'pfnCallBack', type: 'pfnVENCDataHandlingCB', desc: 'pointer of callback function' },
+  ]}
+/>
 
 ### RHAL_VENC_CopyData
 ```bash
 DTV_STATUS_T RHAL_VENC_CopyData(UINT8 port, UINT8*pDest, UINT8*pBufAddr, UINT32 datasize, UINT8*pRStart, UINT8*pREnd);
 ```
-
+Release Encoded Data buffer
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
+    { name: 'pDest', type: 'UINT8*', desc: 'Destination to Copy Data' },
+    { name: 'pBufAddr', type: 'UINT8*', desc: 'Encoded data start point' },
+    { name: 'datasize', type: 'UINT32', desc: 'Encoded data length' },
+    { name: 'pRStart', type: 'UINT8*', desc: 'Start point of RingBuffer' },
+    { name: 'pREnd', type: 'UINT8*', desc: 'End point of RingBuffer' },
+  ]}
+/>
 
 ### RHAL_VENC_ReleaseData
 ```bash
 DTV_STATUS_T RHAL_VENC_ReleaseData(UINT8 port, UINT8*pBufAddr,UINT32 datasize);
 ```
-
+Release Encoded Data buffer
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
+    { name: 'pBufAddr', type: 'UINT8*', desc: 'Encoded data start point' },
+    { name: 'datasize', type: 'UINT32', desc: 'Encoded data length' },
+  ]}
+/>
 
 ### RHAL_VENC_GetThumbnail
 ```bash
 DTV_STATUS_T RHAL_VENC_GetThumbnail(UINT8 port, UINT32 width, UINT32 height, UINT8*pBufAddr, UINT32 datasize);
 ```
-
+Get Thumbnail Data
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
+    { name: 'width', type: 'UINT32', desc: 'width of thumbnail' },
+    { name: 'height', type: 'UINT32', desc: 'height of thumbnail' },
+    { name: 'pBufAddr', type: 'UINT8*', desc: 'Pointer to save thumbnail data' },
+    { name: 'datasize', type: 'UINT32', desc: 'Thumbnail data length' },
+  ]}
+/
 
 ### RHAL_VENC_DEBUG_Menu
 ```bash
 void RHAL_VENC_DEBUG_Menu(void);
 ```
+Serves as an interactive debug menu for the video encoder (VENC).

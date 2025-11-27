@@ -6,27 +6,128 @@ sidebar_position: 67
 
 RHAL_UVC api
 
+## Custom Data Types
+### UVC_TIMING_MSG_TYPE_T
+```bash
+typedef struct UVC_TIMING_MSG_TYPE
+{
+        UVC_CAPTURE_FORMAT_TYPE format;
+        UINT16                                  width;
+        UINT16                                  height;
+        UINT16                                  freq;
+        UINT32                                  UVC_UID;
+} UVC_TIMING_MSG_TYPE_T;
+
+typedef void (*PFN_UVC_NOTIFY_TIMING_CHANGE_T) (UVC_TIMING_MSG_TYPE_T *pMsg);//for uvc timing change callback
+```
+
+### UVC_CAPTURE_FORMAT_TYPE
+```bash
+typedef enum _UVC_CAPTURE_FORMAT_TYPE
+{
+    _NONE = 0,
+    _NV12,
+    _M420,
+    _I420,
+    _YUYV,
+    _RGB24,
+    _RGB32,
+    _P010,
+    _MotionJPEG,
+    _IYU2,
+    _AYUV,
+    _V410,
+    _Y410,
+    _UYVY,
+    _V210,
+    _Y210,
+    _YV12,
+    _RGB565,
+    _RGB555,
+} UVC_CAPTURE_FORMAT_TYPE;
+```
+
+### _VSC_OUTPUT_POSITION_T
+```bash
+#ifndef VSC_OUTPUT_POSITION_T
+typedef enum
+{
+    VSC_OUTPUT_POSITION_MAIN = 0,
+    VSC_OUTPUT_POSITION_SUB,
+    VSC_OUTPUT_POSITION_MAIN_SUB,
+    VSC_OUTPUT_POSITION_OSD1,
+    VSC_OUTPUT_POSITION_OSD2,
+    VSC_OUTPUT_POSITION_OSD3,
+    VSC_OUTPUT_POSITION_OSD4,
+    VSC_OUTPUT_POSITION_OSD5,
+} _VSC_OUTPUT_POSITION_T;
+#define VSC_OUTPUT_POSITION_T _VSC_OUTPUT_POSITION_T
+#endif
+```
 
 ## Function Declaration
 ### RHAL_UVC_Mute
 ```bash
 DTV_STATUS_T RHAL_UVC_Mute(BOOLEAN enable);
 ```
-
+Controls the mute function of the UVC device.
+<ParamTable
+  items={[
+    { name: 'enable', type: 'BOOLEAN', desc: 'Boolean value, TRUE to enable mute, FALSE to disable mute' },
+  ]}
+/>
 
 ### RHAL_UVC_Connect
 ```bash
 DTV_STATUS_T RHAL_UVC_Connect(BOOLEAN enable, VSC_OUTPUT_POSITION_T position, UVC_CAPTURE_FORMAT_TYPE format);
 ```
+Connects or disconnects the UVC device, and sets the output position and capture format.
+<ParamTable
+  items={[
+    { name: 'enable', type: 'BOOLEAN', desc: 'TRUE to connect, FALSE to disconnect' },
+    { name: 'position', type: 'VSC_OUTPUT_POSITION_T', desc: 'specifies the output position' },
+    { name: 'format', type: 'UVC_CAPTURE_FORMAT_TYPE', desc: 'specifies the UVC capture format' },
+  ]}
+/>
 
 
 ### RHAL_UVC_Region_Ctrl
 ```bash
 DTV_STATUS_T RHAL_UVC_Region_Ctrl(unsigned int UID, VIDEO_RECT_T crop_window, VIDEO_RECT_T ori_window, VIDEO_RECT_T output_window, VIDEO_RECT_T zoom_window, UVC_WINDOW_ZOOM_TYPE zoom_type, UINT32 outputFrameRate);
 ```
+Controls the video region and zoom settings of the UVC device.
+<ParamTable
+  items={[
+    { name: 'UID', type: 'unsigned int', desc: 'Unsigned integer, possibly a unique identifier for a specific UVC device or session' },
+    { name: 'crop_window', type: 'VIDEO_RECT_T', desc: 'defines the size and position of the crop window' },
+    { name: 'ori_window', type: 'VIDEO_RECT_T', desc: 'defines the size and position of the original window' },
+    { name: 'output_window', type: 'VIDEO_RECT_T', desc: 'defines the size and position of the output window' },
+    { name: 'zoom_window', type: 'VIDEO_RECT_T', desc: 'defines the size and position of the zoom window' },
+    { name: 'zoom_type', type: 'UVC_WINDOW_ZOOM_TYPE', desc: 'specifies the zoom type' },
+    { name: 'outputFrameRate', type: 'UINT32', desc: 'specifies the output frame rate' },
+  ]}
+/>
 
+```jsx title="VIDEO_RECT_T"
+#ifndef VIDEO_RECT_T
+    typedef struct
+    {
+        UINT16      x;  /**< horizontal Start Position in pixel [0,].*/
+        UINT16      y;  /**< vertical   Start Position in pixel [0,].*/
+        UINT16      w;  /**< horizontal Size(Width)    in pixel [0,].*/
+        UINT16      h;  /**< vertical   Size(Height)   in pixel [0,].*/
+    } __VIDEO_RECT_T;
+#define VIDEO_RECT_T __VIDEO_RECT_T
+#endif
+```
 
 ### RHAL_UVC_RegisterTimingChangeCallback
 ```bash
 DTV_STATUS_T RHAL_UVC_RegisterTimingChangeCallback(PFN_UVC_NOTIFY_TIMING_CHANGE_T pfnUvcTimingChange);
 ```
+Registers a callback function to notify timing changes in the UVC device.
+<ParamTable
+  items={[
+    { name: 'pfnUvcTimingChange', type: 'PFN_UVC_NOTIFY_TIMING_CHANGE_T', desc: 'points to the timing change notification callback function' },
+  ]}
+/>

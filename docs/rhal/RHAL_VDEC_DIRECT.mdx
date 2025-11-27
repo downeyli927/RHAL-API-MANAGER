@@ -6,51 +6,132 @@ sidebar_position: 76
 
 RHAL_VDEC_DIRECT api
 
+## Custom Data Types
+### HAL_VDEC_DIRECT_3D_TYPE_T
+```bash
+typedef enum
+{
+        HAL_VDEC_DIRECT_3D_TYPE_NONE,   // 2D
+        HAL_VDEC_DIRECT_3D_TYPE_SIDEBYSIDE,
+        HAL_VDEC_DIRECT_3D_TYPE_TOPANDBOTTOM,
+
+        HAL_VDEC_DIRECT_3D_TYPE_MAX,
+} HAL_VDEC_DIRECT_3D_TYPE_T;
+```
+
+### HAL_VDEC_DIRECT_VideoInfo
+```bash
+struct HAL_VDEC_DIRECT_VideoInfo
+{
+        /* for backward compatibility */
+        int structure_size;
+
+        int width, height;
+        enum
+        {
+                HAL_VDEC_DIRECT_PROGRESSIVE,
+                HAL_VDEC_DIRECT_INTERLACED,
+        } scan_type;
+        /* actural framerate = framerate_num / framerate_den */
+        int framerate_num, framerate_den;
+        int par_w, par_h;
+};
+```
+
+### HAL_DVDEC_T
+```bash
+typedef struct HAL_DVDEC HAL_DVDEC_T;
+```
+
+### buffID
+```bash
+typedef void (*FN_VDEC_DIRECT_BUFID_T) (unsigned long long  buffID);
+```
 
 ## Function Declaration
 ### RHAL_VDEC_DIRECT_Open
 ```bash
 HAL_DVDEC_T* RHAL_VDEC_DIRECT_Open(unsigned int fourcc, int width, int height, HAL_VDEC_DIRECT_3D_TYPE_T trid_type);
 ```
-
+Open the video decoder
+<ParamTable
+  items={[
+    { name: 'fourcc', type: 'unsigned int', desc: 'Four-character code for the video encoding format' },
+    { name: 'width', type: 'int', desc: 'Video width' },
+    { name: 'height', type: 'int', desc: 'Video height' },
+    { name: 'trid_type', type: 'HAL_VDEC_DIRECT_3D_TYPE_T', desc: '3D video type' },
+  ]}
+/>
 
 ### RHAL_VDEC_DIRECT_SetDEId
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_SetDEId(HAL_DVDEC_T*vdec, int deid);
 ```
+:::danger[Take care]
 
+Not implemented
+
+:::
 
 ### RHAL_VDEC_DIRECT_Play
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_Play(HAL_DVDEC_T*vdec, void*data, int size);
 ```
-
+Start decoding and playing video
+<ParamTable
+  items={[
+    { name: 'vdec', type: 'HAL_DVDEC_T*', desc: 'Decoder handle' },
+    { name: 'data', type: 'void*', desc: 'Video data' },
+    { name: 'size', type: 'int', desc: 'Data size' },
+  ]}
+/>
 
 ### RHAL_VDEC_DIRECT_Stop
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_Stop(HAL_DVDEC_T*vdec);
 ```
-
+Stop video playback
 
 ### RHAL_VDEC_DIRECT_Close
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_Close(HAL_DVDEC_T*vdec);
 ```
-
+Close the video decoder
 
 ### RHAL_VDEC_DIRECT_GetVideoInfo
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_GetVideoInfo(HAL_DVDEC_T*vdec, struct HAL_VDEC_DIRECT_VideoInfo*info);
 ```
-
+Get video information
+<ParamTable
+  items={[
+    { name: 'vdec', type: 'HAL_DVDEC_T*', desc: 'Decoder handle' },
+    { name: 'info', type: 'struct HAL_VDEC_DIRECT_VideoInfo*', desc: 'Pointer to a structure for storing video information' },
+  ]}
+/>
 
 ### RHAL_VDEC_DIRECT_SetCallback
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_SetCallback(HAL_DVDEC_T*vdec, void(*callback)(unsigned long long buffID));
 ```
-
+Set callback function
+<ParamTable
+  items={[
+    { name: 'vdec', type: 'HAL_DVDEC_T*', desc: 'Decoder handle' },
+    { name: 'callback', type: 'void(*)(unsigned long long buffID)', desc: 'Callback function pointer' },
+  ]}
+/>
 
 ### RHAL_VDEC_DIRECT_PlayWithCallback
 ```bash
 DTV_STATUS_T RHAL_VDEC_DIRECT_PlayWithCallback(HAL_DVDEC_T*vdec, void*data, int size, unsigned long long buffID);
 ```
+Video playback with callback
+<ParamTable
+  items={[
+    { name: 'vdec', type: 'HAL_DVDEC_T*', desc: 'Decoder handle' },
+    { name: 'data', type: 'void*', desc: 'Video data' },
+    { name: 'size', type: 'int', desc: 'Data size' },
+    { name: 'buffID', type: 'unsigned long long', desc: 'Buffer ID' },
+  ]}
+/>

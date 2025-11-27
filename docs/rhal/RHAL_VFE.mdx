@@ -6,51 +6,215 @@ sidebar_position: 79
 
 RHAL_VFE api
 
+## Custom Data Types
+###HAL_VFE_SRC_TYPE 
+```bash
+typedef enum
+{
+    HAL_VFE_SRC_TYPE_NULL = 0,  // NULL device
+    HAL_VFE_SRC_TYPE_CVBS = 1,
+    HAL_VFE_SRC_TYPE_COMP = 2,
+    HAL_VFE_SRC_TYPE_HDMI = 3,
+    HAL_VFE_SRC_TYPE_DPRX = 4,
+}HAL_VFE_SRC_TYPE;
+```
+
+### RHAL_VFE_VC_ID 
+```bash
+typedef enum
+{
+     RHAL_VFE_VC_0 = 0,
+     RHAL_VFE_VC_1,
+     RHAL_VFE_VC_2,
+     RHAL_VFE_VC_3,
+     RHAL_VFE_VC_MAX,
+}RHAL_VFE_VC_ID;
+```
+
+### HAL_VFE_SRC_ID
+```bash
+typedef enum
+{
+    HAL_VFE_SRC_NONE  = VFE_SRC_ID(HAL_VFE_SRC_TYPE_NULL, 0),
+    HAL_VFE_SRC_CVBS  = VFE_SRC_ID(HAL_VFE_SRC_TYPE_CVBS, 0),
+    HAL_VFE_SRC_CVBS2 = VFE_SRC_ID(HAL_VFE_SRC_TYPE_CVBS, 1),
+    HAL_VFE_SRC_COMP  = VFE_SRC_ID(HAL_VFE_SRC_TYPE_COMP, 0),
+    HAL_VFE_SRC_HDMI0 = VFE_SRC_ID(HAL_VFE_SRC_TYPE_HDMI, 0),
+    HAL_VFE_SRC_HDMI1 = VFE_SRC_ID(HAL_VFE_SRC_TYPE_HDMI, 1),
+    HAL_VFE_SRC_HDMI2 = VFE_SRC_ID(HAL_VFE_SRC_TYPE_HDMI, 2),
+    HAL_VFE_SRC_HDMI3 = VFE_SRC_ID(HAL_VFE_SRC_TYPE_HDMI, 3),
+    HAL_VFE_SRC_DPRX0 = VFE_SRC_ID(HAL_VFE_SRC_TYPE_DPRX, 0),
+    HAL_VFE_SRC_DPRX1 = VFE_SRC_ID(HAL_VFE_SRC_TYPE_DPRX, 1),
+}HAL_VFE_SRC_ID;
+```
+
+### HAL_VFE_SRC_PRESENT_STATUS
+```bash
+typedef enum
+{
+    HAL_VFE_SRC_PRESENT_STATUS_ABSENT  = 0,
+    HAL_VFE_SRC_PRESENT_STATUS_PRESENT = 1,
+    HAL_VFE_SRC_PRESENT_STATUS_UNKNOWN = 0xF,
+}HAL_VFE_SRC_PRESENT_STATUS;
+```
+
+### HAL_VFE_SRC_PRESENT_MONITOR_ENTRY
+```bash
+typedef struct
+{
+    HAL_VFE_SRC_ID  id;
+    UINT8           status;
+}HAL_VFE_SRC_PRESENT_MONITOR_ENTRY;
+```
+
+### HAL_VFE_TIMING_EXT_FLAGS 
+```bash
+typedef enum
+{
+    HAL_VFE_TIMING_EXT_FLAG_TIMING_OUTPUT_OF_DISP_LIMIT = 1,    // Timing is over DISP limit
+    HAL_VFE_TIMING_EXT_FLAG_TIMING_BYPASSABLE = 2,              // Timing is able to bypass
+    HAL_VFE_TIMING_EXT_FLAG_DSC_RAW_STREAM = 4,                 // Timing is DSC raw stream
+}HAL_VFE_TIMING_EXT_FLAGS;
+```
+
+### HAL_VFE_SRC_PRESENT_MONITOR 
+```bash
+typedef struct
+{
+    HAL_VFE_SRC_PRESENT_MONITOR_ENTRY mnt_list[MAX_VFE_SRC_ENTRY];
+
+    UINT32 no_detect_pin_ctrl:2;        // handling if no detect pin
+
+    #define FORCE_IGNORE_IF_NO_DETECT_PIN  0x0
+    #define FORCE_PRESENT_IF_NO_DETECT_PIN 0x1
+    #define FORCE_ABSENT_IF_NO_DETECT_PIN  0x2
+
+    UINT32 reserved:30;                 // reserved for future
+
+    UINT16 interval;                    // polling interval (ms)
+
+    UINT16 debounce;                    // debounce time (ms)
+
+    void (*p_callback)(HAL_VFE_SRC_ID src, UINT8 ConnectStatus, void* arg);
+
+    void*  p_data;                      // source present monitor private data. this filed will be delivered to callback by arg field
+
+    void*  p_ctx;                       // internal data structure for souce present monitor for thread control
+
+}HAL_VFE_SRC_PRESENT_MONITOR;
+```
+
+### HAL_VFE_EXT_ID
+```bash
+typedef enum
+{
+    HAL_VFE_EXT_ID_GET_PLL_MAX_FREQUENCY = 0,
+    HAL_VFE_EXT_ID_GET_PLL_OD_MAX_FREQUENCY,
+}HAL_VFE_EXT_ID;
+```
+
+### Constants
+```bash
+#define VFE_SRC_ID(type, port)      (((type & 0x7) <<2) | (port & 0x3))
+#define VFE_SRC_ID_TYPE(id)         ((id>>2) & 0x7)
+#define VFE_SRC_ID_PORT(id)         (id & 0x3)
+
+#define RHAL_VFE_VcDisConnect(vc_idx)     RHAL_VFE_VcConnect(vc_idx, HAL_VFE_SRC_NONE)  // disconnect VC to the selected VFE
+#define GET_TIMING_UNSUPPORT_FLAG(var)                ((var & HAL_VFE_TIMING_EXT_FLAG_TIMING_OUTPUT_OF_DISP_LIMIT))
+#define GET_TIMING_BYPASSABLE_FLAG(var)               ((var & HAL_VFE_TIMING_EXT_FLAG_TIMING_BYPASSABLE))
+#define GET_TIMING_DSC_RAW_STREAM_FLAG(var)           ((var & HAL_VFE_TIMING_EXT_FLAG_DSC_RAW_STREAM))
+#define MAX_VFE_SRC_ENTRY       10
+```
 
 ## Function Declaration
 ### RHAL_VFE_GetSourcePresentStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_GetSourcePresentStatus(HAL_VFE_SRC_ID src, UINT8*pSrcPresent);
 ```
-
+Get VFE Source Presend Status
+<ParamTable
+  items={[
+    { name: 'src', type: 'HAL_VFE_SRC_ID', desc: 'vfe src id' },
+    { name: 'pSrcPresent', type: 'UINT8*', desc: 'Src Present Status bit mask' },
+  ]}
+/>
 
 ### RHAL_VFE_SrcPresentMonitorEnable
 ```bash
 DTV_STATUS_T RHAL_VFE_SrcPresentMonitorEnable(HAL_VFE_SRC_PRESENT_MONITOR*p_this);
 ```
-
+Enable a VFE Src Prevent Monitor
+<ParamTable
+  items={[
+    { name: 'p_this', type: 'HAL_VFE_SRC_PRESENT_MONITOR*', desc: 'handle of Src Present Monitor' },
+  ]}
+/>
 
 ### RHAL_VFE_SrcPresentMonitorDisable
 ```bash
 DTV_STATUS_T RHAL_VFE_SrcPresentMonitorDisable(HAL_VFE_SRC_PRESENT_MONITOR*p_this);
 ```
-
+Disable a VFE Src Prevent Monitor
+<ParamTable
+  items={[
+    { name: 'p_this', type: 'HAL_VFE_SRC_PRESENT_MONITOR*', desc: 'handle of Src Present Monitor' },
+  ]}
+/>
 
 ### RHAL_VFE_GetSrcTypeName
 ```bash
 const char* RHAL_VFE_GetSrcTypeName(HAL_VFE_SRC_TYPE type);
 ```
-
+Get the name of Video Source type
+<ParamTable
+  items={[
+    { name: 'type', type: 'HAL_VFE_SRC_TYPE', desc: 'video source type' },
+  ]}
+/>
 
 ### RHAL_VFE_GetVcCount
 ```bash
 DTV_STATUS_T RHAL_VFE_GetVcCount(UINT8*p_VcCount);
 ```
-
+Get video common count
+<ParamTable
+  items={[
+    { name: 'p_VcCount', type: 'UINT8*', desc: 'ret value of count' },
+  ]}
+/>
 
 ### RHAL_VFE_VcConnect
 ```bash
 DTV_STATUS_T RHAL_VFE_VcConnect(RHAL_VFE_VC_ID vc_idx, HAL_VFE_SRC_ID vfe_sel);
 ```
-
+Connect video common with source
+<ParamTable
+  items={[
+    { name: 'vc_idx', type: 'RHAL_VFE_VC_ID', desc: 'index of video common' },
+    { name: 'vfe_sel', type: 'HAL_VFE_SRC_ID', desc: 'source id' },
+  ]}
+/>
 
 ### RHAL_VFE_GetVcConnectSrc
 ```bash
 DTV_STATUS_T RHAL_VFE_GetVcConnectSrc(RHAL_VFE_VC_ID vc_idx, HAL_VFE_SRC_ID*p_vfe_sel);
 ```
-
+Get video common connecting source
+<ParamTable
+  items={[
+    { name: 'vc_idx', type: 'RHAL_VFE_VC_ID', desc: 'index of video common' },
+    { name: 'p_vfe_sel', type: 'HAL_VFE_SRC_ID*', desc: 'return of  source id' },
+  ]}
+/>
 
 ### RHAL_VFE_GeExtInfo
 ```bash
 DTV_STATUS_T RHAL_VFE_GeExtInfo(HAL_VFE_EXT_ID id, UINT32*p_value);
 ```
+Get the Ext infomation of Video Source type
+<ParamTable
+  items={[
+    { name: 'id', type: 'HAL_VFE_EXT_ID', desc: 'ext id' },
+    { name: 'p_value', type: 'UINT32*', desc: 'ext infomation of Video Source type' },
+  ]}
+/>

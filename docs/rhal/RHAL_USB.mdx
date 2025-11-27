@@ -6,135 +6,329 @@ sidebar_position: 66
 
 RHAL_USB api
 
+## Custom Data Types
+### Constants
+```bash
+#define RTK_COMPOSITE_HIDG_ENABLE_PATH                           "/sys/rtk_composite/hidg_enable"
+#define RTK_COMPOSITE_HIDG_MODE_PATH                              "/sys/rtk_composite/hidg_mode"
+#define RTK_COMPOSITE_HIDG_EX_MODE_PATH                        "/sys/rtk_composite/hidg_ex_mode"
+#define RTK_COMPOSITE_REVERSE_CONTROL_MODE_PATH       "/sys/rtk_composite/reverse_control_mode"
+#define RTK_COMPOSITE_REVERSE_CONTROL_EX_MODE_PATH "/sys/rtk_composite/reverse_control_ex_mode"
+#define USB_HUB0_TYPA_SWITCH_MODE_PATH       "/sys/usb_hub0/typea_switch_mode"
+#define USB_HUB1_TYPA_SWITCH_MODE_PATH       "/sys/usb_hub1/typea_switch_mode"
+#define USB_HUB0_TYPA_PORT_SWITCH_MODE_PATH       "/sys/usb_hub0/typea_port_switch_mode"
+#define USB_HUB1_TYPA_PORT_SWITCH_MODE_PATH       "/sys/usb_hub1/typea_port_switch_mode"
+#define RTK_COMPOSITE_HIDG_OUTPUG_ABSOLUTE_POS         "/sys/rtk_composite/hidg_output_absolute_pos"
+#define RTK_COMPOSITE_HIDG_EX_OUTPUG_ABSOLUTE_POS         "/sys/rtk_composite/hidg_ex_output_absolute_pos"
+#define USB_HUB0_POWER_MONITOR_VALUE_PATH        "/sys/usb_hub0/power_monitor_value"
+#define USB_HUB1_POWER_MONITOR_VALUE_PATH        "/sys/usb_hub1/power_monitor_value"
+#define USB_HUB_SELECT_HUB_PATH        "/sys/usb_hub0/select_hub"
+#define RTK_COMPOSITE_HIDG_SEND_KEYUP_EVENT        "/sys/rtk_composite/hidg_send_keyup_event"
+#define RTK_COMPOSITE_HIDG_EX_SEND_KEYUP_EVENT         "/sys/rtk_composite/hidg_ex_send_keyup_event"
+```
+
+### RHAL_USB_OC_STATUS
+```bash
+typedef enum {
+    RHAL_USB_NO_OC   = 0,
+    RHAL_USB_HAS_OC  = 1,
+} RHAL_USB_OC_STATUS;
+```
+
+### MIC_Parameters
+```bash
+struct MIC_Parameters
+{
+        UINT8 oem_auth_code[16];
+        UINT8 mic_auth_code[16];
+        UINT64 serial_num;
+        UINT64 vid;
+        UINT64 pid;
+        char manufacturer[64];
+        UINT8 random[16];
+};
+```
+
+### MIC_Results
+```bash
+struct MIC_Results
+{
+        UINT64 result;//1:verify Pass; other: Verify fail
+        UINT8 random[16];
+};
+```
+
+### MIC_Info
+```bash
+struct MIC_Info
+{
+        UINT8 mic_auth_code[16];
+        UINT64 serial_num;
+        UINT16 vid;
+        UINT16 pid;
+};
+```
 
 ## Function Declaration
 ### RHAL_USB_SuperSpeedSupport
 ```bash
 DTV_STATUS_T RHAL_USB_SuperSpeedSupport(SINT32 connector1, BOOLEAN bOn);
 ```
+Enable or disable SuperSpeed (USB 3.0) support for the specified USB connector.
+<ParamTable
+  items={[
+    { name: 'connector1', type: 'SINT32', desc: 'Index of the USB connector' },
+    { name: 'bOn', type: 'BOOLEAN', desc: 'TRUE to enable SuperSpeed, FALSE to disable' },
+  ]}
+/>
 
 
 ### RHAL_USB_VBusControl
 ```bash
 DTV_STATUS_T RHAL_USB_VBusControl(SINT32 connector1, BOOLEAN bOn);
 ```
+Control the VBUS power of the specified USB connector.
+<ParamTable
+  items={[
+    { name: 'connector1', type: 'SINT32', desc: 'Index of the USB connector' },
+    { name: 'bOn', type: 'BOOLEAN', desc: 'TRUE to turn on VBUS power, FALSE to turn off ' },
+  ]}
+/>
 
 
 ### RHAL_USB_IsConnSupportU3
 ```bash
 BOOLEAN RHAL_USB_IsConnSupportU3(SINT32 connector1);
 ```
+Check if the specified USB connector supports USB 3.0 (SuperSpeed).
+<ParamTable
+  items={[
+    { name: 'connector1', type: 'SINT32', desc: 'Index of the USB connector' },
+  ]}
+/>
 
 
 ### RHAL_USB_GetOCStatus
 ```bash
 SINT32 RHAL_USB_GetOCStatus(SINT32 connector1);
 ```
+Get the overcurrent status of the specified USB connector.
+<ParamTable
+  items={[
+    { name: 'connector1', type: 'SINT32', desc: 'Index of the USB connector' },
+  ]}
+/>
 
 
 ### RHAL_USB_GetTotalConnNum
 ```bash
 SINT32 RHAL_USB_GetTotalConnNum();
 ```
-
+Get the total number of USB connectors.
 
 ### RHAL_USB_Typec_Hidg_enable
 ```bash
 DTV_STATUS_T RHAL_USB_Typec_Hidg_enable(BOOLEAN enable);
 ```
-
+Enable or disable the HID Gadget function for USB Type-C.
+<ParamTable
+  items={[
+    { name: 'enable', type: 'BOOLEAN', desc: 'TRUE to enable, FALSE to disable' },
+  ]}
+/>
 
 ### RHAL_USB_Typec_Get_Hidg_enable
 ```bash
 DTV_STATUS_T RHAL_USB_Typec_Get_Hidg_enable(BOOLEAN*enable);
 ```
-
+Get the enable status of the HID Gadget function for USB Type-C.
+<ParamTable
+  items={[
+    { name: 'enable', type: 'BOOLEAN', desc: 'TRUE to enable, FALSE to disable' },
+  ]}
+/>
 
 ### RHAL_USB_Typec_Reverse_mode_enable
 ```bash
 DTV_STATUS_T RHAL_USB_Typec_Reverse_mode_enable(UINT32 id, BOOLEAN enable);
 ```
-
+Enable or disable the reverse control mode for the specified ID of USB Type-C.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the reverse control mode (0 or 1)' },
+    { name: 'enable', type: 'BOOLEAN', desc: 'TRUE to enable, FALSE to disable' },
+  ]}
+/>
 
 ### RHAL_USB_Typec_Get_Reverse_mode_enable
 ```bash
 DTV_STATUS_T RHAL_USB_Typec_Get_Reverse_mode_enable(UINT32 id, BOOLEAN*enable);
 ```
-
+Get the enable status of the reverse control mode for the specified ID of USB Type-C.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the reverse control mode (0 or 1)' },
+    { name: 'enable', type: 'BOOLEAN', desc: 'TRUE to enable, FALSE to disable' },
+  ]}
+/>
 
 ### RHAL_USB_Typec_Hidg_mode_enable
 ```bash
 DTV_STATUS_T RHAL_USB_Typec_Hidg_mode_enable(UINT32 id, BOOLEAN enable);
 ```
-
+Enable or disable the HID Gadget mode for the specified ID of USB Type-C.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the HID Gadget (0 or 1)' },
+    { name: 'enable', type: 'BOOLEAN', desc: 'TRUE to enable, FALSE to disable' },
+  ]}
+/>
 
 ### RHAL_USB_Typec_Get_Hidg_mode_enable
 ```bash
 DTV_STATUS_T RHAL_USB_Typec_Get_Hidg_mode_enable(UINT32 id, BOOLEAN*enable);
 ```
+Get the enable status of the HID Gadget mode for the specified ID of USB Type-C.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the HID Gadget (0 or 1)' },
+    { name: 'enable', type: 'BOOLEAN', desc: 'TRUE to enable, FALSE to disable' },
+  ]}
+/>
 
 
 ### RHAL_USB_Typec_Select_Hub
 ```bash
 DTV_STATUS_T RHAL_USB_Typec_Select_Hub(UINT32 id);
 ```
-
+Select the USB HUB with the specified ID.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the USB HUB' },
+  ]}
+/>
 
 ### RHAL_USB_SET_POWER_MONITOR_VALUE
 ```bash
 DTV_STATUS_T RHAL_USB_SET_POWER_MONITOR_VALUE(UINT32 id, UINT32 power_value);
 ```
-
+Set the power monitor value for the specified ID of USB HUB.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the USB HUB (0 or 1)' },
+    { name: 'power_value', type: 'UINT32', desc: 'Pointer to an unsigned integer to store the power value' },
+  ]}
+/>
 
 ### RHAL_USB_GET_POWER_MONITOR_VALUE
 ```bash
 DTV_STATUS_T RHAL_USB_GET_POWER_MONITOR_VALUE(UINT32 id, UINT32*power_value);
 ```
-
+Get the power monitor value for the specified ID of USB HUB.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the USB HUB (0 or 1)' },
+    { name: 'power_value', type: 'UINT32', desc: 'Pointer to an unsigned integer to store the power value' },
+  ]}
+/>
 
 ### RHAL_USB_SET_TYPEA_SWITCH_MODE
 ```bash
 DTV_STATUS_T RHAL_USB_SET_TYPEA_SWITCH_MODE(UINT32 id, UINT32 mode);
 ```
-
+Set the switch mode for the USB Type-A port of the specified ID.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the USB HUB (0 or 1)' },
+    { name: 'mode', type: 'UINT32', desc: 'Switch mode to be set' },
+  ]}
+/>
 
 ### RHAL_USB_GET_TYPEA_SWITCH_MODE
 ```bash
 DTV_STATUS_T RHAL_USB_GET_TYPEA_SWITCH_MODE(UINT32 id, UINT32*mode);
 ```
-
+Get the switch mode for the USB Type-A port of the specified ID
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the USB HUB (0 or 1)' },
+    { name: 'mode', type: 'UINT32*', desc: 'Pointer to an unsigned integer to store the switch mode' },
+  ]}
+/>
 
 ### RHAL_USB_SET_TYPEA_PORT_SWITCH_MODE
 ```bash
 DTV_STATUS_T RHAL_USB_SET_TYPEA_PORT_SWITCH_MODE(UINT32 id, UINT32 port_num, UINT32 mode);
 ```
-
+Set the switch mode for the specified ID and port number of the USB Type-A port.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the USB HUB (0 or 1)' },
+    { name: 'port_num', type: 'UINT32', desc: 'Port number' },
+    { name: 'mode', type: 'UINT32', desc: 'Switch mode to be set' },
+  ]}
+/>
 
 ### RHAL_USB_GET_TYPEA_PORT_SWITCH_MODE
 ```bash
 DTV_STATUS_T RHAL_USB_GET_TYPEA_PORT_SWITCH_MODE(UINT32 id, UINT32 port_num, UINT32*mode);
 ```
-
+Get the switch mode for the specified ID and port number of the USB Type-A port.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the USB HUB (0 or 1)' },
+    { name: 'port_num', type: 'UINT32', desc: 'Port number' },
+    { name: 'mode', type: 'UINT32*', desc: 'Pointer to an unsigned integer to store the switch mode' },
+  ]}
+/>
 
 ### RHAL_USB_Typec_Hidg_output_absolute_pos
 ```bash
 DTV_STATUS_T RHAL_USB_Typec_Hidg_output_absolute_pos(UINT32 id, UINT32 x_pos, UINT32 y_pos);
 ```
-
+Set the absolute position output for the USB Type-C HID Gadget.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the HID Gadget (0 or 1)' },
+    { name: 'x_pos', type: 'UINT32', desc: 'X-axis position' },
+    { name: 'y_pos', type: 'UINT32', desc: 'Y-axis position' },
+  ]}
+/>
 
 ### RHAL_USB_Typec_Hidg_send_keyup_event
 ```bash
 DTV_STATUS_T RHAL_USB_Typec_Hidg_send_keyup_event(UINT32 id, SINT32 key_type);
 ```
-
+Send a key release event for the USB Type-C HID Gadget.
+<ParamTable
+  items={[
+    { name: 'id', type: 'UINT32', desc: 'ID of the HID Gadget (0 or 1)' },
+    { name: 'key_type', type: 'SINT32', desc: 'Type of the key' },
+  ]}
+/>
 
 ### RHAL_Verify_MIC_Code
 ```bash
 DTV_STATUS_T RHAL_Verify_MIC_Code(struct MIC_Parameters*parameters, UINT8 parameter_hash[32], struct MIC_Results*result, UINT8 result_hash[32]);
 ```
-
+Verify the MIC (Media Interface Controller) code.
+<ParamTable
+  items={[
+    { name: 'parameters', type: 'struct MIC_Parameters*', desc: 'Pointer to the MIC parameters structure' },
+    { name: 'parameter_hash', type: 'UINT8[32]', desc: 'Array of parameter hash values' },
+    { name: 'result', type: 'struct MIC_Results*', desc: 'Pointer to the MIC results structure' },
+    { name: 'result_hash', type: 'UINT8[32]', desc: 'Array of result hash values' },
+  ]}
+/>
 
 ### RHAL_USB_Get_MIC_info
 ```bash
 DTV_STATUS_T RHAL_USB_Get_MIC_info(char*product, struct MIC_Info*info);
 ```
+Get the MIC information for the specified product.
+<ParamTable
+  items={[
+    { name: 'product', type: 'char*', desc: 'Product name string' },
+    { name: 'info', type: 'struct MIC_Info*', desc: 'Pointer to the MIC_Info structure to store the retrieved information' },
+  ]}
+/>

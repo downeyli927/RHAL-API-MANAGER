@@ -6,243 +6,1149 @@ sidebar_position: 82
 
 RHAL_VFE_DPRX api
 
+## Custom Data Types
+### HAL_DPRX_DRM_EOTF_T 
+```bash
+typedef enum
+{
+    HAL_DPRX_DRM_EOTF_SDR_LUMINANCE_RANGE,
+    HAL_DPRX_DRM_EOTF_HDR_LUMINANCE_RANGE,
+    HAL_DPRX_DRM_EOTF_SMPTE_ST_2084,
+    HAL_DPRX_DRM_EOTF_HLG,
+    HAL_DPRX_DRM_EOTF_RESERVED_4,
+    HAL_DPRX_DRM_EOTF_RESERVED_5,
+    HAL_DPRX_DRM_EOTF_RESERVED_6,
+    HAL_DPRX_DRM_EOTF_RESERVED_7,
+    HAL_DPRX_DRM_EOTF_MAX,
+}HAL_DPRX_DRM_EOTF_T;
+```
+
+### HAL_DPRX_DRM_META_DESC_T
+```bash
+typedef enum
+{
+    HAL_DPRX_DRM_META_TYPE1,
+    HAL_DPRX_DRM_META_RESERVED1,
+    HAL_DPRX_DRM_META_RESERVED2,
+    HAL_DPRX_DRM_META_RESERVED3,
+    HAL_DPRX_DRM_META_RESERVED4,
+    HAL_DPRX_DRM_META_RESERVED5,
+    HAL_DPRX_DRM_META_RESERVED6,
+    HAL_DPRX_DRM_META_RESERVED7,
+}HAL_DPRX_DRM_META_DESC_T;
+```
+
+### HAL_VFE_DPRX_DRM_INFO_T
+```bash
+typedef struct{
+    UINT8 nVersion;
+    UINT8 nLength;
+    HAL_DPRX_DRM_EOTF_T eEOTFtype;
+    HAL_DPRX_DRM_META_DESC_T eMeta_Desc;
+    UINT16 display_primaries_x0;
+    UINT16 display_primaries_y0;
+    UINT16 display_primaries_x1;
+    UINT16 display_primaries_y1;
+    UINT16 display_primaries_x2;
+    UINT16 display_primaries_y2;
+    UINT16 white_point_x;
+    UINT16 white_point_y;
+    UINT16 max_display_mastering_luminance;
+    UINT16 min_display_mastering_luminance;
+    UINT16 maximum_content_light_level;
+    UINT16 maximum_frame_average_light_level;
+}HAL_VFE_DPRX_DRM_INFO_T;
+```
+
+### HAL_VFE_DPRX_PACKET_STATUS_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_PACKET_STATUS_NOT_RECEIVED,    /**< DPRX packet status */
+    HAL_VFE_DPRX_PACKET_STATUS_STOPPED,
+    HAL_VFE_DPRX_PACKET_STATUS_UPDATED,
+    HAL_VFE_DPRX_PACKET_STATUS_MAX
+} HAL_VFE_DPRX_PACKET_STATUS_T;
+```
+
+### HAL_VFE_DPRX_AVI_CSC_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_CSC_RGB,    /**< DPRX CSC info */
+    HAL_VFE_DPRX_AVI_CSC_YCBCR422,
+    HAL_VFE_DPRX_AVI_CSC_YCBCR444,
+    HAL_VFE_DPRX_AVI_CSC_FUTURE
+} HAL_VFE_DPRX_AVI_CSC_T;
+```
+
+### HAL_VFE_DPRX_AVI_ACTIVE_INFO_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_ACTIVE_INFO_INVALID,       /**< DPRX info */
+    HAL_VFE_DPRX_AVI_ACTIVE_INFO_VALID
+} HAL_VFE_DPRX_AVI_ACTIVE_INFO_T;
+```
+
+### HAL_VFE_DPRX_AVI_BAR_INFO_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_BAR_INFO_INVALID,          /**< DPRX info */
+    HAL_VFE_DPRX_AVI_BAR_INFO_VERTICALVALID,
+    HAL_VFE_DPRX_AVI_BAR_INFO_HORIZVALID,
+    HAL_VFE_DPRX_AVI_BAR_INFO_VERTHORIZVALID
+} HAL_VFE_DPRX_AVI_BAR_INFO_T;
+```
+
+### HAL_VFE_DPRX_AVI_SCAN_INFO_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_SCAN_INFO_NODATA,          /**< DPRX info */
+    HAL_VFE_DPRX_AVI_SCAN_INFO_OVERSCANNED,
+    HAL_VFE_DPRX_AVI_SCAN_INFO_UNDERSCANNED,
+    HAL_VFE_DPRX_AVI_SCAN_INFO_FUTURE
+} HAL_VFE_DPRX_AVI_SCAN_INFO_T;
+```
+
+### HAL_VFE_DPRX_AVI_COLORIMETRY_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_COLORIMETRY_NODATA,       /**< DPRX info */
+    HAL_VFE_DPRX_AVI_COLORIMETRY_SMPTE170,
+    HAL_VFE_DPRX_AVI_COLORIMETRY_ITU709,
+    HAL_VFE_DPRX_AVI_COLORIMETRY_FUTURE
+} HAL_VFE_DPRX_AVI_COLORIMETRY_T;
+```
+
+### HAL_VFE_DPRX_AVI_PICTURE_ARC_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_PICTURE_ARC_NODATA,        /**< DPRX info */
+    HAL_VFE_DPRX_AVI_PICTURE_ARC_4_3,
+    HAL_VFE_DPRX_AVI_PICTURE_ARC_16_9,
+    HAL_VFE_DPRX_AVI_PICTURE_ARC_FUTURE
+} HAL_VFE_DPRX_AVI_PICTURE_ARC_T;
+```
+
+### HAL_VFE_DPRX_AVI_ACTIVE_FORMAT_ARC_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_ACTIVE_FORMAT_ARC_PICTURE, /**< DPRX info */
+    HAL_VFE_DPRX_AVI_ACTIVE_FORMAT_ARC_4_3CENTER,
+    HAL_VFE_DPRX_AVI_ACTIVE_FORMAT_ARC_16_9CENTER,
+    HAL_VFE_DPRX_AVI_ACTIVE_FORMAT_ARC_14_9CENTER,
+    HAL_VFE_DPRX_AVI_ACTIVE_FORMAT_ARC_OTHER
+} HAL_VFE_DPRX_AVI_ACTIVE_FORMAT_ARC_T;
+```
+
+### HAL_VFE_DPRX_AVI_SCALING_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_SCALING_NOSCALING,     /**< DPRX info */
+    HAL_VFE_DPRX_AVI_SCALING_HSCALING,
+    HAL_VFE_DPRX_AVI_SCALING_VSCALING,
+    HAL_VFE_DPRX_AVI_SCALING_HVSCALING
+} HAL_VFE_DPRX_AVI_SCALING_T;
+```
+
+### HAL_VFE_DPRX_AVI_IT_CONTENT_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_IT_CONTENT_NODATA, /**< DPRX info */
+    HAL_VFE_DPRX_AVI_IT_CONTENT_ITCONTENT
+} HAL_VFE_DPRX_AVI_IT_CONTENT_T;
+```
+
+### HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_XVYCC601,
+    HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_XVYCC709,
+    HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_SYCC601, // add sYCC 601
+    HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_ADOBEYCC601, // add Adobe YCC 601
+    HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_ADOBERGB, // add Adobe RGB
+    HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_BT2020_YCCBCCRC, // add BT 2020 CL
+    HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_BT2020_RGBORYCBCR, // add BT 2020 NCL
+    HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_XVRESERED
+} HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_T;
+```
+
+### HAL_VFE_DPRX_AVI_RGB_QUANTIZATION_RANGE_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_RGB_QUANTIZATION_RANGE_DEFAULT,        /**< DPRX info */
+    HAL_VFE_DPRX_AVI_RGB_QUANTIZATION_RANGE_LIMITEDRANGE,
+    HAL_VFE_DPRX_AVI_RGB_QUANTIZATION_RANGE_FULLRANGE,
+    HAL_VFE_DPRX_AVI_RGB_QUANTIZATION_RANGE_RESERVED
+} HAL_VFE_DPRX_AVI_RGB_QUANTIZATION_RANGE_T;
+```
+
+### HAL_VFE_DPRX_AVI_YCC_QUANTIZATION_RANGE_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_YCC_QUANTIZATION_RANGE_LIMITEDRANGE, /**< DPRX info */
+    HAL_VFE_DPRX_AVI_YCC_QUANTIZATION_RANGE_FULLRANGE,
+    HAL_VFE_DPRX_AVI_YCC_QUANTIZATION_RANGE_RESERVED
+} HAL_VFE_DPRX_AVI_YCC_QUANTIZATION_RANGE_T;
+```
+### HAL_VFE_DPRX_AVI_CONTENT_TYPE_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_CONTENT_TYPE_GRAPHICS,
+    HAL_VFE_DPRX_AVI_CONTENT_TYPE_PHOTO,
+    HAL_VFE_DPRX_AVI_CONTENT_TYPE_CINEMA,
+    HAL_VFE_DPRX_AVI_CONTENT_TYPE_GAME,
+    HAL_VFE_DPRX_AVI_CONTENT_TYPE_MAX
+} HAL_VFE_DPRX_AVI_CONTENT_TYPE_T;
+```
+
+### HAL_VFE_DPRX_AVI_ADDITIONAL_COLORIMETRY_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AVI_ADDITIONAL_COLORIMETRY_DCI_P3_D65,
+    HAL_VFE_DPRX_AVI_ADDITIONAL_COLORIMETRY_DCI_P3_THEATER,
+    HAL_VFE_DPRX_AVI_ADDITIONAL_COLORIMETRY_RESERVED,
+    HAL_VFE_DPRX_AVI_ADDITIONAL_COLORIMETRY_MAX
+} HAL_VFE_DPRX_AVI_ADDITIONAL_COLORIMETRY_T;
+```
+
+### HAL_VFE_DPRX_IN_PACKET_T
+```bash
+typedef struct
+{
+    UINT8 type;            /**< packet type */
+    UINT8 version;         /**< packet version */
+    UINT8 length;          /**< packet length */
+} HAL_VFE_DPRX_IN_PACKET_T;
+```
+
+### HAL_VFE_DPRX_AVI_INFO_T
+```bash
+typedef struct
+{
+    HAL_VFE_DPRX_AVI_CSC_T ePixelEncoding;          /**< DPRX info */
+
+    HAL_VFE_DPRX_AVI_ACTIVE_INFO_T eActiveInfo;     /**< DPRX info */   /* A0 */
+    HAL_VFE_DPRX_AVI_BAR_INFO_T   eBarInfo;         /**< DPRX info */   /* B1B0 */
+    HAL_VFE_DPRX_AVI_SCAN_INFO_T   eScanInfo;           /**< DPRX info */   /* S1S0 */
+
+    HAL_VFE_DPRX_AVI_COLORIMETRY_T eColorimetry;        /**< DPRX info */   /* C1C0 */
+
+    HAL_VFE_DPRX_AVI_PICTURE_ARC_T ePictureAspectRatio; /**< DPRX info */   /* M1M0 */
+
+    HAL_VFE_DPRX_AVI_ACTIVE_FORMAT_ARC_T eActiveFormatAspectRatio;/**< DPRX info */ /* R3R0 */
+
+    HAL_VFE_DPRX_AVI_SCALING_T eScaling;                        /**< DPRX info */   /* SC1SC0 */
+
+    UINT8 VideoIdCode;                              /**< DPRX info */   /* VICn */
+
+    UINT8 PixelRepeat;                              /**< DPRX info */
+
+    HAL_VFE_DPRX_AVI_IT_CONTENT_T eITContent;           /**< DPRX info */   /*ITC */
+
+    HAL_VFE_DPRX_AVI_EXT_COLORIMETRY_T eExtendedColorimetry;    /**< DPRX info */   /* EC2EC1EC0 */
+
+    HAL_VFE_DPRX_AVI_RGB_QUANTIZATION_RANGE_T eRGBQuantizationRange;    /**< DPRX info */   /* Q1Q0 */
+
+    HAL_VFE_DPRX_AVI_YCC_QUANTIZATION_RANGE_T eYCCQuantizationRange;    /**< DPRX info */   /* YQ1YQ0 */
+
+    HAL_VFE_DPRX_AVI_CONTENT_TYPE_T eContentType;           /**< DPRX info */   /* Contents Type */
+
+    /* bar info */
+    UINT16 TopBarEndLineNumber;             /**< DPRX info */
+    UINT16 BottomBarStartLineNumber;        /**< DPRX info */
+    UINT16 LeftBarEndPixelNumber;           /**< DPRX info */
+    UINT16 RightBarEndPixelNumber;          /**< DPRX info */
+
+    HAL_VFE_DPRX_AVI_ADDITIONAL_COLORIMETRY_T eAdditionalColorimetry;           /**< DPRX info */ /*ACE3ACE0*/
+
+    UINT8 f14;    /**< DPRX info */  /*F143F140*/
+
+    HAL_VFE_DPRX_PACKET_STATUS_T packetStatus;  /**< DPRX info */
+
+    HAL_VFE_DPRX_IN_PACKET_T packet;                    /**< DPRX info */
+} HAL_VFE_DPRX_AVI_INFO_T;
+```
+
+### HAL_VFE_DPRX_PORT_TYPE_E
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_PORT_TYPE_NONE = 0,
+    HAL_VFE_DPRX_PORT_TYPE_DP = 1,
+    HAL_VFE_DPRX_PORT_TYPE_MDP = 2,
+    HAL_VFE_DPRX_PORT_TYPE_TYPEC = 3,
+    HAL_VFE_DPRX_PORT_TYPE_MAX,
+}HAL_VFE_DPRX_PORT_TYPE_E;
+```
+
+### HAL_VFE_DPRX_PORT_LANE_CNT_E
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_PORT_LANE_CNT_NONE = 0,
+    HAL_VFE_DPRX_PORT_LANE_CNT_1 = 1,
+    HAL_VFE_DPRX_PORT_LANE_CNT_2 = 2,
+    HAL_VFE_DPRX_PORT_LANE_CNT_4 = 4,
+}HAL_VFE_DPRX_PORT_LANE_CNT_E;
+```
+
+### HAL_VFE_DPRX_PORT_LINK_RATE_E
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_PORT_LINK_RATE_RBR = 0,
+    HAL_VFE_DPRX_PORT_LINK_RATE_HBR1,
+    HAL_VFE_DPRX_PORT_LINK_RATE_HBR2,
+    HAL_VFE_DPRX_PORT_LINK_RATE_HBR3,
+    HAL_VFE_DPRX_PORT_LINK_RATE_UHBR10,
+    HAL_VFE_DPRX_PORT_LINK_RATE_UHBR13P5,
+    HAL_VFE_DPRX_PORT_LINK_RATE_UHBR20,
+    HAL_VFE_DPRX_PORT_LINK_RATE_MAX,
+}HAL_VFE_DPRX_PORT_LINK_RATE_E;
+```
+
+### HAL_VFE_DPRX_PORT_CAP_E
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_PORT_CAP_DSC_1P3 = 0,
+    HAL_VFE_DPRX_PORT_CAP_FEC,
+    HAL_VFE_DPRX_PORT_CAP_MAX,
+}HAL_VFE_DPRX_PORT_CAP_E;
+```
+
+### HAL_VFE_DPRX_PORT_TYPE_HUB_ID_E
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_PORT_TYPE_HUB_ID_0 = 0,
+    HAL_VFE_DPRX_PORT_TYPE_HUB_ID_1,
+    HAL_VFE_DPRX_PORT_TYPE_HUB_ID_2,
+    HAL_VFE_DPRX_PORT_TYPE_HUB_ID_3,
+    HAL_VFE_DPRX_PORT_TYPE_HUB_ID_MAX,
+}HAL_VFE_DPRX_PORT_TYPE_HUB_ID_E;
+```
+
+### HAL_VFE_DPRX_PORT_CAP_T
+```bash
+typedef struct
+{
+    HAL_VFE_DPRX_PORT_TYPE_E      type;
+    HAL_VFE_DPRX_PORT_LANE_CNT_E  max_lane_cnt;
+    HAL_VFE_DPRX_PORT_TYPE_HUB_ID_E hub_id;
+    UINT32                        link_rate_mask : 16;   // bit mask with HAL_VFE_DPRX_PORT_LINK_RATE_XXX_MASK
+    UINT32                        capablity_mask : 16;   // bit mask with HAL_VFE_DPRX_PORT_CAP_XXX_MASK
+
+} HAL_VFE_DPRX_PORT_CAP_T;
+```
+
+### HAL_VFE_DPRX_PORT_LANE_STATUS_T
+```bash
+typedef struct
+{
+    UINT32 ch_valid:1;
+    UINT32 ch_lock:1;
+    UINT32 reserved:14;
+    UINT32 error_cnt:16;
+} HAL_VFE_DPRX_PORT_LANE_STATUS_T;
+```
+
+### HAL_VFE_DPRX_PORT_CABLE_CFG_E
+```bash
+//--------------------------------------------------------
+// Type C DP Cable Type
+//--------------------------------------------------------
+typedef enum
+{
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_NONE = 0x0,
+    HAL_VFE_DPRX_CABLE_CFG_DP         = 0x1,
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_CFG_A = 0xA,
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_CFG_B = 0xB,
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_CFG_C = 0xC,
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_CFG_D = 0xD,
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_CFG_E = 0xE,
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_CFG_A_FLIP = 0x8A,
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_CFG_B_FLIP = 0x8B,
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_CFG_C_FLIP = 0x8C,
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_CFG_D_FLIP = 0x8D,
+    HAL_VFE_DPRX_CABLE_CFG_TYPEC_CFG_E_FLIP = 0x8E,
+}HAL_VFE_DPRX_PORT_CABLE_CFG_E;
+```
+
+### HAL_VFE_DPRX_PORT_LINK_STATUS_T
+```bash
+typedef struct
+{
+    HAL_VFE_DPRX_PORT_LANE_CNT_E    lane_mode;
+    HAL_VFE_DPRX_PORT_LINK_RATE_E   link_rate;
+    UINT32                          ch_aligned:1;
+    UINT32                          reserved:31;
+    HAL_VFE_DPRX_PORT_LANE_STATUS_T lane_status[4];
+    HAL_VFE_DPRX_PORT_CABLE_CFG_E   cable_cfg;
+} HAL_VFE_DPRX_PORT_LINK_STATUS_T;
+```
+
+### HAL_VFE_DPRX_PORT_SDP_DATA_T
+```bash
+typedef struct
+{
+    // SDP data
+    UINT8                           hb[4];
+    UINT8                           pb[32];
+    // extra information
+    UINT32                          seq_num;
+    UINT32                          time_stamp;
+}HAL_VFE_DPRX_PORT_SDP_DATA_T;
+```
+
+### HAL_VFE_DPRX_SDP_DATA_TYPE_E
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_SDP_INFOFRAME_VSC=0,
+    HAL_VFE_DPRX_SDP_INFOFRAME_HDR,
+    HAL_VFE_DPRX_SDP_INFOFRAME_SPD,
+    HAL_VFE_DPRX_SDP_INFOFRAME_DVS,
+    HAL_VFE_DPRX_SDP_INFOFRAME_ADP_SYNC,
+    HAL_VFE_DPRX_SDP_INFOFRAME_VSC_EXT_VESA,
+    HAL_VFE_DPRX_SDP_INFOFRAME_AVI,
+} HAL_VFE_DPRX_SDP_DATA_TYPE_E;
+```
+
+### HAL_VFE_DPRX_STREAM_TYPE_E
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_STREAM_TYPE_UNKNOWN =0,
+    HAL_VFE_DPRX_STREAM_TYPE_AUDIO_ONLY,        // DP Stram is audio only
+    HAL_VFE_DPRX_STREAM_TYPE_VIDEO_ONLY,        // DP Stram is video only
+    HAL_VFE_DPRX_STREAM_TYPE_AUDIO_VIDEO,       // DP Stram has audio and video
+    HAL_VFE_DPRX_STREAM_TYPE_MAX,
+} HAL_VFE_DPRX_STREAM_TYPE_E;
+```
+
+### HAL_VFE_DPRX_COLOR_DEPTH_T
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_COLOR_DEPTH_6B =0,
+    HAL_VFE_DPRX_COLOR_DEPTH_8B,
+    HAL_VFE_DPRX_COLOR_DEPTH_10B,
+    HAL_VFE_DPRX_COLOR_DEPTH_12B,
+    HAL_VFE_DPRX_COLOR_DEPTH_16B,
+} HAL_VFE_DPRX_COLOR_DEPTH_T;
+```
+
+### HAL_VFE_DP_WAKEUP_MODE_E
+```bash
+typedef enum
+{
+    HAL_VFE_DP_WAKEUP_MODE_NO_WAKEUP = 0,
+    HAL_VFE_DP_WAKEUP_MODE_BY_AUX,
+    HAL_VFE_DP_WAKEUP_MODE_BY_SIGNAL,
+    HAL_VFE_DP_WAKEUP_MODE_BY_AUX_OR_SIGNAL,
+}HAL_VFE_DP_WAKEUP_MODE_E;
+```
+
+### HAL_VFE_DP_HDCP_VER_E
+```bash
+typedef enum
+{
+    HAL_VFE_DP_HDCP_VER_HDCP13 = 0,
+    HAL_VFE_DP_HDCP_VER_HDCP22,
+    HAL_VFE_DP_HDCP_VER_HDCP23,
+}HAL_VFE_DP_HDCP_VER_E;
+```
+
+### HAL_VFE_DP_HDCP_CAPABILITY_E
+```bash
+typedef enum
+{
+    HAL_VFE_DP_HDCP_CAPBILITY_HDCP13 = (0x1 << HAL_VFE_DP_HDCP_VER_HDCP13),
+    HAL_VFE_DP_HDCP_CAPBILITY_HDCP22 = (0x1 << HAL_VFE_DP_HDCP_VER_HDCP22),
+    HAL_VFE_DP_HDCP_CAPBILITY_HDCP23 = (0x1 << HAL_VFE_DP_HDCP_VER_HDCP23),
+    HAL_VFE_DP_HDCP_CAPBILITY_HDCP_REPEATER = (0x1 << 7),
+}HAL_VFE_DP_HDCP_CAPABILITY_E;
+```
+
+### HAL_VFE_DP_HDCP_CAPABILITY_T
+```bash
+typedef UINT32       HAL_VFE_DP_HDCP_CAPABILITY_T;   // bit mask of HAL_VFE_DP_HDCP_CAPABILITY_E
+```
+
+### HAL_VFE_DP_HDCP_MODE
+```bash
+typedef enum
+{
+    HAL_VFE_DP_HDCP_MODE_OFF = 0,
+    HAL_VFE_DP_HDCP_MODE_HDCP_1P3,
+    HAL_VFE_DP_HDCP_MODE_HDCP_2P2,
+    HAL_VFE_DP_HDCP_MODE_HDCP_2P3,
+}HAL_VFE_DP_HDCP_MODE;
+```
+
+### HAL_VFE_DP_HDCP_STATE 
+```bash
+typedef enum
+{
+    HAL_VFE_DP_HDCP_STATE_IDEL = 0,
+    HAL_VFE_DP_HDCP_STATE_AUTH_START,
+    HAL_VFE_DP_HDCP_STATE_AUTH_DONE,
+}HAL_VFE_DP_HDCP_STATE;
+```
+
+### HAL_VFE_DP_DRR_MODE
+```bash
+typedef enum
+{
+    HAL_VFE_DP_DRR_MODE_FRR = 0,       // FIX Refresh Rate
+    HAL_VFE_DP_DRR_MODE_AMD_FREE_SYNC, // AMD Free Sync
+    HAL_VFE_DP_DRR_MODE_ADAPTIVE_SYNC,  // DP Adaptive Sync
+    HAL_VFE_DP_DRR_MODE_UNKNWON,
+}HAL_VFE_DP_DRR_MODE;
+```
+
+### HAL_VFE_DP_COLOR_SPACE_E
+```bash
+typedef enum
+{
+    HAL_VFE_DP_COLOR_SPACE_RGB = 0,
+    HAL_VFE_DP_COLOR_SPACE_YUV444,
+    HAL_VFE_DP_COLOR_SPACE_YUV422,
+    HAL_VFE_DP_COLOR_SPACE_YUV420,
+    HAL_VFE_DP_COLOR_SPACE_YONLY,
+    HAL_VFE_DP_COLOR_SPACE_UNKNOWN,
+}HAL_VFE_DP_COLOR_SPACE_E;
+```
+
+### HAL_VFE_DP_COLOR_DEPTH_E
+```bash
+typedef enum
+{
+    HAL_VFE_DP_COLOR_DEPTH_6B = 6,
+    HAL_VFE_DP_COLOR_DEPTH_8B = 8,
+    HAL_VFE_DP_COLOR_DEPTH_10B = 10,
+    HAL_VFE_DP_COLOR_DEPTH_12B = 12,
+    HAL_VFE_DP_COLOR_DEPTH_16B = 16,
+    HAL_VFE_DP_COLOR_DEPTH_UNKNOWN = 0,
+}HAL_VFE_DP_COLOR_DEPTH_E;
+```
+
+### HAL_VFE_DP_COLORIMETRY_E
+```bash
+typedef enum
+{
+    HAL_VFE_DP_COLORIMETRY_LEGACY_RGB = 0,
+    HAL_VFE_DP_COLORIMETRY_SRGB,
+    HAL_VFE_DP_COLORIMETRY_XRGB,
+    HAL_VFE_DP_COLORIMETRY_SCRGB,
+    HAL_VFE_DP_COLORIMETRY_ADOBE_RGB,
+    HAL_VFE_DP_COLORIMETRY_DCI_P3,
+    HAL_VFE_DP_COLORIMETRY_CUSTOM_COLOR_PROFILE,
+    HAL_VFE_DP_COLORIMETRY_BT_2020_RGB,
+    HAL_VFE_DP_COLORIMETRY_BT_601,
+    HAL_VFE_DP_COLORIMETRY_BT_709,
+    HAL_VFE_DP_COLORIMETRY_XV_YCC_601,
+    HAL_VFE_DP_COLORIMETRY_XV_YCC_709,
+    HAL_VFE_DP_COLORIMETRY_S_YCC_601,
+    HAL_VFE_DP_COLORIMETRY_OP_YCC_601,
+    HAL_VFE_DP_COLORIMETRY_BT_2020_YCCBCCRC,
+    HAL_VFE_DP_COLORIMETRY_BT_2020_YCBCR,
+    HAL_VFE_DP_COLORIMETRY_DICOM_PS314,
+    HAL_VFE_DP_COLORIMETRY_YONLY,
+    HAL_VFE_DP_COLORIMETRY_RAW,
+    HAL_VFE_DP_COLORIMETRY_UNKNOWN,
+}HAL_VFE_DP_COLORIMETRY_E;
+```
+
+### HAL_VFE_DP_DYNAMIC_RANGE_E
+```bash
+typedef enum
+{
+    HAL_VFE_DP_DYNAMIC_RANGE_VESA =0,    //full range
+    HAL_VFE_DP_DYNAMIC_RANGE_CTA,        //limited range
+}HAL_VFE_DP_DYNAMIC_RANGE_E;
+```
+
+### HAL_VFE_DP_CONTENT_TYPE_E
+```bash
+typedef enum
+{
+    HAL_VFE_DP_CONTENT_TYPE_NOT_DEFINED =0,
+    HAL_VFE_DP_CONTENT_TYPE_GRAPHICS,
+    HAL_VFE_DP_CONTENT_TYPE_PHOTO,
+    HAL_VFE_DP_CONTENT_TYPE_VIDEO,
+    HAL_VFE_DP_CONTENT_TYPE_GAME,
+}HAL_VFE_DP_CONTENT_TYPE_E;
+```
+
+### HAL_VFE_DPRX_HDCP_STATUS_T
+```bash
+typedef struct
+{
+    HAL_VFE_DP_HDCP_MODE    mode;       // current HDCP mode
+    HAL_VFE_DP_HDCP_STATE   state;      // hdcp state
+
+    struct
+    {
+        UINT8   aksv[HAL_VFE_HDCP1X_KSV_INFO_LEN];
+        UINT8   bksv[HAL_VFE_HDCP1X_KSV_INFO_LEN];
+    }hdcp1x;
+
+    struct
+    {
+        UINT8   receiverid[HAL_VFE_HDCP2X_RECEIVER_ID_LEN];
+    }hdcp2x;
+
+}HAL_VFE_DPRX_HDCP_STATUS_T;
+```
+
+### HAL_VFE_DPRX_RECT_T
+```bash
+/**
+ * DPRX Rect.
+*/
+typedef struct
+{
+    UINT16      x;  /**< horizontal Start Position in pixel [0,].*/
+    UINT16      y;  /**< vertical   Start Position in pixel [0,].*/
+    UINT16      w;  /**< horizontal Size(Width)    in pixel [0,].*/
+    UINT16      h;  /**< vertical   Size(Height)   in pixel [0,].*/
+} HAL_VFE_DPRX_RECT_T;
+```
+
+### HAL_VFE_DPRX_TIMING_INFO_T
+```bash
+/**
+ * DPRX Timing Information.
+*/
+typedef struct
+{
+    UINT16              hFreq;   /* Unit : Hz */
+    UINT16              vFreq;   /* Unit : 0.01Hz */
+    UINT16              hTotal;  /**< ... */
+    UINT16              vTotal;  /**< ... */
+    UINT16              hPorch;  /**< ... */
+    UINT16              vPorch;  /**< ... */
+    HAL_VFE_DPRX_RECT_T active; /**< ... */
+    UINT16              scanType;    /**< ... */
+    UINT8               mode;        /**< update by TV006 */
+    UINT8               isDolbyHDR;
+    UINT8               isALLM;
+    HAL_VFE_DP_DRR_MODE drrMode;
+    UINT32              drrVFreqHzX1000; /*(unit: 0.001Hz) only valid when drrMode != DP_DRR_MODE_FRR*/
+    UINT8               pixel_mode;
+    #define DPRX_OUT_PIXEL_MODE_1P   1
+    #define DPRX_OUT_PIXEL_MODE_2P   2
+    #define DPRX_OUT_PIXEL_MODE_4P   4
+    UINT32               ext_flags;      // provide extra info for the video timing (bit mask of HAL_VFE_TIMING_EXT_FLAGS)
+} HAL_VFE_DPRX_TIMING_INFO_T;
+```
+
+### DPRX_MAIN_FSM_STATE_T
+```bash
+typedef enum {
+    MAIN_FSM_DPRX_STATE_INIT = 0,
+    MAIN_FSM_DPRX_STATE_DISCONNECT_VSC,
+    MAIN_FSM_DPRX_STATE_DETECT,
+    MAIN_FSM_DPRX_STATE_DISPLAY_ON,
+} DPRX_MAIN_FSM_STATE_T;
+```
+
+### HAL_VFE_DP_PIXEL_ENCODING_FORMAT_T
+```bash
+typedef struct
+{
+    HAL_VFE_DP_COLOR_SPACE_E  color_space;
+    HAL_VFE_DP_COLOR_DEPTH_E  color_depth;
+    HAL_VFE_DP_COLORIMETRY_E  colorimetry;
+    HAL_VFE_DP_DYNAMIC_RANGE_E  dynamic_range;
+    HAL_VFE_DP_CONTENT_TYPE_E  content_type;
+}HAL_VFE_DP_PIXEL_ENCODING_FORMAT_T;
+```
+
+### HAL_VFE_DPRX_AUDIO_CODING_TYPE
+```bash
+typedef enum
+{
+    HAL_VFE_DPRX_AUDIO_CODING_NO_AUDIO = 0,
+    HAL_VFE_DPRX_AUDIO_CODING_LPCM,
+    HAL_VFE_DPRX_AUDIO_CODING_UNKNOWN,
+}HAL_VFE_DPRX_AUDIO_CODING_TYPE;
+```
+
+### HAL_VFE_DPRX_AUDIO_STATUS_T
+```bash
+typedef struct
+{
+    HAL_VFE_DPRX_AUDIO_CODING_TYPE coding_type;
+    UINT16   ch_num : 8;
+    UINT16   reserved : 8;
+    UINT32   sampling_frequency_khz_x100;
+}HAL_VFE_DPRX_AUDIO_STATUS_T;
+```
+
+### Constants 
+```bash
+#define HAL_VFE_DPRX_PORT_LINK_RATE_MASK(x)       (1<<x)
+#define HAL_VFE_DPRX_PORT_LINK_RATE_RBR_MASK      HAL_VFE_DPRX_PORT_LINK_RATE_MASK(HAL_VFE_DPRX_PORT_LINK_RATE_RBR)
+#define HAL_VFE_DPRX_PORT_LINK_RATE_HBR1_MASK     HAL_VFE_DPRX_PORT_LINK_RATE_MASK(HAL_VFE_DPRX_PORT_LINK_RATE_HBR1)
+#define HAL_VFE_DPRX_PORT_LINK_RATE_HBR2_MASK     HAL_VFE_DPRX_PORT_LINK_RATE_MASK(HAL_VFE_DPRX_PORT_LINK_RATE_HBR2)
+#define HAL_VFE_DPRX_PORT_LINK_RATE_HBR3_MASK     HAL_VFE_DPRX_PORT_LINK_RATE_MASK(HAL_VFE_DPRX_PORT_LINK_RATE_HBR3)
+#define HAL_VFE_DPRX_PORT_LINK_RATE_UHBR10_MASK   HAL_VFE_DPRX_PORT_LINK_RATE_MASK(HAL_VFE_DPRX_PORT_LINK_RATE_UHBR10)
+#define HAL_VFE_DPRX_PORT_LINK_RATE_UHBR13P5_MASK HAL_VFE_DPRX_PORT_LINK_RATE_MASK(HAL_VFE_DPRX_PORT_LINK_RATE_UHBR13P5)
+#define HAL_VFE_DPRX_PORT_LINK_RATE_UHBR20_MASK   HAL_VFE_DPRX_PORT_LINK_RATE_MASK(HAL_VFE_DPRX_PORT_LINK_RATE_UHBR20)
+#define HAL_VFE_DPRX_PORT_CAP_MASK(x)           (1<<x)
+#define HAL_VFE_DPRX_PORT_CAP_DSC_1P3_MASK      HAL_VFE_DPRX_PORT_CAP_MASK(HAL_VFE_DPRX_PORT_CAP_DSC_1P3)
+#define HAL_VFE_DPRX_PORT_CAP_FEC_MASK          HAL_VFE_DPRX_PORT_CAP_MASK(HAL_VFE_DPRX_PORT_CAP_FEC)
+#define HAL_VFE_DPRX_HDCP_VERSION_NONE          HAL_VFE_HDCP_VERSION_NONE
+#define HAL_VFE_DPRX_HDCP_VERSION_1x            HAL_VFE_HDCP_VERSION_1x
+#define HAL_VFE_DPRX_HDCP_VERSION_2x            HAL_VFE_HDCP_VERSION_2x
+#define HAL_VFE_HDCP1X_KSV_INFO_LEN     5
+#define HAL_VFE_HDCP2X_RECEIVER_ID_LEN  5
+#define HAL_VFE_DPRX_IS_TIMING_UNDISPLAYABLE(timing_info)        (GET_TIMING_UNSUPPORT_FLAG((timing_info).ext_flags))
+#define HAL_VFE_DPRX_IS_TIMING_BYPASSABLE(timing_info)           (GET_TIMING_BYPASSABLE_FLAG((timing_info).ext_flags))
+#define HAL_VFE_DPRX_IS_TIMING_DSC_RAW_STREAM(timing_info)       (GET_TIMING_DSC_RAW_STREAM_FLAG((timing_info).ext_flags))
+#define HAL_DPRX_APPLY_EDID_IMMEDATELY  0x80
+```
 
 ## Function Declaration
 ### RHAL_VFE_DPRX_Initialize
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Initialize(void);
 ```
-
+Init DPRX VFE
 
 ### RHAL_VFE_DPRX_Uninitialize
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Uninitialize(void);
 ```
-
+Uninit DPRX VFE
 
 ### RHAL_VFE_DPRX_Open
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Open(void);
 ```
-
+Open DPRX VFE
 
 ### RHAL_VFE_DPRX_Close
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Close(void);
 ```
-
+Close DPRX VFE
 
 ### RHAL_VFE_DPRX_Connect
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Connect(UINT8 port);
 ```
-
+Connect a DPRX VFE to Display Path
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port id' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_Disconnect
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Disconnect(UINT8 port);
 ```
-
+Disconnect a DPRX VFE from Display Path
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port id' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_SetWakeupMode
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_SetWakeupMode(HAL_VFE_DP_WAKEUP_MODE_E setMode);
 ```
-
+Set Wakeup mode
+<ParamTable
+  items={[
+    { name: 'setMode', type: 'HAL_VFE_DP_WAKEUP_MODE_E', desc: 'Wakeup mode' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetRxPortCnt
 ```bash
 UINT8 RHAL_VFE_DPRX_GetRxPortCnt(void);
 ```
-
+Get Number of DPRX Port
 
 ### RHAL_VFE_DPRX_GetPortCapability
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetPortCapability(UINT8 port, HAL_VFE_DPRX_PORT_CAP_T*pCap);
 ```
-
+Get DPRX Port Capability
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port id' },
+    { name: 'pCap', type: 'HAL_VFE_DPRX_PORT_CAP_T*', desc: 'DPRX Port Capability' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetLinkStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetLinkStatus(UINT8 port, HAL_VFE_DPRX_PORT_LINK_STATUS_T*pStatus);
 ```
-
+Get DPRX Port Link Status
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port id' },
+    { name: 'pStatus', type: 'HAL_VFE_DPRX_PORT_LINK_STATUS_T*', desc: 'DPRX Port Linux status' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetSdpData
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetSdpData(UINT8 port, HAL_VFE_DPRX_SDP_DATA_TYPE_E type, HAL_VFE_DPRX_PORT_SDP_DATA_T*pSdp);
 ```
-
+Get DPRX Port sdp data by type
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port id' },
+    { name: 'type', type: 'HAL_VFE_DPRX_SDP_DATA_TYPE_E', desc: 'sdp type example:KADP_VFE_DPRX_PORT_SDP_INFOFRAME_SPD' },
+    { name: 'pSdp', type: 'HAL_VFE_DPRX_PORT_SDP_DATA_T*', desc: 'sdp data output' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetStreamType
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetStreamType(UINT8 port, HAL_VFE_DPRX_STREAM_TYPE_E*pType);
 ```
-
+Get Stream Type of a DPRX port
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port id' },
+    { name: 'pType', type: 'HAL_VFE_DPRX_STREAM_TYPE_E*', desc: 'Stream Type output' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetFastSwitchSupport
 ```bash
 UINT8 RHAL_VFE_DPRX_GetFastSwitchSupport(void);
 ```
-
+Get Is DPRX Support Fast Switch
 
 ### RHAL_VFE_DPRX_GetConnectionState
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetConnectionState(UINT8 port, UINT8*pData);
 ```
+Get Cable Connection Status
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port id' },
+    { name: 'pData', type: 'UINT8*', desc: 'connect state output' },
+  ]}
+/>
+:::tip[pData]
 
+0 : cable disconnect<br />
+others : cable connected
+
+:::
 
 ### RHAL_VFE_DPRX_EnableHPD
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_EnableHPD(void);
 ```
-
+Enable HPD of all DPRX Ports
 
 ### RHAL_VFE_DPRX_DisableHPD
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_DisableHPD(void);
 ```
-
+Disable HPD of all DPRX Ports
 
 ### RHAL_VFE_DPRX_SetHotPlug
 ```bash
 UINT8 RHAL_VFE_DPRX_SetHotPlug(UINT8 port, UINT8 hpd);
 ```
-
+Set HPD of a DPRX Ports
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port id' },
+    { name: 'hpd', type: 'UINT8', desc: <> 0 : <code>HPD low</code>, others : <code>HPD High</code> </> },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_ReadEDID
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_ReadEDID(UINT8 port, UINT8*pData, UINT16 Len);
 ```
-
+Read EDID from a given DPRX Port
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port id' },
+    { name: 'pData', type: 'UINT8*', desc: 'EDID data output' },
+    { name: 'Len', type: 'UINT16', desc: 'Number of Bytes to be read' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_WriteEDID
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_WriteEDID(UINT8 port, UINT8*pData, UINT16 Len, UINT32 Flags);
 ```
-
+Write EDID to a given DPRX Port
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port id' },
+    { name: 'pData', type: 'UINT8*', desc: 'EDID data to be written' },
+    { name: 'Len', type: 'UINT16', desc: 'Number of Bytes to be written' },
+    { name: 'Flags', type: 'UINT32', desc: 'control flag' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetPortAVIInfo
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetPortAVIInfo(UINT8 port, HAL_VFE_DPRX_AVI_INFO_T*pAvi);
 ```
-
+Get AVI Information of DPRX VFE
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port id' },
+    { name: 'pAvi', type: 'HAL_VFE_DPRX_AVI_INFO_T*', desc: 'AVI Information structure' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetDRMInfo
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetDRMInfo(UINT8 port, HAL_VFE_DPRX_DRM_INFO_T*pstDRM);
 ```
-
+Get DRM Information of DPRX VFE
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port id' },
+    { name: 'pstDRM', type: 'HAL_VFE_DPRX_DRM_INFO_T*', desc: 'DRM Information structure' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetHDCPCapability
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetHDCPCapability(HAL_VFE_DP_HDCP_CAPABILITY_T*pCability);
 ```
-
+Get HDCP Capability of DPRX VFE
+<ParamTable
+  items={[
+    { name: 'pCability', type: 'HAL_VFE_DP_HDCP_CAPABILITY_T*', desc: 'capability output' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_WriteHDCPKey
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_WriteHDCPKey(HAL_HDCP_KEY*pKey, UINT32 Flag);
 ```
-
+Wite HDCP 1.3/2.3 Key
+<ParamTable
+  items={[
+    { name: 'pKey', type: 'HAL_HDCP_KEY*', desc: 'HDCP Key' },
+    { name: 'Flag', type: 'UINT32', desc: 'control flags' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetHDCPStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetHDCPStatus(UINT8 port, HAL_VFE_DPRX_HDCP_STATUS_T*pStatus);
 ```
-
+Get HDCP Status of DPRX VFE
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'target DPRX chaneel' },
+    { name: 'pStatus', type: 'HAL_VFE_DPRX_HDCP_STATUS_T*', desc: 'HDCP status' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetPortTimingInfo
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetPortTimingInfo(UINT8 port, HAL_VFE_DPRX_TIMING_INFO_T*pInfo);
 ```
-
+Get Port Timing of DPRX port
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port number' },
+    { name: 'pInfo', type: 'HAL_VFE_DPRX_TIMING_INFO_T*', desc: 'timing info output' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_Get_PixelEncodingFormat
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_Get_PixelEncodingFormat(UINT8 port, HAL_VFE_DP_PIXEL_ENCODING_FORMAT_T*pInfo);
 ```
-
+Get pixel encoding format of currenct DPRX port
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port number' },
+    { name: 'pInfo', type: 'HAL_VFE_DP_PIXEL_ENCODING_FORMAT_T*', desc: 'pointer of pixel encoding format' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetAudioCodingType
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetAudioCodingType(UINT8 port, UINT8*pCodingType);
 ```
-
+Get Audio Coding Type
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port number' },
+    { name: 'pCodingType', type: 'UINT8*', desc: 'Audio Coding Type' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_SetVRREnable
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_SetVRREnable(UINT8 port, UINT8 enable);
 ```
-
+set vrr enable
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port number' },
+    { name: 'enable', type: 'UINT8', desc: 'vrr enable/disable' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_SetDSCEnable
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_SetDSCEnable(UINT8 port, UINT8 enable);
 ```
-
+set DSC enable
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port number' },
+    { name: 'enable', type: 'UINT8', desc: 'DSC enable/disable' },
+  ]}
+/>
 
 ### RHAL_QS_VFE_DPRX_Initialize
 ```bash
 DTV_STATUS_T RHAL_QS_VFE_DPRX_Initialize(void);
 ```
-
+DPRX quick show initialize
 
 ### RHAL_VFE_DPRX_GetClockStatus
 ```bash
 BOOLEAN RHAL_VFE_DPRX_GetClockStatus(UINT8 port);
 ```
-
+Get clock status of a DPRX Port
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DPRX port' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_IsHDCP22Supported
 ```bash
 UINT8 RHAL_VFE_DPRX_IsHDCP22Supported(UINT8 port);
 ```
-
+Does the specified DPRX Port support HDCP22
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'target HDMI chaneel' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetHDCPVersion
 ```bash
 HAL_VFE_HDCP_VERSION RHAL_VFE_DPRX_GetHDCPVersion(UINT8 port);
 ```
-
+Get HDCP Version of a DPRX Port
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'target HDMI chaneel' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetSourceKSVData
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetSourceKSVData(UINT8 port, UINT8*pKSVData);
 ```
-
+Get HDCP 1.3 KSV Data of the connected DPRX source
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'target DPRX chaneel' },
+    { name: 'pKSVData', type: 'UINT8', desc: 'KSV data' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetHDCPReceiverId
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetHDCPReceiverId(UINT8*hdcp_2p2_ReceiverId);
 ```
-
+Get DPRX's HDCP22 Receiver ID
+<ParamTable
+  items={[
+    { name: 'hdcp_2p2_ReceiverId', type: 'UINT8*', desc: '40 bits Receiver ID' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_SetHPDLowDelay
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_SetHPDLowDelay(UINT32 delay);
 ```
-
+Set HPD Low Delay
+<ParamTable
+  items={[
+    { name: 'delay', type: 'UINT32', desc: 'number os ms for HPD low' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetCurrentDRRVFrequency
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetCurrentDRRVFrequency(UINT8 port, UINT16*pVFreq_x100);
 ```
-
+Get VRR V Frequency of a given DPRX port
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'port number' },
+    { name: 'pVFreq_x100', type: 'UINT16*', desc: 'DRR Vfreq output' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetAVMute
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetAVMute(BOOLEAN*value);
 ```
-
+Get AV Mute Status of current DPRX Port
+<ParamTable
+  items={[
+    { name: 'value', type: 'BOOLEAN*', desc: 'AV mute value' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetAudioStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetAudioStatus(UINT8 port, HAL_VFE_DPRX_AUDIO_STATUS_T*pStatus);
 ```
-
+Get Audio Status
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'DP Port' },
+    { name: 'pStatus', type: 'HAL_VFE_DPRX_AUDIO_STATUS_T*', desc: 'Audio Status' },
+  ]}
+/>
 
 ### RHAL_VFE_DPRX_GetColorDepth
 ```bash
 DTV_STATUS_T RHAL_VFE_DPRX_GetColorDepth(UINT8 port, HAL_VFE_DPRX_COLOR_DEPTH_T*color_depth);
 ```
+Get Color Depth of a given DPRX port
+<ParamTable
+  items={[
+    { name: 'port', type: 'UINT8', desc: 'Port number' },
+    { name: 'color_depth', type: 'HAL_VFE_DPRX_COLOR_DEPTH_T*', desc: 'color depth' },
+  ]}
+/>
