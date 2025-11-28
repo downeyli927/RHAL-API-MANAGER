@@ -6,177 +6,578 @@ sidebar_position: 91
 
 RHAL_VR api
 
+## Custom Data Types
+### HAL_VR_VIDEO_FRAME_BUFFER_PLANE_NUMBER_T 
+```bash
+/**
+ * @brief This enumeration describes the supported number of plane corresponding to plane type of video frame buffer.
+ */
+typedef enum
+{
+        HAL_VR_VIDEO_FRAME_BUFFER_PLANE_INTERLEAVED = 1,
+        HAL_VR_VIDEO_FRAME_BUFFER_PLANE_SEMI_PLANAR,
+        HAL_VR_VIDEO_FRAME_BUFFER_PLANE_PLANAR
+} HAL_VR_VIDEO_FRAME_BUFFER_PLANE_NUMBER_T;
+```
+
+### HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_T
+```bash
+/**
+ * @brief This enumeration describes the supported pixel format of video frame buffer.
+ */
+typedef enum
+{
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_YUV420_PLANAR = 0,
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_YUV420_SEMI_PLANAR,
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_YUV420_INTERLEAVED,
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_YUV422_PLANAR,
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_YUV422_SEMI_PLANAR,
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_YUV422_INTERLEAVED,
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_YUV444_PLANAR,
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_YUV444_SEMI_PLANAR,
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_YUV444_INTERLEAVED,
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_RGB,
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_ARGB
+} HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_T;
+```
+
+### HAL_VR_VIDEO_WINDOW_TYPE_T
+```bash
+/**
+ * @brief This enumeration describes the supported video window.
+ */
+typedef enum
+{
+        HAL_VR_VIDEO_INVALID_WINDOW = -1,
+        HAL_VR_VIDEO_WINDOW_0 = 0,
+        HAL_VR_VIDEO_WINDOW_1 = 1,
+        HAL_VR_VIDEO_WINDOW_2 = 2
+} HAL_VR_VIDEO_WINDOW_TYPE_T;
+```
+
+### HAL_VR_CAP_FMT
+```bash
+typedef enum
+{
+        HAL_VR_CAP_RGB888,
+        HAL_VR_CAP_ARGB8888,
+        HAL_VR_CAP_RGBA8888,
+        HAL_VR_CAP_ABGR8888,
+        HAL_VR_CAP_NV12,
+        HAL_VR_CAP_NV16,
+        HAL_VR_CAP_NV21,
+        HAL_VR_CAP_MAX
+}HAL_VR_CAP_FMT;
+```
+
+### HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_FLAGS_T
+```bash
+/**
+ * @brief This enumeration describes flags for state of video frame output device setting.
+ */
+typedef enum
+{
+        HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_NOFX                     = 0x00000000,
+        HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_ENABLED                  = 0x00000001,
+        HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_FREEZED                  = 0x00000002,
+        HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_APPLIED_PQ               = 0x00000004,
+        HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_FRAMERATE_DIVIDE = 0x00000010
+} HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_FLAGS_T;
+```
+
+### HAL_VR_DUMP_LOCATION_TYPE_T
+```bash
+/**
+ * @brief This enumeration describes the dump location of video memory.
+ */
+typedef enum
+{
+        HAL_VR_SCALER_INPUT = 0,
+        HAL_VR_SCALER_OUTPUT,
+        HAL_VR_DISPLAY_OUTPUT,
+        HAL_VR_OSDVIDEO_OUTPUT,
+        HAL_VR_SOURCE_OUTPUT,
+        HAL_VR_MAX_LOCATION
+} HAL_VR_DUMP_LOCATION_TYPE_T;
+```
+
+### HAL_VR_VIDEO_TYPE_T
+```bash
+/**
+ * @brief This enumeration describes the type of video.
+ */
+typedef enum
+{
+        HAL_VR_VIDEO_INTERLACED = 0,
+        HAL_VR_VIDEO_PROGRESSIVE
+} HAL_VR_VIDEO_TYPE_T;
+```
+
+### HAL_VR_RECT_T
+```bash
+/**
+ * @brief This structure describes a rectangle specified by a point and a dimension.
+ */
+typedef struct
+{
+        UINT16  x;
+        UINT16  y;
+        UINT16  w;
+        UINT16  h;
+} HAL_VR_RECT_T;
+```
+
+### HAL_VR_DEVICE_CAPABILITY_INFO_T
+```bash
+/**
+ * @brief This structure describes the capability of video device.
+ */
+typedef struct
+{
+        UINT32  numOfVideoWindow;
+} HAL_VR_DEVICE_CAPABILITY_INFO_T;
+```
+
+### HAL_VR_VIDEO_FRAME_BUFFER_CAPABILITY_INFO_T
+```bash
+/**
+ * @brief This structure describes the capability of video frame buffer.
+ */
+typedef struct
+{
+        UINT32 numOfVideoFrameBuffer;
+        HAL_VR_VIDEO_FRAME_BUFFER_PLANE_NUMBER_T numOfPlane;
+} HAL_VR_VIDEO_FRAME_BUFFER_CAPABILITY_INFO_T;
+```
+
+### HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_CAPABILITY_INFO_T
+```bash
+/**
+ * @brief This structure describes the capability of video frame output device.
+ */
+typedef struct
+{
+        UINT8   bSupportedControlEnabled;
+        UINT8   bSupportedControlFreezed;
+        UINT8   bSupportedControlFramerateDivide;
+        UINT8   bSupportedControlPQ;
+} HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_CAPABILITY_INFO_T;
+```
+
+### HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_LIMITATION_INFO_T
+```bash
+/**
+ * @brief This structure describes the limitation of video frame output device.
+ */
+typedef struct {
+        HAL_VR_RECT_T   maxResolution;
+        UINT8   bLeftTopAlign;
+        UINT8   bSupportInputVideoDeInterlacing;
+        UINT8   bSupportDisplayVideoDeInterlacing;
+        UINT8   bSupportScaleUp;
+        UINT32  scaleUpLimitWidth;
+        UINT32  scaleUpLimitHeight;
+        UINT8   bSupportScaleDown;
+        UINT32  scaleDownLimitWidth;
+        UINT32  scaleDownLimitHeight;
+} HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_LIMITATION_INFO_T;
+```
+
+### HAL_VR_VIDEO_FRAME_BUFFER_PROPERTY_INFO_T 
+```bash
+/**
+ * @brief This structure describes the constant property of video frame buffer.
+ * These member values are unique properties of video frame buffer. it is not able to be changed.
+ */
+typedef struct
+{
+        HAL_VR_VIDEO_FRAME_BUFFER_PIXEL_FORMAT_T pixelFormat;
+        UINT32  stride;
+        UINT32  width;
+        UINT32  height;
+        UINT32**        ppPhysicalAddress;
+} HAL_VR_VIDEO_FRAME_BUFFER_PROPERTY_INFO_T;
+```
+
+### HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_INFO_T
+```bash
+/**
+ * @brief This structure describes state information of video frame output device.
+ */
+typedef struct
+{
+        UINT8   bEnabled;
+        UINT8   bFreezed;
+        UINT8   bAppliedPQ;
+        UINT32  framerateDivide;
+} HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_INFO_T;
+```
+
+### HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_PROPERTY_INFO_T
+```bash
+/**
+ * @brief This structure describes property information of video frame output device.
+ */
+typedef struct
+{
+        HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_INFO_T stateInfo;
+        UINT32 framerate;
+        HAL_VR_DUMP_LOCATION_TYPE_T dumpLocation;
+        HAL_VR_RECT_T outputRegion;
+        UINT8 bBlockState;
+} HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_PROPERTY_INFO_T;
+```
+
+### HAL_VR_INPUT_VIDEO_INFO_T
+```bash
+/**
+ * @brief This structure describes information of input video.
+ */
+typedef struct {
+        HAL_VR_VIDEO_TYPE_T                     type;
+        HAL_VR_RECT_T                           region;
+        UINT8                           bIs3DVideo;
+} HAL_VR_INPUT_VIDEO_INFO_T;
+```
+
+### HAL_VR_OUTPUT_VIDEO_INFO_T
+```bash
+/**
+ * @brief This structure describes information of output video.
+ */
+typedef struct {
+        HAL_VR_VIDEO_TYPE_T                     type;
+        HAL_VR_RECT_T                           maxRegion;
+        HAL_VR_RECT_T                           activeRegion;
+} HAL_VR_OUTPUT_VIDEO_INFO_T;
+```
+
+### HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_OUTPUT_INFO_T 
+```bash
+/**
+ * @brief This structure describes output information of video frame output device.
+ */
+typedef struct {
+        UINT32  stride;
+        HAL_VR_RECT_T   maxRegion;
+        HAL_VR_RECT_T   activeRegion;
+} HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_OUTPUT_INFO_T;
+```
+
+### HAL_VR_ROWDATA_SHOW_ONSUBDISP_T
+```bash
+typedef struct
+{
+        bool enable;
+        HAL_VR_RECT_T OutputRegion;
+        unsigned long phyaddr;
+        UINT32  width;
+        UINT32  height;
+}HAL_VR_ROWDATA_SHOW_ONSUBDISP_T;
+```
 
 ## Function Declaration
 ### RHAL_VR_Init
 ```bash
 DTV_STATUS_T RHAL_VR_Init(void);
 ```
-
+Initializes Video module related to.
+Call Chipset driver initialization function and create resources for Video module related to VT.
 
 ### RHAL_VR_InitEX
 ```bash
 DTV_STATUS_T RHAL_VR_InitEX(unsigned int buffernum);
 ```
-
+Initializes Video module related to.
+Call Chipset driver initialization function and create resources for Video module related to VT.
+<ParamTable
+  items={[
+    { name: 'buffernum', type: 'unsigned int', desc: 'buffer addr' },
+  ]}
+/>
 
 ### RHAL_VR_Finalize
 ```bash
 DTV_STATUS_T RHAL_VR_Finalize(void);
 ```
-
+inalize Video module related to VT.
 
 ### RHAL_VR_GetDeviceCapability
 ```bash
 DTV_STATUS_T RHAL_VR_GetDeviceCapability(HAL_VR_DEVICE_CAPABILITY_INFO_T*pDeviceCapabilityInfo);
 ```
-
+Gets the capability of VIDEO Device.
+<ParamTable
+  items={[
+    { name: 'pDeviceCapabilityInfo', type: 'HAL_VR_DEVICE_CAPABILITY_INFO_T*', desc: 'the capability of video device' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoFrameBufferCapability
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoFrameBufferCapability(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_VIDEO_FRAME_BUFFER_CAPABILITY_INFO_T*pVideoFrameBufferCapabilityInfo);
 ```
-
+Gets the capability of Video Frame Buffer.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pVideoFrameBufferCapabilityInfo', type: 'HAL_VR_VIDEO_FRAME_BUFFER_CAPABILITY_INFO_T*', desc: 'the capability of video frame buffer' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoFrameOutputDeviceCapability
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoFrameOutputDeviceCapability(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_CAPABILITY_INFO_T*pVideoFrameOutputDeviceCapabilityInfo);
 ```
-
+Gets the capability of Video Frame Output Device.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pVideoFrameOutputDeviceCapabilityInfo', type: 'HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_CAPABILITY_INFO_T*', desc: 'the capability of video frame output device' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoFrameOutputDeviceLimitation
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoFrameOutputDeviceLimitation(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_LIMITATION_INFO_T*pVideoFrameOutputDeviceLimitationInfo);
 ```
-
+Gets the limitation of Video Frame Output Device.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pVideoFrameOutputDeviceLimitationInfo', type: 'HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_LIMITATION_INFO_T*', desc: 'the limitation of video frame output device' },
+  ]}
+/>
 
 ### RHAL_VR_GetAllVideoFrameBufferProperty
 ```bash
 DTV_STATUS_T RHAL_VR_GetAllVideoFrameBufferProperty(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_VIDEO_FRAME_BUFFER_PROPERTY_INFO_T*pVideoFrameBufferProperty);
 ```
-
+Get properties of video frame buffer corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pVideoFrameBufferProperty', type: 'HAL_VR_VIDEO_FRAME_BUFFER_PROPERTY_INFO_T*', desc: 'the capability of video frame output device' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoFrameBufferIndex
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoFrameBufferIndex(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, UINT32*pIndexOfCurrentVideoFrameBuffer);
 ```
-
+Get index of video frame buffer corresponding to videoWindowID.
+The video frame buffer corresponding to current index is same with video frame buffer that last write operation is completed.
+This buffer may be 1~2 frame delayed buffer compared to video frame being displayed on the screen.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pIndexOfCurrentVideoFrameBuffer', type: 'UINT32*', desc: 'index of current video frame buffer' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoFrameBufferSecureVideoState
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoFrameBufferSecureVideoState(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, UINT8*pIsSecureVideo);
 ```
-
+Get secure video state of video frame buffer corresponding to videoWindowID.
+Vdec driver can know SVP state of own.
+And VT driver can know which vdec is mapped to videoWindowID.
+Therefore, If VT driver can get vdec's SVP state, VT driver can provide the SVP state information to VT client through this interface.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pIsSecureVideo', type: 'UINT8*', desc: 'state of secure video corresponding to videoWIndowID' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoFrameOutputDeviceState
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoFrameOutputDeviceState(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_INFO_T*pVideoFrameOutputDeviceState);
 ```
-
+Get state information of video frame output device corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pVideoFrameOutputDeviceState', type: 'HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_INFO_T*', desc: 'state info of video frame output device' },
+  ]}
+/>
 
 ### RHAL_VR_SetVideoFrameOutputDeviceState
 ```bash
 DTV_STATUS_T RHAL_VR_SetVideoFrameOutputDeviceState(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_FLAGS_T videoFrameOutputDeviceStateFlags, HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_INFO_T*pVideoFrameOutputDeviceState);
 ```
-
+Set state of video frame corresponding to videoInputID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'videoFrameOutputDeviceStateFlags', type: 'HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_FLAGS_T', desc: 'flags to state of video frame output device' },
+    { name: 'pVideoFrameOutputDeviceState', type: 'HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_STATE_INFO_T*', desc: 'state info of video frame output device' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoFrameOutputDeviceFramerate
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoFrameOutputDeviceFramerate(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, UINT32*pVideoFrameOutputDeviceFramerate);
 ```
-
+Get framerate of video frame output device corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pVideoFrameOutputDeviceFramerate', type: 'UINT32*', desc: 'framerate of video frame output device' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoFrameOutputDeviceDumpLocation
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoFrameOutputDeviceDumpLocation(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_DUMP_LOCATION_TYPE_T*pDumpLocation);
 ```
-
+Get dump location of video frame output device corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pDumpLocation', type: 'HAL_VR_DUMP_LOCATION_TYPE_T*', desc: 'dump location of VFOD' },
+  ]}
+/>
 
 ### RHAL_VR_SetVideoFrameOutputDeviceDumpLocation
 ```bash
 DTV_STATUS_T RHAL_VR_SetVideoFrameOutputDeviceDumpLocation(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_DUMP_LOCATION_TYPE_T dumpLocation);
 ```
-
+Set dump location of video frame output device corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pDumpLocation', type: 'HAL_VR_DUMP_LOCATION_TYPE_T', desc: 'dump location of VFOD' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoFrameOutputDeviceOutputInfo
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoFrameOutputDeviceOutputInfo(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_DUMP_LOCATION_TYPE_T dumpLocation, HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_OUTPUT_INFO_T*pOutputInfo);
 ```
-
+Get output information of video frame output device corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'dumpLocation', type: 'HAL_VR_DUMP_LOCATION_TYPE_T', desc: 'dump location of VFOD' },
+    { name: 'pOutputInfo', type: 'HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_OUTPUT_INFO_T*', desc: 'output information of VFOD' },
+  ]}
+/>
 
 ### RHAL_VR_SetVideoFrameOutputDeviceOutputRegion
 ```bash
 DTV_STATUS_T RHAL_VR_SetVideoFrameOutputDeviceOutputRegion(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_DUMP_LOCATION_TYPE_T dumpLocation, HAL_VR_RECT_T*pOutputRegion);
 ```
-
+Set output region information of video frame output device corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'dumpLocation', type: 'HAL_VR_DUMP_LOCATION_TYPE_T', desc: 'dump location of VFOD' },
+    { name: 'pOutputInfo', type: 'HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_OUTPUT_INFO_T', desc: 'output information of VFOD' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoFrameOutputDeviceBlockState
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoFrameOutputDeviceBlockState(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, UINT8*pbBlockState);
 ```
-
+Get block state of video frame output device corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pbBlockState', type: 'UINT8*', desc: 'block state of VFOD corresponding to videoWIndowID' },
+  ]}
+/>
 
 ### RHAL_VR_SetVideoFrameOutputDeviceBlockState
 ```bash
 DTV_STATUS_T RHAL_VR_SetVideoFrameOutputDeviceBlockState(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, UINT8 bBlockState);
 ```
-
-
-### RHAL_VR_GetVideoFrameOutputDeviceProperty
-```bash
-DTV_STATUS_T RHAL_VR_GetVideoFrameOutputDeviceProperty(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_PROPERTY_INFO_T*pVideoFrameOutputDeviceProperty);
-```
-
-
-### RHAL_VR_SetVideoFrameOutputDeviceProperty
-```bash
-DTV_STATUS_T RHAL_VR_SetVideoFrameOutputDeviceProperty(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_VIDEO_FRAME_OUTPUT_DEVICE_PROPERTY_INFO_T*pVideoFrameOutputDeviceProperty);
-```
-
+Set block state of video frame output device corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'bBlockState', type: 'UINT8', desc: 'block state of VFOD corresponding to videoWIndowID' },
+  ]}
+/>
 
 ### RHAL_VR_WaitVsync
 ```bash
 DTV_STATUS_T RHAL_VR_WaitVsync(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID);
 ```
-
+Wait for to be completed what the video frame buffer is being written new data by VFOD corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+  ]}
+/>
 
 ### RHAL_VR_GetInputVideoInfo
 ```bash
 DTV_STATUS_T RHAL_VR_GetInputVideoInfo(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_INPUT_VIDEO_INFO_T*pInputVideoInfo);
 ```
-
+Get input video original region information corresponding to videoWindowID.(input video original region is resolution of input video.)
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pInputVideoInfo', type: 'HAL_VR_INPUT_VIDEO_INFO_T*', desc: 'input video information' },
+  ]}
+/>
 
 ### RHAL_VR_GetOutputVideoInfo
 ```bash
 DTV_STATUS_T RHAL_VR_GetOutputVideoInfo(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, HAL_VR_OUTPUT_VIDEO_INFO_T*pOutputVideoInfo);
 ```
-
+Get output video information corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pOutputVideoInfo', type: 'HAL_VR_OUTPUT_VIDEO_INFO_T*', desc: 'output video information' },
+  ]}
+/>
 
 ### RHAL_VR_GetVideoMuteStatus
 ```bash
 DTV_STATUS_T RHAL_VR_GetVideoMuteStatus(HAL_VR_VIDEO_WINDOW_TYPE_T videoWindowID, UINT8*pbOnOff);
 ```
-
+Get video mute status of video path corresponding to videoWindowID.
+<ParamTable
+  items={[
+    { name: 'videoWindowID', type: 'HAL_VR_VIDEO_WINDOW_TYPE_T', desc: 'video window ID' },
+    { name: 'pbOnOff', type: 'UINT8*', desc: 'video mute status (Mute On : 1, Mute Off : 0)' },
+  ]}
+/>
 
 ### RHAL_VR_Set_PixelFormat
 ```bash
 DTV_STATUS_T RHAL_VR_Set_PixelFormat(HAL_VR_CAP_FMT format);
 ```
-
+Set row data PixelFormat
+<ParamTable
+  items={[
+    { name: 'format', type: 'HAL_VR_CAP_FMT', desc: 'PixelFormat' },
+  ]}
+/>
 
 ### RHAL_VR_Set_Output_Fps
 ```bash
 DTV_STATUS_T RHAL_VR_Set_Output_Fps(unsigned int fps);
 ```
-
+Set vrt driver output fps
+<ParamTable
+  items={[
+    { name: 'fps', type: 'unsigned int', desc: 'target fps' },
+  ]}
+/>
 
 ### RHAL_VR_ROWDATA_SHOW_ONSUBDISP
 ```bash
 DTV_STATUS_T RHAL_VR_ROWDATA_SHOW_ONSUBDISP(HAL_VR_ROWDATA_SHOW_ONSUBDISP_T*VT_ROWDATA_SHOW_ONSUBDISP);
 ```
+Set row data sub display
+<ParamTable
+  items={[
+    { name: 'VT_ROWDATA_SHOW_ONSUBDISP', type: 'HAL_VR_ROWDATA_SHOW_ONSUBDISP_T*', desc: 'row data of sub display' },
+  ]}
+/>
 
-
-### RHAL_VR_DEBUG_Test
-```bash
-void RHAL_VR_DEBUG_Test(void);
-```
