@@ -6,7 +6,28 @@ sidebar_position: 77
 
 RHAL_VDECDEBUG api
 
-## Custom Data Types
+## Constants, macros, and type definitions
+
+```bash
+#define MAX_NAME_LENGTH  128
+#define MAX_DESCRIPTION_LENGTH  256
+
+#define ANSI_COLOR_RED      "\x1b[31m"
+#define ANSI_COLOR_GREEN    "\x1b[32m"
+#define ANSI_COLOR_YELLOW   "\x1b[33m"
+#define ANSI_COLOR_BLUE     "\x1b[34m"
+#define ANSI_COLOR_MAGENTA  "\x1b[35m"
+#define ANSI_COLOR_CYAN     "\x1b[36m"
+#define ANSI_COLOR_RESET    "\x1b[0m"
+
+
+FILE* g_VDEC_dumpCC_Fd = NULL;
+#define VDEC_MAX_MUTEX_SIZE 8
+#define VDEC_THREAD_NAME_LENGTH                 32
+```
+
+## Enums and struct definitions
+
 ### VDECDBGFunctionList
 ```bash
 static RTK_CASE_T VDECDBGFunctionList[] =
@@ -52,26 +73,8 @@ typedef struct
 }RTK_CASE_T;
 ```
 
-### Constants
-```bash
-#define MAX_NAME_LENGTH  128
-#define MAX_DESCRIPTION_LENGTH  256
+## Function declarations and inline functions
 
-#define ANSI_COLOR_RED      "\x1b[31m"
-#define ANSI_COLOR_GREEN    "\x1b[32m"
-#define ANSI_COLOR_YELLOW   "\x1b[33m"
-#define ANSI_COLOR_BLUE     "\x1b[34m"
-#define ANSI_COLOR_MAGENTA  "\x1b[35m"
-#define ANSI_COLOR_CYAN     "\x1b[36m"
-#define ANSI_COLOR_RESET    "\x1b[0m"
-
-
-FILE* g_VDEC_dumpCC_Fd = NULL;
-#define VDEC_MAX_MUTEX_SIZE 8
-#define VDEC_THREAD_NAME_LENGTH                 32
-```
-
-## Function Declaration
 ### RRHAL_VDEC_DebugMenu
 ```bash
 extern DTV_STATUS_T RRHAL_VDEC_DebugMenu(void);

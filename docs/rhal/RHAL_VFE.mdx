@@ -6,7 +6,22 @@ sidebar_position: 79
 
 RHAL_VFE api
 
-## Custom Data Types
+## Constants, macros, and type definitions
+
+```bash
+#define VFE_SRC_ID(type, port)      (((type & 0x7) <<2) | (port & 0x3))
+#define VFE_SRC_ID_TYPE(id)         ((id>>2) & 0x7)
+#define VFE_SRC_ID_PORT(id)         (id & 0x3)
+
+#define RHAL_VFE_VcDisConnect(vc_idx)     RHAL_VFE_VcConnect(vc_idx, HAL_VFE_SRC_NONE)  // disconnect VC to the selected VFE
+#define GET_TIMING_UNSUPPORT_FLAG(var)                ((var & HAL_VFE_TIMING_EXT_FLAG_TIMING_OUTPUT_OF_DISP_LIMIT))
+#define GET_TIMING_BYPASSABLE_FLAG(var)               ((var & HAL_VFE_TIMING_EXT_FLAG_TIMING_BYPASSABLE))
+#define GET_TIMING_DSC_RAW_STREAM_FLAG(var)           ((var & HAL_VFE_TIMING_EXT_FLAG_DSC_RAW_STREAM))
+#define MAX_VFE_SRC_ENTRY       10
+```
+
+## Enums and struct definitions
+
 ###HAL_VFE_SRC_TYPE 
 ```bash
 typedef enum
@@ -113,20 +128,8 @@ typedef enum
 }HAL_VFE_EXT_ID;
 ```
 
-### Constants
-```bash
-#define VFE_SRC_ID(type, port)      (((type & 0x7) <<2) | (port & 0x3))
-#define VFE_SRC_ID_TYPE(id)         ((id>>2) & 0x7)
-#define VFE_SRC_ID_PORT(id)         (id & 0x3)
+## Function declarations and inline functions
 
-#define RHAL_VFE_VcDisConnect(vc_idx)     RHAL_VFE_VcConnect(vc_idx, HAL_VFE_SRC_NONE)  // disconnect VC to the selected VFE
-#define GET_TIMING_UNSUPPORT_FLAG(var)                ((var & HAL_VFE_TIMING_EXT_FLAG_TIMING_OUTPUT_OF_DISP_LIMIT))
-#define GET_TIMING_BYPASSABLE_FLAG(var)               ((var & HAL_VFE_TIMING_EXT_FLAG_TIMING_BYPASSABLE))
-#define GET_TIMING_DSC_RAW_STREAM_FLAG(var)           ((var & HAL_VFE_TIMING_EXT_FLAG_DSC_RAW_STREAM))
-#define MAX_VFE_SRC_ENTRY       10
-```
-
-## Function Declaration
 ### RHAL_VFE_GetSourcePresentStatus
 ```bash
 DTV_STATUS_T RHAL_VFE_GetSourcePresentStatus(HAL_VFE_SRC_ID src, UINT8*pSrcPresent);

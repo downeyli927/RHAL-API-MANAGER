@@ -6,7 +6,10 @@ sidebar_position: 64
 
 RHAL_UAC api
 
-## Custom Data Types
+## Constants, macros, and type definitions
+
+## Enums and struct definitions
+
 ### KADP_UAC_SAMPLE_MSG_TYPE_T
 ```bash
 typedef struct KADP_UAC_SAMPLE_MSG_TYPE
@@ -22,7 +25,8 @@ typedef struct KADP_UAC_SAMPLE_MSG_TYPE
 typedef void (*KADP_PFN_UAC_NOTIFY_SAMPLE_CHANGE_T) (KADP_UAC_SAMPLE_MSG_TYPE_T *pMsg);//for uac sample change callback
 ```
 
-## Function Declaration
+## Function declarations and inline functions
+
 ### RHAL_UAC_RegisterSampleChangeCallback
 ```bash
 DTV_STATUS_T RHAL_UAC_RegisterSampleChangeCallback(PFN_UAC_NOTIFY_SAMPLE_CHANGE_T pfnUacSampleChange);

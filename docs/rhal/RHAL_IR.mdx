@@ -6,9 +6,12 @@ sidebar_position: 35
 
 RHAL_IR api
 
-## Custom Data Types
-### FOR_EACH_IR_PROTOCOL
+## Constants, macros, and type definitions
+
 ```bash
+#define IR_DEV_NAME                     "venus_IR_input"
+#define DEV_NAME_LEN_MIN            64
+
 #define FOR_EACH_IR_PROTOCOL(PROTOCOL) \
     PROTOCOL(IR_PROTOCOL_NEC),       \
     PROTOCOL(IR_PROTOCOL_RC5),       \
@@ -28,6 +31,16 @@ RHAL_IR api
     PROTOCOL(IR_PROTOCOL_RAW_KONKA), \
     PROTOCOL(IR_PROTOCOL_RAW_SONY),  \
     PROTOCOL(IR_PROTOCOL_AEHA),      \
+```
+
+## Enums and struct definitions
+
+### HAL_IRDA_DECODE_ON/HAL_IRDA_DECODE_OFF
+```bash
+enum {
+    HAL_IRDA_DECODE_ON = 0,
+    HAL_IRDA_DECODE_OFF = 1,
+};
 ```
 
 ### EIR_PROTOCOL
@@ -77,18 +90,8 @@ typedef enum {
 }HAL_KEYCODE_INTERCEPT_ACTION;
 ```
 
-### Constants
-```bash
-#define IR_DEV_NAME                     "venus_IR_input"
-#define DEV_NAME_LEN_MIN            64
+## Function declarations and inline functions
 
-enum {
-    HAL_IRDA_DECODE_ON = 0,
-    HAL_IRDA_DECODE_OFF = 1,
-};
-```
-
-## Function Declaration
 ### RHAL_IR_SET_PROTOCOL
 ```bash
 DTV_STATUS_T RHAL_IR_SET_PROTOCOL(UINT32 protocol);

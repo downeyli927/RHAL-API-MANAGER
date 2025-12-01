@@ -6,8 +6,8 @@ sidebar_position: 66
 
 RHAL_USB api
 
-## Custom Data Types
-### Constants
+## Constants, macros, and type definitions
+
 ```bash
 #define RTK_COMPOSITE_HIDG_ENABLE_PATH                           "/sys/rtk_composite/hidg_enable"
 #define RTK_COMPOSITE_HIDG_MODE_PATH                              "/sys/rtk_composite/hidg_mode"
@@ -26,6 +26,8 @@ RHAL_USB api
 #define RTK_COMPOSITE_HIDG_SEND_KEYUP_EVENT        "/sys/rtk_composite/hidg_send_keyup_event"
 #define RTK_COMPOSITE_HIDG_EX_SEND_KEYUP_EVENT         "/sys/rtk_composite/hidg_ex_send_keyup_event"
 ```
+
+## Enums and struct definitions
 
 ### RHAL_USB_OC_STATUS
 ```bash
@@ -69,7 +71,8 @@ struct MIC_Info
 };
 ```
 
-## Function Declaration
+## Function declarations and inline functions
+
 ### RHAL_USB_SuperSpeedSupport
 ```bash
 DTV_STATUS_T RHAL_USB_SuperSpeedSupport(SINT32 connector1, BOOLEAN bOn);

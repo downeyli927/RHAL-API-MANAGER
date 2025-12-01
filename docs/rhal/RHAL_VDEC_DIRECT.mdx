@@ -6,7 +6,10 @@ sidebar_position: 76
 
 RHAL_VDEC_DIRECT api
 
-## Custom Data Types
+## Constants, macros, and type definitions
+
+## Enums and struct definitions
+
 ### HAL_VDEC_DIRECT_3D_TYPE_T
 ```bash
 typedef enum
@@ -48,7 +51,8 @@ typedef struct HAL_DVDEC HAL_DVDEC_T;
 typedef void (*FN_VDEC_DIRECT_BUFID_T) (unsigned long long  buffID);
 ```
 
-## Function Declaration
+## Function declarations and inline functions
+
 ### RHAL_VDEC_DIRECT_Open
 ```bash
 HAL_DVDEC_T* RHAL_VDEC_DIRECT_Open(unsigned int fourcc, int width, int height, HAL_VDEC_DIRECT_3D_TYPE_T trid_type);

@@ -6,7 +6,10 @@ sidebar_position: 62
 
 RHAL_TCON api
 
-## Custom Data Types
+## Constants, macros, and type definitions
+
+## Enums and struct definitions
+
 ### OLED_V22_CMD_INFO
 ```bash
 typedef struct oled_v22_cmd_info {
@@ -46,7 +49,8 @@ typedef struct tcon_cmd_info {
 }TCON_CMD_INFO;
 ```
 
-## Function Declaration
+## Function declarations and inline functions
+
 ### RHAL_TCON_TransferCommand
 ```bash
 DTV_STATUS_T RHAL_TCON_TransferCommand(OLED_V22_CMD_INFO*oledV22CmdInfo);

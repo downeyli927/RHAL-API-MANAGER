@@ -6,7 +6,20 @@ sidebar_position: 94
 
 RHAL_WDOG api
 
-## Custom Data Types
+## Constants, macros, and type definitions
+
+```bash
+#ifndef BIT
+#define BIT(x)                          (1 <<x)
+#endif
+#define LAST_BOOT_REASON_SOFTWARE BIT(2)       //last boot reason is software-induced reset
+#define LAST_BOOT_REASON_BUTTION  BIT(3)       //last boot reason is reset button press
+#define LAST_BOOT_REASON_POWER    BIT(4)       //last boot reason is power cycle  
+#define LAST_BOOT_REASON_WATCHDOG BIT(5)       //last boot reason is watchdog expiration  
+```
+
+## Enums and struct definitions
+
 ###RHAL_WDOG_OPERATE_T 
 ```bash
 /*======================================================
@@ -48,18 +61,8 @@ typedef enum{
 }RHAL_WDOG_STATUS_T;
 ```
 
-### Constants
-```bash
-#ifndef BIT
-#define BIT(x)                          (1 <<x)
-#endif
-#define LAST_BOOT_REASON_SOFTWARE BIT(2)       //last boot reason is software-induced reset
-#define LAST_BOOT_REASON_BUTTION  BIT(3)       //last boot reason is reset button press
-#define LAST_BOOT_REASON_POWER    BIT(4)       //last boot reason is power cycle  
-#define LAST_BOOT_REASON_WATCHDOG BIT(5)       //last boot reason is watchdog expiration  
-```
+## Function declarations and inline functions
 
-## Function Declaration
 ### RHAL_WDOG_Operate
 ```bash
 DTV_STATUS_T RHAL_WDOG_Operate(RHAL_WDOG_OPERATE_T operate);

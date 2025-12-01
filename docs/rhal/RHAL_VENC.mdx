@@ -6,7 +6,18 @@ sidebar_position: 78
 
 RHAL_VENC api
 
-## Custom Data Types
+## Constants, macros, and type definitions
+
+### pfnVENCDataHandlingCB
+```bash
+/**
+ * @brief recoding data callback function Type
+ */
+typedef DTV_STATUS_T (*pfnVENCDataHandlingCB)(VENC_MSG_TYPE_T *pMsg);
+```
+
+## Enums and struct definitions
+
 ### VENC_MSG_TYPE_T 
 ```bash
 /**
@@ -22,14 +33,6 @@ typedef struct VENC_MSG_TYPE
         UINT8   *pRStart;       /**< start pointer of buffer */
         UINT8   *pREnd;         /**< end pointer of buffer */
 }VENC_MSG_TYPE_T;
-```
-
-### DTV_STATUS_T
-```bash
-/**
- * @brief recoding data callback function Type
- */
-typedef DTV_STATUS_T (*pfnVENCDataHandlingCB)(VENC_MSG_TYPE_T *pMsg);
 ```
 
 ### VENC_INPUT_TYPE_T
@@ -147,7 +150,8 @@ typedef enum {
 
 
 
-## Function Declaration
+## Function declarations and inline functions
+
 ### RHAL_VENC_Open
 ```bash
 DTV_STATUS_T RHAL_VENC_Open(void);
