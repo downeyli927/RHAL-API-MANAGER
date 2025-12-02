@@ -12,30 +12,24 @@ RHAL_WDOG api
 #ifndef BIT
 #define BIT(x)                          (1 <<x)
 #endif
-#define LAST_BOOT_REASON_SOFTWARE BIT(2)       //last boot reason is software-induced reset
-#define LAST_BOOT_REASON_BUTTION  BIT(3)       //last boot reason is reset button press
-#define LAST_BOOT_REASON_POWER    BIT(4)       //last boot reason is power cycle  
-#define LAST_BOOT_REASON_WATCHDOG BIT(5)       //last boot reason is watchdog expiration  
+#define LAST_BOOT_REASON_SOFTWARE BIT(2)       
+#define LAST_BOOT_REASON_BUTTION  BIT(3)       
+#define LAST_BOOT_REASON_POWER    BIT(4)       
+#define LAST_BOOT_REASON_WATCHDOG BIT(5)
 ```
 
 ## Enums and struct definitions
 
-### RHAL_WDOG_OPERATE_T 
+### RHAL_WDOG_OPERATE_T
 ```bash
-/*======================================================
- * Para : 
- *        RHAL_WDOG_ON: Turn on the watchdog timer,and need AP kick watchdog periodically.
- *        RHAL_WDOG_OFF: Turn off the watchdog timer.
- *        RHAL_WDOG_PING: Kick watchdog. 
- *        RHAL_WDOG_ON_WITH_KERNEL_AUTO_KICK: Turn on the watchdog timer,and kernel will kick watchdog by itself.
- * Note :
-          RHAL_WDOG_ON_WITH_KERNEL_AUTO_KICK can not used to monitor AP crash issue.
- ======================================================*/
+/**
+ * @brief a series of constants related to watchdog operations
+ */
 typedef enum{
-    RHAL_WDOG_ON = 0,
-    RHAL_WDOG_OFF,
-    RHAL_WDOG_KICK,
-    RHAL_WDOG_ON_WITH_KERNEL_AUTO_KICK,
+    RHAL_WDOG_ON = 0,                     /**< Turn on the watchdog timer,and need AP kick watchdog periodically. */
+    RHAL_WDOG_OFF,                        /**< Turn off the watchdog timer. */
+    RHAL_WDOG_KICK,                       /**< Kick watchdog. */
+    RHAL_WDOG_ON_WITH_KERNEL_AUTO_KICK,   /**< Turn on the watchdog timer,and kernel will kick watchdog by itself. */
     RHAL_WDOG_HW_RESET,
     RHAL_WDOG_SW_RESET,
     RHAL_AP_WDOG_ON,
@@ -44,19 +38,21 @@ typedef enum{
     RHAL_WDOG_OPERATE_MAX
 }RHAL_WDOG_OPERATE_T;
 ```
+:::tip[Tips]
 
-### RHAL_WDOG_STATUS_T 
+RHAL_WDOG_ON_WITH_KERNEL_AUTO_KICK can not used to monitor AP crash issue.
+
+:::
+
+### RHAL_WDOG_STATUS_T
 ```bash
-/*======================================================
- * Para : 
- *        RHAL_WDOG_IS_ON_NEED_AP_KICK: watchdog is enabled. In this case need AP kick watchdog periodically.
- *        RHAL_WDOG_IS_OFF: watchdog is disabled.
- *        RHAL_WDOG_IS_ON_WITH_KERNEL_AUTO_KICK: watchdog is enabled. In this case kernel will kick watchdog by itself.
- ======================================================*/
+/**
+ * @brief describes different states of the watchdog
+ */
 typedef enum{
-    RHAL_WDOG_IS_ON_NEED_AP_KICK = 0,
-    RHAL_WDOG_IS_OFF,
-    RHAL_WDOG_IS_ON_WITH_KERNEL_AUTO_KICK,
+    RHAL_WDOG_IS_ON_NEED_AP_KICK = 0,          /**< watchdog is enabled. In this case need AP kick watchdog periodically. */
+    RHAL_WDOG_IS_OFF,                          /**< watchdog is disabled. */
+    RHAL_WDOG_IS_ON_WITH_KERNEL_AUTO_KICK,     /**< watchdog is enabled. In this case kernel will kick watchdog by itself. */
     RHAL_WDOG_STATUS_MAX
 }RHAL_WDOG_STATUS_T;
 ```
@@ -74,9 +70,10 @@ use for enable/disable/kick watchdog
   ]}
 />
 
+
 ### RHAL_WDOG_SetTimeout
 ```bash
-DTV_STATUS_T RHAL_WDOG_SetTimeout(UINT32*p_timeout);
+DTV_STATUS_T RHAL_WDOG_SetTimeout(UINT32 *p_timeout);
 ```
 use for set watchdog timeout value
 <ParamTable
@@ -85,20 +82,22 @@ use for set watchdog timeout value
   ]}
 />
 
+
 ### RHAL_WDOG_GetTimeout
 ```bash
-DTV_STATUS_T RHAL_WDOG_GetTimeout(UINT32*p_timeout);
+DTV_STATUS_T RHAL_WDOG_GetTimeout(UINT32 *p_timeout);
 ```
-use for get watchdog timeout value
+use for set watchdog timeout value
 <ParamTable
   items={[
     { name: 'p_timeout', type: 'UINT32*', desc: 'buff for timeout value' },
   ]}
 />
 
+
 ### RHAL_WDOG_SetPreTimeout
 ```bash
-DTV_STATUS_T RHAL_WDOG_SetPreTimeout(UINT32*p_timeout);
+DTV_STATUS_T RHAL_WDOG_SetPreTimeout(UINT32 *p_timeout);
 ```
 use for set watchdog NMI timeout value
 <ParamTable
@@ -107,9 +106,10 @@ use for set watchdog NMI timeout value
   ]}
 />
 
+
 ### RHAL_WDOG_GetPreTimeout
 ```bash
-DTV_STATUS_T RHAL_WDOG_GetPreTimeout(UINT32*p_timeout);
+DTV_STATUS_T RHAL_WDOG_GetPreTimeout(UINT32 *p_timeout);
 ```
 use for get watchdog NMI timeout value
 <ParamTable
@@ -118,9 +118,10 @@ use for get watchdog NMI timeout value
   ]}
 />
 
+
 ### RHAL_WDOG_GetTimeLeft
 ```bash
-DTV_STATUS_T RHAL_WDOG_GetTimeLeft(UINT32*p_timeleft);
+DTV_STATUS_T RHAL_WDOG_GetTimeLeft(UINT32 *p_timeleft);
 ```
 use for get left time before watchdog timeout.
 <ParamTable
@@ -129,9 +130,10 @@ use for get left time before watchdog timeout.
   ]}
 />
 
+
 ### RHAL_WDOG_GetStatus
 ```bash
-DTV_STATUS_T RHAL_WDOG_GetStatus(RHAL_WDOG_STATUS_T*p_status);
+DTV_STATUS_T RHAL_WDOG_GetStatus(RHAL_WDOG_STATUS_T* p_status);
 ```
 use for get watchdog status.
 <ParamTable
@@ -140,16 +142,18 @@ use for get watchdog status.
   ]}
 />
 
+
 ### RHAL_WDOG_GetLastBootStatus
 ```bash
-DTV_STATUS_T RHAL_WDOG_GetLastBootStatus(int*p_status);
+DTV_STATUS_T RHAL_WDOG_GetLastBootStatus(int* p_status);
 ```
 use for get watchdog last boot status.
 <ParamTable
   items={[
-    { name: 'p_status', type: 'RHAL_WDOG_STATUS_T*', desc: 'buff for watchdog last boot status' },
+    { name: 'p_status', type: 'int*', desc: 'buff for watchdog last boot status' },
   ]}
 />
+
 
 ### RHAL_SET_AP_WDOG_ON
 ```bash
@@ -179,3 +183,4 @@ set ap id.
     { name: 'ap_id', type: 'UINT32', desc: 'ap id' },
   ]}
 />
+

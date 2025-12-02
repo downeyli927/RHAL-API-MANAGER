@@ -18,20 +18,20 @@ typedef DTV_STATUS_T (*pfnVENCDataHandlingCB)(VENC_MSG_TYPE_T *pMsg);
 
 ## Enums and struct definitions
 
-### VENC_MSG_TYPE_T 
+### VENC_MSG_TYPE_T
 ```bash
 /**
  * @brief infomation of recored frame
  */
 typedef struct VENC_MSG_TYPE
 {
-        UINT32  channel;        /**< Port Id */
-        UINT8   pictype;        /**< Picture Type IDC:1 I:2 P:4 B:8 */
-        UINT64  pts;            /**< PTS */
-        UINT8   *pData;         /**< pointer to Video Data */
-        UINT32  dataLen;        /**< Video Data Length */
-        UINT8   *pRStart;       /**< start pointer of buffer */
-        UINT8   *pREnd;         /**< end pointer of buffer */
+        UINT32        channel;        /**< Port Id */
+        UINT8        pictype;        /**< Picture Type IDC:1 I:2 P:4 B:8 */
+        UINT64        pts;                /**< PTS */
+        UINT8        *pData;                /**< pointer to Video Data */
+        UINT32        dataLen;        /**< Video Data Length */
+        UINT8        *pRStart;        /**< start pointer of buffer */
+        UINT8        *pREnd;                /**< end pointer of buffer */
 }VENC_MSG_TYPE_T;
 ```
 
@@ -43,8 +43,8 @@ typedef struct VENC_MSG_TYPE
 typedef enum
 {
         VENC_INPUT_MAIN = 0,/**< Main Video source */
-        VENC_INPUT_SUB,         /**< Sub Video source */
-        VENC_INPUT_EXT,         /**< Extra Video source */
+        VENC_INPUT_SUB,                /**< Sub Video source */
+        VENC_INPUT_EXT,                /**< Extra Video source */
         VENC_INPUT_NUM
 }VENC_INPUT_TYPE_T;
 ```
@@ -57,7 +57,7 @@ typedef enum
 typedef enum
 {
         VENC_CODEC_H264 = 0,/**< H264 format */
-        VENC_CODEC_VP8          /**< VP8 format */
+        VENC_CODEC_VP8                /**< VP8 format */
 }VENC_CODEC_T;
 ```
 
@@ -69,17 +69,17 @@ typedef enum
 typedef enum
 {
         VENC_FRAMERATE_AUTO = 0,        // Optimal frame rate for this Encoder. (60p -> 30p, 50p -> 25p...)
-        VENC_FRAMERATE_ASIS,    // Use original framerate
-        VENC_FRAMERATE_60P,     //60Hz progressive (reserved not used)
-        VENC_FRAMERATE_60I,     //60Hz interlaced (reserved not used)
-        VENC_FRAMERATE_50P,     //50Hz progressive (reserved not used)
-        VENC_FRAMERATE_50I,     //50Hz interlaced (reserved not used)
-        VENC_FRAMERATE_30P,     //30Hz progressive
-        VENC_FRAMERATE_30I,     //30Hz interlaced (reserved not used)
-        VENC_FRAMERATE_25P,     //25Hz progressive (reserved not used)
-        VENC_FRAMERATE_25I,     //25Hz interlaced (reserved not used)
-        VENC_FRAMERATE_24P,     //24Hz progressive (reserved not used)
-        VENC_FRAMERATE_24I,     //24Hz interlaced (reserved not used)
+        VENC_FRAMERATE_ASIS,        // Use original framerate
+        VENC_FRAMERATE_60P,        //60Hz progressive (reserved not used)
+        VENC_FRAMERATE_60I,        //60Hz interlaced (reserved not used)
+        VENC_FRAMERATE_50P,        //50Hz progressive (reserved not used)
+        VENC_FRAMERATE_50I,        //50Hz interlaced (reserved not used)
+        VENC_FRAMERATE_30P,        //30Hz progressive
+        VENC_FRAMERATE_30I,        //30Hz interlaced (reserved not used)
+        VENC_FRAMERATE_25P,        //25Hz progressive (reserved not used)
+        VENC_FRAMERATE_25I,        //25Hz interlaced (reserved not used)
+        VENC_FRAMERATE_24P,        //24Hz progressive (reserved not used)
+        VENC_FRAMERATE_24I,        //24Hz interlaced (reserved not used)
         VENC_FRAMERATE_INVALID
 }VENC_FRAMERATE_T;
 ```
@@ -118,8 +118,8 @@ typedef enum
  * @brief Rate conotrol mode
  */
 typedef enum {
-        VENC_RATECONTROL_VBR = 0,       /**< Variable Bit Rate (VBR) mode */
-        VENC_RATECONTROL_CBR = 1,       /**< Constant Bit Rate (CBR) mode */
+        VENC_RATECONTROL_VBR = 0,        /**< Variable Bit Rate (VBR) mode */
+        VENC_RATECONTROL_CBR = 1,        /**< Constant Bit Rate (CBR) mode */
 } VENC_RATECONTROL_T;
 ```
 
@@ -148,8 +148,6 @@ typedef enum {
 }VENC_INFO_T;
 ```
 
-
-
 ## Function declarations and inline functions
 
 ### RHAL_VENC_Open
@@ -176,6 +174,7 @@ Select Video source
   ]}
 />
 
+
 ### RHAL_VENC_Start
 ```bash
 DTV_STATUS_T RHAL_VENC_Start(UINT8 port);
@@ -187,6 +186,7 @@ Start Video Encoding
   ]}
 />
 
+
 ### RHAL_VENC_Stop
 ```bash
 DTV_STATUS_T RHAL_VENC_Stop(UINT8 port);
@@ -197,6 +197,7 @@ Stop Video Encoding
     { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
   ]}
 />
+
 
 ### RHAL_VENC_SetParam
 ```bash
@@ -211,18 +212,20 @@ Set Parameter
   ]}
 />
 
+
 ### RHAL_VENC_GetParam
 ```bash
-DTV_STATUS_T RHAL_VENC_GetParam(UINT8 port, VENC_INFO_T info, void*pValue);
+DTV_STATUS_T RHAL_VENC_GetParam(UINT8 port, VENC_INFO_T info, void *pValue);
 ```
 VENC Get infomation
 <ParamTable
   items={[
     { name: 'port', type: 'UINT8', desc: 'port of video encoder(reserved)' },
-    { name: 'info', type: 'VENC_INFO_T', desc: 'type of info to set' },
+    { name: 'info', type: 'VENC_INFO_T', desc: 'Type of info to set' },
     { name: 'pValue', type: 'void*', desc: 'Pointer to set result value' },
   ]}
 />
+
 
 ### RHAL_VENC_RegisterEncoderCallback
 ```bash
@@ -236,9 +239,10 @@ Register Callback function for every frame
   ]}
 />
 
+
 ### RHAL_VENC_CopyData
 ```bash
-DTV_STATUS_T RHAL_VENC_CopyData(UINT8 port, UINT8*pDest, UINT8*pBufAddr, UINT32 datasize, UINT8*pRStart, UINT8*pREnd);
+DTV_STATUS_T RHAL_VENC_CopyData(UINT8 port, UINT8 *pDest, UINT8 *pBufAddr, UINT32 datasize, UINT8 *pRStart, UINT8 *pREnd);
 ```
 Release Encoded Data buffer
 <ParamTable
@@ -252,9 +256,10 @@ Release Encoded Data buffer
   ]}
 />
 
+
 ### RHAL_VENC_ReleaseData
 ```bash
-DTV_STATUS_T RHAL_VENC_ReleaseData(UINT8 port, UINT8*pBufAddr,UINT32 datasize);
+DTV_STATUS_T RHAL_VENC_ReleaseData(UINT8 port, UINT8 *pBufAddr,UINT32 datasize);
 ```
 Release Encoded Data buffer
 <ParamTable
@@ -265,9 +270,10 @@ Release Encoded Data buffer
   ]}
 />
 
+
 ### RHAL_VENC_GetThumbnail
 ```bash
-DTV_STATUS_T RHAL_VENC_GetThumbnail(UINT8 port, UINT32 width, UINT32 height, UINT8*pBufAddr, UINT32 datasize);
+DTV_STATUS_T RHAL_VENC_GetThumbnail(UINT8 port, UINT32 width, UINT32 height, UINT8 *pBufAddr, UINT32 datasize);
 ```
 Get Thumbnail Data
 <ParamTable
@@ -280,8 +286,14 @@ Get Thumbnail Data
   ]}
 />
 
+
 ### RHAL_VENC_DEBUG_Menu
 ```bash
 void RHAL_VENC_DEBUG_Menu(void);
 ```
 Serves as an interactive debug menu for the video encoder (VENC).
+:::tip[Tips]
+
+test
+
+:::
