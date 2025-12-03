@@ -19,46 +19,76 @@ sidebar_position: 12
 
 RHAL_CEC_ADP api
 
-## RHAL_CEC_ADP_Open
+## Enums and struct definitions
+
+### HAL_CEC_STS
+```bash
+/**
+ * @brief status of cec message
+ */
+typedef enum
+{
+    HAL_CEC_STS_OK   =  0,
+    HAL_CEC_STS_FAIL = -1,
+}HAL_CEC_STS;
+```
+
+### HAL_CEC_MSG
+```bash
+/**
+ * @brief cec message structure
+ */
+typedef struct _RHAL_CEC_MSG
+{
+    unsigned char*      Buff;
+    unsigned char       Len;
+} HAL_CEC_MSG;
+```
+
+## Function declarations and inline functions
+
+### RHAL_CEC_ADP_Open
 ```bash
 HAL_CEC_STS RHAL_CEC_ADP_Open(void);
 ```
 Open a RTK CEC Adapter
 
-## RHAL_CEC_ADP_Close
+### RHAL_CEC_ADP_Close
 ```bash
 HAL_CEC_STS RHAL_CEC_ADP_Close(void);
 ```
-Close CEC ADP
+Close a RTK CEC Adapter
 
-## RHAL_CEC_ADP_SendMessage
+### RHAL_CEC_ADP_SendMessage
 ```bash
-HAL_CEC_STS RHAL_CEC_ADP_SendMessage(UINT8*pMsg, UINT8 Len);
+HAL_CEC_STS RHAL_CEC_ADP_SendMessage( UINT8* pMsg, UINT8 Len );
 ```
-Send a CEC Message onto CEC Bus
+Open a RTK CEC Adapter
 <ParamTable
   items={[
     { name: 'pMsg', type: 'UINT8*', desc: 'Message to submit' },
-    { name: 'Len', type: 'UINT8', desc: <>Message length.</> },
+    { name: 'Len', type: 'UINT8', desc: 'Message length' },
   ]}
 />
 
-## RHAL_CEC_ADP_ReadMessage
+
+### RHAL_CEC_ADP_ReadMessage
 ```bash
-HAL_CEC_STS RHAL_CEC_ADP_ReadMessage(UINT8*pMsg, UINT8 Len, UINT8*pRxLen);
+HAL_CEC_STS RHAL_CEC_ADP_ReadMessage( UINT8* pMsg, UINT8 Len, UINT8 *pRxLen);
 ```
 Read a CEC Message onto CEC Bus
 <ParamTable
   items={[
     { name: 'pMsg', type: 'UINT8*', desc: 'Received Message' },
-    { name: 'Len', type: 'UINT8', desc: <>The length of message buf .</> },
-    { name: 'pRxLen', type: 'UINT8*', desc: <>An output parameter pointer used to return the number of bytes actually read..</> },
+    { name: 'Len', type: 'UINT8', desc: 'The length of message buf' },
+    { name: 'pRxLen', type: 'UINT8*', desc: 'An output parameter pointer used to return the number of bytes actually read' },
   ]}
 />
 
-## RHAL_CEC_ADP_PollDevice
+
+### RHAL_CEC_ADP_PollDevice
 ```bash
-HAL_CEC_STS RHAL_CEC_ADP_PollDevice(UINT8 Dest);
+HAL_CEC_STS RHAL_CEC_ADP_PollDevice( UINT8 Dest);
 ```
 Send Poll Message onto CEC Bus
 <ParamTable
@@ -67,20 +97,22 @@ Send Poll Message onto CEC Bus
   ]}
 />
 
-## RHAL_CEC_ADP_Enable
+
+### RHAL_CEC_ADP_Enable
 ```bash
-HAL_CEC_STS RHAL_CEC_ADP_Enable(UINT8 OnOff);
+HAL_CEC_STS RHAL_CEC_ADP_Enable ( UINT8 OnOff );
 ```
 Enable CEC Adapter
 <ParamTable
   items={[
-    { name: 'OnOff', type: 'UINT8', desc: <> 0 : <code>0ff</code>, others : <code>on</code> </> },
+    { name: 'OnOff', type: 'UINT8', desc: <> 0 : <code>off</code>, others : <code>on</code> </> },
   ]}
 />
 
-## RHAL_CEC_ADP_SetLogicalAddress
+
+### RHAL_CEC_ADP_SetLogicalAddress
 ```bash
-HAL_CEC_STS RHAL_CEC_ADP_SetLogicalAddress(UINT8 LogicalAddr);
+HAL_CEC_STS RHAL_CEC_ADP_SetLogicalAddress (UINT8 LogicalAddr);
 ```
 Set Logical address of CEC Adapter
 <ParamTable
@@ -89,16 +121,18 @@ Set Logical address of CEC Adapter
   ]}
 />
 
-## RHAL_CEC_ADP_SetRetryNum
+
+### RHAL_CEC_ADP_SetRetryNum
 ```bash
 HAL_CEC_STS RHAL_CEC_ADP_SetRetryNum(UINT8 Num);
 ```
-set retry times of rtd cec
+Set retry times of rtd cec
 <ParamTable
   items={[
     { name: 'Num', type: 'UINT8', desc: 'Retry times' },
   ]}
 />
+
 ````
 
 ## RHAL API Document supports Markdown and a few additional features.
