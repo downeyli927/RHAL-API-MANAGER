@@ -8,7 +8,10 @@ To improve **software quality**, we have added the RHAL API manager project..
 
 ## Add an API reference
 
-You can refer to **RHAL_CEC_ADP.mdx** to create your API reference file and provide it to me.Please refer to **[RHAL_CEC_ADP文档](./rhal/RHAL_CEC_ADP)** for the final result.
+You can refer to the **[rahl 接口定义格式参考文件.zip](/files/rahl 接口定义格式参考文件.zi)** to modify your interface file and update it in the source code location.
+I will convert your RHAL API interface file into web-displayable content and update it on our site.
+
+You can also refer to **RHAL_CEC_ADP.mdx** to create your API reference file and provide it to me.Please refer to **[RHAL_CEC_ADP文档](./rhal/RHAL_CEC_ADP)** for the final result.
 
 ````jsx title="docs/rhal/RHAL_CEC_ADP.mdx"
 ---
