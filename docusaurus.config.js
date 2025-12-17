@@ -40,6 +40,8 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  
+  plugins: ["@cmfcmf/docusaurus-search-local"],
 
   presets: [
     [
