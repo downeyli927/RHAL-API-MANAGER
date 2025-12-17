@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # SDK API Document Intro
 
-In R+ Android 14, the current total number of RHAL_ APIs is 2,513, covering the three folders under vendor/realtek/common/ATV/frameworks/current/system/rtkhal/: rtktools/, hal_inc/, and rhal_tvfe/, you can click and read **[rhal_api_list](/file/rhal_api_list.txt)** to view the details. 
+In R+ Android 14, the current total number of RHAL_ APIs is <Highlight color="#1877F2">2513</Highlight>, covering the three folders under vendor/realtek/common/ATV/frameworks/current/system/rtkhal/: rtktools/, hal_inc/, and rhal_tvfe/, you can click and read **[rhal_api_list](/file/rhal_api_list.txt)** to view the details. 
 
 To improve **software quality**, we have added the RHAL API manager project..
 
