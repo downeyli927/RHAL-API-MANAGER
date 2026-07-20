@@ -69,19 +69,20 @@ npm run build
 
 Because the project runs both a Docusaurus web server and a Node.js proxy concurrently, we recommend running it via Docker, mapping both ports defined in your `.env`.
 
-Run the production server using Docker:
+To make deployment easier, a `deploy.sh` script is provided.
 
-```bash
-# Runs the Web UI and AI proxy server in the background
-docker run -d \
-  --name rhal-api-docs \
-  --restart always \
-  -v $(pwd):/app \
-  -w /app \
-  -p 3001:3001 \
-  -p 3099:3099 \
-  node:20-alpine sh -c "export \$(cat .env | xargs) && npm run serve -- --host 0.0.0.0 --port \${WEB_PORT:-3000} & node proxy.js"
-```
+1. **Rebuild the frontend** (if you modified any `src/` files):
+   ```bash
+   # Rebuild inside the existing container
+   docker exec rhal-api-docs npm run build
+   ```
+
+2. **Run the deployment script**:
+   ```bash
+   ./deploy.sh
+   ```
+
+*Note: The script automatically stops the old container, reads your new `.env` settings, and starts a new container with the correct ports mapped.*
 
 Once running, access the site at: `http://<your-server-ip>:3001/` (or the port you configured for `WEB_PORT`).
 
@@ -160,23 +161,23 @@ npm run build
 
 ## 部署与启动服务器
 
-由于项目需要同时运行网页前端 (`npm run serve`) 和 AI 代理服务器 (`proxy.js`)，并且我们需要将 `.env` 中的端口配置动态注入到启动命令中，推荐使用 Docker 一键启动部署：
+由于项目需要同时运行网页前端 (`npm run serve`) 和 AI 代理服务器 (`proxy.js`)，并且我们需要将 `.env` 中的端口配置动态注入到启动命令中，推荐使用提供的 `deploy.sh` 脚本一键启动部署。
 
-```bash
-# 读取 .env 配置并在后台运行 Docusaurus 站点及 AI 代理
-docker run -d \
-  --name rhal-api-docs \
-  --restart always \
-  -v $(pwd):/app \
-  -w /app \
-  -p 3001:3001 \
-  -p 3099:3099 \
-  node:20-alpine sh -c "export \$(cat .env | xargs) && npm run serve -- --host 0.0.0.0 --port \${WEB_PORT:-3000} & node proxy.js"
-```
+1. **重新打包前端代码**（如果您修改了前端 `src/` 目录下的任何代码，需要先打包更新 `build`）：
+   ```bash
+   docker exec rhal-api-docs npm run build
+   ```
+
+2. **一键启动/重启部署**：
+   ```bash
+   ./deploy.sh
+   ```
+
+*说明：该脚本会自动停止并删除旧容器，提取 `.env` 中的最新端口配置，并使用正确的映射参数后台启动全新的 Docker 容器。*
 
 启动成功后，即可在浏览器中访问: `http://<您的服务器IP>:3001/` (或您在 `WEB_PORT` 中修改的其他端口)。
 
 ## 架构说明
 
 *   **前端 (`src/components/AIAssistant`)**: 这是一个注入（Swizzle）到 Docusaurus `Root` 组件中的 React 独立组件。它通过直接抓取当前浏览区 `<article>` 标签内的文本内容来实现“上下文 RAG”。它的所有请求都会发向本地的 AI 代理路由，而不是直接连接大模型后端。
-*   **后端 (`proxy.js`)**: 这是一个轻量 Express/HTTP 服务，负责拦截请求，从宿主机的 `.env` 中读取 `AI_API_KEY` 注入到 Header 中，然后转发给 RealGPT 节点。它还能将流式 (Stream) 响应原样返回给客户端，且天然绕过了前端的 CORS 跨域限制。
+*   **后端 (`proxy.js`)**: 这是一个轻量 Express/HTTP 服务，负责拦截请求，从宿主的 `.env` 中读取 `AI_API_KEY` 注入到 Header 中，然后转发给 RealGPT 节点。它还能将流式 (Stream) 响应原样返回给客户端，且天然绕过了前端的 CORS 跨域限制。
