@@ -1,4 +1,8 @@
-# RHAL API Manager
+[English](#english) | [简体中文](#中文版)
+
+---
+
+<h1 id="english">RHAL API Manager</h1>
 
 A comprehensive API documentation manager for RHAL, built with [Docusaurus 3](https://docusaurus.io/) and featuring a built-in Context-Aware AI Assistant powered by RealGPT.
 
@@ -81,3 +85,92 @@ Once running, access the site at: `http://<your-server-ip>:3001/`
 
 *   **Frontend (`src/components/AIAssistant`)**: A React component swizzled into Docusaurus's `Root` component. It scrapes the text of the currently viewed article (`<article>`) to provide RAG context to the LLM. It routes requests to `/api/ai` instead of directly to the LLM.
 *   **Backend (`proxy.js`)**: Intercepts requests to `/api/ai`, injects the `AI_API_KEY` from `.env`, forwards the payload to the RealGPT endpoint, and streams the response back to the client while bypassing CORS restrictions.
+
+<br>
+<br>
+
+---
+
+<h1 id="中文版">RHAL API Manager (中文说明)</h1>
+
+一个为 RHAL 构建的综合 API 文档管理器，基于 [Docusaurus 3](https://docusaurus.io/) 构建，并内置了由 RealGPT 驱动的上下文感知 AI 助手。
+
+## 核心特性
+
+- 📚 **文档**: 结构化的 API 参考与开发指南。
+- 🔍 **本地搜索**: 使用 `@cmfcmf/docusaurus-search-local` 插件集成的离线全文搜索功能。
+- 🤖 **上下文感知 AI 助手**: 页面悬浮 AI 聊天机器人。它能够智能读取您当前正在浏览的文档内容，从而提供精确的、针对当前页面的解答（无需复杂的 RAG 向量库）。
+- 🔒 **安全的 AI 代理**: 使用轻量级的 Node.js 后端 (`proxy.js`) 安全地代理大模型 API 请求，彻底杜绝在前端浏览器中暴露 API 密钥的风险。
+
+## 环境要求
+
+- **Node.js**: `>= 20.0.0` (Docusaurus 3 的严格限制要求)
+- **Docker** (如果您的服务器 Node.js 版本低于 20，比如老旧的 Node 16，强烈推荐使用 Docker)
+
+## 环境变量配置
+
+AI 助手需要通过特定的环境变量来安全连接到内部的 RealGPT 模型。
+
+1. 复制环境变量示例文件：
+   ```bash
+   cp .env.example .env
+   ```
+
+2. 编辑 `.env` 文件并填入您自己的配置：
+   ```env
+   # 您的 RealGPT API Key（注意保密，绝对不要提交到 Git 仓库）
+   AI_API_KEY=您的_api_key_填写在这里
+
+   # RealGPT API 接口地址 (例如 https://proxy.realtek.com/...)
+   AI_API_URL=您的_api_url_填写在这里
+
+   # 指定网站和代理服务器运行的端口 (默认: 3001)
+   PORT=3001
+   ```
+
+## 开发与构建
+
+### 方式一：使用 Docker（推荐用于老旧的宿主服务器环境）
+
+如果您的本地或开发服务器上的 Node 版本 < 20，请使用 Docker 来安装依赖并构建项目，以免污染或报错：
+
+1. **安装依赖**:
+   ```bash
+   docker run --rm -v $(pwd):/app -w /app node:20-alpine npm install
+   ```
+
+2. **构建静态网站** (注意：必须执行构建才能生成供本地搜索使用的索引文件):
+   ```bash
+   docker run --rm -v $(pwd):/app -w /app node:20-alpine npm run build
+   ```
+
+### 方式二：使用本地 Node.js（如果本地 Node >= 20）
+
+```bash
+npm install
+npm run build
+```
+
+## 部署与启动服务器
+
+由于 AI 助手需要安全地给 RealGPT API 请求加上 `Authorization` 头，前端静态页面**不能**只通过简单的 Nginx 等静态服务器直接部署。您**必须**运行项目根目录下的 `proxy.js` 服务器，它会同时提供 Docusaurus 的静态文件 (`/build` 目录) 并且拦截转发 AI 代理路由。
+
+推荐使用 Docker 将生产环境服务器放在后台运行：
+
+```bash
+# 读取 .env 配置并在后台运行 Docusaurus 站点及 AI 代理
+docker run -d \
+  --name rhal-api-manager \
+  --restart always \
+  -v $(pwd):/app \
+  -w /app \
+  -p 3001:3001 \
+  node:20-alpine node proxy.js
+```
+
+启动成功后，即可在浏览器中访问: `http://<您的服务器IP>:3001/`
+
+## 架构说明
+
+*   **前端 (`src/components/AIAssistant`)**: 这是一个注入（Swizzle）到 Docusaurus `Root` 组件中的 React 独立组件。它通过直接抓取当前浏览区 `<article>` 标签内的文本内容来实现“上下文 RAG”。它的所有请求都会发向本站的 `/api/ai` 路由，而不是直接连接大模型后端。
+*   **后端 (`proxy.js`)**: 这是一个轻量 Express/HTTP 服务，负责拦截发往 `/api/ai` 的请求，从宿主机的 `.env` 中读取 `AI_API_KEY` 注入到 Header 中，然后转发给 RealGPT 节点。它还能将流式 (Stream) 响应原样返回给客户端，且天然绕过了前端的 CORS 跨域限制。
