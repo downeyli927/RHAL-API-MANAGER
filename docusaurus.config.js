@@ -4,6 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
+require('dotenv').config();
 import {themes as prismThemes} from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -11,6 +12,10 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'RHAL API MANAGER',
+  customFields: {
+    aiApiUrl: process.env.AI_API_URL_FRONTEND || '/api/chat/completions',
+    aiModel: process.env.AI_MODEL || 'gpt-5.6-luna',
+  },
   tagline: 'List of all RHAL APIs for you',
   favicon: 'img/REALTEK_Logo.jpg',
 
